@@ -497,8 +497,10 @@ a:hover { color: var(--teal); }
 }
 
 /* ── Footer ─────────────────────────────────────────────────────── */
+/* Wrap the footer so the dark band runs edge-to-edge (matching the navy
+   CTA above it), with the columns themselves contained at 1240px. */
+.footer-wrap { background: #07172e; }
 .footer {
-  background: #07172e;
   color: rgba(255,255,255,0.7);
   padding: 56px 40px 36px;
   display: grid;
