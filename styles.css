@@ -285,7 +285,12 @@ a:hover { color: var(--teal); }
 .screenshot img {
   width: 100%; height: 100%; object-fit: cover; display: block;
   background: #081a31;
+  /* Subtle blur on real screenshots so PII (names, phones, emails) doesn't
+     leak. Layout and colors read clearly; text doesn't. */
+  filter: blur(2.2px) saturate(1.05);
+  transition: filter .25s ease;
 }
+.screenshot:hover img { filter: blur(3px) saturate(1.05); }
 .screenshot figcaption {
   position: absolute; bottom: 0; left: 0; right: 0;
   padding: 14px 18px;
