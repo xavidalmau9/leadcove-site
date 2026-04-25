@@ -261,6 +261,197 @@ a:hover { color: var(--teal); }
 }
 .how-body p { color: var(--ink-2); font-size: 15.5px; margin: 0; max-width: 720px; }
 
+/* ── Stats band (right under hero) ──────────────────────────────── */
+.stats-band {
+  background: var(--navy);
+  color: #fff;
+  padding: 56px 40px;
+}
+.stats-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+.stat { display: flex; flex-direction: column; gap: 6px; }
+.stat-number {
+  font-family: var(--f-display);
+  font-size: clamp(42px, 4vw, 56px);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--teal);
+  line-height: 1;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+}
+.stat-unit {
+  font-size: 18px;
+  color: rgba(255,255,255,0.55);
+  font-weight: 500;
+  letter-spacing: 0;
+}
+.stat-label {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  margin-top: 4px;
+}
+.stat-sub {
+  font-size: 13px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.5;
+}
+.stat-sub strong { color: var(--teal); }
+@media (max-width: 900px) {
+  .stats-inner { grid-template-columns: 1fr 1fr; gap: 28px; }
+}
+@media (max-width: 520px) {
+  .stats-inner { grid-template-columns: 1fr; gap: 24px; }
+}
+
+/* ── Newbie path section ────────────────────────────────────────── */
+.newbies {
+  background: linear-gradient(135deg, var(--cream) 0%, var(--sand) 100%);
+  max-width: none;
+  padding: 96px 40px;
+}
+.newbies-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.newbies-copy h2.section-title {
+  margin-bottom: 16px;
+}
+.newbies-lead {
+  font-size: 16px;
+  color: var(--ink-2);
+  margin: 0 0 24px;
+  line-height: 1.6;
+}
+.newbies-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.newbies-list li {
+  font-size: 14.5px;
+  color: var(--ink-2);
+  padding-left: 26px;
+  position: relative;
+  line-height: 1.55;
+}
+.newbies-list li::before {
+  content: '→';
+  position: absolute; left: 0; top: 0;
+  color: var(--teal);
+  font-weight: 700;
+}
+.newbies-card {
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  box-shadow: var(--shadow-md);
+}
+.newbies-card-eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal-2);
+  margin-bottom: 14px;
+}
+.newbies-card-headline {
+  font-family: var(--f-display);
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+.newbies-card-meta {
+  display: flex;
+  gap: 28px;
+  padding: 18px 0;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  margin-bottom: 22px;
+}
+.newbies-card-meta > div { display: flex; flex-direction: column; gap: 2px; }
+.newbies-card-num {
+  font-family: var(--f-display);
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: -0.025em;
+  line-height: 1;
+}
+.newbies-card-suf {
+  font-size: 12px;
+  color: var(--muted);
+}
+.newbies-card-bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--ink-2);
+}
+.newbies-card-bullets > div {
+  padding-left: 6px;
+}
+@media (max-width: 900px) {
+  .newbies-inner { grid-template-columns: 1fr; gap: 36px; }
+}
+
+/* ── Pricing add-on callout ──────────────────────────────────────── */
+.pricing-addon {
+  margin-top: 36px;
+  background: #fff;
+  border: 1px dashed var(--border2);
+  border-radius: var(--radius-md);
+  padding: 18px 24px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  max-width: 880px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.addon-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal-2);
+  background: rgba(14,159,149,0.1);
+  border: 1px solid rgba(14,159,149,0.3);
+  padding: 5px 12px;
+  border-radius: 99px;
+  flex-shrink: 0;
+}
+.addon-body {
+  font-size: 14px;
+  color: var(--ink-2);
+  line-height: 1.55;
+}
+.addon-body strong { color: var(--navy); }
+@media (max-width: 540px) {
+  .pricing-addon { flex-direction: column; align-items: flex-start; }
+}
+
 /* ── Compare (cost vs. alternatives) ────────────────────────────── */
 .compare { background: #fff; max-width: none; padding-left: 40px; padding-right: 40px; }
 .compare > * { max-width: 1240px; margin-left: auto; margin-right: auto; }
