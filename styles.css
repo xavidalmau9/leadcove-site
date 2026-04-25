@@ -532,19 +532,20 @@ a:hover { color: var(--teal); }
 }
 .row-label-tag {
   display: inline-block;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 800;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding: 4px 12px;
+  padding: 7px 16px;
   border-radius: 99px;
-  border: 1px solid;
+  border: 2px solid;
+  white-space: nowrap;
 }
-.row-label-tag.bad  { color: #d94f4f; background: rgba(217,79,79,0.08);  border-color: rgba(217,79,79,0.4); }
-.row-label-tag.good { color: var(--teal-2); background: rgba(14,159,149,0.1); border-color: rgba(14,159,149,0.4); }
+.row-label-tag.bad  { color: #d94f4f; background: rgba(217,79,79,0.1);   border-color: #d94f4f; }
+.row-label-tag.good { color: #fff;    background: var(--teal);            border-color: var(--teal); }
 .row-label-text {
   font-family: var(--f-display);
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 600;
   letter-spacing: -0.015em;
   color: var(--navy);
@@ -568,8 +569,53 @@ a:hover { color: var(--teal); }
   color: var(--teal-2);
 }
 
-/* "Good" cards — LeadCove plans inside the compare section */
-.compare-card-good { background: #fff; border-color: var(--hairline); }
+/* "Rejected" alternative cards — visually crossed out */
+.compare-card-rejected {
+  background: rgba(217, 79, 79, 0.04);
+  border-color: rgba(217, 79, 79, 0.25);
+  position: relative;
+  opacity: 0.78;
+}
+.compare-card-rejected:hover { opacity: 0.88; }
+.compare-card-rejected .compare-name {
+  color: rgba(217, 79, 79, 0.9);
+}
+.compare-card-rejected .compare-cost { position: relative; }
+.compare-cost-strike .num,
+.compare-cost-strike .per {
+  color: rgba(15, 23, 42, 0.45);
+  text-decoration: line-through;
+  text-decoration-color: rgba(217, 79, 79, 0.7);
+  text-decoration-thickness: 3px;
+}
+/* Big red ✗ stamp in the top-right corner */
+.compare-stamp {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(217, 79, 79, 0.14);
+  border: 2px solid #d94f4f;
+  color: #d94f4f;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(8deg);
+}
+
+/* "Good" cards — LeadCove plans, clean and inviting */
+.compare-card-good {
+  background: #fff;
+  border-color: var(--hairline);
+  border-width: 2px;
+  border-color: rgba(14, 159, 149, 0.35);
+  box-shadow: 0 4px 18px rgba(14, 159, 149, 0.08);
+}
 .compare-card-good.compare-card-featured {
   background: var(--navy);
   color: #fff;
