@@ -461,6 +461,93 @@ a:hover { color: var(--teal); }
   gap: 18px;
   margin-top: 36px;
 }
+.compare-grid-3 { grid-template-columns: repeat(3, 1fr); margin-top: 16px; }
+
+/* Two-row compare structure: alternatives ON TOP, LeadCove plans BELOW. */
+.compare-row { margin-top: 36px; }
+.compare-row + .compare-row { margin-top: 24px; }
+.compare-row-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+.row-label-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 99px;
+  border: 1px solid;
+}
+.row-label-tag.bad  { color: #d94f4f; background: rgba(217,79,79,0.08);  border-color: rgba(217,79,79,0.4); }
+.row-label-tag.good { color: var(--teal-2); background: rgba(14,159,149,0.1); border-color: rgba(14,159,149,0.4); }
+.row-label-text {
+  font-family: var(--f-display);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--navy);
+}
+
+/* Divider between the two rows */
+.compare-vs {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 32px 0 8px;
+}
+.compare-vs-line {
+  flex: 1; height: 1px; background: var(--hairline);
+}
+.compare-vs-word {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--teal-2);
+}
+
+/* "Good" cards — LeadCove plans inside the compare section */
+.compare-card-good { background: #fff; border-color: var(--hairline); }
+.compare-card-good.compare-card-featured {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
+}
+.compare-card-good.compare-card-featured .compare-name,
+.compare-card-good.compare-card-featured .compare-tag,
+.compare-card-good.compare-card-featured .compare-cost .num,
+.compare-card-good.compare-card-featured .compare-cost .per,
+.compare-card-good.compare-card-featured .compare-list li {
+  color: #fff;
+}
+.compare-card-good.compare-card-featured .compare-cost .per { color: rgba(255,255,255,0.6); }
+.compare-card-good.compare-card-featured .compare-list li { color: rgba(255,255,255,0.85); }
+
+.compare-card-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.compare-card-head .compare-name { margin-bottom: 0; }
+.compare-tag {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+@media (max-width: 900px) {
+  .compare-grid-3 { grid-template-columns: 1fr; }
+  .compare-row + .compare-row { margin-top: 16px; }
+  .compare-vs { margin: 24px 0 4px; }
+}
 .compare-card {
   background: var(--cream);
   border: 1px solid var(--hairline);
@@ -762,12 +849,12 @@ a:hover { color: var(--teal); }
 }
 .cta-form input[name="email"] { grid-column: 1 / 2; }
 .cta-form input[name="city"]  { grid-column: 2 / 3; }
-.cta-form button              { grid-column: 1 / -1; justify-self: center; min-width: 220px; margin-top: 6px; }
+.cta-form button              { grid-column: 1 / -1; justify-self: center; min-width: 220px; margin-top: 12px; margin-bottom: 14px; }
 .cta-form input::placeholder { color: rgba(255,255,255,0.5); }
 .cta-form input:focus { outline: none; border-color: var(--teal); background: rgba(255,255,255,0.12); }
 .cta-form .btn-primary { background: var(--teal); }
 .cta-form .btn-primary:hover { background: var(--teal-2); }
-.cta-fine { font-size: 12.5px; color: rgba(255,255,255,0.55); margin-top: 28px; }
+.cta-fine { font-size: 12.5px; color: rgba(255,255,255,0.55); margin-top: 36px; }
 @media (max-width: 480px) {
   .cta-form { grid-template-columns: 1fr; }
   .cta-form input[name="email"],
