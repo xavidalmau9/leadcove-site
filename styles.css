@@ -654,6 +654,103 @@ a:hover { color: var(--teal); }
   .newbies-inner { grid-template-columns: 1fr; gap: 36px; }
 }
 
+/* ── Pricing · "How it works" 4-step flow ───────────────────────── */
+.pricing-howitworks {
+  margin: 36px 0 48px;
+  padding: 28px 0 12px;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+}
+.howitworks-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--accent, #E8822A);
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 28px;
+}
+.howitworks-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;                     /* line connectors fill the gap visually */
+  position: relative;
+  align-items: stretch;
+}
+/* Horizontal connector line behind the step circles */
+.howitworks-grid::before {
+  content: '';
+  position: absolute;
+  top: 36px;            /* aligns with the center of the step number circle */
+  left: 12.5%;          /* start at center of step 1 */
+  right: 12.5%;         /* end at center of step 4 */
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    rgba(11,37,69,0.10) 0%,
+    rgba(14,159,149,0.40) 25%,
+    rgba(232,130,42,0.40) 50%,
+    rgba(14,159,149,0.40) 75%,
+    rgba(11,37,69,0.10) 100%
+  );
+  z-index: 0;
+}
+.howitworks-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  padding: 0 14px;
+}
+.howitworks-num {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--navy, #0B2545);
+  color: var(--navy, #0B2545);
+  font-size: 18px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 10px rgba(11, 37, 69, 0.10);
+  transition: transform .15s, box-shadow .15s;
+}
+/* Color-cycle the numbers so each step pops differently */
+.howitworks-step:nth-child(1) .howitworks-num { background: var(--navy, #0B2545); color: #fff; border-color: var(--navy, #0B2545); }
+.howitworks-step:nth-child(2) .howitworks-num { background: var(--teal-2, #0E9F95); color: #fff; border-color: var(--teal-2, #0E9F95); }
+.howitworks-step:nth-child(3) .howitworks-num { background: var(--accent, #E8822A); color: #fff; border-color: var(--accent, #E8822A); }
+.howitworks-step:nth-child(4) .howitworks-num { background: #2A9D5C; color: #fff; border-color: #2A9D5C; }
+.howitworks-step:hover .howitworks-num {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(11, 37, 69, 0.18);
+}
+.howitworks-headline {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy, #0B2545);
+  margin-bottom: 8px;
+  letter-spacing: -0.005em;
+}
+.howitworks-body {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--ink-2, #475569);
+  max-width: 220px;
+}
+.howitworks-body strong { color: var(--navy, #0B2545); font-weight: 700; }
+@media (max-width: 800px) {
+  .howitworks-grid { grid-template-columns: 1fr; gap: 24px; }
+  .howitworks-grid::before { display: none; }      /* connector irrelevant when stacked */
+  .howitworks-step { flex-direction: row; text-align: left; gap: 16px; padding: 0; }
+  .howitworks-num { margin-bottom: 0; flex-shrink: 0; }
+  .howitworks-body { max-width: none; }
+}
+
 /* ── Pricing add-on callout ──────────────────────────────────────── */
 .pricing-addon {
   margin-top: 36px;
@@ -1251,8 +1348,9 @@ a:hover { color: var(--teal); }
 
 /* ── Pricing ────────────────────────────────────────────────────── */
 .pricing-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);   /* all 4 packs on one row */
+  gap: 16px;
   margin-top: 48px;
   align-items: stretch;
 }
