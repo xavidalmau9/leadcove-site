@@ -753,18 +753,18 @@ a:hover { color: var(--teal); }
 
 /* ── Pricing add-on callout ──────────────────────────────────────── */
 .pricing-addon {
-  margin-top: 36px;
+  margin: 18px auto 0;
   background: #fff;
   border: 1px dashed var(--border2);
   border-radius: var(--radius-md);
-  padding: 18px 24px;
-  display: flex;
-  gap: 16px;
+  padding: 22px 26px;
+  display: grid;                                /* grid keeps pill column + body column aligned across cards */
+  grid-template-columns: 180px 1fr;
+  gap: 24px;
   align-items: center;
   max-width: 880px;
-  margin-left: auto;
-  margin-right: auto;
 }
+.pricing-addon + .pricing-addon { margin-top: 14px; }   /* tighter stacking between two cards */
 .addon-tag {
   font-size: 11px;
   font-weight: 700;
@@ -773,18 +773,26 @@ a:hover { color: var(--teal); }
   color: var(--teal-2);
   background: rgba(14,159,149,0.1);
   border: 1px solid rgba(14,159,149,0.3);
-  padding: 5px 12px;
+  padding: 7px 14px;
   border-radius: 99px;
   flex-shrink: 0;
+  text-align: center;
+  width: 100%;                                  /* fill the 180px grid column for parity */
+  min-height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
 }
 .addon-body {
   font-size: 14px;
   color: var(--ink-2);
-  line-height: 1.55;
+  line-height: 1.6;
 }
 .addon-body strong { color: var(--navy); }
-@media (max-width: 540px) {
-  .pricing-addon { flex-direction: column; align-items: flex-start; }
+@media (max-width: 720px) {
+  .pricing-addon { grid-template-columns: 1fr; gap: 12px; padding: 18px 22px; }
+  .addon-tag { width: auto; max-width: 200px; padding: 6px 12px; min-height: 0; }
 }
 
 /* ── Enterprise (4+ agents) callout ──────────────────────────────── */
