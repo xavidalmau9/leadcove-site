@@ -818,6 +818,133 @@ a:hover { color: var(--teal); }
 .compare-card-rejected .compare-name {
   color: rgba(217, 79, 79, 0.9);
 }
+/* Credits-included badge on each plan card */
+.compare-credits {
+  display: block;
+  font-size: 13px;
+  color: var(--ink-2, #475569);
+  margin: -6px 0 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px dashed rgba(11, 37, 69, 0.15);
+}
+.compare-credits strong { color: var(--navy, #0B2545); font-weight: 700; }
+
+/* "What's a credit?" educational callout */
+.credit-explainer {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: linear-gradient(180deg, rgba(14,159,149,0.07), rgba(14,159,149,0.02));
+  border: 1px solid rgba(14,159,149,0.20);
+  border-left: 4px solid var(--teal-2, #0E9F95);
+  border-radius: 12px;
+  padding: 20px 22px;
+  margin: 16px 0 24px;
+}
+.credit-explainer-icon {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  background: var(--teal-2, #0E9F95);
+  color: #fff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 800;
+}
+.credit-explainer-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink-2, #334155);
+}
+.credit-explainer-text strong { color: var(--navy, #0B2545); font-weight: 700; }
+.credit-explainer-text em { font-style: italic; }
+
+/* Add-on packs callout below monthly plans */
+.compare-addon-callout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 28px;
+  align-items: center;
+  background: var(--card, #fff);
+  border: 1px solid rgba(11,37,69,0.12);
+  border-radius: 14px;
+  padding: 24px 26px;
+  margin-top: 24px;
+}
+.addon-callout-side .addon-callout-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--accent, #E8822A);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.addon-callout-side .addon-callout-headline {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--navy, #0B2545);
+  letter-spacing: -0.005em;
+  margin-bottom: 10px;
+}
+.addon-callout-side p {
+  font-size: 13px;
+  color: var(--ink-2, #475569);
+  line-height: 1.55;
+  margin: 0;
+}
+.addon-callout-packs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.addon-pack-mini {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  background: linear-gradient(180deg, #fafbfc, #fff);
+  border: 1px solid rgba(11,37,69,0.10);
+  border-radius: 10px;
+  padding: 14px 8px;
+  transition: transform .12s, border-color .12s, box-shadow .12s;
+}
+.addon-pack-mini:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent, #E8822A);
+  box-shadow: 0 6px 16px rgba(11,37,69,0.10);
+}
+.addon-pack-name {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-2, #475569);
+  margin-bottom: 4px;
+}
+.addon-pack-price {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--navy, #0B2545);
+  line-height: 1.1;
+}
+.addon-pack-credits {
+  font-size: 11px;
+  color: var(--ink-2, #475569);
+  margin-top: 2px;
+}
+.addon-pack-best {
+  background: linear-gradient(180deg, rgba(232,130,42,0.08), #fff);
+  border-color: rgba(232,130,42,0.40);
+}
+.addon-pack-best .addon-pack-name { color: var(--accent, #E8822A); }
+@media (max-width: 800px) {
+  .compare-addon-callout { grid-template-columns: 1fr; }
+  .addon-callout-packs { grid-template-columns: repeat(2, 1fr); }
+}
+
 .compare-card-rejected .compare-cost { position: relative; }
 .compare-cost-strike .num,
 .compare-cost-strike .per {
