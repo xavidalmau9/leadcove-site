@@ -356,6 +356,89 @@ a:hover { color: var(--teal); }
   padding: 96px 40px;
 }
 .band + .band { border-top: 1px solid var(--hairline); }
+
+/* ── Promise band — featured callout: no data, no charge ─────── */
+.promise-band {
+  background:
+    radial-gradient(ellipse at top right, rgba(14,159,149,0.18) 0%, transparent 55%),
+    radial-gradient(ellipse at bottom left, rgba(11,37,69,0.92) 30%, rgba(11,37,69,1) 100%);
+  color: #fff;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.promise-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+}
+.promise-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #4ed6c8;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+.promise-headline {
+  font-size: clamp(36px, 5.5vw, 56px);
+  line-height: 1.05;
+  margin: 0 0 22px;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  color: #fff;
+}
+.promise-lede {
+  font-size: clamp(16px, 1.6vw, 19px);
+  line-height: 1.55;
+  color: rgba(255,255,255,0.86);
+  max-width: 720px;
+  margin: 0 auto 50px;
+}
+.promise-lede strong { color: #4ed6c8; font-weight: 700; }
+.promise-points {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 30px;
+  text-align: left;
+}
+.promise-point {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 22px 20px;
+  backdrop-filter: blur(6px);
+}
+.promise-point-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  background: rgba(14,159,149,0.18);
+  color: #4ed6c8;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 800;
+}
+.promise-point-title {
+  font-weight: 700;
+  font-size: 15px;
+  color: #fff;
+  margin-bottom: 4px;
+}
+.promise-point-body {
+  font-size: 13px;
+  color: rgba(255,255,255,0.74);
+  line-height: 1.55;
+}
+@media (max-width: 800px) {
+  .promise-points { grid-template-columns: 1fr; gap: 14px; }
+}
 .section-eyebrow {
   font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--teal-2);
