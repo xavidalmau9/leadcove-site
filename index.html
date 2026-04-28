@@ -779,19 +779,81 @@
       <button type="submit" class="btn-primary btn-lg">Join the waitlist</button>
     </form>
     <script>
-    // Belt-and-suspenders: even if the Formspree endpoint is down or not
-    // configured yet, every signup is mirrored into localStorage so we
-    // never lose one. View them at any time in DevTools console:
-    //   JSON.parse(localStorage.getItem('leadcove_waitlist'))
+    // ── UTM capture (Google Ads + any campaign) ─────────────────────────
+    // Run on page load. If the URL has utm_* params, stash them in
+    // localStorage so they persist across page navigations + the actual
+    // form submission. First-touch attribution wins (don't overwrite if
+    // we already have stored UTMs from an earlier visit) — that way an
+    // ad-click visitor who later returns organic still gets credited
+    // to the ad campaign.
+    (function captureUtm() {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const fields = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
+        const incoming = {};
+        let any = false;
+        fields.forEach(k => {
+          const v = params.get(k);
+          if (v) { incoming[k] = v; any = true; }
+        });
+        if (any && !localStorage.getItem('leadcove_utm')) {
+          incoming._captured_at = new Date().toISOString();
+          incoming._referrer    = document.referrer || '';
+          incoming._landing     = location.pathname + location.search;
+          localStorage.setItem('leadcove_utm', JSON.stringify(incoming));
+        }
+      } catch (_) { /* private mode etc — fail silent */ }
+    })();
+
+    // ── Waitlist submission — dual mode ────────────────────────────────
+    // Posts to BOTH:
+    //   1. Formspree (existing — confirmation email keeps firing)
+    //   2. our own /api/waitlist on app.leadcove.io (UTM capture, our DB)
+    // Plus a localStorage fallback so a totally offline submission still
+    // lands somewhere we can recover (DevTools console:
+    //   JSON.parse(localStorage.getItem('leadcove_waitlist'))).
     document.getElementById('waitlist-form').addEventListener('submit', function(e) {
-      const list = JSON.parse(localStorage.getItem('leadcove_waitlist') || '[]');
-      list.push({
-        email: this.email.value,
-        city:  this.city.value || '',
-        at:    new Date().toISOString(),
-      });
-      localStorage.setItem('leadcove_waitlist', JSON.stringify(list));
-      // Let the form continue posting to Formspree
+      const email = this.email.value.trim();
+      const city  = this.city.value.trim();
+
+      // Pull stored UTMs (first-touch attribution).
+      let utm = {};
+      try { utm = JSON.parse(localStorage.getItem('leadcove_utm') || '{}'); } catch (_) {}
+
+      // localStorage mirror — survives if both POSTs fail.
+      try {
+        const list = JSON.parse(localStorage.getItem('leadcove_waitlist') || '[]');
+        list.push({ email, city, utm, at: new Date().toISOString() });
+        localStorage.setItem('leadcove_waitlist', JSON.stringify(list));
+      } catch (_) {}
+
+      // Fire the LeadCove API capture in parallel with the Formspree POST.
+      // Don't await — the form still posts to Formspree (its action= URL),
+      // so worst case the API call fails silently and Formspree gets it.
+      try {
+        fetch('https://app.leadcove.io/api/waitlist', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email, name: '', city,
+            utm: {
+              source:   utm.utm_source   || '',
+              medium:   utm.utm_medium   || '',
+              campaign: utm.utm_campaign || '',
+              content:  utm.utm_content  || '',
+              term:     utm.utm_term     || '',
+            },
+            referrer:     utm._referrer || document.referrer || '',
+            landing_page: utm._landing  || (location.pathname + location.search),
+            source_channel: 'formspree',
+          }),
+          // keepalive lets the request survive the form-submit page
+          // navigation (browsers will normally cancel pending requests
+          // when the page unloads).
+          keepalive: true,
+        });
+      } catch (_) { /* network error — Formspree carries the load */ }
+      // Let the form continue posting to Formspree (default behavior).
     });
     </script>
     <p class="cta-fine">Invite-only beta. We'll email when your spot opens.</p>
