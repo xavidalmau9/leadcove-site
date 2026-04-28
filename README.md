@@ -1,7 +1,7 @@
 # LeadCove — Marketing site
 
 Landing page for **leadcove.io** — real estate lead enrichment SaaS.
-Launching Miami May 2026, invite only.
+Launching Florida May 2026, invite only.
 
 ## Structure
 
