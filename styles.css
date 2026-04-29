@@ -1100,6 +1100,16 @@ a:hover { color: var(--teal); }
 }
 .compare-card-good.compare-card-featured .compare-cost .per { color: rgba(255,255,255,0.6); }
 .compare-card-good.compare-card-featured .compare-list li { color: rgba(255,255,255,0.85); }
+/* The credits-included row had navy text + slate sub-text that was
+   invisible on the navy featured card. Force white tones + lighter
+   dashed divider on the featured variant. */
+.compare-card-good.compare-card-featured .compare-credits {
+  color: rgba(255, 255, 255, 0.78);
+  border-bottom-color: rgba(255, 255, 255, 0.18);
+}
+.compare-card-good.compare-card-featured .compare-credits strong {
+  color: #fff;
+}
 
 .compare-card-head {
   display: flex;
