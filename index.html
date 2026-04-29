@@ -134,6 +134,69 @@
   </div>
 </section>
 
+<!-- ─── Plans (primary) ──────────────────────────────────────────────
+     Promoted to immediately under the hero per Xavi 2026-04-29: real
+     estate agents are price-shopping tools, "what does it cost" is the
+     first question. Plans appear ONCE on the page (here). The Compare
+     and Pricing sections later in the page reference these instead of
+     re-rendering the cards. -->
+<section id="plans" class="band band-tight plans-hero">
+  <h2 class="section-eyebrow">Pricing</h2>
+  <h2 class="section-title">Pick your plan.</h2>
+  <p class="section-sub">
+    Same product on every plan — only the included monthly credits change. Cancel anytime,
+    credits roll forward, no surprise charges.
+  </p>
+
+  <div class="pricing-grid pricing-grid-3">
+    <div class="tier">
+      <div class="tier-name">Starter</div>
+      <div class="tier-price"><span class="dollar">$</span>49<span class="per">/mo</span></div>
+      <div class="tier-sub">For lower-volume agents</div>
+      <ul class="tier-list">
+        <li><strong>100 credits</strong> included / month</li>
+        <li>Full LeadCove CRM — Mission Control, pipeline, archive</li>
+        <li>Bring your own list — CSV upload, multi-property dedupe, multi-market</li>
+        <li>DNC + TCPA-litigator metadata on every enriched record</li>
+        <li>Optional Follow Up Boss sync</li>
+        <li>Cancel anytime, credits roll forward</li>
+      </ul>
+      <a href="#waitlist" class="btn-primary btn-full">Join the waitlist</a>
+    </div>
+
+    <div class="tier tier-featured">
+      <div class="tier-badge">Most popular</div>
+      <div class="tier-name">Pro</div>
+      <div class="tier-price"><span class="dollar">$</span>99<span class="per">/mo</span></div>
+      <div class="tier-sub">Most popular</div>
+      <ul class="tier-list">
+        <li><strong>300 credits</strong> included / month</li>
+        <li>Full LeadCove CRM — Mission Control, pipeline, archive</li>
+        <li>Bring your own list — CSV upload, multi-property dedupe, multi-market</li>
+        <li>DNC + TCPA-litigator metadata on every enriched record</li>
+        <li>Optional Follow Up Boss sync</li>
+        <li>Cancel anytime, credits roll forward</li>
+      </ul>
+      <a href="#waitlist" class="btn-primary btn-full">Join the waitlist</a>
+    </div>
+
+    <div class="tier">
+      <div class="tier-name">Power</div>
+      <div class="tier-price"><span class="dollar">$</span>199<span class="per">/mo</span></div>
+      <div class="tier-sub">Highest volume</div>
+      <ul class="tier-list">
+        <li><strong>1,000 credits</strong> included / month</li>
+        <li>Full LeadCove CRM — Mission Control, pipeline, archive</li>
+        <li>Bring your own list — CSV upload, multi-property dedupe, multi-market</li>
+        <li>DNC + TCPA-litigator metadata on every enriched record</li>
+        <li>Optional Follow Up Boss sync</li>
+        <li>Cancel anytime, credits roll forward</li>
+      </ul>
+      <a href="#waitlist" class="btn-primary btn-full">Join the waitlist</a>
+    </div>
+  </div>
+</section>
+
 <!-- ─── Stats band ────────────────────────────────────────────────── -->
 <section class="stats-band">
   <div class="stats-inner">
@@ -284,14 +347,28 @@
     <span class="compare-vs-line"></span>
   </div>
 
-  <!-- Row 2: LeadCove plans (DO) -->
+  <!-- Row 2: LeadCove plans (DO) — collapsed to a tight reference card.
+       Per Xavi 2026-04-29: plans got promoted to a dedicated section
+       directly under the hero (#plans). Re-rendering the full plan
+       cards here would duplicate them on the page. This block is now
+       a "↑ here's what to do instead" pointer + the credit explainer
+       + the 30×-cheaper footnote. -->
   <div class="compare-row compare-row-good">
     <div class="compare-row-label">
       <span class="row-label-tag good">✓ The solution</span>
       <span class="row-label-text">LeadCove — the all-in-one prospecting platform built for agents</span>
     </div>
 
-    <!-- "What's a credit?" educational callout above the plans -->
+    <div class="compare-solution-callout">
+      <div class="compare-solution-headline">
+        <strong>LeadCove · $49–$199/mo</strong> — same product on every plan, only the included monthly credits change.
+      </div>
+      <a href="#plans" class="btn-primary btn-lg">↑ See plan details</a>
+    </div>
+
+    <!-- "What's a credit?" educational callout — kept here because
+         this section is where people are comparing alternatives and
+         this explains the unit. -->
     <div class="credit-explainer">
       <div class="credit-explainer-icon">⓵</div>
       <div class="credit-explainer-text">
@@ -303,87 +380,6 @@
         the data propagates to all of them automatically.
       </div>
     </div>
-
-    <!-- "Same product, only credits change" — the framing line above
-         the tier grid. Every plan ships the same dashboard, integrations,
-         and DNC/TCPA metadata. What differs is the included monthly
-         credit allowance. Pick the volume that fits. (We deliberately
-         do NOT mention top-up packs here — they're a separate, optional
-         safety net for the rare busy month, and most agents will never
-         need them. Per Xavi: "packs are not necessary.") -->
-    <div class="no-cap-banner">
-      <div class="no-cap-banner-icon">≡</div>
-      <div class="no-cap-banner-text">
-        <strong>Same product on every plan — only the included credits change.</strong>
-        Pick the monthly volume that fits your prospecting. Most agents stay within their
-        plan; unused credits roll forward into the next month while your account is active.
-      </div>
-    </div>
-
-    <div class="compare-grid compare-grid-3">
-      <div class="compare-card compare-card-good">
-        <div class="compare-card-head">
-          <div class="compare-name">Starter</div>
-          <div class="compare-tag">For lower-volume agents</div>
-        </div>
-        <div class="compare-cost"><span class="num">$49</span><span class="per">/ mo</span></div>
-        <div class="compare-credits"><strong>100 credits</strong> included / month</div>
-        <ul class="compare-list">
-          <li class="good">Full LeadCove CRM — Mission Control, pipeline, archive</li>
-          <li class="good">Bring your own list — CSV upload, multi-property dedupe, multi-market</li>
-          <li class="good">DNC + TCPA-litigator metadata on every enriched record</li>
-          <li class="good">Optional Follow Up Boss sync</li>
-          <li class="good">Top up anytime with credit packs — no monthly prospecting cap</li>
-          <li class="good">Cancel anytime, credits roll forward</li>
-        </ul>
-        <div class="compare-bar"><span style="width:25%;background:#0E9F95"></span></div>
-      </div>
-
-      <div class="compare-card compare-card-good compare-card-featured">
-        <div class="compare-badge">Most popular</div>
-        <div class="compare-card-head">
-          <div class="compare-name">Pro</div>
-          <div class="compare-tag">Most popular</div>
-        </div>
-        <div class="compare-cost"><span class="num">$99</span><span class="per">/ mo</span></div>
-        <div class="compare-credits"><strong>300 credits</strong> included / month</div>
-        <ul class="compare-list">
-          <li class="good">Full LeadCove CRM — Mission Control, pipeline, archive</li>
-          <li class="good">Bring your own list — CSV upload, multi-property dedupe, multi-market</li>
-          <li class="good">DNC + TCPA-litigator metadata on every enriched record</li>
-          <li class="good">Optional Follow Up Boss sync</li>
-          <li class="good">Top up anytime with credit packs — no monthly prospecting cap</li>
-          <li class="good">Cancel anytime, credits roll forward</li>
-        </ul>
-        <div class="compare-bar"><span style="width:50%;background:#0E9F95"></span></div>
-      </div>
-
-      <div class="compare-card compare-card-good">
-        <div class="compare-card-head">
-          <div class="compare-name">Power</div>
-          <div class="compare-tag">Highest volume</div>
-        </div>
-        <div class="compare-cost"><span class="num">$199</span><span class="per">/ mo</span></div>
-        <div class="compare-credits"><strong>1,000 credits</strong> included / month</div>
-        <ul class="compare-list">
-          <li class="good">Full LeadCove CRM — Mission Control, pipeline, archive</li>
-          <li class="good">Bring your own list — CSV upload, multi-property dedupe, multi-market</li>
-          <li class="good">DNC + TCPA-litigator metadata on every enriched record</li>
-          <li class="good">Optional Follow Up Boss sync</li>
-          <li class="good">Top up anytime with credit packs — no monthly prospecting cap</li>
-          <li class="good">Cancel anytime, credits roll forward</li>
-        </ul>
-        <div class="compare-bar"><span style="width:100%;background:#0E9F95"></span></div>
-      </div>
-    </div>
-
-    <!-- (The "Need more this month?" 4-pack callout that used to live
-         here was removed 2026-04-29. It put the on-demand top-up packs
-         right next to the monthly plans, which made the pricing read
-         like agents had to buy both. The packs now live in their own
-         subtle subsection at the bottom of the page (#topups), framed
-         as optional and most-agents-don't-need-this. Per Xavi: "the
-         packs are not necessary, that is the reality.") -->
   </div>
 
   <p class="compare-footnote">
@@ -620,57 +616,13 @@
     </div>
   </div>
 
-  <!-- Primary pricing display: 3 monthly plans. Same product on every
-       tier — only the included monthly credit allowance changes. The
-       on-demand top-up packs live in their own subtle section near the
-       bottom of the page (not next to these cards) to keep the focus
-       here squarely on monthly subscriptions. -->
-  <div class="pricing-grid pricing-grid-3">
-    <div class="tier">
-      <div class="tier-name">Starter</div>
-      <div class="tier-price"><span class="dollar">$</span>49<span class="per">/mo</span></div>
-      <div class="tier-sub">For lower-volume agents</div>
-      <ul class="tier-list">
-        <li><strong>100 credits</strong> included / month</li>
-        <li>Full LeadCove CRM — Mission Control, pipeline, archive</li>
-        <li>Bring your own list — CSV upload, multi-property dedupe, multi-market</li>
-        <li>DNC + TCPA-litigator metadata on every enriched record</li>
-        <li>Optional Follow Up Boss sync</li>
-        <li>Cancel anytime, credits roll forward</li>
-      </ul>
-      <a href="#waitlist" class="btn-primary btn-full">Join the waitlist</a>
-    </div>
-
-    <div class="tier tier-featured">
-      <div class="tier-badge">Most popular</div>
-      <div class="tier-name">Pro</div>
-      <div class="tier-price"><span class="dollar">$</span>99<span class="per">/mo</span></div>
-      <div class="tier-sub">Most popular</div>
-      <ul class="tier-list">
-        <li><strong>300 credits</strong> included / month</li>
-        <li>Full LeadCove CRM — Mission Control, pipeline, archive</li>
-        <li>Bring your own list — CSV upload, multi-property dedupe, multi-market</li>
-        <li>DNC + TCPA-litigator metadata on every enriched record</li>
-        <li>Optional Follow Up Boss sync</li>
-        <li>Cancel anytime, credits roll forward</li>
-      </ul>
-      <a href="#waitlist" class="btn-primary btn-full">Join the waitlist</a>
-    </div>
-
-    <div class="tier">
-      <div class="tier-name">Power</div>
-      <div class="tier-price"><span class="dollar">$</span>199<span class="per">/mo</span></div>
-      <div class="tier-sub">Highest volume</div>
-      <ul class="tier-list">
-        <li><strong>1,000 credits</strong> included / month</li>
-        <li>Full LeadCove CRM — Mission Control, pipeline, archive</li>
-        <li>Bring your own list — CSV upload, multi-property dedupe, multi-market</li>
-        <li>DNC + TCPA-litigator metadata on every enriched record</li>
-        <li>Optional Follow Up Boss sync</li>
-        <li>Cancel anytime, credits roll forward</li>
-      </ul>
-      <a href="#waitlist" class="btn-primary btn-full">Join the waitlist</a>
-    </div>
+  <!-- Plan cards live in the #plans section right under the hero —
+       removed from here 2026-04-29 to avoid duplication. This Pricing
+       section is now the "How credits work" + "Our promise" + Enterprise
+       deep-dive. The 4 add-on packs section (#topups) lives below. -->
+  <div class="pricing-back-to-plans">
+    <a href="#plans" class="btn-primary btn-lg">↑ See the 3 monthly plans</a>
+    <p class="pricing-back-to-plans-sub">Starter $49 · Pro $99 · Power $199 — full plan details up top.</p>
   </div>
 
   <div class="pricing-addon">
@@ -716,8 +668,7 @@
 
 <!-- ─── FAQ ───────────────────────────────────────────────────────── -->
 <section id="faq" class="band faq">
-  <h2 class="section-eyebrow">FAQ</h2>
-  <h2 class="section-title">Common questions.</h2>
+  <h2 class="section-eyebrow faq-eyebrow-large">FAQ</h2>
   <div class="faq-grid">
     <details>
       <summary>Who is LeadCove for?</summary>

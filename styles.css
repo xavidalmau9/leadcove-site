@@ -271,7 +271,11 @@ a:hover { color: var(--teal); }
   font-weight: 500;
   color: var(--ink-2);
   letter-spacing: 0.005em;
-  white-space: nowrap;
+  /* Removed `white-space: nowrap` — was causing the third proof cell's
+     "no extra software needed" label to overflow the pill on narrower
+     widths. Wrapping to two lines is fine here; the cells are flex
+     children and reflow gracefully. */
+  line-height: 1.3;
 }
 
 @media (max-width: 720px) {
@@ -749,6 +753,62 @@ a:hover { color: var(--teal); }
   .howitworks-step { flex-direction: row; text-align: left; gap: 16px; padding: 0; }
   .howitworks-num { margin-bottom: 0; flex-shrink: 0; }
   .howitworks-body { max-width: none; }
+}
+
+/* "Pick your plan" hero-adjacent section — promoted to immediately
+   under the hero per Xavi 2026-04-29. Tighter top padding than a
+   normal .band so the plans don't feel disconnected from the hero
+   pitch above. */
+.band-tight { padding-top: 40px; padding-bottom: 56px; }
+.plans-hero { background: #fff; }
+.plans-hero .section-eyebrow,
+.plans-hero .section-title,
+.plans-hero .section-sub {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.plans-hero .section-sub { max-width: 640px; }
+.plans-hero .pricing-grid-3 { margin-top: 32px; }
+
+/* Compare section's "Row 2 (DO)" reference card — replaces the full
+   plan cards that used to live here (now in #plans up top). Single-
+   line reassurance + a button back up to the plans section. */
+.compare-solution-callout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  background: linear-gradient(180deg, rgba(14,159,149,0.06), rgba(14,159,149,0.02));
+  border: 1px solid rgba(14,159,149,0.30);
+  border-left: 4px solid var(--teal-2, #0E9F95);
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin: 18px 0;
+}
+.compare-solution-headline {
+  font-size: 16px;
+  line-height: 1.45;
+  color: var(--navy);
+  flex: 1 1 auto;
+  min-width: 240px;
+}
+.compare-solution-headline strong { color: var(--navy); }
+
+/* Pricing section "back to plans" CTA — lives where the duplicate
+   plan cards used to live before they got promoted up top. */
+.pricing-back-to-plans {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin: 24px 0 36px;
+}
+.pricing-back-to-plans-sub {
+  font-size: 13px;
+  color: var(--ink-2);
+  margin: 0;
 }
 
 /* ── Pricing add-on callout ──────────────────────────────────────── */
@@ -1453,10 +1513,22 @@ a:hover { color: var(--teal); }
   padding: 5px 14px; border-radius: 99px;
   font-size: 11px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
 }
+/* Plan name — Starter / Pro / Power. Per Xavi 2026-04-29: "the titles
+   starter pro and power need to be a cooler bigger font maybe? just
+   need to stand out more for branding purposes." Using the display
+   font at section-title scale, mixed case, navy color so the plan
+   identity reads as a real brand element rather than a label. */
 .tier-name {
-  font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--teal-2);
+  font-family: var(--f-display);
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--navy);
+  text-transform: none;
+  margin-bottom: 4px;
 }
+.tier-featured .tier-name { color: var(--teal-2); }
 .tier-price {
   font-family: var(--f-display);
   font-size: 52px; font-weight: 600; color: var(--navy);
@@ -1483,6 +1555,20 @@ a:hover { color: var(--teal); }
 }
 
 /* ── FAQ ────────────────────────────────────────────────────────── */
+/* When the FAQ section drops its subtitle ("Common questions."), the
+   tiny 12px eyebrow doesn't read as a real section header. This larger
+   variant brings it up to the visual weight of section titles
+   elsewhere on the page. Per Xavi 2026-04-29: "common questions not
+   needed just FAW [FAQ] but a little bigger font." */
+.section-eyebrow.faq-eyebrow-large {
+  font-family: var(--f-display);
+  font-size: clamp(28px, 3vw, 38px);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--navy);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
 .faq-grid { margin-top: 36px; display: flex; flex-direction: column; gap: 4px; }
 .faq details {
   background: #fff; border: 1px solid var(--hairline); border-radius: var(--radius-md);
