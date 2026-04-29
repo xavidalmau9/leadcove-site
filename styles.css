@@ -967,6 +967,49 @@ a:hover { color: var(--teal); }
 .credit-explainer-text strong { color: var(--navy, #0B2545); font-weight: 700; }
 .credit-explainer-text em { font-style: italic; }
 
+/* "No prospecting cap" banner — drives home that the monthly credits
+   number is an *allowance*, not a ceiling. Different visual treatment
+   from .credit-explainer (gold-on-navy, infinity glyph) so the eye
+   reads them as two distinct reassurances stacked. */
+.no-cap-banner {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  background: linear-gradient(180deg, #0B2545 0%, #13335f 100%);
+  border: 1px solid #0B2545;
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin: 0 0 22px;
+  color: #fff;
+}
+.no-cap-banner-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  background: var(--accent, #E8822A);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1;
+}
+.no-cap-banner-text {
+  font-size: 14px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.88);
+}
+.no-cap-banner-text strong {
+  color: #fff;
+  font-weight: 700;
+}
+.no-cap-banner-text em {
+  font-style: italic;
+  color: #fde68a;
+}
+
 /* Add-on packs callout below monthly plans */
 .compare-addon-callout {
   display: grid;
