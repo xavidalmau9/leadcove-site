@@ -1415,6 +1415,24 @@ a:hover { color: var(--teal); }
   margin-top: 48px;
   align-items: stretch;
 }
+
+/* 3-card variant for the monthly plans (Starter/Pro/Power). The base
+   .pricing-grid was originally tuned for 4 prepaid packs across the
+   row — when we render 3 monthly plans it appears left-aligned with
+   empty space on the right. This narrower 3-col template + auto
+   margins centers the row properly. */
+.pricing-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 900px) {
+  .pricing-grid-3 {
+    grid-template-columns: 1fr;
+    max-width: 460px;
+  }
+}
 .tier {
   background: #fff;
   border: 1px solid var(--hairline);
