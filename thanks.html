@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>You're on the list · LeadCove</title>
+  <meta name="description" content="You're on the LeadCove waitlist — we'll email you when your spot opens." />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/favicon.svg" />
+  <meta name="theme-color" content="#0B2545" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    /* Page-specific layout for the post-signup confirmation. Inherits
+       global styles from /styles.css; just composes the narrow centered
+       card here. */
+    .thanks-shell {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(14, 159, 149, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 100%, rgba(14, 159, 149, 0.06) 0%, transparent 50%),
+        var(--cream);
+    }
+    .thanks-main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 20px;
+    }
+    .thanks-card {
+      max-width: 540px;
+      width: 100%;
+      background: #fff;
+      border: 1px solid var(--hairline);
+      border-radius: 18px;
+      padding: 48px 40px;
+      box-shadow:
+        0 1px 2px rgba(11, 37, 69, 0.05),
+        0 24px 60px rgba(11, 37, 69, 0.08);
+      text-align: center;
+      animation: thanks-pop .55s cubic-bezier(.16,1,.3,1);
+    }
+    @keyframes thanks-pop {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .thanks-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--teal), #2dd4bf);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      margin: 0 auto 20px auto;
+      box-shadow: 0 8px 24px rgba(14, 159, 149, 0.32);
+      animation: thanks-icon-pulse 2.4s ease-in-out infinite;
+    }
+    @keyframes thanks-icon-pulse {
+      0%, 100% { transform: scale(1); }
+      50%      { transform: scale(1.04); box-shadow: 0 12px 32px rgba(14, 159, 149, 0.45); }
+    }
+    .thanks-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 8px;
+    }
+    .thanks-title {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.15;
+      margin: 0 0 14px 0;
+    }
+    .thanks-lede {
+      font-size: 16px;
+      color: var(--ink-2);
+      line-height: 1.55;
+      margin: 0 0 28px 0;
+    }
+    .thanks-meta {
+      background: var(--sand);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 0 0 28px 0;
+      font-size: 13px;
+      color: var(--ink-2);
+      line-height: 1.6;
+      text-align: left;
+    }
+    .thanks-meta strong { color: var(--navy); }
+    .thanks-meta-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 4px 0;
+    }
+    .thanks-meta-icon {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--teal);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      margin-top: 1px;
+    }
+    .thanks-actions {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .thanks-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 11px 20px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid transparent;
+      transition: background .12s, border-color .12s, color .12s, transform .05s;
+    }
+    .thanks-btn:active { transform: translateY(1px); }
+    .thanks-btn-primary {
+      background: var(--navy);
+      color: #fff;
+    }
+    .thanks-btn-primary:hover { background: var(--navy-2); }
+    .thanks-btn-ghost {
+      background: transparent;
+      color: var(--navy);
+      border-color: var(--hairline);
+    }
+    .thanks-btn-ghost:hover { background: var(--cream); border-color: var(--navy); }
+    .thanks-fine {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 22px;
+      line-height: 1.5;
+    }
+    .thanks-footer {
+      padding: 16px 20px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+      border-top: 1px solid var(--hairline);
+      background: rgba(255, 255, 255, 0.6);
+    }
+    .thanks-footer a { color: var(--navy); text-decoration: none; }
+    .thanks-footer a:hover { text-decoration: underline; }
+    .thanks-email-display {
+      font-family: 'SF Mono', Menlo, monospace;
+      background: var(--cream);
+      border: 1px solid var(--hairline);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 13px;
+      color: var(--navy);
+    }
+  </style>
+</head>
+<body>
+
+<div class="thanks-shell">
+
+  <main class="thanks-main">
+    <div class="thanks-card">
+      <div class="thanks-icon" aria-hidden="true">✓</div>
+      <div class="thanks-eyebrow">YOU'RE ON THE LIST</div>
+      <h1 class="thanks-title">Welcome aboard.</h1>
+      <p class="thanks-lede">
+        We've got your signup<span id="thanks-email-line"></span>. LeadCove is launching Florida-wide in May 2026 with a small group of hand-picked agents — we'll email you the moment your spot opens.
+      </p>
+
+      <div class="thanks-meta">
+        <div class="thanks-meta-row">
+          <span class="thanks-meta-icon">1</span>
+          <span><strong>Hold tight.</strong> We'll email you with early-access details — usually within a week of your spot opening.</span>
+        </div>
+        <div class="thanks-meta-row">
+          <span class="thanks-meta-icon">2</span>
+          <span><strong>Add <a href="mailto:hello@leadcove.io">hello@leadcove.io</a> to your contacts</strong> so our email doesn't land in spam.</span>
+        </div>
+        <div class="thanks-meta-row">
+          <span class="thanks-meta-icon">3</span>
+          <span><strong>Bring a friend?</strong> Share <a href="https://leadcove.io">leadcove.io</a> with another agent — referrals jump the line.</span>
+        </div>
+      </div>
+
+      <div class="thanks-actions">
+        <a href="/" class="thanks-btn thanks-btn-primary">← Back to leadcove.io</a>
+        <a href="https://leadcove.io#how" class="thanks-btn thanks-btn-ghost">See how it works</a>
+      </div>
+
+      <p class="thanks-fine">
+        Questions in the meantime? Email <a href="mailto:hello@leadcove.io" style="color:var(--navy)">hello@leadcove.io</a>.
+      </p>
+    </div>
+  </main>
+
+  <footer class="thanks-footer">
+    © 2026 LeadCove · a brand owned by Miami Metro LLC, Florida ·
+    <a href="/terms.html">Terms</a> ·
+    <a href="/privacy.html">Privacy</a> ·
+    <a href="/tcpa.html">TCPA &amp; DNC</a>
+  </footer>
+</div>
+
+<script>
+  // If the form passed an email through the URL (when we control the
+  // submit flow ourselves), surface it on the page so the user knows
+  // exactly which address we recorded. Currently optional; Formspree
+  // doesn't pass this back, but we'll wire our own /api/waitlist to
+  // include ?email= once we retire Formspree.
+  (function () {
+    var p = new URLSearchParams(window.location.search);
+    var email = p.get('email');
+    if (email) {
+      var line = document.getElementById('thanks-email-line');
+      if (line) {
+        line.innerHTML = ' for <span class="thanks-email-display">' + email.replace(/[<>"']/g, '') + '</span>';
+      }
+    }
+  })();
+</script>
+
+</body>
+</html>

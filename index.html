@@ -776,6 +776,10 @@
       <input type="text"  name="city"  placeholder="Your city (e.g. Orlando, Tampa, Naples)" />
       <input type="hidden" name="_subject" value="LeadCove waitlist signup" />
       <input type="hidden" name="source"   value="leadcove.io" />
+      <!-- Tell Formspree to redirect to our branded /thanks page after
+           submit instead of showing their generic black-and-white
+           confirmation. Formspree honors _next as a redirect URL. -->
+      <input type="hidden" name="_next" id="waitlist-next" value="https://leadcove.io/thanks.html" />
       <button type="submit" class="btn-primary btn-lg">Join the waitlist</button>
     </form>
     <script>
@@ -815,6 +819,14 @@
     document.getElementById('waitlist-form').addEventListener('submit', function(e) {
       const email = this.email.value.trim();
       const city  = this.city.value.trim();
+
+      // Pass the email through to the branded /thanks page so it can
+      // confirm exactly which address we recorded. Formspree honors the
+      // _next hidden field as a redirect target after successful submit.
+      const nextEl = document.getElementById('waitlist-next');
+      if (nextEl) {
+        nextEl.value = 'https://leadcove.io/thanks.html?email=' + encodeURIComponent(email);
+      }
 
       // Pull stored UTMs (first-touch attribution).
       let utm = {};
