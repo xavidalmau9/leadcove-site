@@ -776,10 +776,10 @@
       <input type="text"  name="city"  placeholder="Your city (e.g. Orlando, Tampa, Naples)" />
       <input type="hidden" name="_subject" value="LeadCove waitlist signup" />
       <input type="hidden" name="source"   value="leadcove.io" />
-      <!-- Tell Formspree to redirect to our branded /thanks page after
-           submit instead of showing their generic black-and-white
-           confirmation. Formspree honors _next as a redirect URL. -->
-      <input type="hidden" name="_next" id="waitlist-next" value="https://leadcove.io/thanks.html" />
+      <!-- Note: we no longer rely on Formspree's `_next` redirect (it's
+           a paid-plan feature on Formspree free tier and was being
+           ignored). The submit handler below uses fetch + manual
+           window.location to land on our branded /thanks page. -->
       <button type="submit" class="btn-primary btn-lg">Join the waitlist</button>
     </form>
     <script>
@@ -809,63 +809,78 @@
       } catch (_) { /* private mode etc — fail silent */ }
     })();
 
-    // ── Waitlist submission — dual mode ────────────────────────────────
-    // Posts to BOTH:
-    //   1. Formspree (existing — confirmation email keeps firing)
-    //   2. our own /api/waitlist on app.leadcove.io (UTM capture, our DB)
-    // Plus a localStorage fallback so a totally offline submission still
-    // lands somewhere we can recover (DevTools console:
-    //   JSON.parse(localStorage.getItem('leadcove_waitlist'))).
+    // ── Waitlist submission — AJAX dual-post ──────────────────────────
+    // Formspree's free tier ignores `_next` and shows their generic
+    // black-and-white confirmation page. So we submit via fetch instead
+    // of native form action, post to both endpoints in the background,
+    // then redirect to our branded /thanks.html ourselves.
+    //
+    // Formspree still emails Xavi (the actual reason we kept them).
+    // Our /api/waitlist still captures with UTM tags.
+    // The user lands on a brand-consistent thank-you page either way.
     document.getElementById('waitlist-form').addEventListener('submit', function(e) {
-      const email = this.email.value.trim();
-      const city  = this.city.value.trim();
+      e.preventDefault();   // stop the native form navigation
+      const form = this;
+      const email = form.email.value.trim();
+      const city  = form.city.value.trim();
+      const submitBtn = form.querySelector('button[type="submit"]');
 
-      // Pass the email through to the branded /thanks page so it can
-      // confirm exactly which address we recorded. Formspree honors the
-      // _next hidden field as a redirect target after successful submit.
-      const nextEl = document.getElementById('waitlist-next');
-      if (nextEl) {
-        nextEl.value = 'https://leadcove.io/thanks.html?email=' + encodeURIComponent(email);
+      // Disable button + give visual feedback so an impatient user
+      // doesn't double-submit while we POST.
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Joining…';
       }
 
-      // Pull stored UTMs (first-touch attribution).
+      // Pull stored UTMs (first-touch attribution from earlier ad click).
       let utm = {};
       try { utm = JSON.parse(localStorage.getItem('leadcove_utm') || '{}'); } catch (_) {}
 
-      // localStorage mirror — survives if both POSTs fail.
+      // localStorage mirror — survives even if both POSTs fail.
       try {
         const list = JSON.parse(localStorage.getItem('leadcove_waitlist') || '[]');
         list.push({ email, city, utm, at: new Date().toISOString() });
         localStorage.setItem('leadcove_waitlist', JSON.stringify(list));
       } catch (_) {}
 
-      // Fire the LeadCove API capture in parallel with the Formspree POST.
-      // Don't await — the form still posts to Formspree (its action= URL),
-      // so worst case the API call fails silently and Formspree gets it.
-      try {
-        fetch('https://app.leadcove.io/api/waitlist', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            email, name: '', city,
-            utm: {
-              source:   utm.utm_source   || '',
-              medium:   utm.utm_medium   || '',
-              campaign: utm.utm_campaign || '',
-              content:  utm.utm_content  || '',
-              term:     utm.utm_term     || '',
-            },
-            referrer:     utm._referrer || document.referrer || '',
-            landing_page: utm._landing  || (location.pathname + location.search),
-            source_channel: 'formspree',
-          }),
-          // keepalive lets the request survive the form-submit page
-          // navigation (browsers will normally cancel pending requests
-          // when the page unloads).
-          keepalive: true,
-        });
-      } catch (_) { /* network error — Formspree carries the load */ }
-      // Let the form continue posting to Formspree (default behavior).
+      // 1. Formspree (XHR, so we don't navigate away to their domain).
+      //    Free tier accepts FormData via fetch.
+      const formspreePost = fetch('https://formspree.io/f/xrerjozq', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form),
+      }).catch(() => null);
+
+      // 2. Our own /api/waitlist on app.leadcove.io (UTM capture).
+      const apiPost = fetch('https://app.leadcove.io/api/waitlist', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email, name: '', city,
+          utm: {
+            source:   utm.utm_source   || '',
+            medium:   utm.utm_medium   || '',
+            campaign: utm.utm_campaign || '',
+            content:  utm.utm_content  || '',
+            term:     utm.utm_term     || '',
+          },
+          referrer:     utm._referrer || document.referrer || '',
+          landing_page: utm._landing  || (location.pathname + location.search),
+          source_channel: 'formspree',
+        }),
+      }).catch(() => null);
+
+      // Wait for both (or fail-fast after 6s — we don't want the user
+      // staring at a "Joining…" button forever if a network is slow).
+      const timeout = new Promise(r => setTimeout(r, 6000));
+      Promise.race([
+        Promise.all([formspreePost, apiPost]),
+        timeout,
+      ]).finally(() => {
+        // Always redirect — even if both POSTs failed, the localStorage
+        // mirror has them. We'll never lose a signup.
+        window.location.href = 'https://leadcove.io/thanks.html?email=' + encodeURIComponent(email);
+      });
     });
     </script>
     <p class="cta-fine">Invite-only beta. We'll email when your spot opens.</p>
