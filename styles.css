@@ -1729,7 +1729,9 @@ a:hover { color: var(--teal); }
   background: #f8fafc;
   border-top: 1px solid #e2e8f0;
   border-bottom: 1px solid #e2e8f0;
-  padding: 56px 20px;
+  /* Tighter top per Xavi 2026-04-29: "this section needs less padding
+     on top and a little bit of padding under it." */
+  padding: 28px 20px 36px;
 }
 .topups-inner {
   max-width: 980px;
