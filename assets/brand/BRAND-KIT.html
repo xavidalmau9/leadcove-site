@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>LeadCove · Brand Kit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /*
+    Brand Kit — print-styled HTML.
+    Convert to PDF: open in Chrome → File → Print → "Save as PDF"
+    (US Letter, default margins, "Background graphics" ON).
+    Also rendered automatically by render-png.py-style Chrome headless.
+  */
+  @page {
+    size: letter;
+    margin: 0.5in;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: #0F172A;
+    background: #fff;
+    line-height: 1.55;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  body {
+    max-width: 7.5in;
+    margin: 0 auto;
+    padding: 24px 0 64px;
+    font-size: 11pt;
+  }
+
+  .cover {
+    background: #0B2545;
+    color: #fff;
+    padding: 56px 48px 48px;
+    border-radius: 14px;
+    margin-bottom: 32px;
+    page-break-after: always;
+    position: relative;
+    min-height: 9in;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .cover-mark {
+    width: 120px; height: 120px;
+    margin-bottom: 28px;
+  }
+  .cover h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 56pt;
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    margin: 0 0 12px;
+  }
+  .cover-tagline {
+    font-size: 16pt;
+    opacity: 0.85;
+    margin: 0 0 36px;
+    max-width: 80%;
+  }
+  .cover-meta {
+    border-top: 1px solid rgba(255,255,255,0.18);
+    padding-top: 20px;
+    font-size: 10pt;
+    opacity: 0.75;
+    line-height: 1.7;
+  }
+  .cover-meta strong { color: #fff; opacity: 1; }
+  .cover-band {
+    display: flex; gap: 8px;
+    margin-top: 24px;
+  }
+  .cover-band span {
+    flex: 1;
+    height: 14px;
+    border-radius: 4px;
+  }
+
+  h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 24pt;
+    color: #0B2545;
+    margin: 36px 0 6px;
+    letter-spacing: -0.01em;
+    page-break-after: avoid;
+  }
+  h2 + p.section-lede {
+    color: #475569;
+    font-style: italic;
+    margin: 0 0 18px;
+    font-size: 11pt;
+  }
+  h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 14pt;
+    color: #0B2545;
+    margin: 20px 0 8px;
+    page-break-after: avoid;
+  }
+  p, li, td, th { font-size: 10.5pt; line-height: 1.55; }
+
+  /* Color palette */
+  .palette {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 12px 0;
+  }
+  .swatch {
+    border-radius: 10px;
+    padding: 18px 16px 14px;
+    color: #fff;
+    page-break-inside: avoid;
+  }
+  .swatch-name {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 16pt;
+    line-height: 1;
+    margin-bottom: 2px;
+  }
+  .swatch-hex {
+    font-family: 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 11pt;
+    opacity: 0.85;
+    margin-bottom: 16px;
+  }
+  .swatch-rgb {
+    font-family: 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 9pt;
+    opacity: 0.7;
+    margin-bottom: 6px;
+  }
+  .swatch-use {
+    font-size: 9.5pt;
+    opacity: 0.92;
+    line-height: 1.4;
+    border-top: 1px solid rgba(255,255,255,0.22);
+    padding-top: 8px;
+  }
+  .swatch-light .swatch-name,
+  .swatch-light .swatch-hex,
+  .swatch-light .swatch-rgb,
+  .swatch-light .swatch-use { color: #0F172A; }
+  .swatch-light .swatch-use { border-top-color: rgba(15,23,42,0.18); }
+
+  /* Logo gallery */
+  .logo-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 12px 0 20px;
+  }
+  .logo-tile {
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 24px;
+    text-align: center;
+    page-break-inside: avoid;
+  }
+  .logo-tile-dark { background: #0B2545; border-color: #0B2545; }
+  .logo-tile-cream { background: #FBF8F3; }
+  .logo-tile img {
+    max-width: 100%;
+    height: auto;
+    max-height: 96px;
+    display: inline-block;
+  }
+  .logo-tile .logo-tile-stage {
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  .logo-tile .logo-tile-stage.tall { height: 140px; }
+  .logo-tile-meta {
+    font-family: 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 8.5pt;
+    color: #64748B;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 6px;
+  }
+  .logo-tile-dark .logo-tile-meta {
+    color: rgba(255,255,255,0.6);
+    border-top-color: rgba(255,255,255,0.18);
+  }
+
+  /* Type samples */
+  .type-sample {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 22px 24px;
+    margin-bottom: 14px;
+    page-break-inside: avoid;
+  }
+  .type-meta {
+    font-family: 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 8.5pt;
+    color: #64748B;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 10px;
+  }
+
+  table.usage {
+    width: 100%; border-collapse: collapse;
+    margin: 10px 0 18px;
+  }
+  table.usage th, table.usage td {
+    text-align: left;
+    padding: 7px 10px;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: top;
+  }
+  table.usage th {
+    background: #f8fafc;
+    font-weight: 600;
+    color: #0B2545;
+    font-size: 9.5pt;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  table.usage code {
+    font-family: 'SF Mono', Menlo, Consolas, monospace;
+    font-size: 9.5pt;
+    background: #f1f5f9;
+    padding: 1px 5px;
+    border-radius: 3px;
+  }
+
+  .voice-table { width: 100%; border-collapse: collapse; margin: 10px 0 14px; }
+  .voice-table td {
+    padding: 7px 10px;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 10pt;
+    vertical-align: top;
+  }
+  .voice-bad { color: #b91c1c; text-decoration: line-through; opacity: 0.7; width: 38%; }
+  .voice-arrow { color: #94a3b8; width: 22px; text-align: center; }
+  .voice-good { color: #0B2545; font-weight: 500; }
+
+  .clear-space {
+    background: #fff;
+    border: 1px dashed #cbd5e1;
+    padding: 28px;
+    margin: 8px 0 14px;
+    text-align: center;
+    page-break-inside: avoid;
+  }
+  .clear-space-img { max-width: 240px; }
+  .clear-space-note {
+    font-size: 9.5pt; color: #64748B; margin-top: 12px;
+  }
+
+  ul.dont { padding-left: 22px; margin: 8px 0 14px; }
+  ul.dont li { font-size: 10.5pt; margin-bottom: 5px; }
+  ul.dont li::marker { color: #b91c1c; }
+
+  .footer {
+    margin-top: 40px;
+    padding-top: 12px;
+    border-top: 1px solid #cbd5e1;
+    color: #64748B;
+    font-size: 9pt;
+    font-style: italic;
+    text-align: center;
+  }
+
+  .pagebreak { page-break-after: always; }
+
+  @media print {
+    body { font-size: 10pt; max-width: none; padding: 0; }
+    .cover { border-radius: 0; padding: 64px 48px 48px; }
+    h2 { font-size: 18pt; }
+    h3 { font-size: 12pt; }
+    a { color: #0B2545; text-decoration: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── COVER ─────────────────────────────────────────────────────── -->
+<section class="cover">
+  <div>
+    <img src="svg/mark-mono-white.svg" alt="" class="cover-mark">
+    <h1>LeadCove</h1>
+    <p class="cover-tagline">Brand kit · the visual + voice system for the LeadCove platform.</p>
+    <div class="cover-band">
+      <span style="background:#0E9F95"></span>
+      <span style="background:#0B2545"></span>
+      <span style="background:#FBF8F3"></span>
+      <span style="background:#F5EDE1"></span>
+    </div>
+  </div>
+  <div class="cover-meta">
+    <div><strong>Owned by:</strong> Miami Metro LLC · Florida</div>
+    <div><strong>Sole Member:</strong> Jules Cordero (100%)</div>
+    <div><strong>Co-founders:</strong> Jules Cordero &amp; Javier (Xavi) Dalmau</div>
+    <div><strong>Document version:</strong> 1.1 · April 30, 2026</div>
+    <div><strong>Source:</strong> <code>leadcove-site/assets/brand/</code></div>
+  </div>
+</section>
+
+<!-- ─── PAGE: PALETTE ──────────────────────────────────────────────── -->
+<h2>1 · Color palette</h2>
+<p class="section-lede">Two-color core. Supporting colors used sparingly. Don't introduce new accents without revising this document first.</p>
+
+<div class="palette">
+  <div class="swatch" style="background:#0B2545">
+    <div class="swatch-name">Navy</div>
+    <div class="swatch-hex">#0B2545</div>
+    <div class="swatch-rgb">RGB · 11, 37, 69</div>
+    <div class="swatch-use">Primary brand color. Backgrounds, body text on light, mark container, headlines.</div>
+  </div>
+  <div class="swatch" style="background:#0E9F95">
+    <div class="swatch-name">Teal</div>
+    <div class="swatch-hex">#0E9F95</div>
+    <div class="swatch-rgb">RGB · 14, 159, 149</div>
+    <div class="swatch-use">Accent / action. Mark waves + sun, CTAs, links, success states.</div>
+  </div>
+  <div class="swatch" style="background:#13335f">
+    <div class="swatch-name">Navy-2</div>
+    <div class="swatch-hex">#13335F</div>
+    <div class="swatch-rgb">RGB · 19, 51, 95</div>
+    <div class="swatch-use">Lighter navy for gradients and hover states on dark surfaces.</div>
+  </div>
+  <div class="swatch" style="background:#0B807A">
+    <div class="swatch-name">Teal-2</div>
+    <div class="swatch-hex">#0B807A</div>
+    <div class="swatch-rgb">RGB · 11, 128, 122</div>
+    <div class="swatch-use">Darker teal for button hovers and secondary teal accents.</div>
+  </div>
+  <div class="swatch swatch-light" style="background:#FBF8F3; border:1px solid #e2e8f0">
+    <div class="swatch-name">Cream</div>
+    <div class="swatch-hex">#FBF8F3</div>
+    <div class="swatch-rgb">RGB · 251, 248, 243</div>
+    <div class="swatch-use">Warm secondary background. Sidebars, modals, quiet sections.</div>
+  </div>
+  <div class="swatch swatch-light" style="background:#F5EDE1; border:1px solid #e2e8f0">
+    <div class="swatch-name">Sand</div>
+    <div class="swatch-hex">#F5EDE1</div>
+    <div class="swatch-rgb">RGB · 245, 237, 225</div>
+    <div class="swatch-use">Slightly warmer cream — banners, callouts, post-CTA reassurance.</div>
+  </div>
+  <div class="swatch" style="background:#0F172A">
+    <div class="swatch-name">Ink</div>
+    <div class="swatch-hex">#0F172A</div>
+    <div class="swatch-rgb">RGB · 15, 23, 42</div>
+    <div class="swatch-use">Body text on light backgrounds.</div>
+  </div>
+  <div class="swatch" style="background:#64748B">
+    <div class="swatch-name">Muted</div>
+    <div class="swatch-hex">#64748B</div>
+    <div class="swatch-rgb">RGB · 100, 116, 139</div>
+    <div class="swatch-use">Secondary text, captions, metadata.</div>
+  </div>
+</div>
+
+<div class="pagebreak"></div>
+
+<!-- ─── PAGE: TYPOGRAPHY ───────────────────────────────────────────── -->
+<h2>2 · Typography</h2>
+<p class="section-lede">Two families. Both freely available via Google Fonts.</p>
+
+<div class="type-sample">
+  <div class="type-meta">Fraunces · weights 400/500/600/700 · display + headlines</div>
+  <div style="font-family:'Fraunces',serif; font-weight:600; font-size:42pt; color:#0B2545; letter-spacing:-0.02em; line-height:1.05; margin-bottom:6px;">
+    Pick your plan.
+  </div>
+  <div style="font-family:'Fraunces',serif; font-weight:600; font-size:18pt; color:#0B2545; letter-spacing:-0.01em; line-height:1.15;">
+    You can't contact a prospect without their data.
+  </div>
+  <p style="font-size:9pt; color:#64748B; margin-top:14px; font-style:italic;">
+    Display sizes use letter-spacing −0.02em for a modern, tight look. Body sizes stay at default tracking.
+  </p>
+</div>
+
+<div class="type-sample">
+  <div class="type-meta">Inter · weights 400/500/600/700 · body + UI</div>
+  <div style="font-family:'Inter',sans-serif; font-size:14pt; line-height:1.5; color:#0F172A; margin-bottom:8px;">
+    LeadCove is the all-in-one prospecting platform built for real estate agents. Bring your list, we deliver the owner data — name, phone, and/or email — quickly and simply.
+  </div>
+  <div style="font-family:'Inter',sans-serif; font-size:11pt; font-weight:600; color:#0B807A;">
+    Join the waitlist →
+  </div>
+</div>
+
+<table class="usage">
+  <thead>
+    <tr><th>Family</th><th>Weight</th><th>Use</th><th>System fallback</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Fraunces</code></td>
+      <td>600 (semi-bold)</td>
+      <td>Section titles, plan names, page H1s, pull quotes</td>
+      <td><code>'Times New Roman', Georgia, serif</code></td>
+    </tr>
+    <tr>
+      <td><code>Inter</code></td>
+      <td>400 / 500 / 600 / 700</td>
+      <td>Body, UI labels, buttons, metadata, navigation</td>
+      <td><code>-apple-system, BlinkMacSystemFont, system-ui, sans-serif</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="pagebreak"></div>
+
+<!-- ─── PAGE: LOGOS ────────────────────────────────────────────────── -->
+<h2>3 · Logo system</h2>
+<p class="section-lede">Three lockup formats × two color modes (default + reversed for dark backgrounds). All in vector; raster pre-rendered at standard sizes.</p>
+
+<h3>Primary horizontal lockup</h3>
+<p>The default. Use everywhere the mark + name belong side by side: site headers, navigation, email signatures, slide decks.</p>
+<div class="logo-gallery">
+  <div class="logo-tile">
+    <div class="logo-tile-stage"><img src="svg/logo-horizontal.svg" alt="Horizontal logo, primary"></div>
+    <div class="logo-tile-meta">svg/logo-horizontal.svg · default</div>
+  </div>
+  <div class="logo-tile logo-tile-dark">
+    <div class="logo-tile-stage"><img src="svg/logo-horizontal-light.svg" alt="Horizontal logo, white wordmark"></div>
+    <div class="logo-tile-meta">svg/logo-horizontal-light.svg · for dark bg</div>
+  </div>
+</div>
+
+<h3>Stacked lockup</h3>
+<p>Use when horizontal real estate is scarce — square avatars, business cards, app splash screens.</p>
+<div class="logo-gallery">
+  <div class="logo-tile">
+    <div class="logo-tile-stage tall"><img src="svg/logo-stacked.svg" alt="Stacked logo, primary"></div>
+    <div class="logo-tile-meta">svg/logo-stacked.svg · default</div>
+  </div>
+  <div class="logo-tile logo-tile-dark">
+    <div class="logo-tile-stage tall"><img src="svg/logo-stacked-light.svg" alt="Stacked logo, white wordmark"></div>
+    <div class="logo-tile-meta">svg/logo-stacked-light.svg · for dark bg</div>
+  </div>
+</div>
+
+<h3>Mark only · the wave + sun glyph</h3>
+<p>Favicons, app icons, social profile pictures, watermarks. Always include the rounded-square container in the primary variant; mono variants drop the box.</p>
+<div class="logo-gallery">
+  <div class="logo-tile">
+    <div class="logo-tile-stage"><img src="svg/mark.svg" alt="Mark, navy box + teal" style="max-height:80px"></div>
+    <div class="logo-tile-meta">svg/mark.svg · primary</div>
+  </div>
+  <div class="logo-tile logo-tile-cream">
+    <div class="logo-tile-stage"><img src="svg/mark-light.svg" alt="Teal mark, transparent bg" style="max-height:80px"></div>
+    <div class="logo-tile-meta">svg/mark-light.svg · transparent bg</div>
+  </div>
+  <div class="logo-tile">
+    <div class="logo-tile-stage"><img src="svg/mark-mono-navy.svg" alt="Mono navy mark" style="max-height:80px"></div>
+    <div class="logo-tile-meta">svg/mark-mono-navy.svg · single color</div>
+  </div>
+  <div class="logo-tile logo-tile-dark">
+    <div class="logo-tile-stage"><img src="svg/mark-mono-white.svg" alt="Mono white mark" style="max-height:80px"></div>
+    <div class="logo-tile-meta">svg/mark-mono-white.svg · reversed</div>
+  </div>
+</div>
+
+<h3>Wordmark only</h3>
+<p>When the mark is already adjacent or context makes the icon redundant.</p>
+<div class="logo-gallery">
+  <div class="logo-tile">
+    <div class="logo-tile-stage"><img src="svg/wordmark.svg" alt="Wordmark, navy" style="max-height:60px; max-width:90%"></div>
+    <div class="logo-tile-meta">svg/wordmark.svg</div>
+  </div>
+  <div class="logo-tile logo-tile-dark">
+    <div class="logo-tile-stage"><img src="svg/wordmark-light.svg" alt="Wordmark, white" style="max-height:60px; max-width:90%"></div>
+    <div class="logo-tile-meta">svg/wordmark-light.svg</div>
+  </div>
+</div>
+
+<div class="pagebreak"></div>
+
+<!-- ─── PAGE: USAGE ────────────────────────────────────────────────── -->
+<h2>4 · Logo usage rules</h2>
+
+<h3>Pick the right file</h3>
+<table class="usage">
+  <thead><tr><th>Scenario</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>Browser favicon</td><td><code>mark_32.png</code> or <code>mark.svg</code></td></tr>
+    <tr><td>iOS / Android app icon</td><td><code>mark_512.png</code> / <code>mark_1024.png</code></td></tr>
+    <tr><td>Twitter / LinkedIn / Facebook profile</td><td><code>mark_512.png</code></td></tr>
+    <tr><td>Site header / nav</td><td><code>logo-horizontal.svg</code></td></tr>
+    <tr><td>Dark hero / press release banner</td><td><code>logo-horizontal-light.svg</code></td></tr>
+    <tr><td>Email signature</td><td><code>logo-horizontal_600.png</code></td></tr>
+    <tr><td>Slide deck title slide</td><td><code>logo-horizontal_1200.png</code> or <code>logo-stacked_960.png</code></td></tr>
+    <tr><td>Business card</td><td><code>logo-stacked.svg</code></td></tr>
+    <tr><td>Single-color print / embossing</td><td><code>mark-mono-navy.svg</code></td></tr>
+    <tr><td>Sponsor row / partner deck (everyone monochrome)</td><td><code>mark-mono-navy.svg</code></td></tr>
+  </tbody>
+</table>
+
+<h3>Clear space + minimum size</h3>
+<p>Reserve a margin around the logo equal to the height of one wave glyph (~20% of the mark height). No element — text, photo, badge — encroaches inside that margin.</p>
+<table class="usage">
+  <thead><tr><th>Lockup</th><th>Minimum width</th></tr></thead>
+  <tbody>
+    <tr><td>Mark only</td><td>16 px (favicon — anything smaller becomes a single dot)</td></tr>
+    <tr><td>Horizontal lockup</td><td>120 px (~1 inch in print)</td></tr>
+    <tr><td>Stacked lockup</td><td>80 px square</td></tr>
+  </tbody>
+</table>
+
+<h3>Don'ts</h3>
+<ul class="dont">
+  <li>Don't stretch / squish the logo. Always uniform scaling.</li>
+  <li>Don't rotate or skew.</li>
+  <li>Don't swap the colors (no navy waves on teal box, etc).</li>
+  <li>Don't put the full-color mark on a high-contrast colored background — use the mono variant if the bg is neither white, cream, nor navy.</li>
+  <li>Don't use the wordmark in a different typeface ever. Always Fraunces 600.</li>
+  <li>Don't apply effects (drop shadows, gradients, glows) outside what's already in the SVG file.</li>
+</ul>
+
+<div class="pagebreak"></div>
+
+<!-- ─── PAGE: VOICE ────────────────────────────────────────────────── -->
+<h2>5 · Voice + messaging rules</h2>
+<p class="section-lede">Vocabulary discipline is part of the brand. These rules are enforced in code (memory entries) and on every UI string we ship.</p>
+
+<h3>Forbidden words / phrases</h3>
+<table class="voice-table">
+  <tr>
+    <td class="voice-bad">"phone + email"</td>
+    <td class="voice-arrow">→</td>
+    <td class="voice-good">"owner data — name, phone, and/or email"</td>
+  </tr>
+  <tr>
+    <td class="voice-bad">"free" (anywhere user-visible)</td>
+    <td class="voice-arrow">→</td>
+    <td class="voice-good">"no charge", "included", "covered"</td>
+  </tr>
+  <tr>
+    <td class="voice-bad">"tenant"</td>
+    <td class="voice-arrow">→</td>
+    <td class="voice-good">"user", "account"</td>
+  </tr>
+  <tr>
+    <td class="voice-bad">"Miami" (in marketing — except legal entity name)</td>
+    <td class="voice-arrow">→</td>
+    <td class="voice-good">"Florida"</td>
+  </tr>
+  <tr>
+    <td class="voice-bad">"Resolve" (the verb)</td>
+    <td class="voice-arrow">→</td>
+    <td class="voice-good">"Enrich"</td>
+  </tr>
+  <tr>
+    <td class="voice-bad">"propagated"</td>
+    <td class="voice-arrow">→</td>
+    <td class="voice-good">"same-owner match"</td>
+  </tr>
+  <tr>
+    <td class="voice-bad">Any 3rd-party software brand without legal review</td>
+    <td class="voice-arrow">→</td>
+    <td class="voice-good">"our skip-trace vendor", "our payment processor"</td>
+  </tr>
+</table>
+
+<h3>The job-to-be-done framing</h3>
+<p style="font-family:'Fraunces',serif; font-style:italic; font-size:13pt; color:#0B2545; line-height:1.5; padding-left:14px; border-left:3px solid #0E9F95; margin:8px 0 16px;">
+"You can't contact a prospect without their name, phone, and/or email. LeadCove solves this — quickly and simply."
+</p>
+<p>This is the single sentence the brand is built around. Every marketing message either restates it, reinforces it, or follows from it.</p>
+
+<h3>Hard rules with money</h3>
+<ul style="padding-left:22px">
+  <li><strong>"No data, no charge"</strong> — billing rule + marketing promise in lockstep. Misses don't bill.</li>
+  <li><strong>Same product on every plan</strong> — only the included monthly credits change. No per-tier feature gating.</li>
+  <li><strong>Customers bring their own list</strong> — we don't promise to source data.</li>
+  <li><strong>Top-up packs are optional</strong> — never marketed prominently next to the monthly plans.</li>
+</ul>
+
+<div class="pagebreak"></div>
+
+<!-- ─── PAGE: ENTITY + DOMAINS ────────────────────────────────────── -->
+<h2>6 · Domain &amp; entity</h2>
+
+<table class="usage">
+  <tbody>
+    <tr><th>Primary domain</th><td><code>leadcove.io</code></td></tr>
+    <tr><th>Customer dashboard</th><td><code>app.leadcove.io</code></td></tr>
+    <tr><th>Operator dashboard (admin)</th><td><code>admin.leadcove.io</code></td></tr>
+    <tr><th>Operations email</th><td><code>hello@leadcove.io</code></td></tr>
+    <tr><th>Legal / billing email</th><td><code>hello@miamimetro.us</code></td></tr>
+    <tr><th>Legal owner</th><td>Miami Metro LLC · Florida · EIN 42-1820681</td></tr>
+    <tr><th>Principal place of business</th><td>10600 SW 67 Avenue, Pinecrest FL 33156</td></tr>
+    <tr><th>Sole Member-Manager</th><td>Jules Cordero (100%)</td></tr>
+    <tr><th>Co-founders</th><td>Jules Cordero &amp; Javier (Xavi) Dalmau</td></tr>
+    <tr><th>Footer disclosure</th><td>© 2026 LeadCove · a brand owned by Miami Metro LLC, Florida</td></tr>
+  </tbody>
+</table>
+
+<p>LLC ownership disclosure is required on every legal page (Terms, Privacy, TCPA notice). The only public surface where the word "Miami" appears is in the legal entity name "Miami Metro LLC" — never in marketing copy.</p>
+
+<h2>7 · Where files live</h2>
+<table class="usage">
+  <thead><tr><th>Location</th><th>What's there</th></tr></thead>
+  <tbody>
+    <tr><td><code>leadcove-site/assets/brand/svg/</code></td><td>10 vector logo files — vector primary, edit / scale anywhere</td></tr>
+    <tr><td><code>leadcove-site/assets/brand/png/</code></td><td>34 raster logos at standard sizes (16 → 2400 px)</td></tr>
+    <tr><td><code>leadcove-site/assets/brand/index.html</code></td><td>Browser preview of every variant + palette + type</td></tr>
+    <tr><td><code>leadcove-site/assets/brand/BRAND-KIT.md</code></td><td>Markdown reference (this PDF's source-of-truth)</td></tr>
+    <tr><td><code>leadcove-site/assets/brand/render-png.py</code></td><td>Regenerates PNG renders from SVGs (cairosvg)</td></tr>
+    <tr><td><code>leadcove-site/assets/brand/TRADEMARK-FILING-PREP.pdf</code></td><td>Attorney handoff document for USPTO filing</td></tr>
+  </tbody>
+</table>
+
+<p class="footer">© 2026 LeadCove · a brand owned by Miami Metro LLC, Florida · Brand kit document v1.1 · April 30, 2026</p>
+
+</body>
+</html>
