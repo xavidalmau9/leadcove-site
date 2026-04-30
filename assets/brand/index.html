@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>LeadCove · Brand kit preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:   #0B2545;
+    --navy-2: #13335f;
+    --teal:   #0E9F95;
+    --teal-2: #0B807A;
+    --cream:  #FBF8F3;
+    --sand:   #F5EDE1;
+    --ink:    #0F172A;
+    --muted:  #64748B;
+    --hairline: #e5e7eb;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.5;
+  }
+  header.kit-head {
+    background: var(--navy);
+    color: #fff;
+    padding: 48px 32px;
+  }
+  header.kit-head h1 {
+    font-family: 'Fraunces', serif; font-weight: 600;
+    font-size: 44px; letter-spacing: -0.02em;
+    margin: 0 0 8px;
+  }
+  header.kit-head p { margin: 0; opacity: 0.7; max-width: 560px; }
+  main { max-width: 1100px; margin: 0 auto; padding: 32px; }
+  section.kit { margin-bottom: 48px; }
+  section.kit h2 {
+    font-family: 'Fraunces', serif; font-weight: 600;
+    font-size: 28px; color: var(--navy);
+    margin: 0 0 6px; letter-spacing: -0.01em;
+  }
+  section.kit > p { color: var(--muted); margin: 0 0 18px; }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+  }
+  .card {
+    background: #fff;
+    border: 1px solid var(--hairline);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .card-dark { background: var(--navy); }
+  .card-cream { background: var(--cream); }
+  .card-sand { background: var(--sand); }
+  .card-stage {
+    flex: 1; min-height: 140px;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .card-stage img { max-width: 100%; max-height: 140px; height: auto; display: block; }
+  .card-foot {
+    font-size: 11px;
+    font-family: ui-monospace, Menlo, monospace;
+    color: var(--muted);
+    border-top: 1px solid var(--hairline);
+    padding-top: 8px;
+    word-break: break-all;
+  }
+  .card-dark .card-foot { color: rgba(255,255,255,0.5); border-top-color: rgba(255,255,255,0.1); }
+
+  .swatch-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+  }
+  .swatch {
+    border-radius: 12px;
+    padding: 24px 18px 16px;
+    color: #fff;
+    font-size: 13px;
+  }
+  .swatch-name { font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+  .swatch-hex  { font-family: ui-monospace, Menlo, monospace; opacity: 0.85; }
+  .swatch-use  { margin-top: 24px; opacity: 0.85; font-size: 12px; line-height: 1.45; }
+
+  .type-sample {
+    background: #fff;
+    border: 1px solid var(--hairline);
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 14px;
+  }
+  .type-sample-meta { font-size: 11px; color: var(--muted); margin-bottom: 8px; font-family: ui-monospace, Menlo, monospace; text-transform: uppercase; letter-spacing: 0.06em; }
+
+  .pixel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 14px;
+  }
+  .pixel-card {
+    text-align: center;
+    background: #fff;
+    border: 1px solid var(--hairline);
+    border-radius: 10px;
+    padding: 14px 10px;
+  }
+  .pixel-card img { display: block; margin: 0 auto 8px; image-rendering: pixelated; }
+  .pixel-card .lbl { font-size: 11px; color: var(--muted); font-family: ui-monospace, Menlo, monospace; }
+
+  footer {
+    text-align: center; color: var(--muted); font-size: 12px;
+    padding: 32px 0;
+  }
+</style>
+</head>
+<body>
+
+<header class="kit-head">
+  <h1>LeadCove · Brand kit</h1>
+  <p>Open <code>BRAND-KIT.md</code> for the full reference. This page renders every logo variant + the palette + type samples so you can eyeball before exporting.</p>
+</header>
+
+<main>
+
+  <section class="kit">
+    <h2>Primary horizontal lockup</h2>
+    <p>The default logo for headers, decks, and email signatures.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="card-stage"><img src="svg/logo-horizontal.svg" alt="Horizontal logo"></div>
+        <div class="card-foot">svg/logo-horizontal.svg</div>
+      </div>
+      <div class="card card-dark">
+        <div class="card-stage"><img src="svg/logo-horizontal-light.svg" alt="Horizontal logo, white wordmark"></div>
+        <div class="card-foot">svg/logo-horizontal-light.svg · for dark bg</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="kit">
+    <h2>Stacked lockup</h2>
+    <p>Use when horizontal real estate is scarce — square avatars, business cards, app splash.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="card-stage" style="min-height:200px"><img src="svg/logo-stacked.svg" alt="Stacked logo"></div>
+        <div class="card-foot">svg/logo-stacked.svg</div>
+      </div>
+      <div class="card card-dark">
+        <div class="card-stage" style="min-height:200px"><img src="svg/logo-stacked-light.svg" alt="Stacked logo, white wordmark"></div>
+        <div class="card-foot">svg/logo-stacked-light.svg</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="kit">
+    <h2>Mark only</h2>
+    <p>The wave + sun glyph alone — favicons, app icons, social profile pictures, watermarks.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="card-stage"><img src="svg/mark.svg" alt="Mark, navy box + teal" style="max-height:120px"></div>
+        <div class="card-foot">svg/mark.svg · primary</div>
+      </div>
+      <div class="card card-cream">
+        <div class="card-stage"><img src="svg/mark-light.svg" alt="Mark on cream" style="max-height:120px"></div>
+        <div class="card-foot">svg/mark-light.svg · transparent bg</div>
+      </div>
+      <div class="card">
+        <div class="card-stage"><img src="svg/mark-mono-navy.svg" alt="Monochrome navy mark" style="max-height:120px"></div>
+        <div class="card-foot">svg/mark-mono-navy.svg · single color</div>
+      </div>
+      <div class="card card-dark">
+        <div class="card-stage"><img src="svg/mark-mono-white.svg" alt="Monochrome white mark" style="max-height:120px"></div>
+        <div class="card-foot">svg/mark-mono-white.svg · reversed</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="kit">
+    <h2>Wordmark only</h2>
+    <p>When the mark is already adjacent or context makes the icon redundant.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="card-stage"><img src="svg/wordmark.svg" alt="Wordmark, navy" style="max-height:80px; max-width:90%"></div>
+        <div class="card-foot">svg/wordmark.svg</div>
+      </div>
+      <div class="card card-dark">
+        <div class="card-stage"><img src="svg/wordmark-light.svg" alt="Wordmark, white" style="max-height:80px; max-width:90%"></div>
+        <div class="card-foot">svg/wordmark-light.svg</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="kit">
+    <h2>Mark · raster sizes</h2>
+    <p>Pre-rendered PNGs for places that need raster (most apps + social platforms).</p>
+    <div class="pixel-grid">
+      <div class="pixel-card"><img src="png/mark_16.png" width="16" alt=""><div class="lbl">16</div></div>
+      <div class="pixel-card"><img src="png/mark_32.png" width="32" alt=""><div class="lbl">32</div></div>
+      <div class="pixel-card"><img src="png/mark_64.png" width="64" alt=""><div class="lbl">64</div></div>
+      <div class="pixel-card"><img src="png/mark_128.png" width="128" alt=""><div class="lbl">128</div></div>
+      <div class="pixel-card"><img src="png/mark_256.png" width="128" alt=""><div class="lbl">256</div></div>
+      <div class="pixel-card"><img src="png/mark_512.png" width="128" alt=""><div class="lbl">512</div></div>
+      <div class="pixel-card"><img src="png/mark_1024.png" width="128" alt=""><div class="lbl">1024</div></div>
+    </div>
+  </section>
+
+  <section class="kit">
+    <h2>Color palette</h2>
+    <p>Two-color core. Supporting colors used sparingly.</p>
+    <div class="swatch-row">
+      <div class="swatch" style="background:#0B2545">
+        <div class="swatch-name">Navy</div>
+        <div class="swatch-hex">#0B2545</div>
+        <div class="swatch-use">Primary brand color. Headlines, body text on light, mark container.</div>
+      </div>
+      <div class="swatch" style="background:#0E9F95">
+        <div class="swatch-name">Teal</div>
+        <div class="swatch-hex">#0E9F95</div>
+        <div class="swatch-use">Accent color. Mark glyph, CTAs, links, success.</div>
+      </div>
+      <div class="swatch" style="background:#13335f">
+        <div class="swatch-name">Navy-2</div>
+        <div class="swatch-hex">#13335F</div>
+        <div class="swatch-use">Hover states on dark surfaces, gradients.</div>
+      </div>
+      <div class="swatch" style="background:#0B807A">
+        <div class="swatch-name">Teal-2</div>
+        <div class="swatch-hex">#0B807A</div>
+        <div class="swatch-use">Secondary teal, button hovers.</div>
+      </div>
+      <div class="swatch" style="background:#FBF8F3; color:#0F172A">
+        <div class="swatch-name">Cream</div>
+        <div class="swatch-hex">#FBF8F3</div>
+        <div class="swatch-use">Warm secondary background. Sidebars, modals.</div>
+      </div>
+      <div class="swatch" style="background:#F5EDE1; color:#0F172A">
+        <div class="swatch-name">Sand</div>
+        <div class="swatch-hex">#F5EDE1</div>
+        <div class="swatch-use">Slightly warmer cream — banners, callouts.</div>
+      </div>
+      <div class="swatch" style="background:#0F172A">
+        <div class="swatch-name">Ink</div>
+        <div class="swatch-hex">#0F172A</div>
+        <div class="swatch-use">Body text on light backgrounds.</div>
+      </div>
+      <div class="swatch" style="background:#64748B">
+        <div class="swatch-name">Muted</div>
+        <div class="swatch-hex">#64748B</div>
+        <div class="swatch-use">Captions, metadata, secondary text.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="kit">
+    <h2>Typography</h2>
+
+    <div class="type-sample">
+      <div class="type-sample-meta">Fraunces · 600 · display</div>
+      <div style="font-family:'Fraunces',serif; font-weight:600; font-size:64px; color:var(--navy); letter-spacing:-0.02em; line-height:1.05; margin-bottom:8px;">
+        Pick your plan.
+      </div>
+      <div style="font-family:'Fraunces',serif; font-weight:600; font-size:36px; color:var(--navy); letter-spacing:-0.01em; line-height:1.1;">
+        You can't contact a prospect without their data.
+      </div>
+    </div>
+
+    <div class="type-sample">
+      <div class="type-sample-meta">Inter · 400 / 500 / 600 / 700 · UI + body</div>
+      <div style="font-family:'Inter',sans-serif; font-size:18px; line-height:1.5; color:var(--ink); margin-bottom:8px;">
+        LeadCove is the all-in-one prospecting platform built for real estate agents. Bring your list, we deliver the owner data — name, phone, and/or email — quickly and simply.
+      </div>
+      <div style="font-family:'Inter',sans-serif; font-size:14px; font-weight:600; color:var(--teal-2);">
+        Join the waitlist →
+      </div>
+    </div>
+  </section>
+
+  <section class="kit">
+    <h2>Voice rules at a glance</h2>
+    <p>Full reference in <code>BRAND-KIT.md § 5</code>. The forbidden-words shortlist:</p>
+    <table style="width:100%; border-collapse:collapse; font-size:13px;">
+      <thead>
+        <tr style="border-bottom:1px solid var(--hairline)">
+          <th style="text-align:left; padding:8px 12px; color:var(--muted); font-weight:600;">❌ Don't say</th>
+          <th style="text-align:left; padding:8px 12px; color:var(--muted); font-weight:600;">✅ Say instead</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid var(--hairline)"><td style="padding:8px 12px">"phone + email"</td><td style="padding:8px 12px">"owner data — name, phone, and/or email"</td></tr>
+        <tr style="border-bottom:1px solid var(--hairline)"><td style="padding:8px 12px">"free" (anywhere)</td><td style="padding:8px 12px">"no charge", "included", "covered"</td></tr>
+        <tr style="border-bottom:1px solid var(--hairline)"><td style="padding:8px 12px">"tenant"</td><td style="padding:8px 12px">"user", "account"</td></tr>
+        <tr style="border-bottom:1px solid var(--hairline)"><td style="padding:8px 12px">"Miami" (in marketing)</td><td style="padding:8px 12px">"Florida"</td></tr>
+        <tr style="border-bottom:1px solid var(--hairline)"><td style="padding:8px 12px">"Resolve" (the verb)</td><td style="padding:8px 12px">"Enrich"</td></tr>
+        <tr><td style="padding:8px 12px">"propagated"</td><td style="padding:8px 12px">"same-owner match"</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 LeadCove · a brand owned by Miami Metro LLC, Florida
+</footer>
+
+</body>
+</html>

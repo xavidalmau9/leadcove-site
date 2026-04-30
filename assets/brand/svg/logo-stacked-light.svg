@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  LeadCove · stacked logo, light variant
+  Same composition as logo-stacked.svg but wordmark flips to white
+  for dark backgrounds.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" role="img" aria-label="LeadCove">
+  <title>LeadCove</title>
+  <g transform="translate(112, 32)">
+    <rect width="256" height="256" rx="56" fill="#0B2545"/>
+    <circle cx="194" cy="80" r="22" fill="#0E9F95"/>
+    <path d="M 24 168 C 56 140, 96 140, 128 168 C 160 196, 200 196, 232 168"
+          fill="none" stroke="#0E9F95" stroke-width="17" stroke-linecap="round"/>
+    <path d="M 24 208 C 56 180, 96 180, 128 208 C 160 236, 200 236, 232 208"
+          fill="none" stroke="#0E9F95" stroke-width="17" stroke-linecap="round" opacity="0.55"/>
+  </g>
+  <text x="240" y="404"
+        text-anchor="middle"
+        font-family="Fraunces, 'Times New Roman', Georgia, serif"
+        font-size="76"
+        font-weight="600"
+        letter-spacing="-1.4"
+        fill="#ffffff">LeadCove</text>
+</svg>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  LeadCove · wordmark, white (reversed for dark backgrounds)
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 96" role="img" aria-label="LeadCove">
+  <title>LeadCove</title>
+  <text x="0" y="72"
+        font-family="Fraunces, 'Times New Roman', Georgia, serif"
+        font-size="84"
+        font-weight="600"
+        letter-spacing="-1.6"
+        fill="#ffffff">LeadCove</text>
+</svg>

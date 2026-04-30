@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  LeadCove · wordmark only
+  Fraunces serif at display weight 600. Navy color. Use whenever the
+  mark is already adjacent or context makes it redundant.
+
+  Note: SVG <text> requires Fraunces to be loaded for accurate
+  rendering. For ironclad type fidelity (e.g. press, third-party
+  vendors), open this in Figma/Illustrator and convert text → outlines
+  before exporting. The HTML preview in /assets/brand/index.html
+  pulls Fraunces from Google Fonts so it renders correctly there.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 96" role="img" aria-label="LeadCove">
+  <title>LeadCove</title>
+  <text x="0" y="72"
+        font-family="Fraunces, 'Times New Roman', Georgia, serif"
+        font-size="84"
+        font-weight="600"
+        letter-spacing="-1.6"
+        fill="#0B2545">LeadCove</text>
+</svg>

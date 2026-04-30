@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  LeadCove · monochrome navy mark
+  Use anywhere full-color isn't possible (single-color print, embossing,
+  watermarks, third-party places that allow only one color).
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="LeadCove">
+  <title>LeadCove</title>
+  <circle cx="194" cy="80" r="22" fill="#0B2545"/>
+  <path d="M 24 168 C 56 140, 96 140, 128 168 C 160 196, 200 196, 232 168"
+        fill="none" stroke="#0B2545" stroke-width="17" stroke-linecap="round"/>
+  <path d="M 24 208 C 56 180, 96 180, 128 208 C 160 236, 200 236, 232 208"
+        fill="none" stroke="#0B2545" stroke-width="17" stroke-linecap="round" opacity="0.55"/>
+</svg>
