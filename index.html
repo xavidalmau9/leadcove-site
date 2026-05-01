@@ -70,33 +70,188 @@
 
   </div>
   <div class="hero-visual" aria-hidden="true">
-    <!-- Stylized dashboard mockup -->
+    <!-- Stylized dashboard mockup — reflects today's UI: 8-pill tier
+         bar (4 score-tier + 4 workflow), actionable lead cards. All
+         names/addresses/phones are synthetic. -->
     <div class="mock-dashboard">
       <div class="mock-nav">
         <span class="mock-dot dot-r"></span><span class="mock-dot dot-y"></span><span class="mock-dot dot-g"></span>
-        <span class="mock-title">Today's Calls · LeadCove</span>
+        <span class="mock-title">Mission Control · LeadCove</span>
       </div>
-      <div class="mock-body">
-        <div class="mock-stat"><b>102</b><span>Priority A</span></div>
-        <div class="mock-stat"><b>26</b><span>Callbacks due</span></div>
-        <div class="mock-stat"><b>$4.05</b><span>Spent today</span></div>
+      <div class="mock-body mock-body-stacked">
+        <!-- Top row: 4 score-tier pills -->
+        <div class="mock-tier-row">
+          <div class="mock-tier mock-tier-a"><span class="mock-tier-range">80–100</span><span class="mock-tier-name">A · PRIORITY</span><span class="mock-tier-action">Call today</span></div>
+          <div class="mock-tier mock-tier-b"><span class="mock-tier-range">60–79</span><span class="mock-tier-name">B · PRIORITY</span><span class="mock-tier-action">Next-day</span></div>
+          <div class="mock-tier mock-tier-c"><span class="mock-tier-range">40–59</span><span class="mock-tier-name">C · PRIORITY</span><span class="mock-tier-action">Weekly batch</span></div>
+          <div class="mock-tier mock-tier-hold"><span class="mock-tier-range">0–39</span><span class="mock-tier-name">HOLD</span><span class="mock-tier-action">Backlog</span></div>
+        </div>
+        <!-- Bottom row: 4 workflow pills -->
+        <div class="mock-tier-row">
+          <div class="mock-tier mock-tier-raw"><span class="mock-tier-range">42</span><span class="mock-tier-name">RAW LEADS</span><span class="mock-tier-action">Ready to enrich</span></div>
+          <div class="mock-tier mock-tier-out"><span class="mock-tier-range">17</span><span class="mock-tier-name">OUTREACHED TODAY</span><span class="mock-tier-action">28 left to outreach</span></div>
+          <div class="mock-tier mock-tier-fu"><span class="mock-tier-range">9</span><span class="mock-tier-name">FOLLOW UP</span><span class="mock-tier-action">5+ days no reply</span></div>
+          <div class="mock-tier mock-tier-int"><span class="mock-tier-range">3</span><span class="mock-tier-name">INTERESTED</span><span class="mock-tier-action">Hot — close them!</span></div>
+        </div>
+        <!-- Sample lead cards using fake data -->
         <div class="mock-card tier-a">
-          <div class="mock-card-head"><b>Ricardo M Torres</b><span class="mock-badge">A · 87</span></div>
-          <div class="mock-card-sub">820 N Orange Ave · Orlando · 10 units in building</div>
-          <div class="mock-card-row"><span>📞 (561) 555-0166</span><span class="mock-btn">Call</span></div>
+          <div class="mock-card-head"><b>Maria E. Santiago</b><span class="mock-badge">A · 88</span></div>
+          <div class="mock-card-sub">1432 Sample Way · Coral Gables · Single Family</div>
+          <div class="mock-card-row"><span>📞 (305) 555-0142</span><span class="mock-btn">Call</span></div>
         </div>
         <div class="mock-card tier-a">
-          <div class="mock-card-head"><b>Adriana L Castillo</b><span class="mock-badge">A · 85</span></div>
-          <div class="mock-card-sub">13410 Bayshore Blvd · Tampa · 29 yrs held</div>
-          <div class="mock-card-row"><span>📞 (561) 555-0141</span><span class="mock-btn">Call</span></div>
-        </div>
-        <div class="mock-card tier-b">
-          <div class="mock-card-head"><b>Marco R Delgado</b><span class="mock-badge">B · 72</span></div>
-          <div class="mock-card-sub">74 5th Ave S · Naples · 6 units in building</div>
-          <div class="mock-card-row"><span>📞 (239) 555-0182</span><span class="mock-btn">Call</span></div>
+          <div class="mock-card-head"><b>James &amp; Carmen Rodriguez</b><span class="mock-badge">A · 81</span></div>
+          <div class="mock-card-sub">2008 Demo Drive · Pinecrest · 22 yrs held · 2 owners</div>
+          <div class="mock-card-row"><span>📞 (305) 555-0188</span><span class="mock-btn">Call</span></div>
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ─── Tour the platform ───────────────────────────────────────────
+     Multi-view showcase of the dashboard. Horizontal scroll-snap
+     carousel — each panel is a styled mockup (no real screenshots,
+     no real data). Visitors get a feel for the actual product
+     before signing up. -->
+<section class="band tour-band" id="tour" aria-label="Tour the LeadCove dashboard">
+  <div class="tour-header">
+    <p class="eyebrow">Tour the platform</p>
+    <h2>What you'll actually see when you log in</h2>
+    <p class="section-sub">Five views, no real data, no agent burned to make these. Drag or scroll through to flip between Mission Control, the lead modal, upload flow, area-grouped view, and the daily-workflow keys.</p>
+  </div>
+  <div class="tour-scroller" tabindex="0">
+
+    <!-- 1. Mission Control -->
+    <figure class="tour-slide">
+      <div class="mock-dashboard mock-dashboard-tour">
+        <div class="mock-nav"><span class="mock-dot dot-r"></span><span class="mock-dot dot-y"></span><span class="mock-dot dot-g"></span><span class="mock-title">Mission Control</span></div>
+        <div class="mock-body mock-body-stacked">
+          <div class="mock-tier-row">
+            <div class="mock-tier mock-tier-a"><span class="mock-tier-range">12</span><span class="mock-tier-name">A · PRIORITY</span><span class="mock-tier-action">Call today</span></div>
+            <div class="mock-tier mock-tier-b"><span class="mock-tier-range">38</span><span class="mock-tier-name">B · PRIORITY</span><span class="mock-tier-action">Next-day</span></div>
+            <div class="mock-tier mock-tier-c"><span class="mock-tier-range">64</span><span class="mock-tier-name">C · PRIORITY</span><span class="mock-tier-action">Weekly batch</span></div>
+            <div class="mock-tier mock-tier-hold"><span class="mock-tier-range">21</span><span class="mock-tier-name">HOLD</span><span class="mock-tier-action">Backlog</span></div>
+          </div>
+          <div class="mock-tier-row">
+            <div class="mock-tier mock-tier-raw"><span class="mock-tier-range">42</span><span class="mock-tier-name">RAW LEADS</span><span class="mock-tier-action">Ready to enrich</span></div>
+            <div class="mock-tier mock-tier-out"><span class="mock-tier-range">17</span><span class="mock-tier-name">OUTREACHED TODAY</span><span class="mock-tier-action">28 left to outreach</span></div>
+            <div class="mock-tier mock-tier-fu"><span class="mock-tier-range">9</span><span class="mock-tier-name">FOLLOW UP</span><span class="mock-tier-action">5+ days no reply</span></div>
+            <div class="mock-tier mock-tier-int"><span class="mock-tier-range">3</span><span class="mock-tier-name">INTERESTED</span><span class="mock-tier-action">Hot — close!</span></div>
+          </div>
+          <div class="mock-card tier-a">
+            <div class="mock-card-head"><b>Maria E. Santiago</b><span class="mock-badge">A · 88</span></div>
+            <div class="mock-card-sub">1432 Sample Way · Coral Gables</div>
+            <div class="mock-card-row"><span>📞 (305) 555-0142</span><span class="mock-btn">Call</span></div>
+          </div>
+        </div>
+      </div>
+      <figcaption><strong>Mission Control</strong> — your daily command center. 8 colored pills surface the buckets that matter: priority tiers + workflow state. Tap any pill to drill into that filter.</figcaption>
+    </figure>
+
+    <!-- 2. Lead modal -->
+    <figure class="tour-slide">
+      <div class="mock-dashboard mock-dashboard-tour">
+        <div class="mock-nav"><span class="mock-dot dot-r"></span><span class="mock-dot dot-y"></span><span class="mock-dot dot-g"></span><span class="mock-title">Lead detail</span></div>
+        <div class="mock-modal-body">
+          <div class="mock-modal-title">Maria E. Santiago</div>
+          <div class="mock-modal-sub">1432 Sample Way · Coral Gables 33134</div>
+          <!-- Action stack at top -->
+          <div class="mock-action-row">
+            <span class="mock-action-btn">📞 Call</span>
+            <span class="mock-action-btn">💬 SMS</span>
+            <span class="mock-action-btn">✉️ Email</span>
+            <span class="mock-action-btn">💼 LinkedIn</span>
+          </div>
+          <div class="mock-action-row mock-action-row-secondary">
+            <span class="mock-action-btn-sm">⏰ Callback</span>
+            <span class="mock-action-btn-sm">▶ Queue</span>
+            <span class="mock-action-btn-sm">🚩 Bad data</span>
+            <span class="mock-action-btn-sm">🗂 Archive</span>
+          </div>
+          <!-- Owner section -->
+          <div class="mock-section-title">OWNER(S)</div>
+          <div class="mock-owner-block">
+            <div class="mock-owner-head">Maria E. Santiago</div>
+            <div class="mock-field"><span>Phone(s)</span><span>(305) 555-0142 · (305) 555-0188</span></div>
+            <div class="mock-field"><span>Email(s)</span><span>m.santiago@example.com</span></div>
+          </div>
+          <div class="mock-section-title">PROPERTY</div>
+          <div class="mock-field"><span>Address</span><span>1432 Sample Way</span></div>
+          <div class="mock-field"><span>List price</span><span>$1,250,000</span></div>
+          <div class="mock-field"><span>Years held</span><span>22 yrs</span></div>
+        </div>
+      </div>
+      <figcaption><strong>Lead detail modal</strong> — outreach buttons pinned at the top so you don't scroll. Owner data, phones, and emails right under. Property metadata only when relevant.</figcaption>
+    </figure>
+
+    <!-- 3. Upload flow -->
+    <figure class="tour-slide">
+      <div class="mock-dashboard mock-dashboard-tour">
+        <div class="mock-nav"><span class="mock-dot dot-r"></span><span class="mock-dot dot-y"></span><span class="mock-dot dot-g"></span><span class="mock-title">Upload prospects</span></div>
+        <div class="mock-modal-body">
+          <div class="mock-modal-title">Ready to enrich</div>
+          <div class="mock-modal-sub"><strong>23 usable rows</strong> from <code>palm-island.csv</code> · 4 columns auto-detected</div>
+          <div class="mock-mapping">
+            <div class="mock-map-row"><span>Property address</span><span class="mock-arrow">←</span><code>Site Addr</code></div>
+            <div class="mock-map-row"><span>City</span><span class="mock-arrow">←</span><code>Property City</code></div>
+            <div class="mock-map-row"><span>ZIP</span><span class="mock-arrow">←</span><code>Property Zip</code></div>
+            <div class="mock-map-row"><span>Owner name</span><span class="mock-arrow">←</span><code>Owner Name 1</code></div>
+          </div>
+          <div class="mock-meta">
+            <div><strong>Will enrich:</strong> 23 rows</div>
+            <div><strong>Credits this enrichment uses:</strong> 23</div>
+            <div><strong>Estimated time:</strong> about 1–3 minutes</div>
+          </div>
+          <div class="mock-action-row">
+            <span class="mock-action-btn-ghost">Cancel</span>
+            <span class="mock-action-btn">Start enriching 23 rows →</span>
+          </div>
+        </div>
+      </div>
+      <figcaption><strong>Upload flow</strong> — drop any CSV (MLS export, county records, your own list). Smart column detection figures out where the address + owner live. Preview before you spend a credit.</figcaption>
+    </figure>
+
+    <!-- 4. By Area -->
+    <figure class="tour-slide">
+      <div class="mock-dashboard mock-dashboard-tour">
+        <div class="mock-nav"><span class="mock-dot dot-r"></span><span class="mock-dot dot-y"></span><span class="mock-dot dot-g"></span><span class="mock-title">By Area</span></div>
+        <div class="mock-modal-body">
+          <div class="mock-area-row"><span class="mock-area-name">Coral Gables</span><span class="mock-area-bar"><span style="width:78%"></span></span><span class="mock-area-count">47</span></div>
+          <div class="mock-area-row"><span class="mock-area-name">Brickell</span><span class="mock-area-bar"><span style="width:62%"></span></span><span class="mock-area-count">38</span></div>
+          <div class="mock-area-row"><span class="mock-area-name">Pinecrest</span><span class="mock-area-bar"><span style="width:51%"></span></span><span class="mock-area-count">31</span></div>
+          <div class="mock-area-row"><span class="mock-area-name">Coconut Grove</span><span class="mock-area-bar"><span style="width:42%"></span></span><span class="mock-area-count">26</span></div>
+          <div class="mock-area-row"><span class="mock-area-name">Miami Beach</span><span class="mock-area-bar"><span style="width:34%"></span></span><span class="mock-area-count">21</span></div>
+          <div class="mock-area-row"><span class="mock-area-name">Key Biscayne</span><span class="mock-area-bar"><span style="width:21%"></span></span><span class="mock-area-count">13</span></div>
+          <div class="mock-area-row"><span class="mock-area-name">Sunny Isles Beach</span><span class="mock-area-bar"><span style="width:14%"></span></span><span class="mock-area-count">9</span></div>
+        </div>
+      </div>
+      <figcaption><strong>By Area</strong> — group your pipeline by neighborhood. ZIP-derived so the labels are accurate (no Matrix-MLS area-code drift). Click any row to filter.</figcaption>
+    </figure>
+
+    <!-- 5. Glossary keys -->
+    <figure class="tour-slide">
+      <div class="mock-dashboard mock-dashboard-tour">
+        <div class="mock-nav"><span class="mock-dot dot-r"></span><span class="mock-dot dot-y"></span><span class="mock-dot dot-g"></span><span class="mock-title">Dashboard keys</span></div>
+        <div class="mock-modal-body">
+          <div class="mock-section-title">LEAD STATUS</div>
+          <div class="mock-key-row"><span class="mock-key-pill mock-key-gray">Raw</span><span>Just arrived. No research done yet.</span></div>
+          <div class="mock-key-row"><span class="mock-key-pill mock-key-teal">Enriched</span><span>Score + contact info filled in.</span></div>
+          <div class="mock-key-row"><span class="mock-key-pill mock-key-orange">Queue</span><span>Tier A queued for outreach.</span></div>
+          <div class="mock-key-row"><span class="mock-key-pill mock-key-purple">Contacted</span><span>SMS, email, or LinkedIn sent.</span></div>
+          <div class="mock-key-row"><span class="mock-key-pill mock-key-green">Responded</span><span>They replied. Highest follow-up priority.</span></div>
+          <div class="mock-section-title">SCORE BANDS</div>
+          <div class="mock-key-row"><span class="mock-key-pill mock-key-tier-a">90+</span><span>Drop everything. All signals stacked.</span></div>
+          <div class="mock-key-row"><span class="mock-key-pill mock-key-tier-a">80–89</span><span>Tier A — call today.</span></div>
+          <div class="mock-key-row"><span class="mock-key-pill mock-key-tier-b">60–79</span><span>Tier B — next-day.</span></div>
+        </div>
+      </div>
+      <figcaption><strong>Built-in glossary</strong> — every status, score band, and lead source explained inline. New agents are productive day one without docs.</figcaption>
+    </figure>
+
+  </div>
+  <div class="tour-hint">
+    <span aria-hidden="true">←</span> drag or scroll to see more <span aria-hidden="true">→</span>
   </div>
 </section>
 
