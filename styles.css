@@ -441,6 +441,17 @@ a:hover { color: var(--teal); }
   scroll-snap-align: center;
   display: flex; flex-direction: column;
 }
+/* Uniform tour-slide image size (Xavi 2026-05-02): each slide's
+   mockup pane locked to the same 16:10 aspect ratio. Variable mockup
+   content (different numbers of cards, etc.) clips cleanly inside
+   the box instead of stretching the slide vertically. Result: every
+   slide is the same height, the carousel reads as a clean strip
+   instead of a ragged staircase. */
+.tour-slide .mock-dashboard,
+.tour-slide .mock-dashboard-tour {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
 .tour-slide figcaption {
   margin-top: 16px;
   padding: 0 8px;
@@ -1578,9 +1589,13 @@ a:hover { color: var(--teal); }
 .product-tour { background: #fff; max-width: none; padding-left: 40px; padding-right: 40px; }
 .product-tour > * { max-width: 1240px; margin-left: auto; margin-right: auto; }
 .screenshot-grid {
+  /* Was an asymmetric main+side layout (4:5 main spanning 2 rows + a
+     16:10 side cell). Simplified to two equal 16:10 cells in a
+     single row 2026-05-02 after the analytics screenshot was
+     deleted — left an empty grid cell that looked broken. Both
+     screenshots now share identical dimensions for visual parity. */
   display: grid;
-  grid-template-columns: 1.6fr 1fr;
-  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
   margin-top: 36px;
 }
@@ -1594,7 +1609,7 @@ a:hover { color: var(--teal); }
   aspect-ratio: 16 / 10;
   display: flex; flex-direction: column;
 }
-.screenshot-main { grid-row: span 2; aspect-ratio: 4 / 5; }
+.screenshot-main { /* legacy, no longer applies — kept harmless */ }
 .screenshot img {
   width: 100%; height: 100%; object-fit: cover; display: block;
   background: #081a31;
