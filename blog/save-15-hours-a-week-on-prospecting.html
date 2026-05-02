@@ -125,6 +125,19 @@
     margin: 0 auto 24px;
   }
   .post-cta .hero-ctas { justify-content: center; margin: 0; }
+  /* Both buttons need explicit overrides on the dark navy post-CTA.
+     The global .btn-primary is navy-fill (invisible on navy bg) and
+     .btn-ghost defaults to white-fill on cream (wrong contrast here).
+     Flipped to brand teal/white pairs. */
+  .post-cta .btn-primary {
+    background: var(--teal);
+    border-color: var(--teal);
+    color: #fff;
+  }
+  .post-cta .btn-primary:hover {
+    background: var(--teal-2);
+    border-color: var(--teal-2);
+  }
   .post-cta .btn-ghost {
     color: var(--navy);
     background: #fff;
@@ -169,7 +182,7 @@
     <a href="/#pricing">Pricing</a>
     <a href="/#faq">FAQ</a>
     <a href="/about.html">About</a>
-    <a href="/blog/" class="active">Field notes</a>
+    <a href="/blog/" class="active">Blog</a>
   </nav>
   <div class="nav-cta">
     <a href="https://app.leadcove.io/" class="btn-ghost">Sign in</a>
@@ -179,7 +192,7 @@
 
 <!-- ─── Article ───────────────────────────────────────────────────── -->
 <article class="post">
-  <a class="post-back" href="/blog/">← Field notes</a>
+  <a class="post-back" href="/blog/">← Blog</a>
   <p class="post-eyebrow">Workflow</p>
   <h1>How top agents save 15+ hours a week on prospecting</h1>
   <p class="post-meta">9 min read · By the LeadCove team</p>
@@ -404,7 +417,7 @@
     <a href="/#topups">Add-ons</a>
     <a href="/#faq">FAQ</a>
     <a href="/about.html">About</a>
-    <a href="/blog/">Field notes</a>
+    <a href="/blog/">Blog</a>
   </div>
   <div class="footer-col">
     <h5>Account</h5>
