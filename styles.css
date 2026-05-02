@@ -1963,18 +1963,21 @@ a:hover { color: var(--teal); }
   justify-content: center;
   margin-bottom: 24px;
 }
-/* CTA Sign-in button — same "fill, not outline" rule as the hero
-   variant. White-alpha surface so it has visible weight on the dark
-   navy bg without competing with the brand-teal Sign up. */
+/* CTA Sign-in button on dark navy. Iron rule from Xavi (re-affirmed
+   2026-05-02): "you cannot just have the outline for a button with
+   same color inside as outside, not good enough." 12% white on navy
+   was still failing the contrast bar — flipped to SOLID white fill +
+   navy text. Sign up stays brand-teal — white vs teal complement
+   each other instead of competing, both are unambiguously clickable. */
 .cta .btn-ghost {
-  color: #fff;
-  border-color: rgba(255, 255, 255, 0.5);
-  background: rgba(255, 255, 255, 0.12);
-}
-.cta .btn-ghost:hover {
   color: var(--navy);
   border-color: #fff;
   background: #fff;
+}
+.cta .btn-ghost:hover {
+  color: #fff;
+  border-color: var(--teal);
+  background: var(--teal);
 }
 .cta .btn-primary {
   background: var(--teal);
