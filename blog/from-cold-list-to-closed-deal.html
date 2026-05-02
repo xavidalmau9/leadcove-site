@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>From cold list to closed deal: a playbook · LeadCove</title>
+<meta name="description" content="The full real estate prospecting pipeline — list intake, owner enrichment, scoring, outreach cadence, objection handling, listing appointment. End-to-end with the numbers a working agent should expect at each stage." />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" href="/favicon.svg" />
+<meta name="theme-color" content="#0B2545" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css" />
+<style>
+  .post { max-width: 720px; margin: 0 auto; padding: 56px 40px 40px; }
+  .post-eyebrow {
+    font-size: 12px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--teal-2); margin: 0 0 14px;
+  }
+  .post h1 {
+    font-family: var(--f-display); font-weight: 600;
+    font-size: clamp(34px, 4.2vw, 48px); line-height: 1.08;
+    letter-spacing: -0.02em; color: var(--navy); margin: 0 0 18px;
+  }
+  .post-meta {
+    font-size: 14px; color: var(--muted); margin: 0 0 36px;
+    padding-bottom: 24px; border-bottom: 1px solid var(--hairline);
+  }
+  .post-meta strong { color: var(--ink-2); font-weight: 600; }
+  .post-body { color: var(--ink-2); font-size: 17px; line-height: 1.72; }
+  .post-body p { margin: 0 0 22px; }
+  .post-body strong { color: var(--navy); }
+  .post-body h2 {
+    font-family: var(--f-display); font-weight: 600;
+    font-size: 28px; line-height: 1.2; letter-spacing: -0.01em;
+    color: var(--navy); margin: 44px 0 14px;
+  }
+  .post-body h3 {
+    font-family: var(--f-sans); font-weight: 700; font-size: 18px;
+    color: var(--navy); margin: 28px 0 10px;
+  }
+  .post-body ul, .post-body ol { padding-left: 22px; margin: 0 0 22px; }
+  .post-body li { margin: 0 0 8px; }
+  .post-body blockquote {
+    margin: 28px 0; padding: 18px 22px;
+    border-left: 3px solid var(--teal);
+    background: rgba(14,159,149,0.06);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    font-style: italic; color: var(--ink);
+  }
+  .post-body blockquote p:last-child { margin: 0; }
+  .post-callout {
+    margin: 36px 0; padding: 22px 24px;
+    background: var(--sand); border-radius: var(--radius-md);
+    border: 1px solid rgba(11,37,69,0.08);
+  }
+  .post-callout p { margin: 0; font-size: 15px; }
+  /* Funnel block — minimal vertical funnel with conversion %s.
+     Renders as stacked cards on mobile. */
+  .funnel {
+    margin: 28px 0 36px;
+    display: grid;
+    gap: 10px;
+  }
+  .funnel-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    background: #fff;
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-md);
+    padding: 16px 20px;
+    box-shadow: var(--shadow-sm);
+  }
+  .funnel-stage {
+    font-weight: 600; color: var(--navy); font-size: 15px;
+  }
+  .funnel-stage small {
+    display: block; color: var(--muted); font-weight: 400; font-size: 13px;
+    margin-top: 2px;
+  }
+  .funnel-num {
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--teal-2);
+    text-align: right;
+    min-width: 80px;
+  }
+  .post-cta {
+    background: var(--navy); color: #fff; text-align: center;
+    padding: 56px 40px; margin-top: 24px;
+  }
+  .post-cta h2 {
+    font-family: var(--f-display); font-weight: 600;
+    font-size: 28px; margin: 0 0 12px;
+  }
+  .post-cta p { color: rgba(255,255,255,0.75); max-width: 520px; margin: 0 auto 24px; }
+  .post-cta .hero-ctas { justify-content: center; margin: 0; }
+  .post-cta .btn-ghost {
+    color: #fff; background: rgba(255,255,255,0.12);
+    border-color: rgba(255,255,255,0.5);
+  }
+  .post-cta .btn-ghost:hover { background: #fff; color: var(--navy); border-color: #fff; }
+  .post-back {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 14px; color: var(--muted); margin-bottom: 24px;
+  }
+  .post-back:hover { color: var(--teal-2); }
+  @media (max-width: 640px) {
+    .post { padding: 40px 24px 24px; }
+    .post-body { font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <a class="brand" href="/">
+    <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+      <path d="M3 26 C 8 22, 14 22, 20 26 C 26 30, 32 30, 37 26" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+      <path d="M3 32 C 8 28, 14 28, 20 32 C 26 36, 32 36, 37 32" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" opacity="0.5"/>
+      <circle cx="30" cy="14" r="3" fill="currentColor"/>
+    </svg>
+    <span class="brand-wordmark">LeadCove</span>
+  </a>
+  <nav class="nav-links">
+    <a href="/#how">How it works</a>
+    <a href="/#features">Features</a>
+    <a href="/#tour">Tour</a>
+    <a href="/#pricing">Pricing</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/about.html">About</a>
+    <a href="/blog/" class="active">Field notes</a>
+  </nav>
+  <div class="nav-cta">
+    <a href="https://app.leadcove.io/" class="btn-ghost">Sign in</a>
+    <a href="https://app.leadcove.io/" class="btn-primary">Sign up</a>
+  </div>
+</header>
+
+<article class="post">
+  <a class="post-back" href="/blog/">← Field notes</a>
+  <p class="post-eyebrow">Playbook</p>
+  <h1>From cold list to closed deal: a playbook</h1>
+  <p class="post-meta">12 min read · By the LeadCove team</p>
+
+  <div class="post-body">
+
+    <p>
+      Most prospecting advice stops at "make more calls." That's the easy part. The
+      hard part is the system that surrounds the calls — the part that decides which
+      leads ring first, what you say when they pick up, what happens when they don't,
+      and how a 30-second "I'm not interested" turns into a listing appointment four
+      weeks later.
+    </p>
+
+    <p>
+      This is the end-to-end playbook. Six stages, the conversion rates a working
+      agent should expect at each one, and the operational rules that hold the whole
+      thing together.
+    </p>
+
+    <h2>The funnel</h2>
+
+    <p>
+      Working backward from a closed deal helps you size every stage above it.
+      Here's the funnel for a typical solo agent running cold prospecting on
+      expireds, withdrawals, and FSBOs:
+    </p>
+
+    <div class="funnel">
+      <div class="funnel-row">
+        <div class="funnel-stage">List intake
+          <small>Properties pulled into the pipeline</small></div>
+        <div class="funnel-num">1,000</div>
+      </div>
+      <div class="funnel-row">
+        <div class="funnel-stage">Enriched / contactable
+          <small>Owner data found, DNC clean</small></div>
+        <div class="funnel-num">~700</div>
+      </div>
+      <div class="funnel-row">
+        <div class="funnel-stage">Conversations
+          <small>Live human, &gt;30 sec</small></div>
+        <div class="funnel-num">~150</div>
+      </div>
+      <div class="funnel-row">
+        <div class="funnel-stage">Interested / "tell me more"
+          <small>Qualified pipeline</small></div>
+        <div class="funnel-num">~30</div>
+      </div>
+      <div class="funnel-row">
+        <div class="funnel-stage">Listing appointments booked
+          <small>Calendar lock, signed agreement</small></div>
+        <div class="funnel-num">~10</div>
+      </div>
+      <div class="funnel-row">
+        <div class="funnel-stage">Closed deals
+          <small>Listing taken &amp; sold within 90 days</small></div>
+        <div class="funnel-num">2-3</div>
+      </div>
+    </div>
+
+    <p>
+      Numbers vary by market and by skill, but the shape is durable: every stage
+      drops by roughly 70-85%. <strong>If your funnel is collapsing harder than that
+      at any one stage, that's where to focus.</strong> Most agents burn cycles
+      optimizing the bottom of the funnel (objection handling) when the top is what's
+      actually broken (bad data, weak first 7 seconds).
+    </p>
+
+    <h2>Stage 1 · List intake</h2>
+
+    <p>
+      Three sources, in roughly this order of yield:
+    </p>
+
+    <ul>
+      <li><strong>MLS expireds, withdrawals, canceleds</strong> — homeowners with proof of intent to sell. Highest yield per call. Pull daily.</li>
+      <li><strong>FSBOs</strong> — public listings where the owner is selling without an agent. They've already self-identified.</li>
+      <li><strong>Targeted farm lists</strong> — high-equity, long-held properties in your geography. Cold but high lifetime value.</li>
+    </ul>
+
+    <p>
+      The single biggest mistake at this stage is <strong>too-large lists.</strong>
+      Pulling 500 expireds at once feels productive but you'll never call them
+      before they go stale. Pull what you can dial in 48 hours. That's it.
+    </p>
+
+    <h2>Stage 2 · Enrichment</h2>
+
+    <p>
+      A list of property addresses is not a list of prospects. You need:
+    </p>
+
+    <ul>
+      <li>Owner of record (current — within 30 days)</li>
+      <li>Both names if joint ownership</li>
+      <li>Mailing address (signals investor vs owner-occupant)</li>
+      <li>Phone numbers, ranked by recency</li>
+      <li>Email addresses where available</li>
+      <li>DNC + TCPA litigator flags</li>
+      <li>Equity / ownership-length signals</li>
+    </ul>
+
+    <p>
+      This stage should take you ~5 minutes of clock time per 100 rows — the system
+      does the work, you walk away. <strong>If you're hand-looking-up phone numbers
+      one at a time, this is the highest-leverage thing you can fix this week.</strong>
+      It's an order-of-magnitude productivity gain and there's no skill curve.
+    </p>
+
+    <div class="post-callout">
+      <p>
+        <strong>Skip the LLC rabbit hole.</strong> When the property is owned by an
+        LLC or trust, don't burn an hour on the corporate paperwork. Either your tool
+        surfaces the managing member automatically, or that lead is on the bottom of
+        the pile until you have time. Don't let one weird ownership structure derail
+        the dial window.
+      </p>
+    </div>
+
+    <h2>Stage 3 · Scoring &amp; triage</h2>
+
+    <p>
+      Not every enriched lead deserves the same energy. The simplest scoring model
+      that works:
+    </p>
+
+    <ul>
+      <li><strong>A · 80-100</strong>: high equity, owner-occupied, long-held, fresh expired/withdrawn signal — call <em>today</em></li>
+      <li><strong>B · 60-79</strong>: solid signal, mid-equity or remote owner — call within 48 hours</li>
+      <li><strong>C · 40-59</strong>: weaker signals but contactable — weekly batch</li>
+      <li><strong>Hold · 0-39</strong>: low equity, recent transfer, missing data — backlog only</li>
+    </ul>
+
+    <p>
+      The point of scoring isn't precision. It's <strong>protecting the first hour
+      of your dial window.</strong> Your first 20 calls of the day should always be
+      A-tier. That's where the conversation rate is highest, the morale is freshest,
+      and the marginal close is most likely.
+    </p>
+
+    <h2>Stage 4 · Outreach cadence</h2>
+
+    <p>
+      The rule of seven still holds: most prospects need <strong>5-7 touches</strong>
+      before they engage. A workable cadence:
+    </p>
+
+    <ol>
+      <li><strong>Day 0</strong> — Call. Voicemail if no answer. Texted "courtesy" follow-up if you have prior consent.</li>
+      <li><strong>Day 2</strong> — Call again. Different time of day. Voicemail.</li>
+      <li><strong>Day 5</strong> — Email with a market snapshot for their property.</li>
+      <li><strong>Day 10</strong> — Call. Different angle (price reduction insight, comp news).</li>
+      <li><strong>Day 18</strong> — Hand-written postcard or letter.</li>
+      <li><strong>Day 30</strong> — Final call. If still no engagement, demote to weekly batch.</li>
+    </ol>
+
+    <p>
+      Your dashboard should be doing the cadence math, not your memory. The lead
+      surfaces when it's time. If you're trying to hand-track who needs which touch
+      on which day, you've already lost.
+    </p>
+
+    <h2>Stage 5 · The conversation</h2>
+
+    <p>
+      Books have been written about scripts. Here's the compressed version:
+    </p>
+
+    <h3>The first 7 seconds</h3>
+
+    <p>
+      Lead with the property, not yourself. <em>"Hi, this is Maria — I'm following up
+      on the property at 1432 Sample Way."</em> You're a familiar voice talking about
+      something they care about. You're not a salesperson.
+    </p>
+
+    <h3>The next 30 seconds</h3>
+
+    <p>
+      Ask one direct, useful question. <em>"Are you still considering selling, or did
+      you decide to stay put?"</em> Both answers move the conversation forward. Don't
+      pitch yet.
+    </p>
+
+    <h3>The objection handling</h3>
+
+    <p>
+      Three responses cover 90% of objections:
+    </p>
+
+    <ul>
+      <li><strong>"Already have an agent."</strong> → "Totally understand. Out of curiosity — has the property been getting the showings you expected?" Then listen.</li>
+      <li><strong>"Not interested."</strong> → "Got it. If your situation changes, mind if I send a quick market snapshot once a quarter?" Get the email.</li>
+      <li><strong>"Take me off your list."</strong> → "Done. Thanks for your time." Mark DNC. Move on. Don't re-engage. Ever.</li>
+    </ul>
+
+    <p>
+      Notice what's missing from all three: there is no pitch, no product, no rate.
+      Cold prospecting at the conversation level is about <strong>buying the next
+      conversation</strong>, not closing the listing today.
+    </p>
+
+    <h2>Stage 6 · The listing appointment</h2>
+
+    <p>
+      Once you have a "tell me more" or a "yes, send the snapshot," the goal becomes
+      one thing: get on a calendar. In person if possible, video if not.
+    </p>
+
+    <p>
+      Three rules:
+    </p>
+
+    <ol>
+      <li><strong>Book within 48 hours</strong> — interest decays fast</li>
+      <li><strong>Confirm twice</strong> — the day before, and 30 minutes before</li>
+      <li><strong>Walk in with one thing they don't have</strong> — comp data they haven't seen, a buyer in mind, a marketing plan they didn't get from the last agent</li>
+    </ol>
+
+    <p>
+      This is where market expertise actually matters. The first five stages of the
+      funnel can all be operationalized — automated, scripted, scaled. The listing
+      appointment is human, judgment-driven, and unscalable. That's why it's the
+      highest-paying part of the job.
+    </p>
+
+    <h2>What the math says you should do this week</h2>
+
+    <p>
+      If you want 2-3 closed deals per quarter from cold prospecting, you need to
+      put roughly <strong>1,000 well-enriched leads through this funnel per quarter</strong>
+      — about 75 per week. That's a small list, daily, run all the way through.
+    </p>
+
+    <p>
+      Most agents fail at this not because the math is hard but because they let
+      operational drag eat the dial window. They source too much, enrich too little,
+      score nothing, follow no cadence, and then wonder why the funnel doesn't
+      produce.
+    </p>
+
+    <p>
+      Build the system once. Run it every day. The deals show up.
+    </p>
+
+  </div>
+</article>
+
+<section class="post-cta">
+  <h2>Run the playbook on autopilot.</h2>
+  <p>LeadCove handles intake, enrichment, scoring, and cadence. You handle the conversations.</p>
+  <div class="hero-ctas">
+    <a href="https://app.leadcove.io/" class="btn-primary btn-lg">Sign up</a>
+    <a href="https://app.leadcove.io/" class="btn-ghost btn-lg">Sign in</a>
+  </div>
+</section>
+
+<div class="footer-wrap">
+<footer class="footer">
+  <div class="footer-col">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <path d="M3 26 C 8 22, 14 22, 20 26 C 26 30, 32 30, 37 26" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+        <path d="M3 32 C 8 28, 14 28, 20 32 C 26 36, 32 36, 37 32" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" opacity="0.5"/>
+        <circle cx="30" cy="14" r="3" fill="currentColor"/>
+      </svg>
+      <span class="brand-wordmark">LeadCove</span>
+    </div>
+    <p class="footer-tag">The lead layer beneath your CRM.</p>
+  </div>
+  <div class="footer-col">
+    <h5>Product</h5>
+    <a href="/#how">How it works</a>
+    <a href="/#features">Features</a>
+    <a href="/#tour">Tour</a>
+    <a href="/#pricing">Pricing</a>
+    <a href="/#faq">FAQ</a>
+  </div>
+  <div class="footer-col">
+    <h5>Account</h5>
+    <a href="https://app.leadcove.io/">Sign in</a>
+    <a href="https://app.leadcove.io/">Sign up</a>
+    <a href="/about.html">About</a>
+    <a href="/blog/">Field notes</a>
+    <a href="mailto:hello@leadcove.io">hello@leadcove.io</a>
+  </div>
+  <div class="footer-col">
+    <h5>Legal</h5>
+    <a href="/terms.html">Terms of Service</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/tcpa.html">TCPA &amp; DNC</a>
+  </div>
+  <div class="footer-bar">
+    © 2026 LeadCove · a brand owned by Miami Metro LLC · <a href="mailto:hello@leadcove.io" style="color:inherit;text-decoration:underline">hello@leadcove.io</a>
+  </div>
+</footer>
+</div>
+
+</body>
+</html>

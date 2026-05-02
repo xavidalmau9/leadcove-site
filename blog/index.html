@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Field Notes · LeadCove</title>
+<meta name="description" content="Practical playbooks for real estate agents who want to stop being data-entry clerks and start closing more deals. Written by working agents." />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" href="/favicon.svg" />
+<meta name="theme-color" content="#0B2545" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css" />
+<style>
+  /* Blog index — three-card grid that mirrors the home page's
+     pricing/features cards stylistically so the blog feels native
+     to the rest of the marketing site, not a bolted-on subdomain.
+     Cards collapse to a single column under 720px. */
+  .blog-hero {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 64px 40px 24px;
+    text-align: center;
+  }
+  .blog-eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal-2);
+    margin: 0 0 14px;
+  }
+  .blog-title {
+    font-family: var(--f-display);
+    font-weight: 600;
+    font-size: clamp(36px, 4.4vw, 56px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--navy);
+    margin: 0 0 18px;
+  }
+  .blog-lede {
+    font-size: 18px;
+    line-height: 1.55;
+    color: var(--ink-2);
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .blog-grid {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 32px 40px 80px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .blog-card {
+    background: var(--card);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-md);
+    padding: 28px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  }
+  .blog-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(14,159,149,0.40);
+  }
+  .blog-card-tag {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: var(--teal-2);
+    margin: 0 0 10px;
+  }
+  .blog-card h3 {
+    font-family: var(--f-display);
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 1.18;
+    letter-spacing: -0.01em;
+    color: var(--navy);
+    margin: 0 0 12px;
+  }
+  .blog-card p {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink-2);
+    margin: 0 0 18px;
+  }
+  .blog-card-meta {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .blog-card-link {
+    color: var(--teal-2);
+    font-weight: 600;
+  }
+  .blog-card a.blog-card-cover {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+  @media (max-width: 920px) {
+    .blog-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 640px) {
+    .blog-grid { grid-template-columns: 1fr; padding: 24px 24px 56px; }
+    .blog-hero { padding: 48px 24px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Same nav as home + about so navigation stays continuous. -->
+<header class="nav">
+  <a class="brand" href="/">
+    <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+      <path d="M3 26 C 8 22, 14 22, 20 26 C 26 30, 32 30, 37 26" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+      <path d="M3 32 C 8 28, 14 28, 20 32 C 26 36, 32 36, 37 32" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" opacity="0.5"/>
+      <circle cx="30" cy="14" r="3" fill="currentColor"/>
+    </svg>
+    <span class="brand-wordmark">LeadCove</span>
+  </a>
+  <nav class="nav-links">
+    <a href="/#how">How it works</a>
+    <a href="/#features">Features</a>
+    <a href="/#tour">Tour</a>
+    <a href="/#pricing">Pricing</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/about.html">About</a>
+    <a href="/blog/" class="active">Field notes</a>
+  </nav>
+  <div class="nav-cta">
+    <a href="https://app.leadcove.io/" class="btn-ghost">Sign in</a>
+    <a href="https://app.leadcove.io/" class="btn-primary">Sign up</a>
+  </div>
+</header>
+
+<!-- ─── Hero ─────────────────────────────────────────────────────── -->
+<section class="blog-hero">
+  <p class="blog-eyebrow">Field notes</p>
+  <h1 class="blog-title">Playbooks from working agents.</h1>
+  <p class="blog-lede">
+    No fluff. No "10 ways to crush your goals." Just the unglamorous, hard-won
+    operational habits that turn a list of addresses into closed deals.
+  </p>
+</section>
+
+<!-- ─── Articles ─────────────────────────────────────────────────── -->
+<section class="blog-grid" aria-label="Articles">
+
+  <article class="blog-card">
+    <a class="blog-card-cover" href="/blog/save-15-hours-a-week-on-prospecting.html">
+      <p class="blog-card-tag">Workflow</p>
+      <h3>How top agents save 15+ hours a week on prospecting</h3>
+      <p>
+        The real bottleneck in cold outreach isn't the dialing — it's the prep work
+        nobody talks about. Here's the daily workflow we see top producers actually use.
+      </p>
+    </a>
+    <div class="blog-card-meta">
+      <span>9 min read</span>
+      <a class="blog-card-link" href="/blog/save-15-hours-a-week-on-prospecting.html">Read →</a>
+    </div>
+  </article>
+
+  <article class="blog-card">
+    <a class="blog-card-cover" href="/blog/hidden-cost-of-bad-lead-data.html">
+      <p class="blog-card-tag">Data</p>
+      <h3>The hidden cost of bad lead data</h3>
+      <p>
+        Wrong numbers, stale owners, mislabeled LLCs — every bad row taxes your day twice:
+        once when you dial it, again when it tanks your morale. Here's how to see the
+        real cost and shut it down.
+      </p>
+    </a>
+    <div class="blog-card-meta">
+      <span>7 min read</span>
+      <a class="blog-card-link" href="/blog/hidden-cost-of-bad-lead-data.html">Read →</a>
+    </div>
+  </article>
+
+  <article class="blog-card">
+    <a class="blog-card-cover" href="/blog/from-cold-list-to-closed-deal.html">
+      <p class="blog-card-tag">Playbook</p>
+      <h3>From cold list to closed deal: a playbook</h3>
+      <p>
+        The full pipeline — list intake, owner enrichment, scoring, outreach cadence,
+        objection handling, listing appointment. End-to-end, with the numbers a working
+        agent should expect at each stage.
+      </p>
+    </a>
+    <div class="blog-card-meta">
+      <span>12 min read</span>
+      <a class="blog-card-link" href="/blog/from-cold-list-to-closed-deal.html">Read →</a>
+    </div>
+  </article>
+
+</section>
+
+<!-- ─── Footer (mirrors home page) ───────────────────────────────── -->
+<div class="footer-wrap">
+<footer class="footer">
+  <div class="footer-col">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <path d="M3 26 C 8 22, 14 22, 20 26 C 26 30, 32 30, 37 26" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+        <path d="M3 32 C 8 28, 14 28, 20 32 C 26 36, 32 36, 37 32" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" opacity="0.5"/>
+        <circle cx="30" cy="14" r="3" fill="currentColor"/>
+      </svg>
+      <span class="brand-wordmark">LeadCove</span>
+    </div>
+    <p class="footer-tag">The lead layer beneath your CRM.</p>
+  </div>
+  <div class="footer-col">
+    <h5>Product</h5>
+    <a href="/#how">How it works</a>
+    <a href="/#features">Features</a>
+    <a href="/#tour">Tour</a>
+    <a href="/#pricing">Pricing</a>
+    <a href="/#faq">FAQ</a>
+  </div>
+  <div class="footer-col">
+    <h5>Account</h5>
+    <a href="https://app.leadcove.io/">Sign in</a>
+    <a href="https://app.leadcove.io/">Sign up</a>
+    <a href="/about.html">About</a>
+    <a href="/blog/">Field notes</a>
+    <a href="mailto:hello@leadcove.io">hello@leadcove.io</a>
+  </div>
+  <div class="footer-col">
+    <h5>Legal</h5>
+    <a href="/terms.html">Terms of Service</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/tcpa.html">TCPA &amp; DNC</a>
+  </div>
+  <div class="footer-bar">
+    © 2026 LeadCove · a brand owned by Miami Metro LLC · <a href="mailto:hello@leadcove.io" style="color:inherit;text-decoration:underline">hello@leadcove.io</a>
+  </div>
+</footer>
+</div>
+
+</body>
+</html>
