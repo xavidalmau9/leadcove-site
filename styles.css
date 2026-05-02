@@ -72,8 +72,19 @@ a:hover { color: var(--teal); }
 }
 .btn-primary { background: var(--navy); color: #fff; box-shadow: var(--shadow-sm); }
 .btn-primary:hover { background: var(--navy-2); transform: translateY(-1px); box-shadow: var(--shadow-md); color: #fff; }
-.btn-ghost { background: transparent; color: var(--ink); border-color: var(--hairline); }
-.btn-ghost:hover { border-color: var(--navy); color: var(--navy); }
+/* btn-ghost — Sign-in companion to Sign-up. Per Xavi 2026-05-02:
+   "you cannot just have the outline for a button with same color
+   inside as outside, not good enough." Filled white bg + navy
+   border + navy text — reads as a true secondary button, distinct
+   from Sign up's navy-filled primary, both visible on cream hero
+   bg. On dark backgrounds (the .cta section) the .cta override
+   below takes precedence. */
+.btn-ghost {
+  background: #fff;
+  color: var(--navy);
+  border-color: var(--navy);
+}
+.btn-ghost:hover { background: var(--navy); color: #fff; }
 .btn-lg { padding: 13px 22px; font-size: 15px; border-radius: 12px; }
 .btn-full { width: 100%; }
 
@@ -622,10 +633,16 @@ a:hover { color: var(--teal); }
 .mock-key-tier-b { background: rgba(245,185,58,0.20); color: #f5b93a; }
 
 /* ── Bands (generic section wrapper) ────────────────────────────── */
+/* Symmetric padding (Xavi 2026-05-02 — "should be equal top/bottom").
+   Was 96/96 — visually too generous, sections felt over-spaced and
+   the page read as long-er than necessary. Tightened to 64/64 across
+   the board. .band-tight kept smaller for the hero-adjacent plans
+   block. Section-sub margin-bottom reduced 48→32 for tighter heading
+   stacks. */
 .band {
   max-width: 1240px;
   margin: 0 auto;
-  padding: 96px 40px;
+  padding: 64px 40px;
 }
 .band + .band { border-top: 1px solid var(--hairline); }
 
@@ -727,7 +744,7 @@ a:hover { color: var(--teal); }
   max-width: 720px;
 }
 .section-sub {
-  color: var(--ink-2); font-size: 16px; max-width: 660px; margin: 0 0 48px;
+  color: var(--ink-2); font-size: 16px; max-width: 660px; margin: 0 0 32px;
 }
 
 /* ── Problem ────────────────────────────────────────────────────── */
@@ -1027,7 +1044,7 @@ a:hover { color: var(--teal); }
    under the hero per Xavi 2026-04-29. Tighter top padding than a
    normal .band so the plans don't feel disconnected from the hero
    pitch above. */
-.band-tight { padding-top: 40px; padding-bottom: 56px; }
+.band-tight { padding-top: 40px; padding-bottom: 40px; }
 .plans-hero { background: #fff; }
 .plans-hero .section-eyebrow,
 .plans-hero .section-title,
@@ -1862,7 +1879,7 @@ a:hover { color: var(--teal); }
 .faq details p { margin: 12px 0 0; color: var(--ink-2); font-size: 15px; }
 
 /* ── CTA / Waitlist ─────────────────────────────────────────────── */
-.cta { background: var(--navy); max-width: none; color: #fff; padding: 80px 40px; }
+.cta { background: var(--navy); max-width: none; color: #fff; padding: 64px 40px; }
 .cta-inner { max-width: 720px; margin: 0 auto; text-align: center; }
 .cta-badge {
   display: inline-block;
@@ -1946,15 +1963,18 @@ a:hover { color: var(--teal); }
   justify-content: center;
   margin-bottom: 24px;
 }
+/* CTA Sign-in button — same "fill, not outline" rule as the hero
+   variant. White-alpha surface so it has visible weight on the dark
+   navy bg without competing with the brand-teal Sign up. */
 .cta .btn-ghost {
   color: #fff;
-  border-color: rgba(255, 255, 255, 0.4);
-  background: transparent;
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.12);
 }
 .cta .btn-ghost:hover {
-  color: #fff;
+  color: var(--navy);
   border-color: #fff;
-  background: rgba(255, 255, 255, 0.06);
+  background: #fff;
 }
 .cta .btn-primary {
   background: var(--teal);
