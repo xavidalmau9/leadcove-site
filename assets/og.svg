@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- Brand background — navy with subtle radial wash so the card has
+       depth at thumbnail size. -->
+  <defs>
+    <radialGradient id="bg" cx="35%" cy="40%" r="80%">
+      <stop offset="0%" stop-color="#13335f"/>
+      <stop offset="60%" stop-color="#0B2545"/>
+      <stop offset="100%" stop-color="#081a32"/>
+    </radialGradient>
+    <linearGradient id="wave1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0E9F95"/>
+      <stop offset="100%" stop-color="#13d4c5"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Decorative wave layer (LeadCove brand mark, scaled up + faded) -->
+  <g opacity="0.16" transform="translate(0, 480)">
+    <path d="M -50 60 C 200 0, 400 120, 600 60 C 800 0, 1000 120, 1250 60" stroke="url(#wave1)" stroke-width="3" fill="none"/>
+    <path d="M -50 100 C 200 40, 400 160, 600 100 C 800 40, 1000 160, 1250 100" stroke="url(#wave1)" stroke-width="3" fill="none" opacity="0.6"/>
+  </g>
+
+  <!-- Top-left brand lockup -->
+  <g transform="translate(72, 72)">
+    <svg width="56" height="56" viewBox="0 0 40 40" x="0" y="0">
+      <path d="M3 26 C 8 22, 14 22, 20 26 C 26 30, 32 30, 37 26" stroke="#0E9F95" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+      <path d="M3 32 C 8 28, 14 28, 20 32 C 26 36, 32 36, 37 32" stroke="#0E9F95" stroke-width="2.4" fill="none" stroke-linecap="round" opacity="0.5"/>
+      <circle cx="30" cy="14" r="3" fill="#0E9F95"/>
+    </svg>
+    <text x="76" y="42" fill="#fff" font-family="'Fraunces', Georgia, serif" font-size="38" font-weight="700" letter-spacing="-1">LeadCove</text>
+  </g>
+
+  <!-- Eyebrow -->
+  <text x="72" y="270" fill="#13d4c5" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="700" letter-spacing="3">REAL ESTATE PROSPECTING ON AUTOPILOT</text>
+
+  <!-- Headline -->
+  <text x="72" y="370" fill="#fff" font-family="'Fraunces', Georgia, serif" font-size="92" font-weight="700" letter-spacing="-2">More dials.</text>
+  <text x="72" y="470" fill="#13d4c5" font-family="'Fraunces', Georgia, serif" font-size="92" font-weight="700" letter-spacing="-2">Less prep.</text>
+
+  <!-- Footer URL -->
+  <text x="72" y="568" fill="#fff" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="500" opacity="0.75">leadcove.io</text>
+</svg>

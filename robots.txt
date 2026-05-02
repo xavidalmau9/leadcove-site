@@ -1,0 +1,16 @@
+# LeadCove · robots.txt
+# We want everything on the marketing site indexed.
+# The customer dashboard at app.leadcove.io and the operator dashboard
+# at admin.leadcove.io live on different hosts and have their own
+# robots policies.
+
+User-agent: *
+Allow: /
+
+# Auth-protected screenshots and brand-asset originals are technically
+# crawlable but should not appear as standalone search results.
+Disallow: /assets/brand/
+Disallow: /screenshots/
+Disallow: /_mockup_render/
+
+Sitemap: https://leadcove.io/sitemap.xml
