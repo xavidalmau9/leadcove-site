@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- LeadCove agent avatar — used as the support chat profile pic
+       in Crisp, as the operator avatar wherever needed. Brand wave
+       mark in white on the navy brand color. Crisp typically renders
+       avatars as circles, so the rounded-rect background falls behind
+       the auto-mask cleanly. -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#13335f"/>
+      <stop offset="100%" stop-color="#0B2545"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Solid background — works for both square and circle-cropped contexts -->
+  <rect width="512" height="512" fill="url(#bg)"/>
+
+  <!-- Brand wave mark, centered, scaled to ~64% of the avatar -->
+  <g transform="translate(56, 56) scale(10)">
+    <!-- Top wave — solid -->
+    <path d="M3 26 C 8 22, 14 22, 20 26 C 26 30, 32 30, 37 26"
+          stroke="#13d4c5" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+    <!-- Bottom wave — softer -->
+    <path d="M3 32 C 8 28, 14 28, 20 32 C 26 36, 32 36, 37 32"
+          stroke="#0E9F95" stroke-width="2.6" fill="none" stroke-linecap="round" opacity="0.75"/>
+    <!-- Buoy / sun -->
+    <circle cx="30" cy="14" r="3.2" fill="#13d4c5"/>
+  </g>
+</svg>
