@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Stop typing leads into Follow Up Boss · LeadCove</title>
+<meta name="description" content="Follow Up Boss is a great CRM. It doesn't enrich. Here's how to keep using FUB and stop hand-feeding it owner names, phones, and emails — one-click sync from LeadCove, every match auto-pushed." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://leadcove.io/blog/leadcove-and-follow-up-boss.html" />
+<meta property="og:title" content="Stop typing leads into Follow Up Boss" />
+<meta property="og:description" content="Follow Up Boss is a great CRM. It doesn't enrich. Here's how to keep using FUB and stop hand-feeding it." />
+<meta property="og:image" content="https://leadcove.io/assets/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:site_name" content="LeadCove" />
+<meta property="og:locale" content="en_US" />
+<meta property="article:author" content="LeadCove" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Stop typing leads into Follow Up Boss" />
+<meta name="twitter:description" content="Follow Up Boss is great. It doesn't enrich. Here's how to keep using FUB and stop hand-feeding it." />
+<meta name="twitter:image" content="https://leadcove.io/assets/og.png" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" href="/favicon.svg" />
+<meta name="theme-color" content="#0B2545" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css" />
+<style>
+  /* Article layout — same as save-15-hours sister post; narrow column,
+     generous line-height, no sidebar. Keeps the blog visually
+     consistent across all posts. */
+  .post {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 40px 40px;
+  }
+  .post-eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal-2);
+    margin: 0 0 14px;
+  }
+  .post h1 {
+    font-family: var(--f-display);
+    font-weight: 600;
+    font-size: clamp(34px, 4.2vw, 48px);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    color: var(--navy);
+    margin: 0 0 18px;
+  }
+  .post-meta {
+    font-size: 14px;
+    color: var(--muted);
+    margin: 0 0 36px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .post-meta strong { color: var(--ink-2); font-weight: 600; }
+  .post-body {
+    color: var(--ink-2);
+    font-size: 17px;
+    line-height: 1.72;
+  }
+  .post-body p { margin: 0 0 22px; }
+  .post-body strong { color: var(--navy); }
+  .post-body h2 {
+    font-family: var(--f-display);
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: var(--navy);
+    margin: 44px 0 14px;
+  }
+  .post-body h3 {
+    font-family: var(--f-sans);
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--navy);
+    margin: 28px 0 10px;
+  }
+  .post-body ul, .post-body ol {
+    padding-left: 22px;
+    margin: 0 0 22px;
+  }
+  .post-body li { margin: 0 0 8px; }
+  .post-body blockquote {
+    margin: 28px 0;
+    padding: 18px 22px;
+    border-left: 3px solid var(--teal);
+    background: rgba(14,159,149,0.06);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    font-style: italic;
+    color: var(--ink);
+  }
+  .post-body blockquote p:last-child { margin: 0; }
+  .post-callout {
+    margin: 36px 0;
+    padding: 22px 24px;
+    background: var(--sand);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(11,37,69,0.08);
+  }
+  .post-callout p { margin: 0; font-size: 15px; }
+  /* Step-numbered list — used to render the 4-step setup walkthrough.
+     Matches the home-page How-it-works visual without needing a new
+     class system. */
+  .post-steps {
+    counter-reset: step;
+    list-style: none;
+    padding: 0;
+    margin: 28px 0;
+  }
+  .post-steps li {
+    counter-increment: step;
+    position: relative;
+    padding: 14px 16px 14px 56px;
+    margin: 0 0 10px;
+    background: var(--sand);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(11,37,69,0.08);
+  }
+  .post-steps li::before {
+    content: counter(step);
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--teal);
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .post-cta {
+    background: var(--navy);
+    color: #fff;
+    text-align: center;
+    padding: 56px 40px;
+    margin-top: 24px;
+  }
+  .post-cta h2 {
+    font-family: var(--f-display);
+    font-weight: 600;
+    font-size: 28px;
+    margin: 0 0 12px;
+  }
+  .post-cta p {
+    color: rgba(255,255,255,0.75);
+    max-width: 520px;
+    margin: 0 auto 24px;
+  }
+  .post-cta .hero-ctas { justify-content: center; margin: 0; }
+  .post-cta .btn-primary {
+    background: var(--teal);
+    border-color: var(--teal);
+    color: #fff;
+  }
+  .post-cta .btn-primary:hover {
+    background: var(--teal-2);
+    border-color: var(--teal-2);
+  }
+  .post-cta .btn-ghost {
+    color: var(--navy);
+    background: #fff;
+    border-color: #fff;
+  }
+  .post-cta .btn-ghost:hover {
+    background: var(--teal);
+    color: #fff;
+    border-color: var(--teal);
+  }
+  .post-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+  .post-back:hover { color: var(--teal-2); }
+  @media (max-width: 640px) {
+    .post { padding: 40px 24px 24px; }
+    .post-body { font-size: 16px; }
+  }
+</style>
+<!-- Crisp support chat (Hugo AI + live ops). Loads async, no perf hit. -->
+<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="42ed026c-1c3c-432e-a4c8-fced861a42b2";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+</head>
+<body>
+
+<header class="nav">
+  <a class="brand" href="/">
+    <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+      <path d="M3 26 C 8 22, 14 22, 20 26 C 26 30, 32 30, 37 26" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+      <path d="M3 32 C 8 28, 14 28, 20 32 C 26 36, 32 36, 37 32" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" opacity="0.5"/>
+      <circle cx="30" cy="14" r="3" fill="currentColor"/>
+    </svg>
+    <span class="brand-wordmark">LeadCove</span>
+  </a>
+  <nav class="nav-links">
+    <a href="/#how">How it works</a>
+    <a href="/#features">Features</a>
+    <a href="/#tour">Tour</a>
+    <a href="/#pricing">Pricing</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/about.html">About</a>
+    <a href="/blog/" class="active">Blog</a>
+  </nav>
+  <div class="nav-cta">
+    <a href="https://app.leadcove.io/" class="btn-ghost">Sign in</a>
+    <a href="https://app.leadcove.io/#signup" class="btn-primary">Sign up</a>
+  </div>
+</header>
+
+<article class="post">
+  <a class="post-back" href="/blog/">← Blog</a>
+  <p class="post-eyebrow">Integrations</p>
+  <h1>Stop typing leads into Follow Up Boss.</h1>
+  <p class="post-meta">7 min read · By the LeadCove team</p>
+
+  <div class="post-body">
+
+    <p>
+      Most working agents we talk to already pay for Follow Up Boss. They like the
+      pipeline view, the action plans, the SmartLists, the texting. FUB is a great
+      CRM. <strong>It just doesn't enrich.</strong>
+    </p>
+
+    <p>
+      So agents end up doing one of two things, both bad. Either (1) they hand-type
+      every owner name and phone number into FUB after looking it up on three other
+      websites, or (2) they leave FUB half-empty and dial off a spreadsheet — which
+      defeats the entire point of paying for the CRM.
+    </p>
+
+    <p>
+      LeadCove plugs that gap. You bring a list of addresses. We deliver the owner data.
+      It auto-syncs to Follow Up Boss. You keep doing everything you already do in FUB —
+      action plans, SmartLists, follow-up cadences — except now there's actually
+      something <em>in</em> FUB to follow up on.
+    </p>
+
+    <h2>What FUB is great at — and what it doesn't do</h2>
+
+    <p>
+      Here's an honest breakdown of where FUB shines and where it leaves you stranded.
+    </p>
+
+    <h3>What Follow Up Boss is great at</h3>
+
+    <ul>
+      <li><strong>Pipeline management.</strong> Stages, deal value, expected close date.</li>
+      <li><strong>Action plans + automation.</strong> Auto-text on day 0, auto-email on day 3, follow-up reminder on day 7.</li>
+      <li><strong>SmartLists.</strong> "Show me everyone in Brickell who I haven't called in 14 days who isn't on Do Not Call." That kind of slicing.</li>
+      <li><strong>Team collaboration.</strong> Round-robin assignments, ownership rules, deal credit splits.</li>
+      <li><strong>Two-way text + email.</strong> Conversations live in the contact record, not your phone.</li>
+    </ul>
+
+    <h3>What Follow Up Boss does <em>not</em> do</h3>
+
+    <ul>
+      <li><strong>Source leads.</strong> FUB assumes you've already got contacts.</li>
+      <li><strong>Enrich addresses.</strong> Drop in a property, FUB doesn't know who owns it.</li>
+      <li><strong>Surface owner phone or email.</strong> Same gap — you have to find that data somewhere else.</li>
+      <li><strong>Unmask LLC / Trust / Corp owners.</strong> The exact properties that often have the most equity.</li>
+      <li><strong>Flag DNC and litigators.</strong> FUB stores the phone, doesn't tell you whether you can legally call it.</li>
+    </ul>
+
+    <p>
+      Notice the pattern: FUB manages contacts beautifully <em>once they exist.</em>
+      Everything before that — the part that turns a list of addresses into a contact
+      worth managing — is on you.
+    </p>
+
+    <h2>The setup (literally four steps)</h2>
+
+    <p>
+      One-time wiring. Five minutes start to finish, including the coffee break.
+    </p>
+
+    <ol class="post-steps">
+      <li>In Follow Up Boss, go to <strong>Admin → API → Create API Key</strong>. Name it "LeadCove" and copy the key.</li>
+      <li>In LeadCove, open <strong>Settings → Integrations → Follow Up Boss</strong>.</li>
+      <li>Paste the key. Click Connect. We test the credential and confirm.</li>
+      <li>That's it. Every lead you enrich from now on auto-pushes to FUB the moment owner data resolves.</li>
+    </ol>
+
+    <p>
+      No webhooks to configure, no Zapier, no developer time. The integration is
+      bidirectional: LeadCove rows deep-link to the FUB person record (one-click open
+      from your dashboard), and FUB knows where each contact came from.
+    </p>
+
+    <div class="post-callout">
+      <p>
+        <strong>Heads up:</strong> the FUB integration is included on Pro and Power
+        plans. If you're on the entry tier, upgrade in <strong>Settings → Plan</strong>
+        and the connection unlocks immediately — your existing API key keeps working,
+        no re-paste required.
+      </p>
+    </div>
+
+    <h2>What syncs (and what doesn't)</h2>
+
+    <p>
+      We push the data Follow Up Boss can actually use, in the format it expects. No
+      garbage fields, no forced custom-field mapping you have to maintain.
+    </p>
+
+    <h3>Pushed automatically on every enrichment</h3>
+
+    <ul>
+      <li><strong>Owner first + last name.</strong> Real human, even when the property is owned by an LLC, Trust, or Corp — we unmask the entity-behind-the-entity.</li>
+      <li><strong>Primary phone.</strong> Mobile preferred, landline as fallback.</li>
+      <li><strong>Email address.</strong> Best available match.</li>
+      <li><strong>Property address + custom fields.</strong> Years held, equity signal, list price (if known), property type.</li>
+      <li><strong>Lead source = "LeadCove".</strong> So your FUB SmartLists can carve out leads that came from us vs. cold MLS exports vs. open-house sign-ins.</li>
+      <li><strong>DNC and TCPA flags as tags.</strong> The compliance signal travels with the contact, so your action plan can branch — for example, skip auto-texts on DNC-flagged numbers.</li>
+      <li><strong>Joint-owner data.</strong> When a property has two named owners (spouses, business partners), we send both contact records linked to the same address.</li>
+    </ul>
+
+    <h3>What we don't push</h3>
+
+    <ul>
+      <li><strong>Raw vendor IDs.</strong> Internal-only. FUB stays clean.</li>
+      <li><strong>Excluded leads.</strong> PO boxes, generic mail-forwarding addresses, government-owned parcels — those never make it to your dashboard, let alone to FUB.</li>
+      <li><strong>Unenriched rows.</strong> If we couldn't deliver usable contact data on a row, it doesn't pollute your CRM with "Property Owner @ 123 Main St" placeholders. Garbage in, garbage out — we'd rather hold the row back than push junk.</li>
+    </ul>
+
+    <h2>The day-in-the-life</h2>
+
+    <p>
+      Here's what the integrated workflow actually looks like, end to end. This is
+      what we see top producers running today.
+    </p>
+
+    <h3>7:30 AM · Morning intake</h3>
+
+    <p>
+      Pull today's list — expireds, withdrawals, FSBOs, building canvass, whatever.
+      Drop the CSV into LeadCove. Hit enrich. Walk away.
+    </p>
+
+    <h3>7:45 AM · While you grab coffee</h3>
+
+    <p>
+      LeadCove enriches the list, scores each row A/B/C by equity and ownership
+      length, and pushes every match to Follow Up Boss as a new person record. Each
+      one tagged "LeadCove · YYYY-MM-DD" so it's easy to bulk-action later.
+    </p>
+
+    <h3>8:00 AM · Action plans fire</h3>
+
+    <p>
+      The new FUB contacts trip whatever action plan you've built — first text,
+      first email, follow-up reminder. The plan respects the DNC + TCPA tags we sent,
+      so you don't accidentally spam a litigator.
+    </p>
+
+    <h3>9:00 AM · Dial window</h3>
+
+    <p>
+      Open Follow Up Boss. Today's call list is already there: A-tier leads from
+      this morning's intake, plus yesterday's no-answers cycling back, plus
+      callbacks scheduled for today. You dial. The list doesn't have holes.
+    </p>
+
+    <h3>11:00 AM · Pipeline review</h3>
+
+    <p>
+      Conversation that went well? Move the FUB stage to "Listing appointment scheduled."
+      LeadCove sees the FUB stage change via deep-link tag and surfaces those leads in
+      your dashboard's <em>Interested</em> bucket too — so the prospecting view stays
+      synced with the CRM view.
+    </p>
+
+    <h2>Why we don't replace FUB</h2>
+
+    <p>
+      Plenty of agents who try LeadCove already have years of muscle memory in
+      Follow Up Boss. SmartLists they've built. Templates they've refined. Drip
+      sequences they've tuned over hundreds of contacts. Throwing all of that
+      away to migrate to a new CRM is a bad trade — even if the new CRM is great.
+    </p>
+
+    <p>
+      We built LeadCove to slot <em>underneath</em> FUB, not replace it. You keep
+      every workflow you've already invested in. We just stop the bleeding on the
+      one thing FUB doesn't do: turning addresses into deal-ready contacts at scale.
+    </p>
+
+    <p>
+      If you don't have a CRM yet, LeadCove also runs as a full prospecting CRM
+      out of the box — Mission Control, lead manager, pipeline, archive, analytics.
+      Same product, different starting point. But for the FUB users reading this:
+      keep using FUB. We complement it, we don't compete with it.
+    </p>
+
+    <h2>The bottom line</h2>
+
+    <p>
+      Follow Up Boss manages relationships. LeadCove creates them. The
+      five-minute integration between the two is the difference between a CRM
+      that's full of stale leads from 2024 and one that has a fresh, enriched list
+      hitting your morning dial window every single day.
+    </p>
+
+    <p>
+      Pull your next list. Drop it in. Watch FUB fill itself.
+    </p>
+
+  </div>
+</article>
+
+<section class="post-cta">
+  <h2>Stop hand-feeding your CRM.</h2>
+  <p>Connect Follow Up Boss in Settings, drop in your first list, and watch the contacts auto-populate. No copy-paste, no Zapier, no missing data.</p>
+  <div class="hero-ctas">
+    <a href="https://app.leadcove.io/#signup" class="btn-primary btn-lg">Sign up</a>
+    <a href="https://app.leadcove.io/" class="btn-ghost btn-lg">Sign in</a>
+  </div>
+</section>
+
+<div class="footer-wrap">
+<footer class="footer">
+  <div class="footer-col">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <path d="M3 26 C 8 22, 14 22, 20 26 C 26 30, 32 30, 37 26" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+        <path d="M3 32 C 8 28, 14 28, 20 32 C 26 36, 32 36, 37 32" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" opacity="0.5"/>
+        <circle cx="30" cy="14" r="3" fill="currentColor"/>
+      </svg>
+      <span class="brand-wordmark">LeadCove</span>
+    </div>
+    <p class="footer-tag">More dials. Less prep.</p>
+  </div>
+  <div class="footer-col">
+    <h5>Product</h5>
+    <a href="/#how">How it works</a>
+    <a href="/#features">Features</a>
+    <a href="/#tour">Tour</a>
+    <a href="/#plans">Pricing</a>
+    <a href="/#topups">Add-ons</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/about.html">About</a>
+    <a href="/blog/">Blog</a>
+  </div>
+  <div class="footer-col">
+    <h5>Account</h5>
+    <a href="https://app.leadcove.io/">Sign in</a>
+    <a href="https://app.leadcove.io/#signup">Sign up</a>
+    <a href="mailto:hello@leadcove.io">hello@leadcove.io</a>
+  </div>
+  <div class="footer-col">
+    <h5>Legal</h5>
+    <a href="/terms.html">Terms of Service</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/tcpa.html">TCPA &amp; DNC</a>
+  </div>
+  <div class="footer-bar">
+    © 2026 LeadCove · a brand owned by Miami Metro LLC · <a href="mailto:hello@leadcove.io" style="color:inherit;text-decoration:underline">hello@leadcove.io</a>
+  </div>
+</footer>
+</div>
+
+</body>
+</html>
