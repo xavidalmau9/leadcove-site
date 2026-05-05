@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Use LeadCove as your CRM — import existing leads, no enrichment needed · LeadCove</title>
+<meta name="description" content="Already have a list of leads with phone numbers and emails? You don't need to re-enrich anything. Import directly into LeadCove, organize by score and outreach status, work them like a proper CRM. Two-button preview lets you choose import-only or import-and-enrich on every upload." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://leadcove.io/blog/use-leadcove-as-your-crm.html" />
+<meta property="og:title" content="Use LeadCove as your CRM — import existing leads, no enrichment needed" />
+<meta property="og:description" content="Already have a list with phone numbers and emails? You don't need to re-enrich anything. Import directly, organize by score and outreach status, work them like a proper CRM." />
+<meta property="og:image" content="https://leadcove.io/screenshots/all-leads.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:site_name" content="LeadCove" />
+<meta property="og:locale" content="en_US" />
+<meta property="article:author" content="LeadCove" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Use LeadCove as your CRM — import existing leads, no enrichment needed" />
+<meta name="twitter:description" content="Already have leads with phone+email? Import directly, work them like a proper CRM. No credits spent on data you already provided." />
+<meta name="twitter:image" content="https://leadcove.io/screenshots/all-leads.png" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" href="/favicon.svg" />
+<meta name="theme-color" content="#0B2545" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css" />
+<style>
+  /* Article layout — same as sister posts (save-15-hours, FUB,
+     balanced-prospecting). Keeps the blog visually consistent. */
+  .post {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 40px 40px;
+  }
+  .post-eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal-2);
+    margin: 0 0 14px;
+  }
+  .post h1 {
+    font-family: var(--f-display);
+    font-weight: 600;
+    font-size: clamp(34px, 4.2vw, 48px);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    color: var(--navy);
+    margin: 0 0 18px;
+  }
+  .post-meta {
+    font-size: 14px;
+    color: var(--muted);
+    margin: 0 0 36px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .post-body {
+    color: var(--ink-2);
+    font-size: 17px;
+    line-height: 1.72;
+  }
+  .post-body p { margin: 0 0 22px; }
+  .post-body strong { color: var(--navy); }
+  .post-body h2 {
+    font-family: var(--f-display);
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: var(--navy);
+    margin: 44px 0 14px;
+  }
+  .post-body h3 {
+    font-family: var(--f-sans);
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--navy);
+    margin: 28px 0 10px;
+  }
+  .post-body ul, .post-body ol {
+    padding-left: 22px;
+    margin: 0 0 22px;
+  }
+  .post-body li { margin: 0 0 8px; }
+  .post-body code {
+    background: var(--sand);
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-size: 0.92em;
+    border: 1px solid rgba(11,37,69,0.06);
+  }
+  .post-body blockquote {
+    margin: 28px 0;
+    padding: 18px 22px;
+    border-left: 3px solid var(--teal);
+    background: rgba(14,159,149,0.06);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    font-style: italic;
+    color: var(--ink);
+  }
+  .post-body blockquote p:last-child { margin: 0; }
+  .post-callout {
+    margin: 36px 0;
+    padding: 22px 24px;
+    background: var(--sand);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(11,37,69,0.08);
+  }
+  .post-callout p { margin: 0; font-size: 15px; }
+  /* Screenshot figure — bordered, drop-shadowed, with a clean caption.
+     Wraps off article column on wide screens for visual breathing room. */
+  .post-figure {
+    margin: 32px 0;
+  }
+  .post-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--hairline);
+    box-shadow: 0 6px 24px rgba(11,37,69,0.10);
+  }
+  .post-figure figcaption {
+    margin-top: 10px;
+    font-size: 13px;
+    color: var(--muted);
+    text-align: center;
+    font-style: italic;
+  }
+  /* Two-up screenshot grid for cases where two views complement each other */
+  .post-figure-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 32px 0;
+  }
+  .post-figure-grid figure { margin: 0; }
+  .post-figure-grid img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--hairline);
+    box-shadow: 0 4px 16px rgba(11,37,69,0.08);
+  }
+  .post-figure-grid figcaption {
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--muted);
+    text-align: center;
+    font-style: italic;
+  }
+  @media (max-width: 720px) {
+    .post-figure-grid { grid-template-columns: 1fr; }
+  }
+  .post-cta {
+    background: var(--navy);
+    color: #fff;
+    text-align: center;
+    padding: 56px 40px;
+    margin-top: 24px;
+  }
+  .post-cta h2 {
+    font-family: var(--f-display);
+    font-weight: 600;
+    font-size: 28px;
+    margin: 0 0 12px;
+  }
+  .post-cta p {
+    color: rgba(255,255,255,0.75);
+    max-width: 520px;
+    margin: 0 auto 24px;
+  }
+  .post-cta .hero-ctas { justify-content: center; margin: 0; }
+  .post-cta .btn-primary {
+    background: var(--teal);
+    border-color: var(--teal);
+    color: #fff;
+  }
+  .post-cta .btn-primary:hover {
+    background: var(--teal-2);
+    border-color: var(--teal-2);
+  }
+  .post-cta .btn-ghost {
+    color: var(--navy);
+    background: #fff;
+    border-color: #fff;
+  }
+  .post-cta .btn-ghost:hover {
+    background: var(--teal);
+    color: #fff;
+    border-color: var(--teal);
+  }
+  .post-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+  .post-back:hover { color: var(--teal-2); }
+  @media (max-width: 640px) {
+    .post { padding: 40px 24px 24px; }
+    .post-body { font-size: 16px; }
+  }
+</style>
+<!-- Crisp support chat (Hugo AI + live ops). Loads async, no perf hit. -->
+<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="42ed026c-1c3c-432e-a4c8-fced861a42b2";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+</head>
+<body>
+
+<header class="nav">
+  <a class="brand" href="/">
+    <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+      <path d="M3 26 C 8 22, 14 22, 20 26 C 26 30, 32 30, 37 26" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+      <path d="M3 32 C 8 28, 14 28, 20 32 C 26 36, 32 36, 37 32" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" opacity="0.5"/>
+      <circle cx="30" cy="14" r="3" fill="currentColor"/>
+    </svg>
+    <span class="brand-wordmark">LeadCove</span>
+  </a>
+  <nav class="nav-links">
+    <a href="/#how">How it works</a>
+    <a href="/#features">Features</a>
+    <a href="/#tour">Tour</a>
+    <a href="/#pricing">Pricing</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/about.html">About</a>
+    <a href="/blog/" class="active">Blog</a>
+  </nav>
+  <div class="nav-cta">
+    <a href="https://app.leadcove.io/" class="btn-ghost">Sign in</a>
+    <a href="https://app.leadcove.io/#signup" class="btn-primary">Sign up</a>
+  </div>
+</header>
+
+<article class="post">
+  <a class="post-back" href="/blog/">← Blog</a>
+  <p class="post-eyebrow">CRM</p>
+  <h1>Use LeadCove as your CRM. Even if your leads are already enriched.</h1>
+  <p class="post-meta">7 min read · By the LeadCove team</p>
+
+  <div class="post-body">
+
+    <p>
+      A lot of agents we talk to already have their leads. They've spent
+      months collecting them — building canvasses, MLS exports, an old
+      FUB list, contacts a friend exported from a competing platform.
+      Phone numbers and emails already filled in. The data is there.
+    </p>
+
+    <p>
+      What they don't have is a system to <em>work</em> them. Their
+      leads live across three spreadsheets, two phones, and a CRM that
+      went unused after the trial expired. They want one place to
+      organize everything, track outreach, score by priority, and
+      actually move deals forward.
+    </p>
+
+    <p>
+      That's a CRM job. And LeadCove is built for it &mdash; not just for
+      enrichment.
+    </p>
+
+    <h2>Import once. No credits spent on data you already have.</h2>
+
+    <p>
+      Drop your CSV in. The upload preview reads your columns
+      automatically (it knows what "Owner Name," "Phone Number,"
+      "Email," and "Property Address" look like across just about
+      every export format an agent runs into). Then it shows you
+      exactly what's in the file:
+    </p>
+
+    <ul>
+      <li><strong>Total rows in your file.</strong></li>
+      <li><strong>How many already have contacts</strong> &mdash; phone or email already filled in. Those go straight into your dashboard. No credits, no waiting.</li>
+      <li><strong>How many need owner data surfaced</strong> &mdash; rows where you've got an address but no phone or email yet.</li>
+    </ul>
+
+    <p>
+      You get two buttons:
+    </p>
+
+    <ul>
+      <li><strong>Import only</strong> &mdash; saves every row to your dashboard right now. Zero credits used. If you decide later that you want to surface owner data for a specific lead, you click <strong>🔍 Enrich</strong> on that one lead. One click, one credit.</li>
+      <li><strong>Import + enrich</strong> &mdash; brings everything in AND immediately runs owner lookups on the rows that need it. Enriched rows that already have contacts in your CSV are skipped automatically &mdash; we never charge you for data you already provided.</li>
+    </ul>
+
+    <p>
+      Either way, the data is in your dashboard the moment the import
+      finishes. Usually a few seconds for a typical list.
+    </p>
+
+    <div class="post-callout">
+      <p>
+        <strong>The math.</strong> A 200-row CSV where 120 rows already
+        have phone numbers and 80 don't: <strong>Import only</strong>
+        uses 0 credits. <strong>Import + enrich</strong> uses 0 credits
+        for the 120 rows you already have, and bills you only for the
+        80 that needed a lookup. You're never charged for data you
+        already brought in.
+      </p>
+    </div>
+
+    <h2>What you get the moment your data lands</h2>
+
+    <p>
+      Your imported leads show up in <strong>All Leads</strong> &mdash;
+      fully searchable, filterable, sortable. Score, status, tier,
+      area, owner type, and every contact column from your CSV is
+      already populated.
+    </p>
+
+    <figure class="post-figure">
+      <img src="/screenshots/all-leads.png" alt="LeadCove All Leads view showing imported prospects with score, status, contact info, area, and outreach tracking columns." />
+      <figcaption>All Leads view &mdash; everything that came in from your CSV, plus scoring and outreach status surfaced automatically.</figcaption>
+    </figure>
+
+    <p>
+      Click any row to open the full lead modal &mdash; address details,
+      property data, owner info, phones, emails, and the timeline of
+      every touch you've made on that lead. From here you can call,
+      text, email, send a LinkedIn message, log a callback, or report
+      bad data &mdash; all without leaving the page.
+    </p>
+
+    <figure class="post-figure">
+      <img src="/screenshots/lead-modal.png" alt="LeadCove lead modal with property details, owner contacts, action buttons for call/SMS/email/LinkedIn, and the lead's full outreach history timeline." />
+      <figcaption>The lead modal &mdash; everything about a prospect in one place, every action one click away.</figcaption>
+    </figure>
+
+    <h2>Mission Control: your dashboard for "what should I work today?"</h2>
+
+    <p>
+      The first screen you see every morning isn't the lead table.
+      It's <strong>Mission Control</strong> &mdash; LeadCove's daily
+      workflow surface.
+    </p>
+
+    <ul>
+      <li><strong>Today's priority calls</strong> &mdash; A-tier leads that haven't been touched yet, surfaced in the order you should dial them.</li>
+      <li><strong>Yesterday's no-answers</strong> &mdash; cycled back automatically once enough time has passed to retry without being annoying.</li>
+      <li><strong>Today's callbacks</strong> &mdash; anyone you scheduled to follow up with today.</li>
+      <li><strong>Quick-jump pills</strong> for slicing the data: A-tier, Outreached today, Follow-up due, Interested, Raw.</li>
+    </ul>
+
+    <figure class="post-figure">
+      <img src="/screenshots/mission-control.png" alt="LeadCove Mission Control daily workflow surface showing priority calls, callbacks due today, recently outreached leads, and tier filters." />
+      <figcaption>Mission Control &mdash; "what should I work today" answered in three seconds.</figcaption>
+    </figure>
+
+    <h2>Outreach across four channels, tracked honestly</h2>
+
+    <p>
+      Every lead has four outreach buttons: <strong>📞 Call</strong>,
+      <strong>💬 SMS</strong>, <strong>✉️ Email</strong>, and
+      <strong>💼 LinkedIn</strong>. Each one is its own first-class
+      channel &mdash; with its own templates, its own status, and its
+      own history event in the lead's timeline.
+    </p>
+
+    <p>
+      Why does that matter? Because tracking lies if you can't
+      separate channels. If you send a LinkedIn message but it logs
+      as an SMS, every report that depends on "what's working" is
+      already wrong. Your "SMS sent" count is inflated, your LinkedIn
+      outreach is invisible. We built each channel separate so the
+      numbers always tell the truth.
+    </p>
+
+    <p>
+      Templates for SMS and LinkedIn live in a dedicated <strong>📝
+      Scripts</strong> tab in the sidebar. Edit them once, save, and
+      every future click on the SMS or LinkedIn button uses your
+      latest version. Two custom slots per channel let you save your
+      best-performing messages alongside the defaults.
+    </p>
+
+    <h2>Pipeline + outreach status, automatic</h2>
+
+    <p>
+      LeadCove tracks status changes for you. Call a lead and mark
+      "Interested" &mdash; status flips to Interested. Send an SMS &mdash;
+      status flips to "SMS sent." Send an email &mdash; "Email sent."
+      LinkedIn &mdash; "LinkedIn." The lead moves through your pipeline
+      without you maintaining anything by hand.
+    </p>
+
+    <figure class="post-figure">
+      <img src="/screenshots/priority-a.png" alt="LeadCove A-tier priority view showing high-equity, long-held, owner-occupied leads sorted by score for the day's outreach session." />
+      <figcaption>The A-tier view &mdash; the leads most likely to convert, ranked by the score every imported row receives automatically.</figcaption>
+    </figure>
+
+    <h2>Already on Follow Up Boss? Connect it.</h2>
+
+    <p>
+      If you're a Follow Up Boss user, LeadCove fits in <em>under</em>
+      FUB &mdash; not as a replacement. Connect once, and every lead
+      you enrich from then on auto-pushes to your FUB account with
+      owner name, phone, email, property details, and tags ready for
+      your existing action plans. (FUB integration is included on
+      Pro and Power plans.) See the <a href="/blog/leadcove-and-follow-up-boss.html">FUB integration walk-through</a> for the full setup.
+    </p>
+
+    <p>
+      If you don't have a CRM &mdash; LeadCove is your CRM. Same product,
+      different starting point. Mission Control, lead manager,
+      pipeline, archive, scripts, analytics, all of it.
+    </p>
+
+    <h2>What this looks like for an agent who already has leads</h2>
+
+    <p>
+      A typical week one for an agent migrating from spreadsheets:
+    </p>
+
+    <ol>
+      <li><strong>Day 1.</strong> Export every list you have to CSV. Drop them into LeadCove with <em>Import only</em>. Everything's in your dashboard, zero credits used.</li>
+      <li><strong>Day 1, afternoon.</strong> Sort All Leads by score. Run through the A-tier rows. The ones with phone numbers, you call. The ones missing contact data, click <em>Enrich</em> &mdash; one credit, owner data appears, you call.</li>
+      <li><strong>Day 2.</strong> Set up your <em>Scripts</em> tab. Personalize the SMS and LinkedIn templates. Two minutes of work that pays off every day after.</li>
+      <li><strong>Day 3+.</strong> Mission Control becomes your morning. Today's priorities, yesterday's no-answers, scheduled callbacks &mdash; all there. You stop opening spreadsheets.</li>
+    </ol>
+
+    <h2>The bottom line</h2>
+
+    <p>
+      You don't have to start from zero to use LeadCove. If you've
+      already got the contacts, bring them &mdash; we won't charge you
+      for what you already have. The value is in working them
+      properly: scoring, daily prioritization, multi-channel outreach
+      tracking, callback discipline, and a single place that's never
+      out of sync with itself.
+    </p>
+
+    <p>
+      Drop your list in. Pick <strong>Import only</strong>. Your CRM
+      is set up before you finish your coffee.
+    </p>
+
+  </div>
+</article>
+
+<section class="post-cta">
+  <h2>Bring your leads in. Stop juggling spreadsheets.</h2>
+  <p>Drop your CSV, click Import only, and your dashboard is ready &mdash; zero credits used, every column you imported preserved, every lead one click from a call.</p>
+  <div class="hero-ctas">
+    <a href="https://app.leadcove.io/#signup" class="btn-primary btn-lg">Sign up</a>
+    <a href="https://app.leadcove.io/" class="btn-ghost btn-lg">Sign in</a>
+  </div>
+</section>
+
+<div class="footer-wrap">
+<footer class="footer">
+  <div class="footer-col">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <path d="M3 26 C 8 22, 14 22, 20 26 C 26 30, 32 30, 37 26" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+        <path d="M3 32 C 8 28, 14 28, 20 32 C 26 36, 32 36, 37 32" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" opacity="0.5"/>
+        <circle cx="30" cy="14" r="3" fill="currentColor"/>
+      </svg>
+      <span class="brand-wordmark">LeadCove</span>
+    </div>
+    <p class="footer-tag">More dials. Less prep.</p>
+  </div>
+  <div class="footer-col">
+    <h5>Product</h5>
+    <a href="/#how">How it works</a>
+    <a href="/#features">Features</a>
+    <a href="/#tour">Tour</a>
+    <a href="/#plans">Pricing</a>
+    <a href="/#topups">Add-ons</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/about.html">About</a>
+    <a href="/blog/">Blog</a>
+  </div>
+  <div class="footer-col">
+    <h5>Account</h5>
+    <a href="https://app.leadcove.io/">Sign in</a>
+    <a href="https://app.leadcove.io/#signup">Sign up</a>
+    <a href="mailto:hello@leadcove.io">hello@leadcove.io</a>
+  </div>
+  <div class="footer-col">
+    <h5>Legal</h5>
+    <a href="/terms.html">Terms of Service</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/tcpa.html">TCPA &amp; DNC</a>
+  </div>
+  <div class="footer-bar">
+    © 2026 LeadCove · a brand owned by Miami Metro LLC · <a href="mailto:hello@leadcove.io" style="color:inherit;text-decoration:underline">hello@leadcove.io</a>
+  </div>
+</footer>
+</div>
+
+</body>
+</html>
