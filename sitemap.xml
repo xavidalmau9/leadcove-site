@@ -13,6 +13,14 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Integrations -->
+  <url>
+    <loc>https://leadcove.io/integrations/follow-up-boss.html</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Field notes (blog) -->
   <url>
     <loc>https://leadcove.io/blog/</loc>

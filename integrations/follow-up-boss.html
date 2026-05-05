@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Connect Follow Up Boss to LeadCove · 30-second setup</title>
+<meta name="description" content="Step-by-step instructions to connect Follow Up Boss to LeadCove. Paste your FUB API key once and every enriched lead auto-syncs to your FUB account — deduped, tagged, ready for your action plans." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://leadcove.io/integrations/follow-up-boss.html" />
+<meta property="og:title" content="Connect Follow Up Boss to LeadCove" />
+<meta property="og:description" content="30-second setup. Paste your FUB API key once and every enriched lead from LeadCove auto-pushes to Follow Up Boss." />
+<meta property="og:image" content="https://leadcove.io/assets/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:site_name" content="LeadCove" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Connect Follow Up Boss to LeadCove" />
+<meta name="twitter:description" content="30-second setup. Paste your FUB API key once and every enriched lead from LeadCove auto-pushes to Follow Up Boss." />
+<meta name="twitter:image" content="https://leadcove.io/assets/og.png" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" href="/favicon.svg" />
+<meta name="theme-color" content="#0B2545" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css" />
+<style>
+  /* Integration setup page — narrower than blog, action-oriented.
+     Borrows the blog post layout but swaps long-form prose for a
+     focused step-by-step walkthrough with inline screenshots. */
+  .post {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 40px 40px;
+  }
+  .post-eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal-2);
+    margin: 0 0 14px;
+  }
+  .post h1 {
+    font-family: var(--f-display);
+    font-weight: 600;
+    font-size: clamp(34px, 4.2vw, 48px);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    color: var(--navy);
+    margin: 0 0 18px;
+  }
+  .post-lede {
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--ink);
+    margin: 0 0 36px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .post-body {
+    color: var(--ink-2);
+    font-size: 17px;
+    line-height: 1.72;
+  }
+  .post-body p { margin: 0 0 22px; }
+  .post-body strong { color: var(--navy); }
+  .post-body h2 {
+    font-family: var(--f-display);
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: var(--navy);
+    margin: 44px 0 14px;
+  }
+  .post-body h3 {
+    font-family: var(--f-sans);
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--navy);
+    margin: 28px 0 10px;
+  }
+  .post-body ul, .post-body ol {
+    padding-left: 22px;
+    margin: 0 0 22px;
+  }
+  .post-body li { margin: 0 0 8px; }
+  .post-body code {
+    background: rgba(11,37,69,0.06);
+    color: var(--navy);
+    padding: 2px 7px;
+    border-radius: 5px;
+    font-size: 0.92em;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  /* Setup steps — large, numbered, with inline screenshots between
+     instructions and explanatory text. Built to work as a checklist. */
+  .setup-step {
+    position: relative;
+    margin: 32px 0;
+    padding: 24px 28px 24px 78px;
+    background: #fff;
+    border: 1px solid rgba(11,37,69,0.10);
+    border-radius: var(--radius-md);
+    box-shadow: 0 1px 2px rgba(11,37,69,0.04);
+  }
+  .setup-step::before {
+    content: attr(data-step);
+    position: absolute;
+    left: 22px;
+    top: 26px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--teal);
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .setup-step h3 {
+    margin: 0 0 8px;
+    font-size: 19px;
+    color: var(--navy);
+  }
+  .setup-step p { margin: 0 0 14px; font-size: 16px; }
+  .setup-step p:last-child { margin: 0; }
+  .setup-step-meta {
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: var(--sand);
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .setup-step-meta strong { color: var(--ink); }
+  .post-callout {
+    margin: 36px 0;
+    padding: 22px 24px;
+    background: var(--sand);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(11,37,69,0.08);
+  }
+  .post-callout p { margin: 0; font-size: 15px; }
+  .post-callout p + p { margin-top: 10px; }
+  .faq-item {
+    margin: 0 0 14px;
+    padding: 16px 20px;
+    background: #fff;
+    border: 1px solid rgba(11,37,69,0.10);
+    border-radius: var(--radius-sm);
+  }
+  .faq-item summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--navy);
+    font-size: 16px;
+    list-style: none;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::before {
+    content: '+';
+    display: inline-block;
+    width: 20px;
+    color: var(--teal-2);
+    font-weight: 700;
+  }
+  .faq-item[open] summary::before { content: '−'; }
+  .faq-item-body {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(11,37,69,0.08);
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--ink-2);
+  }
+  .faq-item-body p { margin: 0 0 10px; }
+  .faq-item-body p:last-child { margin: 0; }
+  .post-cta {
+    background: var(--navy);
+    color: #fff;
+    text-align: center;
+    padding: 56px 40px;
+    margin-top: 24px;
+  }
+  .post-cta h2 {
+    font-family: var(--f-display);
+    font-weight: 600;
+    font-size: 28px;
+    margin: 0 0 12px;
+  }
+  .post-cta p {
+    color: rgba(255,255,255,0.75);
+    max-width: 520px;
+    margin: 0 auto 24px;
+  }
+  .post-cta .hero-ctas { justify-content: center; margin: 0; }
+  .post-cta .btn-primary {
+    background: var(--teal);
+    border-color: var(--teal);
+    color: #fff;
+  }
+  .post-cta .btn-primary:hover {
+    background: var(--teal-2);
+    border-color: var(--teal-2);
+  }
+  .post-cta .btn-ghost {
+    color: var(--navy);
+    background: #fff;
+    border-color: #fff;
+  }
+  .post-cta .btn-ghost:hover {
+    background: var(--teal);
+    color: #fff;
+    border-color: var(--teal);
+  }
+  .post-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+  .post-back:hover { color: var(--teal-2); }
+  .integration-hero {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 0 0 24px;
+    padding: 18px 22px;
+    background: linear-gradient(135deg, #F0FBFA 0%, #E5F6F4 100%);
+    border: 1px solid #B5E3DE;
+    border-radius: var(--radius-md);
+  }
+  .integration-hero-logos {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    flex-shrink: 0;
+  }
+  .integration-hero-logos .arrow {
+    color: var(--teal);
+    font-size: 20px;
+  }
+  .integration-hero-text {
+    font-size: 14px;
+    color: var(--ink-2);
+    line-height: 1.5;
+  }
+  @media (max-width: 640px) {
+    .post { padding: 40px 24px 24px; }
+    .post-body { font-size: 16px; }
+    .setup-step { padding: 70px 22px 22px; }
+    .setup-step::before { left: 22px; top: 22px; }
+  }
+</style>
+<!-- Crisp support chat (Hugo AI + live ops). Loads async, no perf hit. -->
+<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="42ed026c-1c3c-432e-a4c8-fced861a42b2";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+</head>
+<body>
+
+<header class="nav">
+  <a class="brand" href="/">
+    <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+      <path d="M3 26 C 8 22, 14 22, 20 26 C 26 30, 32 30, 37 26" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+      <path d="M3 32 C 8 28, 14 28, 20 32 C 26 36, 32 36, 37 32" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" opacity="0.5"/>
+      <circle cx="30" cy="14" r="3" fill="currentColor"/>
+    </svg>
+    <span class="brand-wordmark">LeadCove</span>
+  </a>
+  <nav class="nav-links">
+    <a href="/#how">How it works</a>
+    <a href="/#features">Features</a>
+    <a href="/#tour">Tour</a>
+    <a href="/#pricing">Pricing</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/about.html">About</a>
+    <a href="/blog/">Blog</a>
+  </nav>
+  <div class="nav-cta">
+    <a href="https://app.leadcove.io/" class="btn-ghost">Sign in</a>
+    <a href="https://app.leadcove.io/#signup" class="btn-primary">Sign up</a>
+  </div>
+</header>
+
+<article class="post">
+  <a class="post-back" href="/">← Home</a>
+  <p class="post-eyebrow">Integration · Setup guide</p>
+  <h1>Connect Follow Up Boss to LeadCove.</h1>
+  <p class="post-lede">
+    A 30-second connection. Paste your Follow Up Boss API key once, and every
+    lead you enrich from that point forward auto-pushes into FUB &mdash; deduped
+    by phone or email, tagged with score and source so your SmartLists can pick
+    them up automatically.
+  </p>
+
+  <div class="post-body">
+
+    <div class="integration-hero">
+      <div class="integration-hero-logos">
+        <span aria-label="LeadCove">🌊</span>
+        <span class="arrow">→</span>
+        <span aria-label="Follow Up Boss">📇</span>
+      </div>
+      <div class="integration-hero-text">
+        <strong>LeadCove preps the contacts. Follow Up Boss runs the conversation.</strong>
+        Every newly enriched lead lands in your FUB account the instant owner
+        data resolves &mdash; with the phone, email, score, and tags pre-filled.
+      </div>
+    </div>
+
+    <h2>Before you start</h2>
+
+    <p>
+      You'll need an active Follow Up Boss account (any tier) and a LeadCove
+      account on the <strong>Pro</strong>, <strong>Power</strong>, or
+      <strong>House</strong> plan. If you're on Starter, upgrade in
+      <strong>Settings &rarr; Plan</strong> first &mdash; the integration unlocks
+      the moment your subscription updates.
+    </p>
+
+    <p>
+      Total time, start to finish: <strong>about 30 seconds</strong>, plus
+      whatever it takes you to log into both tabs.
+    </p>
+
+    <h2>Setup &mdash; three steps</h2>
+
+    <div class="setup-step" data-step="1">
+      <h3>Get your Follow Up Boss API key</h3>
+      <p>
+        In Follow Up Boss, go to
+        <strong>Admin &rarr; API &rarr; Create API Key</strong>. Name it
+        "LeadCove" so future-you remembers what it's for, and copy the key to
+        your clipboard.
+      </p>
+      <div class="setup-step-meta">
+        <strong>Direct link:</strong> <a href="https://app.followupboss.com/api" target="_blank" rel="noopener">app.followupboss.com/api</a>
+      </div>
+    </div>
+
+    <div class="setup-step" data-step="2">
+      <h3>Paste it into LeadCove</h3>
+      <p>
+        In LeadCove, click <strong>&#x2699; Settings</strong> in the top right,
+        scroll down to the <strong>&#x1F4C7; Follow Up Boss</strong> section,
+        and paste your API key. Click <strong>Connect FUB</strong>.
+      </p>
+      <p>
+        We test the credential against your FUB account before saving. Invalid
+        keys get rejected with a clear error message &mdash; you won't end up
+        with a half-connected state that fails silently later.
+      </p>
+    </div>
+
+    <div class="setup-step" data-step="3">
+      <h3>You're done. Try it.</h3>
+      <p>
+        Drop a CSV into LeadCove (or click <strong>Enrich</strong> on a single
+        lead). The instant owner data resolves, that contact appears in your
+        Follow Up Boss account &mdash; deduped by phone/email if FUB already
+        had a similar record, otherwise created fresh.
+      </p>
+      <p>
+        Each pushed contact carries tags so you can SmartList in FUB the same
+        way you filter in LeadCove: source, lead-source, list name, score
+        tier, score, property type, equity percentage, and years held.
+      </p>
+    </div>
+
+    <div class="post-callout">
+      <p>
+        <strong>Verifying the connection worked:</strong> after your first
+        enrichment, refresh your Follow Up Boss People view. The new contact
+        will be there, tagged with <code>leadcove</code> at minimum (plus all
+        the LeadCove-specific tags). If you don't see it within 30 seconds,
+        jump to the troubleshooting section below.
+      </p>
+    </div>
+
+    <h2>What gets synced</h2>
+
+    <p>
+      The integration pushes <strong>new enrichments forward from the moment
+      you connect</strong>. Existing data in either tool stays right where it
+      is &mdash; we don't migrate, overwrite, or modify your historical FUB
+      contacts.
+    </p>
+
+    <h3>What gets pushed on each enrichment</h3>
+
+    <ul>
+      <li><strong>Owner first + last name</strong> &mdash; including the real person behind LLC / Trust / Corp ownership.</li>
+      <li><strong>Primary phone</strong> &mdash; mobile preferred, landline as fallback.</li>
+      <li><strong>Email address</strong> &mdash; best available match.</li>
+      <li><strong>Property address</strong> &mdash; full street + city + state + ZIP.</li>
+      <li><strong>Joint-owner data</strong> &mdash; when a property has two named owners (spouses, business partners), both contacts go in linked to the same address.</li>
+      <li><strong>Tags</strong> &mdash; <code>leadcove</code>, <code>source:&lt;label&gt;</code>, <code>lead-source:&lt;raw&gt;</code>, <code>list:&lt;name&gt;</code>, <code>tier:&lt;A|B|C|Hold&gt;</code>, <code>score:&lt;N&gt;</code>, <code>type:&lt;property type&gt;</code>, <code>equity:&lt;N&gt;%</code>, <code>held:&lt;N&gt;y</code>.</li>
+    </ul>
+
+    <h3>What we don't push</h3>
+
+    <ul>
+      <li><strong>Rows we couldn't enrich.</strong> If a lead didn't return usable contact data, it stays in LeadCove only &mdash; no "Property Owner @ 123 Main St" placeholders polluting your FUB account.</li>
+      <li><strong>Excluded rows.</strong> PO boxes, generic mail-forwarding addresses, government-owned parcels &mdash; filtered out before they reach your dashboard, let alone FUB.</li>
+      <li><strong>DNC / TCPA-flagged contacts.</strong> Surfaced inside LeadCove but never pushed to FUB &mdash; you decide how to handle them.</li>
+    </ul>
+
+    <h2>Manual sync &mdash; for the leads you already enriched</h2>
+
+    <p>
+      Auto-sync only fires on <strong>new</strong> enrichments after you
+      connect. For leads already enriched in LeadCove (before you wired up
+      FUB), use one of three manual sync surfaces:
+    </p>
+
+    <ul>
+      <li><strong>Per-list</strong> &mdash; click the &#x1F4C7; icon next to any list in your sidebar to push every enriched lead in that list to FUB.</li>
+      <li><strong>All Leads</strong> &mdash; the &#x1F4C7; <em>Sync to FUB</em> button in the All Leads page header pushes everything.</li>
+      <li><strong>Selected leads</strong> &mdash; check the boxes on specific rows, then use the <strong>&#x1F4C7; Sync to FUB</strong> button in the bulk-action bar.</li>
+    </ul>
+
+    <p>
+      All three surfaces are <strong>idempotent</strong> &mdash; already-synced
+      rows are skipped automatically (we know because each row gets stamped
+      with its FUB contact ID after the first push). You can re-run a sync as
+      many times as you want without creating duplicate FUB contacts.
+    </p>
+
+    <h2>Troubleshooting</h2>
+
+    <details class="faq-item">
+      <summary>I pasted my key but the connection failed.</summary>
+      <div class="faq-item-body">
+        <p>
+          Double-check that you copied the full key from FUB &mdash; they're
+          long, and a partial paste won't validate. The Settings drawer will
+          show the validation error verbatim, which tells you whether the key
+          is malformed, expired, or rejected by FUB's API.
+        </p>
+        <p>
+          If you regenerate the key in FUB, paste the new one and click
+          <strong>Update</strong> &mdash; we replace the old credential and
+          the integration picks up immediately.
+        </p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>I enriched a lead but don't see it in FUB.</summary>
+      <div class="faq-item-body">
+        <p>
+          A few things to check, in order: (1) was the enrichment successful
+          &mdash; i.e. did LeadCove actually find a phone or email for the
+          owner? Auto-sync only fires when there's contact data to push.
+          (2) Is your FUB filter view showing all contacts? Sometimes a
+          SmartList narrows the view past where the new contact would appear.
+          (3) Search FUB by the property address &mdash; the new contact may
+          have been deduped into an existing FUB person record.
+        </p>
+        <p>
+          If none of those explain it, refresh the LeadCove dashboard and
+          check Settings &rarr; Follow Up Boss &mdash; the
+          <em>Last sync</em> timestamp tells you when the most recent push
+          happened.
+        </p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Will this create duplicate contacts in my FUB account?</summary>
+      <div class="faq-item-body">
+        <p>
+          No. The integration uses FUB's deduplication (by phone and email)
+          on every push. If we find a contact for a property whose owner is
+          already in your FUB account, we update that existing record instead
+          of creating a duplicate.
+        </p>
+        <p>
+          We also stamp the LeadCove row with the FUB contact ID after each
+          push, so re-running a sync is a no-op for already-synced rows.
+        </p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Can I disconnect later?</summary>
+      <div class="faq-item-body">
+        <p>
+          Yes. <strong>Settings &rarr; Follow Up Boss &rarr; Disconnect</strong>
+          removes the API key from LeadCove. Your existing FUB contacts stay
+          right where they are &mdash; we never touch them on disconnect. Only
+          new enrichments stop auto-pushing.
+        </p>
+        <p>
+          You can reconnect any time by pasting the key again.
+        </p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Does my FUB account need a specific plan?</summary>
+      <div class="faq-item-body">
+        <p>
+          No. The integration works on any FUB plan that exposes the API
+          (which is all of them). The plan-tier requirement is on the
+          <em>LeadCove</em> side: you need to be on Pro, Power, or House to
+          connect.
+        </p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Is the API key stored securely?</summary>
+      <div class="faq-item-body">
+        <p>
+          Yes. Keys are encrypted at rest in our database, never logged in
+          plaintext, and only decrypted in-memory when a sync fires. We never
+          send your key to any third party other than the FUB API itself.
+        </p>
+      </div>
+    </details>
+
+    <h2>Want the full story?</h2>
+
+    <p>
+      For the longer narrative on how LeadCove and Follow Up Boss are designed
+      to work together &mdash; and what an integrated day-in-the-life looks
+      like for a working agent &mdash; read our
+      <a href="/blog/leadcove-and-follow-up-boss.html">Send enriched leads
+      straight to Follow Up Boss</a> blog post.
+    </p>
+
+  </div>
+</article>
+
+<section class="post-cta">
+  <h2>Ready to fill your FUB account automatically?</h2>
+  <p>Sign in, paste your key, and watch the contacts auto-populate. No copy-paste, no Zapier, no missing data.</p>
+  <div class="hero-ctas">
+    <a href="https://app.leadcove.io/" class="btn-primary btn-lg">Open LeadCove &amp; connect</a>
+    <a href="https://app.leadcove.io/#signup" class="btn-ghost btn-lg">Sign up</a>
+  </div>
+</section>
+
+<div class="footer-wrap">
+<footer class="footer">
+  <div class="footer-col">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <path d="M3 26 C 8 22, 14 22, 20 26 C 26 30, 32 30, 37 26" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+        <path d="M3 32 C 8 28, 14 28, 20 32 C 26 36, 32 36, 37 32" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" opacity="0.5"/>
+        <circle cx="30" cy="14" r="3" fill="currentColor"/>
+      </svg>
+      <span class="brand-wordmark">LeadCove</span>
+    </div>
+    <p class="footer-tag">More dials. Less prep.</p>
+  </div>
+  <div class="footer-col">
+    <h5>Product</h5>
+    <a href="/#how">How it works</a>
+    <a href="/#features">Features</a>
+    <a href="/#tour">Tour</a>
+    <a href="/#plans">Pricing</a>
+    <a href="/#topups">Add-ons</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/about.html">About</a>
+    <a href="/blog/">Blog</a>
+  </div>
+  <div class="footer-col">
+    <h5>Account</h5>
+    <a href="https://app.leadcove.io/">Sign in</a>
+    <a href="https://app.leadcove.io/#signup">Sign up</a>
+    <a href="mailto:hello@leadcove.io">hello@leadcove.io</a>
+  </div>
+  <div class="footer-col">
+    <h5>Legal</h5>
+    <a href="/terms.html">Terms of Service</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/tcpa.html">TCPA &amp; DNC</a>
+  </div>
+  <div class="footer-bar">
+    © 2026 LeadCove · a brand owned by Miami Metro LLC · <a href="mailto:hello@leadcove.io" style="color:inherit;text-decoration:underline">hello@leadcove.io</a>
+  </div>
+</footer>
+</div>
+
+</body>
+</html>
