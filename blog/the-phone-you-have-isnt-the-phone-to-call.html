@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>The phone you have isn't the phone you should call · LeadCove</title>
+<meta name="description" content="Even when your prospect list already has phone numbers, enriching it pays for itself the first time you avoid dialing a DNC number. Here's a real case from a Florida agent that cost one credit and saved a $1,500 TCPA fine." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://leadcove.io/blog/the-phone-you-have-isnt-the-phone-to-call.html" />
+<meta property="og:title" content="The phone you have isn't the phone you should call" />
+<meta property="og:description" content="Why enrichment is worth the credit — even when your CSV already has a phone number. Real case: 1 credit spent, 1 DNC trap avoided, 2 emails + a second phone unlocked." />
+<meta property="og:image" content="https://leadcove.io/assets/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:site_name" content="LeadCove" />
+<meta property="og:locale" content="en_US" />
+<meta property="article:author" content="LeadCove" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="The phone you have isn't the phone you should call" />
+<meta name="twitter:description" content="A real Florida agent's enrichment story: 1 credit spent, 1 DNC trap avoided, 2 emails + a second phone unlocked. Why CSV phones aren't enough." />
+<meta name="twitter:image" content="https://leadcove.io/assets/og.png" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" href="/favicon.svg" />
+<meta name="theme-color" content="#0B2545" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css" />
+<style>
+  .post { max-width: 720px; margin: 0 auto; padding: 56px 40px 40px; }
+  .post-eyebrow {
+    font-size: 12px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--teal-2); margin: 0 0 14px;
+  }
+  .post h1 {
+    font-family: var(--f-display); font-weight: 600;
+    font-size: clamp(34px, 4.2vw, 48px); line-height: 1.08;
+    letter-spacing: -0.02em; color: var(--navy); margin: 0 0 18px;
+  }
+  .post-meta {
+    font-size: 14px; color: var(--muted); margin: 0 0 36px;
+    padding-bottom: 24px; border-bottom: 1px solid var(--hairline);
+  }
+  .post-meta strong { color: var(--ink-2); font-weight: 600; }
+  .post-body { color: var(--ink-2); font-size: 17px; line-height: 1.72; }
+  .post-body p { margin: 0 0 22px; }
+  .post-body strong { color: var(--navy); }
+  .post-body h2 {
+    font-family: var(--f-display); font-weight: 600;
+    font-size: 28px; line-height: 1.2; letter-spacing: -0.01em;
+    color: var(--navy); margin: 44px 0 14px;
+  }
+  .post-body h3 {
+    font-family: var(--f-sans); font-weight: 700;
+    font-size: 18px; color: var(--navy); margin: 28px 0 10px;
+  }
+  .post-body ul, .post-body ol { padding-left: 22px; margin: 0 0 22px; }
+  .post-body li { margin: 0 0 8px; }
+  .post-body blockquote {
+    margin: 28px 0; padding: 18px 22px;
+    border-left: 3px solid var(--teal);
+    background: rgba(14,159,149,0.06);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    font-style: italic; color: var(--ink);
+  }
+  .post-body blockquote p:last-child { margin: 0; }
+  .post-callout {
+    margin: 36px 0; padding: 22px 24px;
+    background: var(--sand); border-radius: var(--radius-md);
+    border: 1px solid rgba(11,37,69,0.08);
+  }
+  .post-callout p { margin: 0; font-size: 15px; }
+  /* Before/After contact card — visual story device for the case
+     study. Two stacked cards: one shows what came in from the CSV,
+     the other shows what enrichment surfaced, side by side on
+     desktop, stacked on mobile. */
+  .case-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 16px; margin: 28px 0;
+  }
+  @media (max-width: 720px) {
+    .case-grid { grid-template-columns: 1fr; }
+  }
+  .case-card {
+    background: #fff; border: 1px solid rgba(11,37,69,0.10);
+    border-radius: var(--radius-md); padding: 20px 22px;
+    box-shadow: 0 1px 2px rgba(11,37,69,0.04);
+  }
+  .case-card-after {
+    border-color: var(--teal);
+    box-shadow: 0 0 0 1px var(--teal), 0 4px 12px rgba(14,159,149,0.12);
+  }
+  .case-card-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; margin-bottom: 12px;
+  }
+  .case-card-before .case-card-label { color: var(--muted); }
+  .case-card-after .case-card-label { color: var(--teal-2); }
+  .case-card-row {
+    display: flex; gap: 8px; padding: 6px 0;
+    font-size: 14px; color: var(--ink-2);
+    border-bottom: 1px dashed rgba(11,37,69,0.08);
+  }
+  .case-card-row:last-child { border-bottom: 0; }
+  .case-card-row-key {
+    flex: 0 0 70px; color: var(--muted);
+    font-size: 12px; padding-top: 1px;
+  }
+  .case-card-row-val { flex: 1; }
+  .case-card-row-val .badge-dnc {
+    display: inline-block; background: #fee2e2; color: #b91c1c;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.04em;
+    padding: 2px 6px; border-radius: 4px;
+    margin-left: 6px; vertical-align: 1px;
+  }
+  .case-card-row-val .muted { color: var(--muted); }
+  .ledger {
+    background: var(--sand); border-radius: var(--radius-md);
+    padding: 22px 26px; margin: 28px 0;
+  }
+  .ledger-row {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 6px 0; font-size: 15px;
+  }
+  .ledger-row strong { color: var(--navy); font-weight: 600; }
+  .ledger-row.total {
+    border-top: 1px solid rgba(11,37,69,0.15);
+    margin-top: 8px; padding-top: 12px;
+    font-weight: 700; font-size: 16px; color: var(--navy);
+  }
+  .ledger-row .pos { color: #047857; }
+  .ledger-row .neg { color: #b91c1c; }
+  .post-cta {
+    background: var(--navy); color: #fff;
+    text-align: center; padding: 56px 40px; margin-top: 24px;
+  }
+  .post-cta h2 {
+    font-family: var(--f-display); font-weight: 600;
+    font-size: 28px; margin: 0 0 12px;
+  }
+  .post-cta p {
+    color: rgba(255,255,255,0.75);
+    max-width: 520px; margin: 0 auto 24px;
+  }
+  .post-cta .hero-ctas { justify-content: center; margin: 0; }
+  .post-cta .btn-primary {
+    background: var(--teal); border-color: var(--teal); color: #fff;
+  }
+  .post-cta .btn-primary:hover {
+    background: var(--teal-2); border-color: var(--teal-2);
+  }
+  .post-cta .btn-ghost {
+    color: var(--navy); background: #fff; border-color: #fff;
+  }
+  .post-cta .btn-ghost:hover {
+    background: var(--teal); color: #fff; border-color: var(--teal);
+  }
+  .post-back {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 14px; color: var(--muted); margin-bottom: 24px;
+  }
+  .post-back:hover { color: var(--teal-2); }
+  @media (max-width: 640px) {
+    .post { padding: 40px 24px 24px; }
+    .post-body { font-size: 16px; }
+  }
+</style>
+<!-- Crisp support chat (Hugo AI + live ops). Loads async, no perf hit. -->
+<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="42ed026c-1c3c-432e-a4c8-fced861a42b2";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+</head>
+<body>
+
+<header class="nav">
+  <a class="brand" href="/">
+    <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+      <path d="M3 26 C 8 22, 14 22, 20 26 C 26 30, 32 30, 37 26" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+      <path d="M3 32 C 8 28, 14 28, 20 32 C 26 36, 32 36, 37 32" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" opacity="0.5"/>
+      <circle cx="30" cy="14" r="3" fill="currentColor"/>
+    </svg>
+    <span class="brand-wordmark">LeadCove</span>
+  </a>
+  <nav class="nav-links">
+    <a href="/#how">How it works</a>
+    <a href="/#features">Features</a>
+    <a href="/#tour">Tour</a>
+    <a href="/#pricing">Pricing</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/about.html">About</a>
+    <a href="/blog/" class="active">Blog</a>
+  </nav>
+  <div class="nav-cta">
+    <a href="https://app.leadcove.io/" class="btn-ghost">Sign in</a>
+    <a href="https://app.leadcove.io/#signup" class="btn-primary">Sign up</a>
+  </div>
+</header>
+
+<article class="post">
+  <a class="post-back" href="/blog/">← Blog</a>
+  <p class="post-eyebrow">Compliance + workflow</p>
+  <h1>The phone you have isn't the phone you should call.</h1>
+  <p class="post-meta">5 min read · By the LeadCove team</p>
+
+  <div class="post-body">
+
+    <p>
+      Last week, an agent uploaded a clean prospect list into LeadCove.
+      189 properties, mostly Pinecrest condos, all of them already had
+      phone numbers attached. The list came from a property-data
+      provider, looked great, and felt ready to dial.
+    </p>
+
+    <p>
+      She paused on a row before picking up the phone. The owner had
+      one number, no email, and the property was a free-and-clear
+      condo with $300K+ of equity — exactly the kind of conversation
+      she wanted to have. She clicked Enrich. One credit. Then she
+      looked at what came back.
+    </p>
+
+    <h2>The before-and-after</h2>
+
+    <div class="case-grid">
+      <div class="case-card case-card-before">
+        <div class="case-card-label">From the CSV — what she had</div>
+        <div class="case-card-row">
+          <div class="case-card-row-key">Phone</div>
+          <div class="case-card-row-val">786-555-####</div>
+        </div>
+        <div class="case-card-row">
+          <div class="case-card-row-key">Email</div>
+          <div class="case-card-row-val muted">—</div>
+        </div>
+        <div class="case-card-row">
+          <div class="case-card-row-key">DNC?</div>
+          <div class="case-card-row-val muted">unknown</div>
+        </div>
+        <div class="case-card-row">
+          <div class="case-card-row-key">TCPA?</div>
+          <div class="case-card-row-val muted">unknown</div>
+        </div>
+        <div class="case-card-row">
+          <div class="case-card-row-key">Spouse</div>
+          <div class="case-card-row-val muted">unknown</div>
+        </div>
+      </div>
+
+      <div class="case-card case-card-after">
+        <div class="case-card-label">After enrichment — what she got</div>
+        <div class="case-card-row">
+          <div class="case-card-row-key">Phone 1</div>
+          <div class="case-card-row-val">305-555-#### <span class="badge-dnc">⛔ DNC</span></div>
+        </div>
+        <div class="case-card-row">
+          <div class="case-card-row-key">Phone 2</div>
+          <div class="case-card-row-val">323-555-####</div>
+        </div>
+        <div class="case-card-row">
+          <div class="case-card-row-key">Email 1</div>
+          <div class="case-card-row-val">o######@hotmail.com</div>
+        </div>
+        <div class="case-card-row">
+          <div class="case-card-row-key">Email 2</div>
+          <div class="case-card-row-val">o######@gmail.com</div>
+        </div>
+        <div class="case-card-row">
+          <div class="case-card-row-key">Spouse</div>
+          <div class="case-card-row-val">Captured (separate record)</div>
+        </div>
+      </div>
+    </div>
+
+    <p>
+      The phone the CSV gave her wasn't even in the enriched data — it
+      was an outdated number that didn't belong to the current owner
+      anymore. The two phones the system actually surfaced were both
+      live and tied to the right person. <strong>One of them was on
+      the federal Do Not Call registry.</strong> Calling that number
+      cold could have exposed her to a TCPA claim worth between
+      <strong>$500 and $1,500 per violation</strong>.
+    </p>
+
+    <p>
+      Total cost of finding all of this out: 1 credit. About 30 cents
+      at her plan tier.
+    </p>
+
+    <h2>Why CSV phones go stale</h2>
+
+    <p>
+      Property records sit in county systems for years. The phone
+      attached to a parcel might have been valid when the deed was
+      filed in 2006. Since then the owner has changed carriers, ported
+      numbers, dropped landlines, registered the line on Do Not Call,
+      moved, or switched the number to their kid. The county doesn't
+      get a phone-number update notification — they just keep the old
+      one on file.
+    </p>
+
+    <p>
+      Property-data providers that resell county data inherit the same
+      problem. The phone column in their export is a snapshot of
+      whatever the county had, not a real-time check. It looks like
+      data, it walks like data, but it doesn't behave like data when
+      you actually try to use it.
+    </p>
+
+    <h2>What enrichment actually adds</h2>
+
+    <p>
+      When you run Enrich, LeadCove does five things at once. None of
+      them are visible from a CSV phone number alone:
+    </p>
+
+    <ol>
+      <li><strong>Phone verification.</strong> Cross-checks the number against current carrier and household records. Outdated numbers get flagged. Live numbers get returned.</li>
+      <li><strong>Multi-source phone discovery.</strong> Surfaces all known phones for the owner, not just the one the county had on file. Mobile preferred. Landline as fallback.</li>
+      <li><strong>DNC + TCPA-litigator screening.</strong> Cross-references the federal Do Not Call registry and known TCPA-litigator lists. Flags appear in the lead modal before you can click Call.</li>
+      <li><strong>Email discovery.</strong> Property records rarely have email, but enrichment routinely surfaces 1–2 active addresses. Email is the cleanest legal channel — first-party email outreach isn't covered by TCPA the way phones are.</li>
+      <li><strong>Joint-owner unmasking.</strong> Pulls the spouse or co-owner's contact data into the same lead, so when you reach the household you actually know who's likely on the other end.</li>
+    </ol>
+
+    <h2>The math (with the case study above)</h2>
+
+    <div class="ledger">
+      <div class="ledger-row">
+        <span>Cost of enrichment</span>
+        <span class="neg">−1 credit (~$0.30)</span>
+      </div>
+      <div class="ledger-row">
+        <span>TCPA fine avoided</span>
+        <span class="pos">+$500 to $1,500</span>
+      </div>
+      <div class="ledger-row">
+        <span>New phone number that actually works</span>
+        <span class="pos">+1 viable channel</span>
+      </div>
+      <div class="ledger-row">
+        <span>Email addresses for legal outreach</span>
+        <span class="pos">+2 viable channels</span>
+      </div>
+      <div class="ledger-row">
+        <span>Outdated phone removed from queue</span>
+        <span class="pos">+15 min saved (no wrong-number call)</span>
+      </div>
+      <div class="ledger-row total">
+        <span>Net</span>
+        <span class="pos">credit pays for itself the first time it dodges a DNC number</span>
+      </div>
+    </div>
+
+    <h2>"But I already have phone numbers"</h2>
+
+    <p>
+      That's exactly the scenario this case is about. The agent
+      already had a phone number attached to every row. She still
+      decided to enrich the rows she planned to call that day. Three
+      reasons it pays off, every time:
+    </p>
+
+    <h3>1. The number on the CSV might not work.</h3>
+
+    <p>
+      Stale data is the default state of bulk property exports. Even
+      when the number works, it might belong to someone else now.
+      Wrong-number calls are wasted minutes and a small but real risk
+      — calling a number that's been reassigned to a third party who
+      then reports you can absolutely happen.
+    </p>
+
+    <h3>2. The number on the CSV doesn't carry compliance signals.</h3>
+
+    <p>
+      A phone string is just digits. Whether that phone is on the
+      federal Do Not Call registry, whether it belongs to a known TCPA
+      litigator, whether the line is mobile (text-eligible) or
+      landline (text-ineligible), whether the number is the owner's
+      direct line or a property manager's — none of that travels with
+      the phone digits. Enrichment is what makes the digits safe to
+      dial.
+    </p>
+
+    <h3>3. The number on the CSV is one channel of three or four.</h3>
+
+    <p>
+      Email beats phone for first-touch in many markets. LinkedIn beats
+      both for high-equity owners over 50 who screen their phones.
+      Direct mail beats everything for absentee owners who live out of
+      state. A CSV phone gives you one channel; an enriched lead gives
+      you three to four. When you only have one channel and it's
+      DNC-flagged, you have nothing.
+    </p>
+
+    <h2>The compliance-first habit</h2>
+
+    <p>
+      Real estate prospecting in 2026 is regulated heavier than it has
+      ever been. The TCPA is enforced. Federal DNC fines are real. Some
+      states (Florida, California, Oklahoma) have layered their own
+      mini-TCPA statutes on top with their own state-level fines. The
+      agents who keep their books clean aren't lucky — they have a
+      verification habit, and they enrich their lists before working
+      them.
+    </p>
+
+    <p>
+      One credit per row, one DNC trap dodged, one less letter from a
+      plaintiff's attorney three months from now. Enrichment is the
+      cheapest insurance policy you can buy in this business.
+    </p>
+
+    <div class="post-callout">
+      <p>
+        <strong>Iron rule for Florida agents specifically:</strong> the
+        Florida Telephone Solicitation Act (revised 2021) imposes its
+        own state DNC + signed-consent requirements that are stricter
+        than the federal TCPA. Enriching for DNC + litigator flags is
+        table stakes if you're prospecting Florida properties. <a href="/tcpa.html">More on TCPA + DNC</a>.
+      </p>
+    </div>
+
+    <h2>The bottom line</h2>
+
+    <p>
+      The agent in this story spent one credit. She got a verified
+      phone, a second phone, two emails, a spouse contact, a DNC flag
+      she would have otherwise walked into, and the freedom to keep
+      her number off a TCPA complaint list for one more day.
+    </p>
+
+    <p>
+      The phone number the CSV gave her was the one she <em>had</em>.
+      The phone numbers and emails enrichment surfaced were the ones
+      she <em>could safely use</em>. That's the difference, and it's
+      worth a credit every single time.
+    </p>
+
+  </div>
+</article>
+
+<section class="post-cta">
+  <h2>Stop trusting CSV phones. Start enriching them.</h2>
+  <p>One credit. DNC + TCPA flags. Multi-source phones. Spouse contacts. Emails for legal outreach. The cheapest insurance policy in real estate prospecting.</p>
+  <div class="hero-ctas">
+    <a href="https://app.leadcove.io/#signup" class="btn-primary btn-lg">Sign up</a>
+    <a href="https://app.leadcove.io/" class="btn-ghost btn-lg">Sign in</a>
+  </div>
+</section>
+
+<div class="footer-wrap">
+<footer class="footer">
+  <div class="footer-col">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <path d="M3 26 C 8 22, 14 22, 20 26 C 26 30, 32 30, 37 26" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+        <path d="M3 32 C 8 28, 14 28, 20 32 C 26 36, 32 36, 37 32" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" opacity="0.5"/>
+        <circle cx="30" cy="14" r="3" fill="currentColor"/>
+      </svg>
+      <span class="brand-wordmark">LeadCove</span>
+    </div>
+    <p class="footer-tag">More dials. Less prep.</p>
+  </div>
+  <div class="footer-col">
+    <h5>Product</h5>
+    <a href="/#how">How it works</a>
+    <a href="/#features">Features</a>
+    <a href="/#tour">Tour</a>
+    <a href="/#plans">Pricing</a>
+    <a href="/#topups">Add-ons</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/about.html">About</a>
+    <a href="/blog/">Blog</a>
+  </div>
+  <div class="footer-col">
+    <h5>Account</h5>
+    <a href="https://app.leadcove.io/">Sign in</a>
+    <a href="https://app.leadcove.io/#signup">Sign up</a>
+    <a href="mailto:hello@leadcove.io">hello@leadcove.io</a>
+  </div>
+  <div class="footer-col">
+    <h5>Legal</h5>
+    <a href="/terms.html">Terms of Service</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/tcpa.html">TCPA &amp; DNC</a>
+  </div>
+  <div class="footer-bar">
+    © 2026 LeadCove · a brand owned by Miami Metro LLC · <a href="mailto:hello@leadcove.io" style="color:inherit;text-decoration:underline">hello@leadcove.io</a>
+  </div>
+</footer>
+</div>
+
+</body>
+</html>
