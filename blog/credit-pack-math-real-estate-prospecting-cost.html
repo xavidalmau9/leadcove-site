@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Google Analytics (GA4) — added 2026-05-11 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q17T70D5R4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q17T70D5R4');
+  </script>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>What does a real estate prospecting credit actually cost? Pack math, explained · LeadCove</title>
+<meta name="description" content="The full cost-per-credit math on every LeadCove pack: $0.25 down to $0.14 per enriched prospect, no auto-renewal, no expiration. When to buy a pack, when to upgrade the plan, and how the numbers compare to other prospecting tools." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://leadcove.io/blog/credit-pack-math-real-estate-prospecting-cost.html" />
+<meta property="og:title" content="What does a real estate prospecting credit actually cost?" />
+<meta property="og:description" content="Per-credit math across every pack — $0.25 to $0.14 per enriched prospect. No auto-renewal. No expiration. The case for buying credits in bulk." />
+<meta property="og:image" content="https://leadcove.io/assets/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:site_name" content="LeadCove" />
+<meta property="og:locale" content="en_US" />
+<meta property="article:author" content="LeadCove" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="What does a real estate prospecting credit actually cost?" />
+<meta name="twitter:description" content="Per-credit math across every pack — $0.25 to $0.14 per enriched prospect. No auto-renewal, no expiration." />
+<meta name="twitter:image" content="https://leadcove.io/assets/og.png" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" href="/favicon.svg" />
+<meta name="theme-color" content="#0B2545" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css" />
+<style>
+  .post { max-width: 720px; margin: 0 auto; padding: 56px 40px 40px; }
+  .post-eyebrow {
+    font-size: 12px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--teal-2); margin: 0 0 14px;
+  }
+  .post h1 {
+    font-family: var(--f-display); font-weight: 600;
+    font-size: clamp(34px, 4.2vw, 48px); line-height: 1.08;
+    letter-spacing: -0.02em; color: var(--navy); margin: 0 0 18px;
+  }
+  .post-meta {
+    font-size: 14px; color: var(--muted); margin: 0 0 36px;
+    padding-bottom: 24px; border-bottom: 1px solid var(--hairline);
+  }
+  .post-body { color: var(--ink-2); font-size: 17px; line-height: 1.72; }
+  .post-body p { margin: 0 0 22px; }
+  .post-body strong { color: var(--navy); }
+  .post-body h2 {
+    font-family: var(--f-display); font-weight: 600;
+    font-size: 28px; line-height: 1.2; letter-spacing: -0.01em;
+    color: var(--navy); margin: 44px 0 14px;
+  }
+  .post-body h3 {
+    font-family: var(--f-sans); font-weight: 700;
+    font-size: 18px; color: var(--navy); margin: 28px 0 10px;
+  }
+  .post-body ul, .post-body ol { padding-left: 22px; margin: 0 0 22px; }
+  .post-body li { margin: 0 0 8px; }
+  .post-body blockquote {
+    margin: 28px 0; padding: 18px 22px;
+    border-left: 3px solid var(--teal);
+    background: rgba(14,159,149,0.06);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    font-style: italic; color: var(--ink);
+  }
+  .post-body blockquote p:last-child { margin: 0; }
+  .post-callout {
+    margin: 36px 0; padding: 22px 24px;
+    background: var(--sand); border-radius: var(--radius-md);
+    border: 1px solid rgba(11,37,69,0.08);
+  }
+  .post-callout p { margin: 0; font-size: 15px; }
+  .post-table {
+    width: 100%; border-collapse: collapse; margin: 24px 0;
+    font-size: 14px;
+  }
+  .post-table th, .post-table td {
+    padding: 12px 14px; text-align: left;
+    border-bottom: 1px solid rgba(11,37,69,0.08);
+    vertical-align: top;
+  }
+  .post-table th {
+    background: var(--sand); color: var(--navy);
+    font-weight: 600; font-size: 12px;
+    letter-spacing: 0.04em; text-transform: uppercase;
+  }
+  .post-table td:first-child { font-weight: 600; color: var(--navy); white-space: nowrap; }
+  .post-table tr.featured td {
+    background: rgba(14,159,149,0.06);
+  }
+  .post-table tr.featured td:last-child {
+    color: var(--teal-2); font-weight: 700;
+  }
+  /* Pack grid — visual card showcase of the four packs */
+  .pack-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 10px; margin: 28px 0;
+  }
+  @media (max-width: 720px) {
+    .pack-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  .pack-card {
+    background: #fff; border: 1px solid rgba(11,37,69,0.10);
+    border-radius: var(--radius-md); padding: 18px 14px;
+    text-align: center;
+    box-shadow: 0 1px 2px rgba(11,37,69,0.04);
+  }
+  .pack-card.featured {
+    border-color: var(--teal);
+    box-shadow: 0 0 0 1px var(--teal), 0 4px 12px rgba(14,159,149,0.12);
+  }
+  .pack-card-name {
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 8px;
+  }
+  .pack-card.featured .pack-card-name { color: var(--teal-2); }
+  .pack-card-price {
+    font-family: var(--f-display); font-weight: 700;
+    font-size: 22px; color: var(--navy); margin-bottom: 4px;
+  }
+  .pack-card-credits {
+    font-size: 13px; color: var(--ink-2); margin-bottom: 8px;
+  }
+  .pack-card-credits strong { color: var(--navy); }
+  .pack-card-percredit {
+    font-size: 11px; color: var(--muted);
+    font-weight: 600; letter-spacing: 0.02em;
+  }
+  .pack-card.featured .pack-card-percredit { color: var(--teal-2); }
+  .pack-card-badge {
+    display: inline-block; margin-top: 8px;
+    font-size: 9px; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: #fff; background: var(--teal);
+    padding: 3px 8px; border-radius: 10px;
+  }
+  .post-cta {
+    background: var(--navy); color: #fff;
+    text-align: center; padding: 56px 40px; margin-top: 24px;
+  }
+  .post-cta h2 {
+    font-family: var(--f-display); font-weight: 600;
+    font-size: 28px; margin: 0 0 12px;
+  }
+  .post-cta p {
+    color: rgba(255,255,255,0.75);
+    max-width: 520px; margin: 0 auto 24px;
+  }
+  .post-cta .hero-ctas { justify-content: center; margin: 0; }
+  .post-cta .btn-primary {
+    background: var(--teal); border-color: var(--teal); color: #fff;
+  }
+  .post-cta .btn-primary:hover {
+    background: var(--teal-2); border-color: var(--teal-2);
+  }
+  .post-cta .btn-ghost {
+    color: var(--navy); background: #fff; border-color: #fff;
+  }
+  .post-cta .btn-ghost:hover {
+    background: var(--teal); color: #fff; border-color: var(--teal);
+  }
+  .post-back {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 14px; color: var(--muted); margin-bottom: 24px;
+  }
+  .post-back:hover { color: var(--teal-2); }
+  @media (max-width: 640px) {
+    .post { padding: 40px 24px 24px; }
+    .post-body { font-size: 16px; }
+    .post-table { font-size: 13px; }
+    .post-table th, .post-table td { padding: 10px 8px; }
+  }
+</style>
+<!-- Crisp support chat (Hugo AI + live ops). Loads async, no perf hit. -->
+<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="42ed026c-1c3c-432e-a4c8-fced861a42b2";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+</head>
+<body>
+
+<header class="nav">
+  <a class="brand" href="/">
+    <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+      <path d="M3 26 C 8 22, 14 22, 20 26 C 26 30, 32 30, 37 26" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+      <path d="M3 32 C 8 28, 14 28, 20 32 C 26 36, 32 36, 37 32" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" opacity="0.5"/>
+      <circle cx="30" cy="14" r="3" fill="currentColor"/>
+    </svg>
+    <span class="brand-wordmark">LeadCove</span>
+  </a>
+  <nav class="nav-links">
+    <a href="/#how">How it works</a>
+    <a href="/#features">Features</a>
+    <a href="/#tour">Tour</a>
+    <a href="/#pricing">Pricing</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/about.html">About</a>
+    <a href="/blog/" class="active">Blog</a>
+  </nav>
+  <div class="nav-cta">
+    <a href="https://app.leadcove.io/" class="btn-ghost">Sign in</a>
+    <a href="https://app.leadcove.io/#signup" class="btn-primary">Sign up</a>
+  </div>
+</header>
+
+<article class="post">
+  <a class="post-back" href="/blog/">← Blog</a>
+  <p class="post-eyebrow">Pricing</p>
+  <h1>What does a real estate prospecting credit actually cost?</h1>
+  <p class="post-meta">5 min read · By the LeadCove team</p>
+
+  <div class="post-body">
+
+    <p>
+      Most prospecting tools price by the seat, by the month, or by some
+      vague "credits per tier" structure that makes it hard to know what
+      a single enriched lead actually costs you. LeadCove publishes the
+      number directly. One credit = one prospect enriched (owner name,
+      verified phone, email, DNC flag, joint-owner data). Add a real
+      dollar figure to that credit, and you have a unit cost you can put
+      in a spreadsheet next to your closed-listing revenue.
+    </p>
+
+    <p>
+      This post is the math, fully transparent: what each pack costs,
+      what each credit inside that pack costs, and which configuration
+      fits which use case. No tricks, no hidden auto-renewal, no
+      expiration on what you buy.
+    </p>
+
+    <h2>The four packs in one glance</h2>
+
+    <div class="pack-grid">
+      <div class="pack-card">
+        <div class="pack-card-name">Trial</div>
+        <div class="pack-card-price">$10</div>
+        <div class="pack-card-credits"><strong>+40 credits</strong></div>
+        <div class="pack-card-percredit">$0.25 / credit</div>
+      </div>
+      <div class="pack-card">
+        <div class="pack-card-name">Starter</div>
+        <div class="pack-card-price">$25</div>
+        <div class="pack-card-credits"><strong>+125 credits</strong></div>
+        <div class="pack-card-percredit">$0.20 / credit</div>
+      </div>
+      <div class="pack-card">
+        <div class="pack-card-name">Pro</div>
+        <div class="pack-card-price">$99</div>
+        <div class="pack-card-credits"><strong>+550 credits</strong></div>
+        <div class="pack-card-percredit">$0.18 / credit</div>
+      </div>
+      <div class="pack-card featured">
+        <div class="pack-card-name">Volume</div>
+        <div class="pack-card-price">$249</div>
+        <div class="pack-card-credits"><strong>+1,750 credits</strong></div>
+        <div class="pack-card-percredit">$0.14 / credit</div>
+        <div class="pack-card-badge">Best value</div>
+      </div>
+    </div>
+
+    <p>
+      The pattern is clean: buy more, pay less per credit. The Trial pack
+      lets you sample at 25 cents a lookup; the Volume pack drops the
+      effective cost to <strong>14 cents</strong> per enriched prospect.
+      Same data delivered either way — multi-phone with per-phone DNC
+      pills, joint-owner data, LLC unmasking, email discovery. Pack size
+      only changes the per-credit cost, not the data quality.
+    </p>
+
+    <h2>How packs work alongside your monthly plan</h2>
+
+    <p>
+      Every paid LeadCove account starts with a monthly subscription —
+      Starter ($49 / 100 credits), Pro ($99 / 250 credits), or Power
+      ($199 / 500 credits). Plan credits refresh every billing cycle.
+      They're sized for your typical month.
+    </p>
+
+    <p>
+      Packs are for the months that aren't typical. The 12 days you
+      decide to canvass an entire building. The week you pull 400
+      expireds in a quarterly batch. The investor sprint where you work
+      a whole ZIP for a single off-market acquisition. When you hit your
+      monthly plan limit and still have leads to call, you top up with
+      a pack.
+    </p>
+
+    <p>
+      Three things to know about pack credits specifically:
+    </p>
+
+    <ul>
+      <li><strong>No auto-renewal.</strong> You buy a pack once. It doesn't recharge automatically. No surprise charge on your card next month.</li>
+      <li><strong>No expiration.</strong> Pack credits sit in your account until you spend them. If you buy a Volume pack in May and don't touch it until August, those credits are still there.</li>
+      <li><strong>Stacks on top of your plan.</strong> Plan credits get used first each month (they refresh anyway), then pack credits draw down. Maximizes the value of your plan AND your packs.</li>
+    </ul>
+
+    <h2>The per-credit math, against your plan</h2>
+
+    <p>
+      Here's where the packs get interesting. If you look at the
+      effective cost of each plan's included credits, the packs are
+      actually <em>cheaper</em> per credit than the plan tiers
+      themselves — because plans bundle a full CRM, integrations, and
+      support, not just credits.
+    </p>
+
+    <table class="post-table">
+      <thead>
+        <tr>
+          <th>What you buy</th>
+          <th>Cost</th>
+          <th>Credits</th>
+          <th>Per credit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Starter plan</td>
+          <td>$49 / mo</td>
+          <td>100 / mo</td>
+          <td>$0.49</td>
+        </tr>
+        <tr>
+          <td>Pro plan</td>
+          <td>$99 / mo</td>
+          <td>250 / mo</td>
+          <td>$0.40</td>
+        </tr>
+        <tr>
+          <td>Power plan</td>
+          <td>$199 / mo</td>
+          <td>500 / mo</td>
+          <td>$0.40</td>
+        </tr>
+        <tr>
+          <td>Trial pack</td>
+          <td>$10</td>
+          <td>40</td>
+          <td>$0.25</td>
+        </tr>
+        <tr>
+          <td>Starter pack</td>
+          <td>$25</td>
+          <td>125</td>
+          <td>$0.20</td>
+        </tr>
+        <tr>
+          <td>Pro pack</td>
+          <td>$99</td>
+          <td>550</td>
+          <td>$0.18</td>
+        </tr>
+        <tr class="featured">
+          <td>Volume pack</td>
+          <td>$249</td>
+          <td>1,750</td>
+          <td><strong>$0.14</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      The Volume pack is the cheapest credit you can buy from us —
+      almost <strong>3.5× cheaper</strong> than the per-credit cost
+      baked into the Starter plan, and about <strong>2.8× cheaper</strong>
+      than Pro or Power. If you have a high-volume month, buying a
+      Volume pack on top of your existing plan delivers more credits at
+      a lower marginal cost than upgrading.
+    </p>
+
+    <h2>Real scenarios — when to buy which pack</h2>
+
+    <h3>Scenario 1 — "I'm new and just want to try it"</h3>
+
+    <p>
+      Sign up for Starter ($49, 100 credits). That's enough to enrich
+      and test the workflow on a real list. If you find yourself
+      working through it in week one, grab a Trial pack ($10, 40
+      credits) to extend the runway and confirm the math works for your
+      practice before committing to a higher plan tier.
+    </p>
+
+    <h3>Scenario 2 — "I had an unusually big week"</h3>
+
+    <p>
+      You're on Pro ($99, 250 credits/month) and you decide to canvass
+      a 300-unit building. Your plan covers 250, you need another 50.
+      Buy a Starter pack ($25, 125 credits) — it covers the overflow
+      and leaves you with 75 unused credits sitting in the account for
+      next time. No expiration, so they're still there in two months
+      when you next need them.
+    </p>
+
+    <h3>Scenario 3 — "Quarterly expired-listings sprint"</h3>
+
+    <p>
+      Many agents work expireds in batches — a few hundred at a time,
+      every few months. If you're pulling 600 expireds in one sitting
+      and you're on Pro, your plan covers 250 and you need 350+ more
+      credits. The Pro pack ($99, 550 credits) is the right shape —
+      drops your effective per-credit cost to $0.18 on the overflow
+      and leaves you with cushion for the next batch.
+    </p>
+
+    <h3>Scenario 4 — "Investor sourcing a market"</h3>
+
+    <p>
+      Investors working a 1,000-property target zone benefit most from
+      the Volume pack. $249 for 1,750 credits = $0.14 per enriched
+      lead, the lowest unit cost we offer. Combine with any plan tier;
+      packs draw down after plan credits.
+    </p>
+
+    <h2>What you're actually paying for at $0.14–$0.49 per credit</h2>
+
+    <p>
+      It's easy to look at the per-credit cost and forget what's
+      delivered for it. Every enriched lead returns:
+    </p>
+
+    <ul>
+      <li><strong>Owner name(s)</strong>, including the human behind LLCs and trusts.</li>
+      <li><strong>Multiple verified phone numbers</strong> (typically 3–5 per owner).</li>
+      <li><strong>Per-phone DNC and TCPA-litigator flags</strong> — the compliance signals that prevent $500 to $1,500 TCPA fines per call.</li>
+      <li><strong>Multiple email addresses</strong> ranked by likely deliverability.</li>
+      <li><strong>Joint-owner data</strong> when a property is co-owned (spouse, partner, family).</li>
+      <li><strong>Property attributes</strong> — equity estimate, years held, owner-occupied flag, and more, captured from the source data at no extra charge.</li>
+    </ul>
+
+    <p>
+      For context, paid lookups with the same depth of data — multi-phone,
+      compliance flags, entity unmasking — typically run between $0.30
+      and $2.00 per lookup if you go direct to the underlying providers.
+      LeadCove bundles the lookups, runs them through compliance scrubs,
+      adds the dashboard layer, and delivers the result for as little as
+      14 cents on the Volume pack.
+    </p>
+
+    <h2>The "no data, no charge" iron rule</h2>
+
+    <p>
+      One more piece of the math nobody else publishes: <strong>if our
+      lookup returns no usable contact data, we don't charge a credit.
+      Ever.</strong> So the per-credit cost above is the cost per
+      <em>successful</em> enrichment, not the cost per attempt. Miss
+      rates don't tax your balance.
+    </p>
+
+    <p>
+      For a typical Florida residential list, the hit rate runs 85–95%.
+      For LLC-owned commercial property, it's slightly lower. Whatever
+      the hit rate, you pay for hits — the misses are on us.
+    </p>
+
+    <div class="post-callout">
+      <p>
+        <strong>The simple decision tree:</strong> if you regularly burn
+        through your monthly plan, upgrade the plan. If you occasionally
+        hit a busy month, buy a pack and keep the smaller plan. The
+        Volume pack alone, at $0.14 per credit, is the cheapest
+        prospecting data you can buy from any compliance-clean vendor —
+        period.
+      </p>
+    </div>
+
+    <h2>How to buy a pack</h2>
+
+    <p>
+      Inside the dashboard, the <strong>Buy credits</strong> button sits
+      below your monthly credit pill in the sidebar. One click opens
+      the pack picker. Stripe handles the payment; credits land in your
+      account within seconds. No phone calls, no sales rep, no "request
+      a demo." Same self-serve flow as the rest of LeadCove.
+    </p>
+
+    <p>
+      You can also let your monthly plan handle most volume and only
+      reach for packs when needed. Many agents go three or four months
+      on plan-only, then buy a Volume pack ahead of a heavy quarter.
+      Whatever shape your prospecting takes, the per-credit cost is
+      published, the math is yours to do, and there's no auto-renewal
+      sneaking up on you.
+    </p>
+
+    <h2>The bottom line</h2>
+
+    <p>
+      A real estate prospecting credit on LeadCove costs between
+      <strong>14 cents and 49 cents</strong> depending on how you buy
+      it. The cheapest path is the Volume pack at $0.14 per credit.
+      The most expensive is the Starter plan's marginal cost at $0.49 —
+      and even that includes the dashboard, the compliance scrubs, the
+      LLC unmask, and the CRM integrations on top of the data itself.
+    </p>
+
+    <p>
+      Any prospecting habit that lands a single deal a year is paying
+      for the tool five hundred times over. Most working agents land
+      multiple deals from a clean enriched list. The math has never
+      been hard. It just hasn't been published this clearly anywhere
+      else.
+    </p>
+
+  </div>
+</article>
+
+<section class="post-cta">
+  <h2>Start at $49/mo. Top up at $0.14/credit when you need volume.</h2>
+  <p>Published pricing, no auto-renewal, no expiration on pack credits, no charge when we can't find data. Real estate prospecting math, transparent.</p>
+  <div class="hero-ctas">
+    <a href="https://app.leadcove.io/#signup" class="btn-primary btn-lg">Sign up</a>
+    <a href="https://app.leadcove.io/" class="btn-ghost btn-lg">Sign in</a>
+  </div>
+</section>
+
+<div class="footer-wrap">
+<footer class="footer">
+  <div class="footer-col">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <path d="M3 26 C 8 22, 14 22, 20 26 C 26 30, 32 30, 37 26" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+        <path d="M3 32 C 8 28, 14 28, 20 32 C 26 36, 32 36, 37 32" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" opacity="0.5"/>
+        <circle cx="30" cy="14" r="3" fill="currentColor"/>
+      </svg>
+      <span class="brand-wordmark">LeadCove</span>
+    </div>
+    <p class="footer-tag">More dials. Less prep.</p>
+  </div>
+  <div class="footer-col">
+    <h5>Product</h5>
+    <a href="/#how">How it works</a>
+    <a href="/#features">Features</a>
+    <a href="/#tour">Tour</a>
+    <a href="/#plans">Pricing</a>
+    <a href="/#topups">Add-ons</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/about.html">About</a>
+    <a href="/blog/">Blog</a>
+  </div>
+  <div class="footer-col">
+    <h5>Account</h5>
+    <a href="https://app.leadcove.io/">Sign in</a>
+    <a href="https://app.leadcove.io/#signup">Sign up</a>
+    <a href="mailto:hello@leadcove.io">hello@leadcove.io</a>
+  </div>
+  <div class="footer-col">
+    <h5>Legal</h5>
+    <a href="/terms.html">Terms of Service</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/tcpa.html">TCPA &amp; DNC</a>
+  </div>
+  <div class="footer-bar">
+    © 2026 LeadCove · a brand owned by Miami Metro LLC · <a href="mailto:hello@leadcove.io" style="color:inherit;text-decoration:underline">hello@leadcove.io</a>
+  </div>
+</footer>
+</div>
+
+</body>
+</html>
