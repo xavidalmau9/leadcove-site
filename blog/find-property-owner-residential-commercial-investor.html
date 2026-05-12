@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Google Analytics (GA4) — added 2026-05-11 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q17T70D5R4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q17T70D5R4');
+  </script>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>How to find a property owner's name + contact info — residential, commercial, or investor · LeadCove</title>
+<meta name="description" content="Same prospecting tool, three audiences. Whether you're a residential agent calling expireds, a commercial broker working an off-market building, or an investor sourcing distressed SFRs, the workflow is the same: address in, owner contact data out. Including the LLC-owned ones." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://leadcove.io/blog/find-property-owner-residential-commercial-investor.html" />
+<meta property="og:title" content="How to find a property owner's name — residential, commercial, or investor" />
+<meta property="og:description" content="One workflow, three audiences. Address in, owner contact out — including the human behind LLCs and trusts." />
+<meta property="og:image" content="https://leadcove.io/assets/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:site_name" content="LeadCove" />
+<meta property="og:locale" content="en_US" />
+<meta property="article:author" content="LeadCove" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="How to find a property owner's name — residential, commercial, or investor" />
+<meta name="twitter:description" content="One workflow, three audiences. Address in, owner contact out — including the human behind LLCs and trusts." />
+<meta name="twitter:image" content="https://leadcove.io/assets/og.png" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" href="/favicon.svg" />
+<meta name="theme-color" content="#0B2545" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css" />
+<style>
+  .post { max-width: 720px; margin: 0 auto; padding: 56px 40px 40px; }
+  .post-eyebrow {
+    font-size: 12px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--teal-2); margin: 0 0 14px;
+  }
+  .post h1 {
+    font-family: var(--f-display); font-weight: 600;
+    font-size: clamp(34px, 4.2vw, 48px); line-height: 1.08;
+    letter-spacing: -0.02em; color: var(--navy); margin: 0 0 18px;
+  }
+  .post-meta {
+    font-size: 14px; color: var(--muted); margin: 0 0 36px;
+    padding-bottom: 24px; border-bottom: 1px solid var(--hairline);
+  }
+  .post-body { color: var(--ink-2); font-size: 17px; line-height: 1.72; }
+  .post-body p { margin: 0 0 22px; }
+  .post-body strong { color: var(--navy); }
+  .post-body h2 {
+    font-family: var(--f-display); font-weight: 600;
+    font-size: 28px; line-height: 1.2; letter-spacing: -0.01em;
+    color: var(--navy); margin: 44px 0 14px;
+  }
+  .post-body h3 {
+    font-family: var(--f-sans); font-weight: 700;
+    font-size: 18px; color: var(--navy); margin: 28px 0 10px;
+  }
+  .post-body ul, .post-body ol { padding-left: 22px; margin: 0 0 22px; }
+  .post-body li { margin: 0 0 8px; }
+  .post-body blockquote {
+    margin: 28px 0; padding: 18px 22px;
+    border-left: 3px solid var(--teal);
+    background: rgba(14,159,149,0.06);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    font-style: italic; color: var(--ink);
+  }
+  .post-body blockquote p:last-child { margin: 0; }
+  .post-callout {
+    margin: 36px 0; padding: 22px 24px;
+    background: var(--sand); border-radius: var(--radius-md);
+    border: 1px solid rgba(11,37,69,0.08);
+  }
+  .post-callout p { margin: 0; font-size: 15px; }
+  /* Audience cards — three personas side-by-side on desktop, stacked on mobile */
+  .persona-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 14px; margin: 28px 0;
+  }
+  @media (max-width: 720px) {
+    .persona-grid { grid-template-columns: 1fr; }
+  }
+  .persona-card {
+    background: #fff; border: 1px solid rgba(11,37,69,0.10);
+    border-radius: var(--radius-md); padding: 22px 20px;
+    box-shadow: 0 1px 2px rgba(11,37,69,0.04);
+  }
+  .persona-icon {
+    width: 38px; height: 38px;
+    background: rgba(14,159,149,0.10);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--teal-2); font-size: 20px; margin-bottom: 12px;
+  }
+  .persona-card h4 {
+    font-family: var(--f-sans); font-weight: 700;
+    color: var(--navy); font-size: 16px; margin: 0 0 6px;
+  }
+  .persona-card p {
+    font-size: 13px; color: var(--ink-2);
+    line-height: 1.55; margin: 0;
+  }
+  /* Shared-workflow flow diagram */
+  .workflow {
+    background: var(--sand); border-radius: var(--radius-md);
+    padding: 26px 28px; margin: 28px 0;
+  }
+  .workflow-row {
+    display: flex; align-items: center; gap: 12px;
+    padding: 8px 0; font-size: 15px; color: var(--ink-2);
+  }
+  .workflow-num {
+    flex: 0 0 28px; height: 28px; width: 28px;
+    background: var(--teal); color: #fff;
+    border-radius: 50%; display: flex;
+    align-items: center; justify-content: center;
+    font-weight: 700; font-size: 13px;
+  }
+  .workflow-row strong { color: var(--navy); }
+  .post-cta {
+    background: var(--navy); color: #fff;
+    text-align: center; padding: 56px 40px; margin-top: 24px;
+  }
+  .post-cta h2 {
+    font-family: var(--f-display); font-weight: 600;
+    font-size: 28px; margin: 0 0 12px;
+  }
+  .post-cta p {
+    color: rgba(255,255,255,0.75);
+    max-width: 520px; margin: 0 auto 24px;
+  }
+  .post-cta .hero-ctas { justify-content: center; margin: 0; }
+  .post-cta .btn-primary {
+    background: var(--teal); border-color: var(--teal); color: #fff;
+  }
+  .post-cta .btn-primary:hover {
+    background: var(--teal-2); border-color: var(--teal-2);
+  }
+  .post-cta .btn-ghost {
+    color: var(--navy); background: #fff; border-color: #fff;
+  }
+  .post-cta .btn-ghost:hover {
+    background: var(--teal); color: #fff; border-color: var(--teal);
+  }
+  .post-back {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 14px; color: var(--muted); margin-bottom: 24px;
+  }
+  .post-back:hover { color: var(--teal-2); }
+  @media (max-width: 640px) {
+    .post { padding: 40px 24px 24px; }
+    .post-body { font-size: 16px; }
+  }
+</style>
+<!-- Crisp support chat (Hugo AI + live ops). Loads async, no perf hit. -->
+<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="42ed026c-1c3c-432e-a4c8-fced861a42b2";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+</head>
+<body>
+
+<header class="nav">
+  <a class="brand" href="/">
+    <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+      <path d="M3 26 C 8 22, 14 22, 20 26 C 26 30, 32 30, 37 26" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+      <path d="M3 32 C 8 28, 14 28, 20 32 C 26 36, 32 36, 37 32" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" opacity="0.5"/>
+      <circle cx="30" cy="14" r="3" fill="currentColor"/>
+    </svg>
+    <span class="brand-wordmark">LeadCove</span>
+  </a>
+  <nav class="nav-links">
+    <a href="/#how">How it works</a>
+    <a href="/#features">Features</a>
+    <a href="/#tour">Tour</a>
+    <a href="/#pricing">Pricing</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/about.html">About</a>
+    <a href="/blog/" class="active">Blog</a>
+  </nav>
+  <div class="nav-cta">
+    <a href="https://app.leadcove.io/" class="btn-ghost">Sign in</a>
+    <a href="https://app.leadcove.io/#signup" class="btn-primary">Sign up</a>
+  </div>
+</header>
+
+<article class="post">
+  <a class="post-back" href="/blog/">← Blog</a>
+  <p class="post-eyebrow">Use cases</p>
+  <h1>How to find a property owner's name — residential, commercial, or investor.</h1>
+  <p class="post-meta">6 min read · By the LeadCove team</p>
+
+  <div class="post-body">
+
+    <p>
+      The most common question in property prospecting is the same
+      question whether you're working a $300,000 condo, a $30 million
+      industrial building, or a $1.2 million off-market single-family
+      rental: <strong>who actually owns this?</strong>
+    </p>
+
+    <p>
+      And it's almost always the wrong question to ask the county
+      directly. County records give you a name, but that name is often
+      "MIKEANGY LLC" or "THE ESCLASANS FAMILY TRUST DTD 04/14/2009."
+      You need the human behind it. The phone the human answers. The
+      email the human checks. Without those three things, you have an
+      address — not a prospect.
+    </p>
+
+    <p>
+      LeadCove was built to solve that one question for three different
+      audiences at once. The product doesn't care what type of property
+      you're working. The workflow is the same. The data layer
+      underneath is the same. What changes is what you do with the
+      owner contact once you have it.
+    </p>
+
+    <h2>Three audiences, one workflow</h2>
+
+    <div class="persona-grid">
+      <div class="persona-card">
+        <div class="persona-icon">🏠</div>
+        <h4>Residential agents</h4>
+        <p>
+          Working expireds, FSBOs, building canvasses, or absentee
+          owners. Need owner phone + email to make the first call.
+        </p>
+      </div>
+      <div class="persona-card">
+        <div class="persona-icon">🏢</div>
+        <h4>Commercial brokers</h4>
+        <p>
+          Working off-market buildings, multi-family, retail strips,
+          industrial. Most of these are LLC or trust-owned — you need
+          the human behind the entity.
+        </p>
+      </div>
+      <div class="persona-card">
+        <div class="persona-icon">📈</div>
+        <h4>Investors</h4>
+        <p>
+          Sourcing distressed SFRs, tired-landlord portfolios,
+          high-equity absentee owners. Volume matters — you're working
+          hundreds of properties to find ten conversations.
+        </p>
+      </div>
+    </div>
+
+    <p>
+      The shared workflow underneath all three:
+    </p>
+
+    <div class="workflow">
+      <div class="workflow-row">
+        <div class="workflow-num">1</div>
+        <div><strong>Upload property addresses.</strong> CSV from your MLS, county scrape, ATTOM export, a notepad — whatever you have.</div>
+      </div>
+      <div class="workflow-row">
+        <div class="workflow-num">2</div>
+        <div><strong>Enrich.</strong> Each row gets owner name, mobile phone(s), email(s), joint-owner data, DNC flags, TCPA-litigator flags.</div>
+      </div>
+      <div class="workflow-row">
+        <div class="workflow-num">3</div>
+        <div><strong>Reach out.</strong> Call, text, email, or LinkedIn — your choice, your channel, manual dialing. No automation, no compliance risk.</div>
+      </div>
+      <div class="workflow-row">
+        <div class="workflow-num">4</div>
+        <div><strong>Work the response.</strong> Score, follow up, archive, sync to your CRM. The dashboard handles the pipeline.</div>
+      </div>
+    </div>
+
+    <p>
+      Every audience does step 1 differently — the list looks different
+      depending on whether you're chasing condos in a high-rise or
+      industrial parks in a tertiary market — but steps 2, 3, and 4
+      are identical.
+    </p>
+
+    <h2>Audience 1 — Residential agents</h2>
+
+    <p>
+      The most common LeadCove user. You have an MLS account, you can
+      pull expireds and withdrawns weekly, and you know which buildings
+      in your area have absentee or tired owners. The bottleneck isn't
+      finding addresses. It's getting from address to a phone you can
+      legally call.
+    </p>
+
+    <h3>What this looks like in practice</h3>
+
+    <ul>
+      <li><strong>Expired listings.</strong> MLS export → upload → enrich → call. Most expireds have an outdated agent number; the verified mobile from enrichment is what gets you the live conversation.</li>
+      <li><strong>Building canvasses.</strong> One condo tower, every unit. The parcel list comes from the county or a property-data provider. Enrichment surfaces each owner's contact info. Joint-owner data handles the "and spouse" rows so you get both phones, not just one.</li>
+      <li><strong>FSBOs.</strong> Pulled from Zillow, Craigslist, or local circles. Most FSBO listings hide the owner's number behind a contact form; enrichment surfaces the real number directly.</li>
+      <li><strong>Absentee owners.</strong> Out-of-state owners with Florida property. The county only has the mailing address. Enrichment surfaces phone, email, and often a second mobile or work line.</li>
+    </ul>
+
+    <p>
+      For residential workflows, the per-phone DNC and TCPA-litigator
+      flags are non-negotiable. Florida residents are aggressively
+      protected by both the federal TCPA and the state-level FTSA —
+      one DNC dial without prior consent is a potential $1,500 fine.
+      Working a verified list is how agents stay off complaint records.
+      We wrote a full plain-language primer:
+      <a href="/blog/tcpa-florida-real-estate-agents.html">TCPA + Florida FTSA for real estate agents: what triggers a fine</a>.
+    </p>
+
+    <h2>Audience 2 — Commercial brokers</h2>
+
+    <p>
+      Commercial property prospecting has a different shape than
+      residential. The buildings are bigger, the deals are slower, the
+      buyer pool is smaller — and the ownership structure is almost
+      always an entity. LLCs hold commercial property. Trusts hold
+      commercial property. Holding companies own multiple LLCs that
+      each own one building. The chain of "who do I actually call" can
+      be three or four layers deep.
+    </p>
+
+    <p>
+      Traditional commercial brokerage has handled this with manual
+      research: pulling articles of incorporation from the state, calling
+      the registered agent, getting a generic intake line, asking for
+      whoever runs the building. Hours per prospect. LeadCove collapses
+      that into the same enrichment step every other property type
+      uses.
+    </p>
+
+    <h3>What this looks like in practice</h3>
+
+    <ul>
+      <li><strong>Multi-family.</strong> A 24-unit building owned by "RIVER POINTE HOLDINGS LLC." Enrichment returns the principal's name (the human filing tax returns on the entity), their direct mobile, their personal email. That's the conversation, not the registered agent's voicemail.</li>
+      <li><strong>Retail strip centers.</strong> Often held by a family-office trust or a partnership. The principal might own a dozen properties under different LLC names; enrichment connects them to the human.</li>
+      <li><strong>Industrial / warehouses.</strong> Frequently absentee-owned by out-of-state investors. The county address is a mail-forwarding service in Delaware. Enrichment returns the principal's real address, real phone, real email.</li>
+      <li><strong>Off-market opportunity scouting.</strong> The classic move: drive a corridor, photograph buildings that look under-managed or vacant, upload the addresses. Enrichment turns the address list into a call list overnight.</li>
+    </ul>
+
+    <p>
+      The LLC unmasking step is what makes commercial prospecting
+      actually viable at volume. Without it, you're working three
+      properties a day on manual research. With it, you're working
+      thirty.
+    </p>
+
+    <h2>Audience 3 — Investors</h2>
+
+    <p>
+      Investor prospecting is a volume game. You're working a wide
+      funnel because most owners aren't selling at any given moment.
+      Your job is to talk to enough of them that the few who are quietly
+      ready surface to the top. The math only works if your cost per
+      conversation is low — which means cost per outreach attempt has
+      to be low, which means cost per enriched lead has to be low.
+    </p>
+
+    <h3>What this looks like in practice</h3>
+
+    <ul>
+      <li><strong>Distressed SFRs.</strong> Pre-foreclosure lists, code-violation lists, eviction filings. Mostly residential, but often owned by tired-landlord LLCs that mask the actual human investor.</li>
+      <li><strong>Tired-landlord portfolios.</strong> Owners with 5+ properties held for 10+ years and low equity. Enrichment surfaces both the principal's contact info and reveals which other parcels the same owner controls — the entire portfolio in one move.</li>
+      <li><strong>Probate / inherited properties.</strong> Owner deceased, property in transition. Enrichment surfaces the heir or executor's contact details (often via the joint-owner / family-member field).</li>
+      <li><strong>High-equity absentee owners.</strong> Property held free-and-clear for 15+ years, owner lives elsewhere. The classic motivated-seller profile. Enrichment surfaces the contact info to start the conversation.</li>
+    </ul>
+
+    <p>
+      Investors care about three numbers: cost per enriched lead, hit
+      rate (percentage of rows that come back with usable data), and
+      no-data-no-charge policy. LeadCove's billing is structured around
+      all three: <strong>one credit per successful enrichment</strong>, no charge
+      on misses, and same-owner-across-multiple-properties counts as one
+      lookup (so a portfolio of ten properties owned by the same LLC
+      costs one credit, not ten).
+    </p>
+
+    <h2>The LLC question, in one section</h2>
+
+    <p>
+      Whether you're residential, commercial, or investor, the moment
+      you start working any meaningful volume you'll hit LLC-owned
+      properties. Especially in Florida, where the LLC is the default
+      ownership structure for anyone with more than one investment
+      property or anyone who paid an attorney to set up basic asset
+      protection. The county tax roll shows "MIKEANGY LLC" and offers
+      no further information.
+    </p>
+
+    <p>
+      The traditional answer was: pull articles of organization from
+      the state portal (in Florida, that's Sunbiz), find the registered
+      agent, hope the registered agent will tell you who the manager is,
+      then hope the manager's name is unique enough to find them on
+      Google. Hours per LLC. Useless at scale.
+    </p>
+
+    <p>
+      LeadCove's entity-unmask pipeline runs the address → entity →
+      manager → human chain automatically. The lead row that started
+      as "MIKEANGY LLC" comes back with a real human name, their direct
+      mobile, their personal email. Same one credit as any other lookup.
+      No state-by-state setup, no manual registered-agent calls,
+      nationwide coverage.
+    </p>
+
+    <p>
+      Same workflow whether the entity is a single-property LLC owned
+      by an absentee landlord, a 12-property holding company owned by
+      a family office, or a commercial real estate trust with a 9-figure
+      portfolio. The data layer doesn't care.
+    </p>
+
+    <h2>What's the same across all three audiences</h2>
+
+    <p>
+      The product doesn't change based on who you are. Every account
+      gets:
+    </p>
+
+    <ul>
+      <li><strong>Address-to-owner lookup</strong> nationwide, residential and entity owners.</li>
+      <li><strong>Multiple phones per owner</strong> (typically 3 to 5) with per-phone Clean / DNC / TCPA pills.</li>
+      <li><strong>Multiple emails per owner</strong>, ranked by likely deliverability.</li>
+      <li><strong>Joint-owner unmasking</strong> for spouses, partners, or co-owners.</li>
+      <li><strong>LLC and trust unmasking</strong> for entity-owned properties.</li>
+      <li><strong>Color-coded scoring</strong> (A / B / C / Hold) based on equity, hold duration, and owner type — useful for prioritization regardless of property type.</li>
+      <li><strong>CRM integration</strong> with Follow Up Boss (more CRMs coming). Or use LeadCove's built-in pipeline if you don't already have a CRM.</li>
+      <li><strong>One pricing model</strong>: monthly plan with included credits, top-up packs available, cancel anytime. Same dollars per credit whether you're enriching condos or industrial buildings.</li>
+    </ul>
+
+    <h2>What's different between the audiences</h2>
+
+    <p>
+      Not the product. The list-sourcing step (what addresses you put
+      in) and the outreach step (what channel and what message you use
+      on the way out). Residential agents lean on the phone. Commercial
+      brokers tend toward email and LinkedIn. Investors run direct mail
+      campaigns in parallel with cold-calling. LeadCove tracks all four
+      channels independently per lead, with separate templates for
+      each, so the same dashboard runs all three workflows without
+      forcing one style.
+    </p>
+
+    <div class="post-callout">
+      <p>
+        <strong>The simple summary:</strong> if your job depends on getting
+        from a property address to a conversation with the owner, the
+        workflow is the same across residential, commercial, and
+        investor use cases. Upload, enrich, reach out, work the response.
+        LeadCove was built to be the layer underneath all three.
+      </p>
+    </div>
+
+    <h2>The bottom line</h2>
+
+    <p>
+      Most prospecting tools narrow themselves to one audience —
+      "residential agent CRM" or "commercial broker platform" or
+      "investor lead-gen tool" — and then build a closed ecosystem
+      that only fits that audience. LeadCove takes the opposite
+      approach: focus on the one shared problem (address → owner
+      contact) and let the rest of your stack — your CRM, your dialer,
+      your scripts, your team — stay whatever it already is.
+    </p>
+
+    <p>
+      The math works for residential agents at $49 a month and 100
+      credits. It also works for commercial brokers and investors at
+      the Power tier or with credit-pack top-ups. The product is the
+      same; only the volume changes.
+    </p>
+
+    <p>
+      Address in, owner out. That's the whole pitch. The rest is what
+      you do with it.
+    </p>
+
+  </div>
+</article>
+
+<section class="post-cta">
+  <h2>One tool. Three audiences. Address in, owner out.</h2>
+  <p>Residential agents working expireds, commercial brokers chasing off-market buildings, or investors sourcing distressed deals — same workflow, same data layer, same per-credit pricing.</p>
+  <div class="hero-ctas">
+    <a href="https://app.leadcove.io/#signup" class="btn-primary btn-lg">Sign up</a>
+    <a href="https://app.leadcove.io/" class="btn-ghost btn-lg">Sign in</a>
+  </div>
+</section>
+
+<div class="footer-wrap">
+<footer class="footer">
+  <div class="footer-col">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <path d="M3 26 C 8 22, 14 22, 20 26 C 26 30, 32 30, 37 26" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+        <path d="M3 32 C 8 28, 14 28, 20 32 C 26 36, 32 36, 37 32" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" opacity="0.5"/>
+        <circle cx="30" cy="14" r="3" fill="currentColor"/>
+      </svg>
+      <span class="brand-wordmark">LeadCove</span>
+    </div>
+    <p class="footer-tag">More dials. Less prep.</p>
+  </div>
+  <div class="footer-col">
+    <h5>Product</h5>
+    <a href="/#how">How it works</a>
+    <a href="/#features">Features</a>
+    <a href="/#tour">Tour</a>
+    <a href="/#plans">Pricing</a>
+    <a href="/#topups">Add-ons</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/about.html">About</a>
+    <a href="/blog/">Blog</a>
+  </div>
+  <div class="footer-col">
+    <h5>Account</h5>
+    <a href="https://app.leadcove.io/">Sign in</a>
+    <a href="https://app.leadcove.io/#signup">Sign up</a>
+    <a href="mailto:hello@leadcove.io">hello@leadcove.io</a>
+  </div>
+  <div class="footer-col">
+    <h5>Legal</h5>
+    <a href="/terms.html">Terms of Service</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/tcpa.html">TCPA &amp; DNC</a>
+  </div>
+  <div class="footer-bar">
+    © 2026 LeadCove · a brand owned by Miami Metro LLC · <a href="mailto:hello@leadcove.io" style="color:inherit;text-decoration:underline">hello@leadcove.io</a>
+  </div>
+</footer>
+</div>
+
+</body>
+</html>
