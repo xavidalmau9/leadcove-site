@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Google Analytics (GA4) — added 2026-05-11 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q17T70D5R4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q17T70D5R4');
+  </script>
+  <!-- Microsoft Clarity — added 2026-05-12 -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wq57o9awo1");
+  </script>
+
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Why we built LeadCove — a real estate prospecting tool by a working agent · LeadCove</title>
+<meta name="description" content="LeadCove was built by an active Florida real estate agent who lost 3–4 hours every day on prospecting prep — owner lookups, DNC scrubs, LLC unmasking. Same workflow for residential agents, commercial brokers, and investors. More dials. Less prep." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://leadcove.io/blog/why-we-built-leadcove.html" />
+<meta property="og:title" content="Why we built LeadCove — and why you should use it if you're prospecting in real estate" />
+<meta property="og:description" content="An active real estate agent's case for ending the daily prospecting-prep slog. Address in → verified owner contact out. For agents, brokers, and investors." />
+<meta property="og:image" content="https://leadcove.io/assets/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:site_name" content="LeadCove" />
+<meta property="og:locale" content="en_US" />
+<meta property="article:author" content="Jules Cordero" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Why we built LeadCove" />
+<meta name="twitter:description" content="An active real estate agent's case for ending the daily prospecting-prep slog. Address → verified owner contact. Nationwide." />
+<meta name="twitter:image" content="https://leadcove.io/assets/og.png" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" href="/favicon.svg" />
+<meta name="theme-color" content="#0B2545" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css" />
+<style>
+  .post { max-width: 720px; margin: 0 auto; padding: 56px 40px 40px; }
+  .post-eyebrow {
+    font-size: 12px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--teal-2); margin: 0 0 14px;
+  }
+  .post h1 {
+    font-family: var(--f-display); font-weight: 600;
+    font-size: clamp(34px, 4.2vw, 48px); line-height: 1.08;
+    letter-spacing: -0.02em; color: var(--navy); margin: 0 0 18px;
+  }
+  .post-meta {
+    font-size: 14px; color: var(--muted); margin: 0 0 36px;
+    padding-bottom: 24px; border-bottom: 1px solid var(--hairline);
+  }
+  .post-body { color: var(--ink-2); font-size: 17px; line-height: 1.72; }
+  .post-body p { margin: 0 0 22px; }
+  .post-body strong { color: var(--navy); }
+  .post-body h2 {
+    font-family: var(--f-display); font-weight: 600;
+    font-size: 28px; line-height: 1.2; letter-spacing: -0.01em;
+    color: var(--navy); margin: 44px 0 14px;
+  }
+  .post-body h3 {
+    font-family: var(--f-sans); font-weight: 700;
+    font-size: 18px; color: var(--navy); margin: 28px 0 10px;
+  }
+  .post-body ul, .post-body ol { padding-left: 22px; margin: 0 0 22px; }
+  .post-body li { margin: 0 0 8px; }
+  .post-body blockquote {
+    margin: 28px 0; padding: 18px 22px;
+    border-left: 3px solid var(--teal);
+    background: rgba(14,159,149,0.06);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    font-style: italic; color: var(--ink);
+  }
+  .post-body blockquote p:last-child { margin: 0; }
+  .post-callout {
+    margin: 36px 0; padding: 22px 24px;
+    background: var(--sand); border-radius: var(--radius-md);
+    border: 1px solid rgba(11,37,69,0.08);
+  }
+  .post-callout p { margin: 0; font-size: 15px; }
+  /* Capability list — what every enriched lead returns */
+  .capability-list {
+    list-style: none; padding: 0; margin: 24px 0;
+  }
+  .capability-list li {
+    display: flex; gap: 14px; padding: 12px 0;
+    border-bottom: 1px dashed rgba(11,37,69,0.08);
+    font-size: 16px; line-height: 1.55; color: var(--ink-2);
+  }
+  .capability-list li:last-child { border-bottom: 0; }
+  .capability-list .arrow {
+    flex: 0 0 24px; font-weight: 700;
+    color: var(--teal-2); font-size: 18px;
+  }
+  .capability-list strong { color: var(--navy); }
+  /* Audience triplet — three personas */
+  .audience-row {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 12px; margin: 24px 0;
+  }
+  @media (max-width: 640px) {
+    .audience-row { grid-template-columns: 1fr; }
+  }
+  .audience-card {
+    background: #fff; border: 1px solid rgba(11,37,69,0.10);
+    border-radius: var(--radius-md); padding: 18px 16px;
+  }
+  .audience-card .icon {
+    font-size: 22px; margin-bottom: 8px;
+  }
+  .audience-card h4 {
+    font-family: var(--f-sans); font-weight: 700;
+    color: var(--navy); font-size: 15px; margin: 0 0 4px;
+  }
+  .audience-card p {
+    font-size: 13px; color: var(--ink-2);
+    line-height: 1.55; margin: 0;
+  }
+  /* Signature block */
+  .signature {
+    margin: 40px 0 0; padding: 24px 0 0;
+    border-top: 1px solid var(--hairline);
+    font-size: 15px; color: var(--ink-2); line-height: 1.7;
+  }
+  .signature .name {
+    font-family: var(--f-display); font-weight: 700;
+    color: var(--navy); font-size: 18px;
+  }
+  .signature .role {
+    font-size: 13px; color: var(--muted);
+    font-style: italic;
+  }
+  .post-cta {
+    background: var(--navy); color: #fff;
+    text-align: center; padding: 56px 40px; margin-top: 24px;
+  }
+  .post-cta h2 {
+    font-family: var(--f-display); font-weight: 600;
+    font-size: 28px; margin: 0 0 12px;
+  }
+  .post-cta p {
+    color: rgba(255,255,255,0.75);
+    max-width: 520px; margin: 0 auto 24px;
+  }
+  .post-cta .hero-ctas { justify-content: center; margin: 0; }
+  .post-cta .btn-primary {
+    background: var(--teal); border-color: var(--teal); color: #fff;
+  }
+  .post-cta .btn-primary:hover {
+    background: var(--teal-2); border-color: var(--teal-2);
+  }
+  .post-cta .btn-ghost {
+    color: var(--navy); background: #fff; border-color: #fff;
+  }
+  .post-cta .btn-ghost:hover {
+    background: var(--teal); color: #fff; border-color: var(--teal);
+  }
+  .post-back {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 14px; color: var(--muted); margin-bottom: 24px;
+  }
+  .post-back:hover { color: var(--teal-2); }
+  @media (max-width: 640px) {
+    .post { padding: 40px 24px 24px; }
+    .post-body { font-size: 16px; }
+  }
+</style>
+<!-- Crisp support chat (Hugo AI + live ops). Loads async, no perf hit. -->
+<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="42ed026c-1c3c-432e-a4c8-fced861a42b2";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+</head>
+<body>
+
+<header class="nav">
+  <a class="brand" href="/">
+    <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+      <path d="M3 26 C 8 22, 14 22, 20 26 C 26 30, 32 30, 37 26" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+      <path d="M3 32 C 8 28, 14 28, 20 32 C 26 36, 32 36, 37 32" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" opacity="0.5"/>
+      <circle cx="30" cy="14" r="3" fill="currentColor"/>
+    </svg>
+    <span class="brand-wordmark">LeadCove</span>
+  </a>
+  <nav class="nav-links">
+    <a href="/#how">How it works</a>
+    <a href="/#features">Features</a>
+    <a href="/#tour">Tour</a>
+    <a href="/#pricing">Pricing</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/about.html">About</a>
+    <a href="/blog/" class="active">Blog</a>
+  </nav>
+  <div class="nav-cta">
+    <a href="https://app.leadcove.io/" class="btn-ghost">Sign in</a>
+    <a href="https://app.leadcove.io/#signup" class="btn-primary">Sign up</a>
+  </div>
+</header>
+
+<article class="post">
+  <a class="post-back" href="/blog/">← Blog</a>
+  <p class="post-eyebrow">Founder note</p>
+  <h1>Why we built LeadCove — and why you should use it if you're prospecting in real estate.</h1>
+  <p class="post-meta">5 min read · By Jules Cordero, Founder</p>
+
+  <div class="post-body">
+
+    <p>
+      After years working real estate, I was losing 3–4 hours every
+      working day on prospecting prep — before I made a single phone
+      call.
+    </p>
+
+    <p>
+      Pulling owner names out of county records. Hunting phone numbers
+      that turned out to be stale. Figuring out who's actually behind
+      every LLC and trust on the deed. Scrubbing the federal Do Not Call
+      registry so I didn't end up on a TCPA complaint list. Tracking
+      which contacts I'd already touched, who was a real lead, what was
+      a dead number.
+    </p>
+
+    <p>
+      I don't mind prep. But losing half my workday on it <em>before
+      the first conversation</em> felt wrong.
+    </p>
+
+    <p>
+      So I built the tool I wanted to use.
+    </p>
+
+    <h2>What LeadCove does</h2>
+
+    <p>
+      Upload any list of property addresses — an MLS export, a building
+      canvass, an FSBO scrape, a county pull, whatever you've got — and
+      LeadCove hands back every owner, ready to call.
+    </p>
+
+    <p>What you get on every match:</p>
+
+    <ul class="capability-list">
+      <li>
+        <span class="arrow">→</span>
+        <span><strong>Verified mobile and landline phone numbers.</strong> The ones that actually work today — not the one on the deed from 2009.</span>
+      </li>
+      <li>
+        <span class="arrow">→</span>
+        <span><strong>Active email addresses</strong> ranked by likely deliverability.</span>
+      </li>
+      <li>
+        <span class="arrow">→</span>
+        <span><strong>Per-phone DNC and TCPA-litigator flags</strong> on every number, so you know which are safe to dial before you click Call.</span>
+      </li>
+      <li>
+        <span class="arrow">→</span>
+        <span><strong>The human behind every LLC, trust, and corporation</strong> — the part that used to take hours of state-portal hunting per parcel. We do it in one credit, nationwide.</span>
+      </li>
+      <li>
+        <span class="arrow">→</span>
+        <span><strong>Joint owners surfaced as their own records.</strong> Spouse, partner, co-owner — each with their own phones and emails so you can reach the household, not just one name.</span>
+      </li>
+    </ul>
+
+    <h2>Who it's for</h2>
+
+    <div class="audience-row">
+      <div class="audience-card">
+        <div class="icon">🏠</div>
+        <h4>Residential agents</h4>
+        <p>Working expireds, FSBOs, building canvasses, absentee owners.</p>
+      </div>
+      <div class="audience-card">
+        <div class="icon">🏢</div>
+        <h4>Commercial brokers</h4>
+        <p>Off-market buildings, multi-family, retail strips, industrial. Most are LLC-owned.</p>
+      </div>
+      <div class="audience-card">
+        <div class="icon">📈</div>
+        <h4>Real estate investors</h4>
+        <p>Distressed SFRs, tired-landlord portfolios, high-equity absentee owners.</p>
+      </div>
+    </div>
+
+    <p>
+      Same workflow. Nationwide — all 50 U.S. states. No state-by-state
+      setup. No per-region waitlist. Drop a list of addresses anywhere
+      in the country and we'll work it.
+    </p>
+
+    <h2>Compliance, built in — not bolted on</h2>
+
+    <p>
+      Real estate prospecting in 2026 is regulated heavier than it ever
+      has been. Federal TCPA fines run <strong>$500 to $1,500 per
+      violation</strong>. Florida's FTSA layers stricter state-level
+      rules on top of that. One DNC dial without prior consent is the
+      cheapest insurance you can possibly buy — except you can't buy
+      back the call once it's made.
+    </p>
+
+    <p>
+      LeadCove surfaces the compliance signals on every lead
+      <em>before</em> you click Call. Per-phone DNC pills, TCPA-litigator
+      flags, mobile-vs-landline classification, source provenance for
+      audit. We don't dial or text on your behalf — that would put the
+      TCPA exposure on us, and more importantly on your license. We
+      deliver the data; you make the manual call from your own phone
+      to a verified, clean number. That's the legally cleanest
+      configuration in the market, and that's the one we'll keep being.
+    </p>
+
+    <h2>Transparent pricing — published, not hidden behind a sales call</h2>
+
+    <p>
+      Three monthly tiers: <strong>Starter at $49/mo (100 credits)</strong>,
+      <strong>Pro at $99/mo (250 credits)</strong>,
+      <strong>Power at $199/mo (500 credits)</strong>. Same product on
+      every plan; only the credit volume changes. One credit per
+      enriched prospect.
+    </p>
+
+    <p>
+      A few things nobody else in this category publishes openly:
+    </p>
+
+    <ul>
+      <li><strong>No data found = no credit charged.</strong> If our lookup returns nothing usable, you don't pay. Iron rule.</li>
+      <li><strong>Same owner across multiple properties = one credit.</strong> If the same LLC owns 10 units on your list, you pay once and the data populates on all 10.</li>
+      <li><strong>Cancel anytime from the dashboard.</strong> No phone call to a retention rep. No two-week notice. Click cancel; you're done.</li>
+      <li><strong>Add-on credit packs available</strong> for busy months — $10 / $25 / $99 / $249. No auto-renewal on these. Pack credits don't expire.</li>
+    </ul>
+
+    <div class="post-callout">
+      <p>
+        <strong>The honest math:</strong> the cheapest credit you can
+        buy from us is $0.14 (Volume pack). The most expensive is $0.49
+        (Starter plan's marginal credit). Either price tag includes the
+        dashboard, the compliance scrubs, the LLC unmask, and the CRM
+        integration — not just the data. One closed deal pays for the
+        tool for the year, several times over.
+      </p>
+    </div>
+
+    <h2>Why I'm the one writing this</h2>
+
+    <p>
+      I'm not a tech founder who decided real estate looked like a good
+      vertical to disrupt. I'm an active agent who got tired of doing
+      the prep work the hard way and built the tool I wished existed.
+      Every workflow inside LeadCove comes from real prospecting
+      calls — not a product team's whiteboard. The little details
+      (the order phones appear in, the way DNC flags render, the
+      sibling-property handling, the way joint owners get their own
+      records) all exist because I needed them in my own workday.
+    </p>
+
+    <p>
+      If you spend any part of your day going from a property address
+      to a phone call, LeadCove saves you that time. <strong>More dials.
+      Less prep.</strong> That's the whole pitch.
+    </p>
+
+    <div class="signature">
+      <div class="name">Jules Cordero</div>
+      <div class="role">Founder · LeadCove · Active Florida real estate agent</div>
+    </div>
+
+  </div>
+</article>
+
+<section class="post-cta">
+  <h2>Stop losing hours on prospecting prep. Start dialing.</h2>
+  <p>$49/mo to start. One credit per enriched prospect. No data, no charge. Cancel anytime. More dials. Less prep.</p>
+  <div class="hero-ctas">
+    <a href="https://app.leadcove.io/#signup" class="btn-primary btn-lg">Sign up</a>
+    <a href="https://app.leadcove.io/" class="btn-ghost btn-lg">Sign in</a>
+  </div>
+</section>
+
+<div class="footer-wrap">
+<footer class="footer">
+  <div class="footer-col">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <path d="M3 26 C 8 22, 14 22, 20 26 C 26 30, 32 30, 37 26" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+        <path d="M3 32 C 8 28, 14 28, 20 32 C 26 36, 32 36, 37 32" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" opacity="0.5"/>
+        <circle cx="30" cy="14" r="3" fill="currentColor"/>
+      </svg>
+      <span class="brand-wordmark">LeadCove</span>
+    </div>
+    <p class="footer-tag">More dials. Less prep.</p>
+  </div>
+  <div class="footer-col">
+    <h5>Product</h5>
+    <a href="/#how">How it works</a>
+    <a href="/#features">Features</a>
+    <a href="/#tour">Tour</a>
+    <a href="/#plans">Pricing</a>
+    <a href="/#topups">Add-ons</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/about.html">About</a>
+    <a href="/blog/">Blog</a>
+  </div>
+  <div class="footer-col">
+    <h5>Account</h5>
+    <a href="https://app.leadcove.io/">Sign in</a>
+    <a href="https://app.leadcove.io/#signup">Sign up</a>
+    <a href="mailto:hello@leadcove.io">hello@leadcove.io</a>
+  </div>
+  <div class="footer-col">
+    <h5>Legal</h5>
+    <a href="/terms.html">Terms of Service</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/tcpa.html">TCPA &amp; DNC</a>
+  </div>
+  <div class="footer-bar">
+    © 2026 LeadCove · a brand owned by Miami Metro LLC · <a href="mailto:hello@leadcove.io" style="color:inherit;text-decoration:underline">hello@leadcove.io</a>
+  </div>
+</footer>
+</div>
+
+</body>
+</html>
