@@ -156,10 +156,16 @@ a:hover { color: var(--teal); }
     font-size: 11px;
     letter-spacing: 0.04em;
     padding: 6px 12px;
-    gap: 8px;
+    gap: 6px;
   }
-  .eyebrow-divider { display: none; }
-  .eyebrow-tag { display: none; }
+  /* Keep "Nationwide" tag visible on mobile — it's a positioning
+     signal ("we cover your market") that's especially important on
+     phone where the visitor has even less context. Iron rule Xavi
+     2026-05-20: nationwide framing stays in the first viewport at
+     every viewport size. Slightly compressed letter-spacing on the
+     dot+text so the whole pill still fits on one line. */
+  .eyebrow-divider { margin: 0 2px; }
+  .eyebrow-tag { font-size: 10px; }
 }
 .hero-title {
   font-family: var(--f-display);
@@ -210,11 +216,24 @@ a:hover { color: var(--teal); }
   font-weight: 700;
 }
 .hero-microcopy {
-  margin: 0 0 32px;
+  margin: 0 0 10px;
   font-size: 13px;
   color: var(--muted);
   font-weight: 500;
   line-height: 1.4;
+}
+/* Trust line — geo-neutral founder credibility signal under the
+   trial microcopy. Iron rule Xavi 2026-05-20: nationwide, never
+   Florida-specific in marketing copy. The star + sentence gives
+   the cold visitor a 1-second "real product made by real agent"
+   read without resorting to fake testimonials. */
+.hero-trust {
+  margin: 0 0 28px;
+  font-size: 13px;
+  color: var(--teal-2);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
 }
 @media (max-width: 520px) {
   /* Phone: hide arrows + use equal-width pills so all 3 fit cleanly
