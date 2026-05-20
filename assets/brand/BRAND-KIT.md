@@ -79,6 +79,19 @@ Supporting palette (keep cool palette honest, add warmth where helpful):
 
 **Don't use** any other colors as brand expression. If we ever need a third accent (e.g. for a campaign), bring it in as a one-off and fold it back to navy/teal afterward.
 
+### Social graphics, IG/LinkedIn posts, ads, OG images — SAME RULE (Xavi 2026-05-20)
+
+Every rendered graphic that carries the LeadCove mark uses the locked
+palette. Iron rule re-confirmed after an IG post used a darker teal
+that wasn't `#0E9F95`. **Brand teal is `#0E9F95` — period.** Do not
+substitute `#0B807A` (that's hover-only), and do not eyeball a color
+from a design tool. Paste the hex directly. If the picker shows a
+different value after paste, the export will also be wrong.
+
+The rendering HTML/CSS for any social graphic should start with a
+header comment listing the palette so it's reviewable at a glance.
+Canonical example: `/Users/305partners/Desktop/LeadCove-Trial-Announcement/src/*.html`.
+
 ---
 
 ## 3. Typography
