@@ -29,6 +29,15 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+/* GLOBAL HORIZONTAL-SCROLL GUARD. Iron rule Xavi 2026-05-19:
+   "my page on mobile doesn't fit the screen properly i have to
+   scroll left and right." Root cause was .tour-scroller's
+   negative-margin edge-bleed + mock-dashboard 3D perspective
+   transform leaking past the viewport. overflow-x:hidden on html
+   AND body is the belt-and-suspenders fix that kills every
+   future negative-margin overflow leak in one rule. Do not
+   remove without an alternate per-element wrap solution. */
+html, body { overflow-x: hidden; max-width: 100vw; }
 body {
   margin: 0;
   font-family: var(--f-sans);
@@ -168,7 +177,66 @@ a:hover { color: var(--teal); }
   margin: 0 0 32px;
   max-width: 560px;
 }
-.hero-ctas { display: flex; gap: 12px; margin-bottom: 44px; flex-wrap: wrap; }
+.hero-ctas { display: flex; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
+/* IG-rhyming 3-step row — same metaphor as the IG graphics. Sits
+   between hero-sub and the CTA so an IG visitor sees the same
+   story they just tapped on. Xavi 2026-05-19. */
+.hero-flow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 8px 0 28px;
+  flex-wrap: wrap;
+}
+.hero-flow-step {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  background: rgba(14,159,149,0.08);
+  border: 1.5px solid rgba(11,128,122,0.30);
+  border-radius: 999px;
+}
+.hero-flow-ic { font-size: 22px; line-height: 1; }
+.hero-flow-l {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 0.01em;
+}
+.hero-flow-arrow {
+  font-size: 22px;
+  color: var(--teal-2);
+  font-weight: 700;
+}
+.hero-microcopy {
+  margin: 0 0 32px;
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 500;
+  line-height: 1.4;
+}
+@media (max-width: 520px) {
+  /* Phone: hide arrows + use equal-width pills so all 3 fit cleanly
+     in ~350px usable. Arrows are decorative; spacing alone reads
+     as a sequence at this scale. */
+  .hero-flow {
+    gap: 8px;
+    margin: 4px 0 20px;
+    justify-content: stretch;
+    flex-wrap: nowrap;
+  }
+  .hero-flow-arrow { display: none; }
+  .hero-flow-step {
+    flex: 1 1 0;
+    justify-content: center;
+    padding: 9px 6px;
+    gap: 6px;
+    min-width: 0;
+  }
+  .hero-flow-ic { font-size: 17px; }
+  .hero-flow-l { font-size: 13px; white-space: nowrap; }
+}
 /* ── Hero proof strip — single integrated "live data" component ───── */
 .hero-proof { margin-top: 40px; }
 
@@ -1802,6 +1870,17 @@ a:hover { color: var(--teal); }
   padding: 5px 14px; border-radius: 99px;
   font-size: 11px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
 }
+/* Starter trial badge — different color from "Most popular" so the
+   two badges read as distinct categories at a glance. */
+.tier-badge-trial { background: var(--teal); }
+/* Micro-copy below the trial CTA — "$0 today · $49 on day 7" */
+.tier-microcopy {
+  margin: 10px 0 0;
+  font-size: 12px;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.4;
+}
 /* Plan name — Starter / Pro / Power. Per Xavi 2026-04-29: "the titles
    starter pro and power need to be a cooler bigger font maybe? just
    need to stand out more for branding purposes." Using the display
@@ -2033,9 +2112,69 @@ a:hover { color: var(--teal); }
 
 /* ── Responsive ─────────────────────────────────────────────────── */
 @media (max-width: 960px) {
-  .nav { padding: 12px 20px; gap: 12px; }
-  .nav-links { display: none; }
+  .nav { padding: 12px 20px; gap: 8px; }
+  /* Mobile nav: keep top-bar links HIDDEN by default (they're shown
+     inside the hamburger drawer when toggled). Show the burger.
+     Iron rule Xavi 2026-05-19: mobile users MUST be able to reach
+     Pricing/Features/FAQ without scrolling the whole landing page. */
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 0; right: 0; bottom: 0;
+    width: min(86vw, 320px);
+    background: var(--cream);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    margin: 0;
+    padding: 78px 24px 24px;
+    box-shadow: -12px 0 32px -8px rgba(11,37,69,0.18);
+    overflow-y: auto;
+    z-index: 60;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a {
+    padding: 14px 4px;
+    font-size: 16px;
+    border-bottom: 1px solid var(--hairline);
+    color: var(--navy);
+  }
+  .nav-links a:last-child { border-bottom: 0; }
+  .nav-burger {
+    display: inline-flex;
+    align-items: center; justify-content: center;
+    width: 44px; height: 44px;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    border-radius: 8px;
+    color: var(--navy);
+    margin-left: auto;   /* push to right edge */
+  }
+  .nav-burger:hover { background: rgba(11,37,69,0.06); }
+  .nav-burger svg { width: 24px; height: 24px; }
+  /* Hamburger backdrop when drawer is open */
+  .nav-backdrop {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(11,37,69,0.40);
+    backdrop-filter: blur(2px);
+    z-index: 55;
+  }
+  .nav-backdrop.open { display: block; }
+  /* Sign-in moves into the drawer on mobile; only Sign up stays
+     visible in the top bar as the primary mobile CTA. */
+  .nav-cta .btn-ghost { display: none; }
+  .nav-cta { gap: 6px; }
+
   .hero { grid-template-columns: 1fr; padding: 44px 20px 56px; gap: 40px; }
+  /* CRITICAL: CSS grid tracks default to min-content sizing, which means
+     the dashboard mockup's implicit minimum width (~520px from tier-row
+     children) was forcing the grid track wider than the viewport on
+     mobile. Adding min-width:0 to both grid children lets them shrink
+     below their content-min so the track respects the viewport. Fixes
+     the "third hero pill is clipped" issue Xavi 2026-05-19. */
+  .hero-inner, .hero-visual { min-width: 0; }
   .hero-visual { order: 2; }
   .band { padding: 64px 20px; }
   .problem-grid { grid-template-columns: 1fr; }
@@ -2044,10 +2183,21 @@ a:hover { color: var(--teal); }
   .how-list li { grid-template-columns: 1fr; gap: 10px; }
   .footer { grid-template-columns: 1fr 1fr; padding: 40px 20px 24px; gap: 28px; }
   .mock-dashboard { transform: none; }
+
+  /* Bigger CTA tap targets on mobile — Apple HIG ≥44pt. */
+  .btn-primary, .btn-ghost { min-height: 44px; padding: 11px 18px; font-size: 15px; }
+  .btn-lg { min-height: 50px; padding: 14px 22px; font-size: 16px; }
 }
+/* Desktop: hide the burger entirely. */
+.nav-burger { display: none; }
+.nav-backdrop { display: none; }
 @media (max-width: 520px) {
   .hero-proof { grid-template-columns: 1fr; gap: 14px; }
   .footer { grid-template-columns: 1fr; }
+  /* Belt-and-suspenders: kill any residual 3D transform on the
+     hero mockup at phone sizes — even sub-pixel overflow from
+     perspective() can re-introduce horizontal scroll. */
+  .mock-dashboard { transform: none !important; }
 }
 
 /* ──────────────────────────────────────────────────────────────────
