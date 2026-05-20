@@ -63,7 +63,7 @@
     </svg>
     <span class="brand-wordmark">LeadCove</span>
   </a>
-  <nav class="nav-links">
+  <nav class="nav-links" id="navLinks">
     <a href="#how">How it works</a>
     <a href="#features">Features</a>
     <a href="#tour">Tour</a>
@@ -73,12 +73,45 @@
     <a href="/help/">Help</a>
     <a href="/about.html">About</a>
     <a href="/blog/">Blog</a>
+    <a href="https://app.leadcove.io/">Sign in</a>
   </nav>
   <div class="nav-cta">
     <a href="https://app.leadcove.io/" class="btn-ghost">Sign in</a>
-    <a href="https://app.leadcove.io/#signup" class="btn-primary">Sign up</a>
+    <a href="https://app.leadcove.io/?trial=1#signup" class="btn-primary">Start trial</a>
   </div>
+  <!-- Mobile hamburger — hidden on desktop, shown <960px via CSS. -->
+  <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false" type="button">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+  </button>
 </header>
+<div class="nav-backdrop" id="navBackdrop"></div>
+<script>
+// Hamburger toggle — opens drawer + dims rest of page.
+(function(){
+  var burger = document.getElementById('navBurger');
+  var links = document.getElementById('navLinks');
+  var back  = document.getElementById('navBackdrop');
+  if (!burger || !links || !back) return;
+  function close(){
+    links.classList.remove('open');
+    back.classList.remove('open');
+    burger.setAttribute('aria-expanded','false');
+    document.body.style.overflow = '';
+  }
+  function open(){
+    links.classList.add('open');
+    back.classList.add('open');
+    burger.setAttribute('aria-expanded','true');
+    document.body.style.overflow = 'hidden';
+  }
+  burger.addEventListener('click', function(){
+    if (links.classList.contains('open')) close(); else open();
+  });
+  back.addEventListener('click', close);
+  // Auto-close after tapping a link (smooth-scroll to target).
+  links.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', close); });
+})();
+</script>
 
 <!-- ─── Hero ──────────────────────────────────────────────────────── -->
 <section class="hero">
@@ -90,18 +123,30 @@
       <span class="eyebrow-tag">Nationwide</span>
     </div>
     <h1 class="hero-title">
-      Prospecting on autopilot for <span class="accent">real estate agents</span>.
+      Bring a list. <span class="accent">Skip the setup</span>.
     </h1>
     <p class="hero-sub">
-      You can't contact a prospect without their <strong>name, phone, and/or email</strong>.
-      LeadCove solves this — quickly and simply. Upload a CSV (any MLS export, your own
-      spreadsheet, anything with addresses) and we surface the owner data on every match,
-      ready to call, text, or email from your dashboard.
+      Real estate prospecting on autopilot. Upload any list — MLS, FSBOs, expireds, your own CSV — and LeadCove hands back verified owner contacts. <strong>5 minutes from list to first call.</strong>
     </p>
+
+    <!-- IG-style 3-step icon row — visual continuity with the IG
+         posts that bring most of our traffic. Iron rule Xavi
+         2026-05-19: an IG visitor must see the same metaphor twice
+         in 4 seconds (IG graphic → landing-page hero) so the page
+         CLICKS instantly. -->
+    <div class="hero-flow" aria-hidden="true">
+      <div class="hero-flow-step"><span class="hero-flow-ic">📄</span><span class="hero-flow-l">List</span></div>
+      <span class="hero-flow-arrow">→</span>
+      <div class="hero-flow-step"><span class="hero-flow-ic">⚡</span><span class="hero-flow-l">5 min</span></div>
+      <span class="hero-flow-arrow">→</span>
+      <div class="hero-flow-step"><span class="hero-flow-ic">☎️</span><span class="hero-flow-l">Call</span></div>
+    </div>
+
     <div class="hero-ctas">
-      <a href="https://app.leadcove.io/#signup" class="btn-primary btn-lg">Sign up</a>
+      <a href="https://app.leadcove.io/?trial=1#signup" class="btn-primary btn-lg">Start 7-day trial →</a>
       <a href="https://app.leadcove.io/" class="btn-ghost btn-lg">Sign in</a>
     </div>
+    <p class="hero-microcopy">$0 today · $49 on day 7 unless you cancel · 15 credits to try</p>
     <!-- Live-performance proof strip removed 2026-04-30 per Xavi.
          The numbers ("~95% contact-match rate / 3-4hrs/day saved /
          0 tools") were marketing claims we couldn't substantiate
@@ -312,9 +357,10 @@
 
   <div class="pricing-grid pricing-grid-3">
     <div class="tier">
+      <div class="tier-badge tier-badge-trial">7-day trial</div>
       <div class="tier-name">Starter</div>
       <div class="tier-price"><span class="dollar">$</span>49<span class="per">/mo</span></div>
-      <div class="tier-sub">For lower-volume agents</div>
+      <div class="tier-sub">Best place to start · 7-day trial</div>
       <ul class="tier-list">
         <li><strong>100 credits</strong> / month — refresh each cycle</li>
         <li>Full LeadCove CRM — Mission Control, color-coded triage, archive</li>
@@ -322,7 +368,8 @@
         <li>DNC + TCPA-litigator metadata on every enriched record</li>
         <li>Cancel anytime, no surprise charges</li>
       </ul>
-      <a href="https://app.leadcove.io/#signup" class="btn-primary btn-full">Sign up</a>
+      <a href="https://app.leadcove.io/?trial=1#signup" class="btn-primary btn-full">Start 7-day trial →</a>
+      <p class="tier-microcopy">$0 today · $49 on day 7 unless you cancel</p>
     </div>
 
     <div class="tier tier-featured">
@@ -338,7 +385,7 @@
         <li><strong>Follow Up Boss sync</strong> — auto-push every enriched lead</li>
         <li>Cancel anytime, no surprise charges</li>
       </ul>
-      <a href="https://app.leadcove.io/#signup" class="btn-primary btn-full">Sign up</a>
+      <a href="https://app.leadcove.io/#signup" class="btn-primary btn-full">Choose Pro →</a>
     </div>
 
     <div class="tier">
@@ -353,7 +400,7 @@
         <li><strong>Follow Up Boss sync</strong> — auto-push every enriched lead</li>
         <li>Cancel anytime, no surprise charges</li>
       </ul>
-      <a href="https://app.leadcove.io/#signup" class="btn-primary btn-full">Sign up</a>
+      <a href="https://app.leadcove.io/#signup" class="btn-primary btn-full">Choose Power →</a>
     </div>
   </div>
 </section>
@@ -682,13 +729,13 @@
      Direct CTA to app.leadcove.io for account creation + plan pick. -->
 <section id="get-started" class="band cta">
   <div class="cta-inner">
-    <h2>Start your LeadCove account.</h2>
+    <h2>Start your 7-day LeadCove trial.</h2>
     <p>
-      Pick a plan, upload your first list, start dialing. Cancel anytime, no surprise charges.
-      Sign-up takes about 30 seconds.
+      15 credits to try the full platform. Card required, $0 charged today.
+      Cancel anytime before day 7 — no charge, no questions.
     </p>
     <div class="hero-ctas">
-      <a href="https://app.leadcove.io/#signup" class="btn-primary btn-lg">Sign up</a>
+      <a href="https://app.leadcove.io/?trial=1#signup" class="btn-primary btn-lg">Start 7-day trial →</a>
       <a href="https://app.leadcove.io/" class="btn-ghost btn-lg">Sign in</a>
     </div>
     <script>
