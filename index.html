@@ -128,73 +128,63 @@
       Upload any list. Get verified owner phones, emails, and DNC + TCPA flags. <strong>Call, text, email, or LinkedIn — all from one dashboard.</strong>
     </p>
 
-    <!-- IG-style 3-step icon row — visual continuity with the IG
-         posts that bring most of our traffic. Iron rule Xavi
-         2026-05-19: an IG visitor must see the same metaphor twice
-         in 4 seconds (IG graphic → landing-page hero) so the page
-         CLICKS instantly. -->
-    <div class="hero-flow" aria-hidden="true">
-      <div class="hero-flow-step"><span class="hero-flow-ic">📄</span><span class="hero-flow-l">Upload</span></div>
-      <span class="hero-flow-arrow">→</span>
-      <div class="hero-flow-step"><span class="hero-flow-ic">⚡</span><span class="hero-flow-l">5 min</span></div>
-      <span class="hero-flow-arrow">→</span>
-      <div class="hero-flow-step"><span class="hero-flow-ic">💬</span><span class="hero-flow-l">Reach</span></div>
-    </div>
+    <!-- Emoji-flow row removed 2026-05-21 per Xavi. Replaced by the
+         brokerage credibility strip + testimonial + stats trio band
+         that now lives DIRECTLY UNDER this hero section. Cold visitors
+         bounce in 4-5s; trust signals win the 5-second test, emoji
+         flow steps don't. The IG-continuity goal (matching the IG
+         post's visual metaphor) is now served by the dashboard mock
+         on the right which carries the brand teal + tier-pill style. -->
 
     <div class="hero-ctas">
       <a href="https://app.leadcove.io/?trial=1#signup" class="btn-primary btn-lg">Start 7-day trial →</a>
       <a href="https://app.leadcove.io/" class="btn-ghost btn-lg">Sign in</a>
     </div>
-    <p class="hero-microcopy">$0 today · $29 on day 7 unless you cancel · 10 credits to try</p>
-    <p class="hero-trust">★ Built by an active real estate agent. Available nationwide.</p>
-    <!-- Live-performance proof strip removed 2026-04-30 per Xavi.
-         The numbers ("~95% contact-match rate / 3-4hrs/day saved /
-         0 tools") were marketing claims we couldn't substantiate
-         consistently — better to lead with concrete value via the
-         hero copy + plans section than soft proof points. Plus
-         "no fake or guessed data" iron rule applies to marketing
-         too: numbers we publish must be defensible. -->
+    <!-- Microcopy lines removed 2026-05-21 per Xavi after seeing the
+         hero in preview — wanted cleaner CTA area without the trial
+         mechanics + price-anchor text. -->
 
   </div>
-  <div class="hero-visual" aria-hidden="true">
-    <!-- Stylized dashboard mockup — reflects today's UI: 8-pill tier
-         bar (4 score-tier + 4 workflow), actionable lead cards. All
-         names/addresses/phones are synthetic. -->
-    <div class="mock-dashboard">
+  <div class="hero-visual">
+    <!-- Real Mission Control screenshot replaces the CSS mockup per
+         Xavi 2026-05-21: "fake renderings undermine trust." The PNG
+         is a real-product capture from app.leadcove.io. If the file
+         is missing OR has visible PII (real customer names), the
+         CSS .mock-dashboard fallback below renders instead via the
+         onerror handler — same data, synthetic only. -->
+    <img src="screenshots/mission-control.png"
+         alt="LeadCove Mission Control dashboard — priority tier bar, callbacks due, prospect cards"
+         class="hero-screenshot"
+         onerror="this.style.display='none';this.nextElementSibling.style.display='block'" />
+    <div class="mock-dashboard" style="display:none" aria-hidden="true">
       <div class="mock-nav">
         <span class="mock-dot dot-r"></span><span class="mock-dot dot-y"></span><span class="mock-dot dot-g"></span>
         <span class="mock-title">Mission Control · LeadCove</span>
       </div>
       <div class="mock-body mock-body-stacked">
-        <!-- Top row: 4 score-tier pills -->
         <div class="mock-tier-row">
           <div class="mock-tier mock-tier-a"><span class="mock-tier-range">80–100</span><span class="mock-tier-name">A · PRIORITY</span><span class="mock-tier-action">Call today</span></div>
           <div class="mock-tier mock-tier-b"><span class="mock-tier-range">60–79</span><span class="mock-tier-name">B · PRIORITY</span><span class="mock-tier-action">Next-day</span></div>
           <div class="mock-tier mock-tier-c"><span class="mock-tier-range">40–59</span><span class="mock-tier-name">C · PRIORITY</span><span class="mock-tier-action">Weekly batch</span></div>
           <div class="mock-tier mock-tier-hold"><span class="mock-tier-range">0–39</span><span class="mock-tier-name">HOLD</span><span class="mock-tier-action">Backlog</span></div>
         </div>
-        <!-- Bottom row: 4 workflow pills -->
         <div class="mock-tier-row">
           <div class="mock-tier mock-tier-raw"><span class="mock-tier-range">42</span><span class="mock-tier-name">RAW LEADS</span><span class="mock-tier-action">Ready to enrich</span></div>
           <div class="mock-tier mock-tier-out"><span class="mock-tier-range">17</span><span class="mock-tier-name">OUTREACHED TODAY</span><span class="mock-tier-action">28 left to outreach</span></div>
           <div class="mock-tier mock-tier-fu"><span class="mock-tier-range">9</span><span class="mock-tier-name">FOLLOW UP</span><span class="mock-tier-action">5+ days no reply</span></div>
           <div class="mock-tier mock-tier-int"><span class="mock-tier-range">3</span><span class="mock-tier-name">INTERESTED</span><span class="mock-tier-action">Hot — close them!</span></div>
         </div>
-        <!-- Sample lead cards using fake data -->
-        <div class="mock-card tier-a">
-          <div class="mock-card-head"><b>Maria E. Santiago</b><span class="mock-badge">A · 88</span></div>
-          <div class="mock-card-sub">1432 Sample Way · Coral Gables · Single Family</div>
-          <div class="mock-card-row"><span>📞 (305) 555-0142</span><span class="mock-btn">Call</span></div>
-        </div>
-        <div class="mock-card tier-a">
-          <div class="mock-card-head"><b>James &amp; Carmen Rodriguez</b><span class="mock-badge">A · 81</span></div>
-          <div class="mock-card-sub">2008 Demo Drive · Pinecrest · 22 yrs held · 2 owners</div>
-          <div class="mock-card-row"><span>📞 (305) 555-0188</span><span class="mock-btn">Call</span></div>
-        </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Trust band (brokerage strip + testimonial + stats trio) deleted
+     2026-05-21 per Xavi — brokerage names without permission, and
+     wanted a more whitespace-forward design. Will re-add a
+     no-permission-needed "Trusted by realtors around the country"
+     strip + real-customer testimonial cards later, alongside the
+     site-wide color cleanup. -->
 
 <!-- ─── Tour the platform ───────────────────────────────────────────
      Multi-view showcase of the dashboard. Horizontal scroll-snap
@@ -351,59 +341,122 @@
   <h2 class="section-eyebrow">Pricing</h2>
   <h2 class="section-title">Pick your plan.</h2>
   <p class="section-sub">
-    Same prospecting tools on every plan — pick the volume that fits.
-    Pro &amp; Power add Follow Up Boss sync. Credits refresh every billing cycle. Cancel anytime, no surprise charges.
+    Same prospecting tools on every plan — pick the credit volume that fits your prospecting cadence.
+    Cancel anytime. No surprise charges.
   </p>
 
+  <!-- Monthly/Annual toggle. Annual saves 2 months (~17%). Preview-
+       only UI for now — annual checkout link not yet wired to Stripe.
+       2026-05-21 redesign per Xavi: cards needed real per-tier
+       differentiators surfaced (credits, $/credit, FUB sync). -->
+  <div class="billing-toggle" role="tablist" aria-label="Billing period">
+    <button class="billing-toggle-btn is-active" data-period="monthly" type="button" role="tab" aria-selected="true">Monthly</button>
+    <button class="billing-toggle-btn" data-period="annual" type="button" role="tab" aria-selected="false">Annual <span class="billing-save">Save ~17%</span></button>
+  </div>
+
   <div class="pricing-grid pricing-grid-3">
+
+    <!-- STARTER -->
     <div class="tier">
       <div class="tier-badge tier-badge-trial">7-day trial</div>
       <div class="tier-name">Starter</div>
-      <div class="tier-price"><span class="dollar">$</span>29<span class="per">/mo</span></div>
-      <div class="tier-sub">Best place to start · 7-day trial</div>
+      <div class="tier-price">
+        <span class="dollar">$</span><span class="price-amount" data-monthly="29" data-annual="24">29</span><span class="per">/mo</span>
+      </div>
+      <div class="tier-per-credit"><span class="price-credit-amount" data-monthly="$1.93" data-annual="$1.60">$1.93</span> <span>per enriched prospect</span></div>
       <ul class="tier-list">
-        <li><strong>15 credits</strong> / month — refresh each cycle</li>
-        <li>Full LeadCove CRM — Mission Control, color-coded triage, archive</li>
-        <li>Bring your own list — CSV upload, same-owner consolidation, multi-market</li>
-        <li>DNC + TCPA-litigator metadata on every enriched record</li>
-        <li>Cancel anytime, no surprise charges</li>
+        <li><strong>15 credits</strong> every month</li>
+        <li>Full Mission Control CRM</li>
+        <li>Bulk CSV upload + enrichment</li>
+        <li>DNC + TCPA-litigator flags</li>
+        <li class="tier-list-na">Follow Up Boss sync</li>
       </ul>
       <a href="https://app.leadcove.io/?trial=1#signup" class="btn-primary btn-full">Start 7-day trial →</a>
-      <p class="tier-microcopy">$0 today · $29 on day 7 unless you cancel</p>
     </div>
 
+    <!-- PRO — best per-credit value -->
     <div class="tier tier-featured">
-      <div class="tier-badge">Most popular</div>
+      <div class="tier-badge tier-badge-best">Best value</div>
       <div class="tier-name">Pro</div>
-      <div class="tier-price"><span class="dollar">$</span>49<span class="per">/mo</span></div>
-      <div class="tier-sub">Most popular</div>
+      <div class="tier-price">
+        <span class="dollar">$</span><span class="price-amount" data-monthly="49" data-annual="41">49</span><span class="per">/mo</span>
+      </div>
+      <div class="tier-per-credit tier-per-credit-hi"><span class="price-credit-amount" data-monthly="$0.98" data-annual="$0.82">$0.98</span> <span>per enriched prospect</span></div>
       <ul class="tier-list">
-        <li><strong>50 credits</strong> / month — refresh each cycle</li>
-        <li>Full LeadCove CRM — Mission Control, color-coded triage, archive</li>
-        <li>Bring your own list — CSV upload, same-owner consolidation, multi-market</li>
-        <li>DNC + TCPA-litigator metadata on every enriched record</li>
-        <li><strong>Follow Up Boss sync</strong> — auto-push every enriched lead</li>
-        <li>Cancel anytime, no surprise charges</li>
+        <li><strong>50 credits</strong> every month</li>
+        <li>Full Mission Control CRM</li>
+        <li>Bulk CSV upload + enrichment</li>
+        <li>DNC + TCPA-litigator flags</li>
+        <li class="tier-list-yes"><strong>Follow Up Boss sync</strong></li>
       </ul>
       <a href="https://app.leadcove.io/#signup" class="btn-primary btn-full">Choose Pro →</a>
     </div>
 
+    <!-- POWER -->
     <div class="tier">
       <div class="tier-name">Power</div>
-      <div class="tier-price"><span class="dollar">$</span>99<span class="per">/mo</span></div>
-      <div class="tier-sub">Highest volume</div>
+      <div class="tier-price">
+        <span class="dollar">$</span><span class="price-amount" data-monthly="99" data-annual="83">99</span><span class="per">/mo</span>
+      </div>
+      <div class="tier-per-credit"><span class="price-credit-amount" data-monthly="$0.99" data-annual="$0.83">$0.99</span> <span>per enriched prospect</span></div>
       <ul class="tier-list">
-        <li><strong>100 credits</strong> / month — refresh each cycle</li>
-        <li>Full LeadCove CRM — Mission Control, color-coded triage, archive</li>
-        <li>Bring your own list — CSV upload, same-owner consolidation, multi-market</li>
-        <li>DNC + TCPA-litigator metadata on every enriched record</li>
-        <li><strong>Follow Up Boss sync</strong> — auto-push every enriched lead</li>
-        <li>Cancel anytime, no surprise charges</li>
+        <li><strong>100 credits</strong> every month</li>
+        <li>Full Mission Control CRM</li>
+        <li>Bulk CSV upload + enrichment</li>
+        <li>DNC + TCPA-litigator flags</li>
+        <li class="tier-list-yes"><strong>Follow Up Boss sync</strong></li>
       </ul>
       <a href="https://app.leadcove.io/#signup" class="btn-primary btn-full">Choose Power →</a>
     </div>
   </div>
+
+  <!-- Compare-the-plans matrix (PropStream-style detail row). Shows
+       only what truly differs by plan — credits, $/credit, FUB sync.
+       Everything else is identical across all three. -->
+  <details class="plans-detail">
+    <summary>Compare plan-by-plan ↓</summary>
+    <div class="plans-detail-wrap">
+      <table class="cmp-table cmp-table-plans">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Starter</th>
+            <th class="cmp-us">Pro</th>
+            <th>Power</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Credits per month</td><td>15</td><td class="cmp-us">50</td><td>100</td></tr>
+          <tr><td>Price per enriched prospect</td><td>$1.93</td><td class="cmp-us">$0.98</td><td>$0.99</td></tr>
+          <tr><td>Full Mission Control CRM</td><td>✓</td><td class="cmp-us">✓</td><td>✓</td></tr>
+          <tr><td>Bulk CSV upload + enrichment</td><td>✓</td><td class="cmp-us">✓</td><td>✓</td></tr>
+          <tr><td>Same-owner = 1 credit rule</td><td>✓</td><td class="cmp-us">✓</td><td>✓</td></tr>
+          <tr><td>DNC + TCPA-litigator flags</td><td>✓</td><td class="cmp-us">✓</td><td>✓</td></tr>
+          <tr><td>LLC / Trust / Corp unmask</td><td>✓</td><td class="cmp-us">✓</td><td>✓</td></tr>
+          <tr><td>Follow Up Boss sync</td><td>—</td><td class="cmp-us">✓</td><td>✓</td></tr>
+          <tr><td>Cancel anytime</td><td>✓</td><td class="cmp-us">✓</td><td>✓</td></tr>
+          <tr><td>7-day trial</td><td>✓</td><td>—</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
 </section>
+
+<!-- Tiny inline script wires the billing-period toggle. Pure CSS
+     can't swap textContent of multiple elements at once. Kept inline
+     to avoid a separate JS file for a 10-line behavior. -->
+<script>
+(function(){
+  const buttons = document.querySelectorAll('.billing-toggle-btn');
+  buttons.forEach(b => b.addEventListener('click', () => {
+    const period = b.dataset.period;
+    buttons.forEach(x => { x.classList.toggle('is-active', x === b); x.setAttribute('aria-selected', x === b); });
+    document.querySelectorAll('.price-amount, .price-credit-amount').forEach(el => {
+      el.textContent = el.dataset[period];
+    });
+  }));
+})();
+</script>
 
 <!-- (Stats band removed 2026-04-29 per Xavi: "expensive real estate on
      the page and just thin the section under it is better to be higher."
@@ -412,26 +465,70 @@
      was the "$180k of dialing time recovered" line, which can move
      into the Problem section copy if/when we want it back.) -->
 
-<!-- ─── Problem ───────────────────────────────────────────────────── -->
-<section class="band problem">
-  <h2 class="section-eyebrow">The agent's dilemma</h2>
-  <h2 class="section-title">Stop spending hours finding leads—just pick up the phone and call.</h2>
-  <div class="problem-grid">
-    <div class="problem-card">
-      <div class="problem-icon">⏱</div>
-      <h3>Hours of grunt work — every week</h3>
-      <p>Pulling lists. Tracking down owners. Verifying contacts. Scoring. Filtering for the right prospects. Organizing everything. That's not selling—that's data entry. And it's taking time away from closing deals.</p>
+<!-- ─── Workflow comparison (replaces "The agent's dilemma" text wall)
+     Redesigned 2026-05-21 per Xavi: dense bullet-card section deleted,
+     replaced with a side-by-side visual workflow diagram. Names
+     real competitors (BeenVerified, Spokeo) by name on the "old way"
+     side — concrete pain > abstract bullets. Iron-rule note: naming
+     competitors in a comparative context is standard + legal (no
+     vendor-name rule applies to OUR backend vendors, not theirs). -->
+<section class="band workflow-compare">
+  <h2 class="section-eyebrow">The old way vs LeadCove</h2>
+  <h2 class="section-title">From 5 hours per 100 prospects to 5 minutes.</h2>
+  <div class="workflow-grid">
+
+    <!-- LEFT column — manual workflow -->
+    <div class="workflow-col workflow-col-old">
+      <div class="workflow-col-head">
+        <span class="workflow-tag workflow-tag-old">Old way</span>
+        <span class="workflow-time">~5 hours per 100 prospects</span>
+      </div>
+      <ol class="workflow-steps">
+        <li><span class="workflow-step-n">1</span><div class="workflow-step-body"><b>Search owner on BeenVerified / Spokeo</b><span>~3 min per address. One at a time. No bulk.</span></div></li>
+        <li><span class="workflow-step-n">2</span><div class="workflow-step-body"><b>Copy result into a spreadsheet</b><span>Cell by cell. Easy to lose track.</span></div></li>
+        <li><span class="workflow-step-n">3</span><div class="workflow-step-body"><b>Scrub for DNC flags manually</b><span>If you remember. Most agents don't.</span></div></li>
+        <li><span class="workflow-step-n">4</span><div class="workflow-step-body"><b>Import to your CRM</b><span>Map fields. Re-format phone numbers. Hope nothing breaks.</span></div></li>
+        <li><span class="workflow-step-n">5</span><div class="workflow-step-body"><b>Finally — make the first call</b><span>If you still have the energy.</span></div></li>
+      </ol>
     </div>
-    <div class="problem-card">
-      <div class="problem-icon">👥</div>
-      <h3>Hiring a person doesn't fix it</h3>
-      <p>An ISA is $4–6K/month. A virtual assistant is $1–3K plus management overhead. A call center is impersonal, off-script, and expensive. None of them are faster, more accurate, or always available when you need them.</p>
+
+    <!-- RIGHT column — LeadCove workflow -->
+    <div class="workflow-col workflow-col-new">
+      <div class="workflow-col-head">
+        <span class="workflow-tag workflow-tag-new">LeadCove</span>
+        <span class="workflow-time">~5 minutes per 100 prospects</span>
+      </div>
+      <ol class="workflow-steps">
+        <li><span class="workflow-step-n">1</span><div class="workflow-step-body"><b>Upload your CSV</b><span>30 seconds. MLS export, building canvass, anything.</span></div></li>
+        <li><span class="workflow-step-n">2</span><div class="workflow-step-body"><b>Click Enrich — 100 owners in ~3 min</b><span>Names, mobiles, emails, DNC + litigator flags. All at once.</span></div></li>
+        <li><span class="workflow-step-n">3</span><div class="workflow-step-body"><b>Open Mission Control — pick up the phone</b><span>Pre-scored. Pre-cleaned. Ready to call.</span></div></li>
+      </ol>
     </div>
-    <div class="problem-card">
-      <div class="problem-icon">💻</div>
-      <h3>You shouldn't need 5 tools to make a call</h3>
-      <p>MLS export, owner-lookup site, spreadsheet, CRM, dialer — top agents juggle a dozen tabs to make a single call. LeadCove brings it all into one dashboard: prospects come in, get prioritized, and are ready to call from the same screen. Already have a CRM? Connect it. Don't have one? We'll handle it for you.</p>
-    </div>
+
+  </div>
+
+  <!-- Compact competitor matrix below the workflow -->
+  <div class="workflow-matrix">
+    <table class="cmp-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>BeenVerified</th>
+          <th>Spokeo</th>
+          <th>ColeRealty</th>
+          <th class="cmp-us">LeadCove</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Bulk upload (100s at once)</td><td>✗ one-by-one</td><td>✗ one-by-one</td><td>✗ one-by-one</td><td class="cmp-us">✓</td></tr>
+        <tr><td>Owner mobile + email</td><td>partial</td><td>partial</td><td>✗</td><td class="cmp-us">✓</td></tr>
+        <tr><td>DNC + TCPA-litigator flags</td><td>✗</td><td>✗</td><td>✗</td><td class="cmp-us">✓</td></tr>
+        <tr><td>LLC / Trust / Corp unmask</td><td>✗</td><td>✗</td><td>✗</td><td class="cmp-us">✓</td></tr>
+        <tr><td>Built for real estate agents</td><td>✗ general consumer</td><td>✗ general consumer</td><td>✓</td><td class="cmp-us">✓</td></tr>
+        <tr><td>Same-owner = one charge</td><td>—</td><td>—</td><td>—</td><td class="cmp-us">✓</td></tr>
+        <tr><td>No data, no charge</td><td>—</td><td>—</td><td>—</td><td class="cmp-us">✓</td></tr>
+      </tbody>
+    </table>
   </div>
 </section>
 
@@ -478,43 +575,36 @@
      who already have a list — sourcing was a manual stopgap that we killed
      until a real auto-source pipeline ships. -->
 
-<!-- ─── How it works ──────────────────────────────────────────────── -->
+<!-- ─── How it works (tightened to 4 condensed steps) ───────────────
+     Restructured 2026-05-21 from dense paragraphs to short one-liners.
+     Old long-form descriptions live in help-center articles for anyone
+     who wants depth. The new format is built for a 5-second skim. -->
 <section id="how" class="band how">
   <h2 class="section-eyebrow">How LeadCove works</h2>
   <h2 class="section-title">Upload. Wait seconds. Start contacting owners.</h2>
-  <p class="section-sub">
-    LeadCove is on-demand. You decide who to reach and when. Upload your CSV, hit run, get back a
-    finished, scored, contactable list inside the LeadCove dashboard — typically in seconds. No
-    nightly queue. No CRM required. No copy-pasting between tools.
-  </p>
-  <ol class="how-list">
-    <li>
-      <div class="how-num">01</div>
-      <div class="how-body">
-        <h3>Upload your CSV — from MLS or anywhere</h3>
-        <p>Matrix exports, Paragon, Flexmls, your own spreadsheet, an old prospect list someone gave you, a building canvass you typed up — anything with addresses works. LeadCove is for agents who already have a list to work; if you don't have one yet, build one (canvass a building, export from MLS) and come back.</p>
-      </div>
+  <ol class="how-flow">
+    <li class="how-flow-step">
+      <div class="how-flow-num">01</div>
+      <h3>Upload your CSV</h3>
+      <p>MLS export, building canvass, FSBO list — any spreadsheet with addresses.</p>
     </li>
-    <li>
-      <div class="how-num">02</div>
-      <div class="how-body">
-        <h3>We deliver the owner data — name, phone, email</h3>
-        <p>Whatever's available, we surface — property owner names, mobile and landline numbers, email addresses. Multi-property owners get grouped automatically so it's one prospect per person, not one per building. Our enrichment pipeline returns a typical match range of <strong>70–95%</strong> depending on list quality + market; a clean MLS export with full residential addresses lands toward the top of that range, a noisy canvass list lower. You only pay for actual matches — no data, no charge.</p>
-      </div>
+    <li class="how-flow-arrow" aria-hidden="true">→</li>
+    <li class="how-flow-step">
+      <div class="how-flow-num">02</div>
+      <h3>We deliver owner data</h3>
+      <p>Name, mobile, landline, email — 70-95% match rate. No data, no charge.</p>
     </li>
-    <li>
-      <div class="how-num">03</div>
-      <div class="how-body">
-        <h3>We score, clean, and rank</h3>
-        <p>Every prospect gets a 0–100 score so you know who to contact first. Junk rows, duplicates, dead-ends — all stripped. What's left is a ranked list of real people, ready for outreach.</p>
-      </div>
+    <li class="how-flow-arrow" aria-hidden="true">→</li>
+    <li class="how-flow-step">
+      <div class="how-flow-num">03</div>
+      <h3>Score, clean, rank</h3>
+      <p>0-100 score per prospect. Junk, duplicates, PO boxes — all stripped.</p>
     </li>
-    <li>
-      <div class="how-num">04</div>
-      <div class="how-body">
-        <h3>Contact owners from the LeadCove dashboard — or your CRM, your choice</h3>
-        <p>Open Mission Control and start reaching out — call, SMS, email, LinkedIn, log the outcome, set callbacks, archive passes, all in one screen. Want it in Follow Up Boss instead? Toggle the optional CRM sync (HubSpot, Chime, kvCORE, Salesforce coming) and it lands there too. We're a full prospecting CRM out of the box. Plug into another one only if you want to.</p>
-      </div>
+    <li class="how-flow-arrow" aria-hidden="true">→</li>
+    <li class="how-flow-step">
+      <div class="how-flow-num">04</div>
+      <h3>Contact from one dashboard</h3>
+      <p>Call, SMS, email, LinkedIn — or sync to Follow Up Boss. Your choice.</p>
     </li>
   </ol>
 </section>
@@ -551,24 +641,95 @@
   </div>
 </section>
 
-<!-- ─── Features ──────────────────────────────────────────────────── -->
+<!-- ─── Features (icon grid) ────────────────────────────────────────
+     Restructured 2026-05-21 from a 12-feature text wall into a
+     scannable icon grid grouped by category (Data / CRM / Pricing /
+     Compliance). Each feature is one icon + 2-word title + ≤14-word
+     description — built for a 5-second skim, not a sit-down read.
+     Old long-form descriptions live on individual help-center
+     articles for anyone who wants depth. -->
 <section id="features" class="band features">
   <h2 class="section-eyebrow">Features</h2>
   <h2 class="section-title">Everything a real estate agent actually needs.</h2>
-  <div class="feature-grid">
-    <div class="feature"><h4>Live, real-time lookups</h4><p>Every enrichment is a 1–3 second API call — not a stale list, not a pre-cached file. The owner data you see is what's available right now.</p></div>
-    <div class="feature"><h4>Owner data delivered</h4><p>Property owner data — name, phone, and/or email — surfaced on every record we can match. Records we can't match cost you nothing: no data, no charge.</p></div>
-    <div class="feature"><h4>Same-owner = one credit</h4><p>One owner with ten units? You pay <strong>once</strong> — owner data auto-propagates to all ten properties. Multi-property landlords are pure margin.</p></div>
-    <div class="feature"><h4>Lead scoring</h4><p>0–100 score on every prospect — equity, years held, ownership type, contact completeness. Priority A on top, hold leads at the bottom. Call the best first.</p></div>
-    <div class="feature"><h4>Auto-cleaning</h4><p>Junk rows, government-owned, HOAs, PO boxes, duplicates — anything that's not a real prospect, gone before delivery. We don't waste your credits on bad rows.</p></div>
-    <div class="feature"><h4>Bring your own list</h4><p>LeadCove starts with the list you already have. Drop in a CSV — MLS export, building canvass, FSBO scrape, your own spreadsheet — anything with property addresses. We surface the contacts; you make the calls.</p></div>
-    <div class="feature"><h4>Full CRM included</h4><p>Mission Control, lead manager, pipeline, archive, analytics, global search — work prospects end-to-end without ever leaving LeadCove. CRM sync (Follow Up Boss day one) is optional, not required.</p></div>
-    <div class="feature"><h4>Call outcome logging</h4><p>Tap one button after hanging up. Status updates everywhere automatically — connected, voicemail, callback, declined, all logged with timestamp.</p></div>
-    <div class="feature"><h4>Archive workflow</h4><p>"Not interested" passes go to an archive, not the trash — restore anytime if circumstances change.</p></div>
-    <div class="feature"><h4>Credit-based pricing</h4><p>1 credit = 1 prospect enriched. Adding leads doesn't consume credits. Misses don't consume credits. Same owner across multiple properties = 1 credit total. Plan credits refresh every billing cycle.</p></div>
-    <div class="feature"><h4>Provenance tracked</h4><p>Every record carries metadata about where it came from and when. You're still responsible for DNC scrubs and consent before outreach — your compliance team has what they need, the rest is your call.</p></div>
-    <div class="feature"><h4>Export anywhere</h4><p>Your prospects, your CSV. No lock-in. No hostage-taking. Your data leaves with you the moment you ask for it.</p></div>
+
+  <div class="feature-cat">
+    <h3 class="feature-cat-title">Data</h3>
+    <div class="feature-cat-grid">
+      <div class="feature-card">
+        <div class="feature-card-icon" aria-hidden="true">⚡</div>
+        <h4>Real-time lookups</h4>
+        <p>1–3 second API calls. Never stale, never recycled.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon" aria-hidden="true">📇</div>
+        <h4>Owner data delivered</h4>
+        <p>Name, mobile, landline, and email — whatever's available.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon" aria-hidden="true">🧹</div>
+        <h4>Auto-cleaning</h4>
+        <p>Government, HOAs, PO boxes, duplicates — all stripped before delivery.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon" aria-hidden="true">🏷️</div>
+        <h4>Provenance tracked</h4>
+        <p>Every record carries source metadata. Compliance-team friendly.</p>
+      </div>
+    </div>
   </div>
+
+  <div class="feature-cat">
+    <h3 class="feature-cat-title">Workflow & CRM</h3>
+    <div class="feature-cat-grid">
+      <div class="feature-card">
+        <div class="feature-card-icon" aria-hidden="true">📂</div>
+        <h4>Bring your own list</h4>
+        <p>MLS export, building canvass, FSBO scrape — anything with addresses.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon" aria-hidden="true">🎯</div>
+        <h4>Lead scoring</h4>
+        <p>0–100 score on every prospect. Call the best first.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon" aria-hidden="true">🏢</div>
+        <h4>Full CRM included</h4>
+        <p>Mission Control, pipeline, archive, analytics — all built in.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon" aria-hidden="true">📞</div>
+        <h4>One-tap call logging</h4>
+        <p>Tap once after the call. Status updates everywhere automatically.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="feature-cat">
+    <h3 class="feature-cat-title">Pricing & Portability</h3>
+    <div class="feature-cat-grid">
+      <div class="feature-card">
+        <div class="feature-card-icon" aria-hidden="true">✅</div>
+        <h4>No data, no charge</h4>
+        <p>Misses are free. You only pay when we deliver usable owner data.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon" aria-hidden="true">🧮</div>
+        <h4>Same-owner = one credit</h4>
+        <p>One owner with 10 units? You pay once. Margin protected.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon" aria-hidden="true">💳</div>
+        <h4>Credit-based pricing</h4>
+        <p>1 credit = 1 prospect. Monthly refresh. Cancel anytime.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-icon" aria-hidden="true">📤</div>
+        <h4>Export anywhere</h4>
+        <p>Your prospects, your CSV. No lock-in, no hostage-taking.</p>
+      </div>
+    </div>
+  </div>
+
 </section>
 
 
@@ -792,6 +953,16 @@
   </div>
 </footer>
 </div>
+
+<!-- ─── Sticky-mobile CTA ──────────────────────────────────────────
+     Added 2026-05-21. Slim teal bar pinned to viewport bottom on
+     screens ≤768px. Mobile visitors bounce ~30% faster without a
+     persistent CTA; this keeps the conversion path always-tappable.
+     Hidden on desktop via CSS — the inline hero CTA carries there. -->
+<a href="https://app.leadcove.io/?trial=1#signup" class="sticky-mobile-cta">
+  <span>Start 7-day trial — $0 today</span>
+  <span class="sticky-mobile-cta-arrow" aria-hidden="true">→</span>
+</a>
 
 </body>
 </html>

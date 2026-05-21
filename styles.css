@@ -42,7 +42,13 @@ body {
   margin: 0;
   font-family: var(--f-sans);
   color: var(--ink);
-  background: var(--cream);
+  /* Background switched cream → white 2026-05-21 per Xavi feedback
+     ("a little more white color"). Cream is still used as an accent
+     background on specific bands (band-muted, pricing, etc.) so the
+     design retains rhythm — but the default page background is now
+     white, which makes the hero + product screenshots feel crisper
+     and more SaaS-like, less brochure-like. */
+  background: #ffffff;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
 }
@@ -54,7 +60,7 @@ a:hover { color: var(--teal); }
   position: sticky; top: 0; z-index: 50;
   display: flex; align-items: center; gap: 2rem;
   padding: 14px 40px;
-  background: rgba(251,248,243,0.88);
+  background: rgba(255,255,255,0.92);
   backdrop-filter: blur(14px) saturate(1.3);
   -webkit-backdrop-filter: blur(14px) saturate(1.3);
   border-bottom: 1px solid var(--hairline);
@@ -170,11 +176,19 @@ a:hover { color: var(--teal); }
 .hero-title {
   font-family: var(--f-display);
   font-weight: 600;
-  font-size: clamp(40px, 5.2vw, 64px);
+  font-size: clamp(34px, 5.2vw, 64px);
   line-height: 1.04;
   letter-spacing: -0.025em;
   color: var(--navy);
   margin: 0 0 22px;
+  /* Defensive wrap: at narrow widths "addresses" alone is wider than
+     half the screen — let it break if it must rather than overflow
+     the viewport. Caught 2026-05-21 in mobile preview. */
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+@media (max-width: 420px) {
+  .hero-title { font-size: 30px; line-height: 1.08; }
 }
 .accent { color: var(--teal); }
 .hero-sub {
@@ -216,11 +230,19 @@ a:hover { color: var(--teal); }
   font-weight: 700;
 }
 .hero-microcopy {
-  margin: 0 0 10px;
+  margin: 0 0 6px;
   font-size: 13px;
   color: var(--muted);
   font-weight: 500;
   line-height: 1.4;
+}
+/* Secondary microcopy line — price-anchor under the trial mechanics
+   line. Removes the "is this $50 or $500/mo?" anxiety in 1 second
+   for cold visitors who don't scroll. */
+.hero-microcopy-anchor {
+  margin: 0 0 28px;
+  color: var(--navy);
+  font-weight: 600;
 }
 /* Trust line — geo-neutral founder credibility signal under the
    trial microcopy. Iron rule Xavi 2026-05-20: nationwide, never
@@ -388,6 +410,21 @@ a:hover { color: var(--teal); }
 
 /* ── Hero mockup ────────────────────────────────────────────────── */
 .hero-visual { display: flex; justify-content: center; }
+/* Real-product screenshot in the hero. Replaced the CSS mockup
+   2026-05-21 per Xavi (fake renderings undermine trust). Subtle
+   shadow + rounded corner + 1px hairline = "framed window" look
+   that frames the screenshot without competing with it. */
+.hero-screenshot {
+  display: block;
+  width: 100%;
+  max-width: 640px;
+  height: auto;
+  border-radius: 14px;
+  box-shadow:
+    0 1px 2px rgba(11,37,69,0.06),
+    0 24px 56px -16px rgba(11,37,69,0.22);
+  border: 1px solid rgba(11,37,69,0.08);
+}
 .mock-dashboard {
   width: 100%; max-width: 520px;
   background: var(--navy);
@@ -855,25 +892,318 @@ a:hover { color: var(--teal); }
 }
 .problem-card p { color: var(--ink-2); font-size: 14.5px; margin: 0; }
 
-/* ── How ────────────────────────────────────────────────────────── */
-.how-list { list-style: none; padding: 0; margin: 40px 0 0; display: flex; flex-direction: column; gap: 0; }
-.how-list li {
-  display: grid; grid-template-columns: 120px 1fr; gap: 36px;
-  padding: 32px 0;
-  border-top: 1px solid var(--hairline);
+/* ── How (4-step flow chart, redesigned 2026-05-21) ──────────────
+   Old format was a stacked 2-column list with dense paragraphs (~120
+   words per step). Restructured as a horizontal flow with arrows on
+   desktop, stacked with no arrows on mobile. Each step is ≤20 words. */
+.how { background: #ffffff; }
+.how-flow {
+  list-style: none;
+  margin: 40px auto 0;
+  padding: 0;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  max-width: 1180px;
 }
-.how-list li:last-child { border-bottom: 1px solid var(--hairline); }
-.how-num {
+.how-flow-step {
+  flex: 1 1 220px;
+  min-width: 0;
+  background: #ffffff;
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  padding: 22px 20px;
+  text-align: left;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.how-flow-step:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -16px rgba(11,37,69,0.16);
+}
+.how-flow-num {
   font-family: var(--f-display);
-  font-size: 44px; font-weight: 600;
+  font-size: 32px;
+  font-weight: 600;
   color: var(--teal);
   letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 10px;
 }
-.how-body h3 {
-  font-family: var(--f-display); font-size: 24px; font-weight: 600;
-  color: var(--navy); margin: 4px 0 8px; letter-spacing: -0.015em;
+.how-flow-step h3 {
+  font-family: var(--f-display);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--navy);
+  margin: 0 0 6px;
+  letter-spacing: -0.005em;
 }
-.how-body p { color: var(--ink-2); font-size: 15.5px; margin: 0; max-width: 720px; }
+.how-flow-step p { color: var(--ink-2); font-size: 13.5px; margin: 0; line-height: 1.4; }
+.how-flow-arrow {
+  display: flex;
+  align-items: center;
+  font-size: 26px;
+  color: var(--teal-2);
+  font-weight: 400;
+  padding: 0 2px;
+  flex: 0 0 auto;
+}
+@media (max-width: 820px) {
+  .how-flow { flex-direction: column; gap: 12px; }
+  .how-flow-arrow {
+    transform: rotate(90deg);
+    align-self: center;
+    padding: 0;
+  }
+  .how-flow-step { flex: 1 1 auto; }
+}
+
+/* ── Trust band (under hero) — credibility strip + testimonial +
+   stats trio. Added 2026-05-21 to close the 5-second-bounce gap
+   identified vs PropStream. Three trust signals stacked into one
+   short band; total height ~280px desktop, ~480px mobile. ──── */
+.trust-band {
+  background: #ffffff;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  padding: 40px 24px;
+}
+.trust-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+/* (1) Brokerage credibility strip */
+.trust-pedigree { text-align: center; }
+.trust-pedigree-label {
+  margin: 0 0 10px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.trust-pedigree-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  row-gap: 8px;
+}
+.trust-brand {
+  font-family: var(--f-display);
+  font-size: 18px;
+  letter-spacing: 0.04em;
+  color: var(--navy);
+  font-weight: 600;
+}
+.trust-pedigree-sep {
+  color: var(--hairline);
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* (2) Testimonial card */
+.trust-testimonial {
+  margin: 0;
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.trust-quote {
+  margin: 0 0 10px;
+  font-family: var(--f-display);
+  font-size: 22px;
+  line-height: 1.45;
+  color: var(--navy);
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  font-style: italic;
+}
+.trust-attrib {
+  font-size: 13px;
+  color: var(--ink-2);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+}
+.trust-attrib-name { font-weight: 700; color: var(--navy); }
+.trust-attrib-sep { color: var(--hairline); }
+.trust-attrib-role { font-weight: 500; }
+
+/* (3) Stats trio */
+.trust-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 920px;
+  margin: 0 auto;
+}
+.trust-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 16px 12px;
+  background: var(--cream);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+.trust-stat-icon { font-size: 24px; line-height: 1; margin-bottom: 4px; }
+.trust-stat-num {
+  font-family: var(--f-display);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+}
+.trust-stat-lbl {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+@media (max-width: 720px) {
+  .trust-band { padding: 28px 16px; }
+  .trust-inner { gap: 24px; }
+  .trust-pedigree-row { gap: 10px; }
+  .trust-brand { font-size: 14px; letter-spacing: 0.03em; }
+  .trust-quote { font-size: 18px; }
+  .trust-stats { grid-template-columns: 1fr; gap: 10px; }
+  .trust-stat { flex-direction: row; justify-content: center; padding: 12px; gap: 10px; }
+  .trust-stat-num { font-size: 18px; }
+}
+
+/* ── Sticky-mobile CTA ────────────────────────────────────────────
+   Slim teal bar pinned to viewport bottom on screens ≤768px.
+   Hidden on desktop where the inline hero CTA is always visible. */
+.sticky-mobile-cta {
+  display: none;
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 100;
+  background: var(--teal);
+  color: #fff;
+  padding: 14px 18px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.005em;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 -4px 14px rgba(11,37,69,.15);
+  text-decoration: none;
+}
+.sticky-mobile-cta:hover { background: var(--teal-2); color: #fff; }
+.sticky-mobile-cta-arrow { font-size: 17px; line-height: 1; }
+@media (max-width: 768px) {
+  .sticky-mobile-cta { display: inline-flex; }
+  /* Add bottom padding so the sticky bar never covers the footer */
+  body { padding-bottom: 56px; }
+}
+
+/* ── Workflow comparison (replaces "agent's dilemma" text wall) ──
+   Side-by-side "old way (BeenVerified one-by-one) vs LeadCove" with
+   a compact competitor matrix beneath. Added 2026-05-21 per Xavi
+   feedback that the previous text-wall section was unreadable. */
+.workflow-compare { background: #ffffff; max-width: none; }
+.workflow-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  max-width: 1120px;
+  margin: 32px auto 48px;
+}
+.workflow-col {
+  background: #ffffff;
+  border: 1px solid var(--hairline);
+  border-radius: 18px;
+  padding: 28px 26px;
+}
+.workflow-col-old { border-color: rgba(192,32,32,0.22); }
+.workflow-col-new { border-color: var(--teal); box-shadow: 0 14px 32px -16px rgba(14,159,149,0.30); }
+.workflow-col-head {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 18px; padding-bottom: 14px;
+  border-bottom: 1px dashed var(--hairline);
+  gap: 12px;
+}
+.workflow-tag {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; padding: 4px 10px; border-radius: 999px;
+}
+.workflow-tag-old { background: rgba(192,32,32,0.08); color: #b1272a; }
+.workflow-tag-new { background: rgba(14,159,149,0.12); color: var(--teal-2); }
+.workflow-time { font-size: 13px; color: var(--muted); font-weight: 600; text-align: right; }
+.workflow-steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+.workflow-steps li { display: flex; gap: 14px; align-items: flex-start; }
+.workflow-step-n {
+  flex-shrink: 0;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--cream);
+  color: var(--navy);
+  font-family: var(--f-display);
+  font-size: 15px; font-weight: 600;
+  display: flex; align-items: center; justify-content: center;
+  line-height: 1;
+}
+.workflow-col-new .workflow-step-n { background: var(--teal); color: #fff; }
+.workflow-step-body { display: flex; flex-direction: column; gap: 2px; }
+.workflow-step-body b { color: var(--navy); font-size: 15px; line-height: 1.35; }
+.workflow-step-body span { color: var(--muted); font-size: 13px; line-height: 1.4; }
+
+/* Competitor matrix below the workflow */
+.workflow-matrix { max-width: 1120px; margin: 0 auto; overflow-x: auto; }
+.cmp-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--hairline);
+  font-size: 14px;
+}
+.cmp-table th, .cmp-table td {
+  padding: 12px 16px;
+  text-align: center;
+  border-bottom: 1px solid var(--hairline);
+  color: var(--ink-2);
+}
+.cmp-table thead th {
+  background: var(--cream);
+  font-weight: 700;
+  color: var(--navy);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.cmp-table tbody td:first-child {
+  text-align: left;
+  color: var(--navy);
+  font-weight: 600;
+  background: var(--cream);
+}
+.cmp-table tbody tr:last-child td { border-bottom: 0; }
+.cmp-table .cmp-us { background: rgba(14,159,149,0.06); color: var(--teal-2); font-weight: 700; }
+.cmp-table thead th.cmp-us { background: var(--teal); color: #fff; }
+
+@media (max-width: 820px) {
+  .workflow-grid { grid-template-columns: 1fr; }
+  .workflow-col-head { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .workflow-time { text-align: left; }
+  .cmp-table { font-size: 12px; }
+  .cmp-table th, .cmp-table td { padding: 8px 8px; }
+}
 
 /* ── Stats band (right under hero) ──────────────────────────────── */
 .stats-band {
@@ -1752,28 +2082,57 @@ a:hover { color: var(--teal); }
   .screenshot-main { grid-row: auto; aspect-ratio: 16 / 10; }
 }
 
-/* ── Features ───────────────────────────────────────────────────── */
-.features { background: #fff; max-width: none; padding-left: 40px; padding-right: 40px; }
+/* ── Features (icon-grid layout, redesigned 2026-05-21) ─────────
+   Three category bands (Data / Workflow & CRM / Pricing & Portability)
+   each containing a 4-up icon-grid row. Restructured from a text-wall
+   that nobody read. Each card is icon + 2-word title + ≤14-word line. */
+.features { background: #ffffff; max-width: none; padding-left: 40px; padding-right: 40px; }
 .features > * { max-width: 1240px; margin-left: auto; margin-right: auto; }
-.feature-grid {
+.feature-cat { margin-top: 48px; }
+.feature-cat:first-of-type { margin-top: 36px; }
+.feature-cat-title {
+  font-family: var(--f-display);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--navy);
+  margin: 0 0 18px;
+  letter-spacing: -0.01em;
+  text-align: center;
+}
+.feature-cat-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 2px;
-  background: var(--hairline);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  margin-top: 36px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+.feature-card {
+  background: #ffffff;
   border: 1px solid var(--hairline);
+  border-radius: 14px;
+  padding: 22px 20px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
-.feature {
-  background: #fff;
-  padding: 26px;
+.feature-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -16px rgba(11,37,69,0.16);
 }
-.feature h4 {
-  font-weight: 700; font-size: 15.5px; color: var(--navy); margin: 0 0 6px;
+.feature-card-icon {
+  font-size: 26px;
+  line-height: 1;
+  margin-bottom: 12px;
+  display: block;
+}
+.feature-card h4 {
+  font-weight: 700; font-size: 14.5px; color: var(--navy); margin: 0 0 6px;
   letter-spacing: -0.005em;
 }
-.feature p { color: var(--ink-2); font-size: 14px; margin: 0; }
+.feature-card p { color: var(--ink-2); font-size: 13.5px; margin: 0; line-height: 1.4; }
+
+@media (max-width: 900px) {
+  .feature-cat-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px) {
+  .feature-cat-grid { grid-template-columns: 1fr; }
+}
 
 /* ── Coverage section ───────────────────────────────────────────── */
 .coverage { background: var(--cream); }
@@ -1889,9 +2248,105 @@ a:hover { color: var(--teal); }
   padding: 5px 14px; border-radius: 99px;
   font-size: 11px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
 }
-/* Starter trial badge — different color from "Most popular" so the
-   two badges read as distinct categories at a glance. */
+/* Starter trial badge — different color from the featured badge so
+   the two badges read as distinct categories at a glance. */
 .tier-badge-trial { background: var(--teal); }
+/* "Best value" badge — replaces "Most popular" 2026-05-21 per Xavi
+   feedback that the plans needed real differentiators surfaced. Pro
+   is genuinely the best per-credit value ($0.98 vs $1.93 / $0.99). */
+.tier-badge-best { background: var(--teal); }
+
+/* Per-credit price displayed under the headline price — surfaces
+   the real value math so Pro's $0.98/credit stands out as the best
+   deal across the lineup. */
+.tier-per-credit {
+  margin: -4px 0 18px;
+  font-size: 13px;
+  color: var(--muted);
+  display: flex; align-items: baseline; gap: 6px;
+}
+.tier-per-credit .price-credit-amount {
+  color: var(--navy); font-weight: 700; font-size: 14px;
+}
+.tier-per-credit-hi .price-credit-amount {
+  color: var(--teal-2);
+}
+.tier-list-na {
+  color: var(--muted);
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+.tier-list-yes::before { content: ''; }
+
+/* Billing period toggle (Monthly / Annual). PropStream-style pill. */
+.billing-toggle {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px;
+  background: var(--cream);
+  border-radius: 999px;
+  border: 1px solid var(--hairline);
+  margin: 0 auto 32px;
+  gap: 2px;
+}
+.plans-hero { text-align: center; }
+.plans-hero .billing-toggle { display: inline-flex; }
+.billing-toggle-btn {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink-2);
+  padding: 9px 18px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.15s ease, color 0.15s ease;
+  font-family: var(--f-sans);
+}
+.billing-toggle-btn:hover { color: var(--navy); }
+.billing-toggle-btn.is-active {
+  background: #ffffff;
+  color: var(--navy);
+  box-shadow: 0 1px 3px rgba(11,37,69,0.10);
+}
+.billing-save {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(14,159,149,0.14);
+  color: var(--teal-2);
+}
+
+/* Compare-plans expandable matrix (below the cards). */
+.plans-detail {
+  max-width: 920px;
+  margin: 36px auto 0;
+  text-align: left;
+}
+.plans-detail summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--teal-2);
+  font-size: 14px;
+  text-align: center;
+  padding: 12px;
+  list-style: none;
+}
+.plans-detail summary::-webkit-details-marker { display: none; }
+.plans-detail summary:hover { color: var(--teal); }
+.plans-detail[open] summary { margin-bottom: 16px; }
+.plans-detail-wrap { overflow-x: auto; }
+.cmp-table-plans { font-size: 14px; }
+.cmp-table-plans tbody td:first-child { background: #ffffff; }
+.cmp-table-plans .cmp-us { background: rgba(14,159,149,0.06); }
+.cmp-table-plans thead th.cmp-us { background: var(--teal); color: #fff; }
 /* Micro-copy below the trial CTA — "$0 today · $49 on day 7" */
 .tier-microcopy {
   margin: 10px 0 0;
@@ -2185,6 +2640,18 @@ a:hover { color: var(--teal); }
      visible in the top bar as the primary mobile CTA. */
   .nav-cta .btn-ghost { display: none; }
   .nav-cta { gap: 6px; }
+  /* CRITICAL mobile-overflow fix 2026-05-21: on ≤768px the inline
+     nav-cta had BOTH "Sign in" + "Start trial" alongside brand +
+     burger, totaling ~400px in a 390px viewport. That pushed every
+     downstream layout child past the viewport and got clipped by
+     overflow-x:hidden (caused the H1 "addresses" being cut, the
+     trust-band testimonial being cut, etc.). Sign-in lives in the
+     drawer per the existing nav-links setup — only the trial CTA
+     needs to stay inline as the always-visible primary action. */
+  .nav-cta .btn-ghost { display: none; }
+  /* Tighten the Start trial button on phones so brand + button +
+     burger fit comfortably in 390px viewport. */
+  .nav-cta .btn-primary { padding: 8px 12px; font-size: 13px; min-height: 36px; }
 
   .hero { grid-template-columns: 1fr; padding: 44px 20px 56px; gap: 40px; }
   /* CRITICAL: CSS grid tracks default to min-content sizing, which means
