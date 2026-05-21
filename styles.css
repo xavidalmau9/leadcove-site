@@ -2257,21 +2257,14 @@ a:hover { color: var(--teal); }
    is genuinely the best per-credit value ($0.98 vs $1.93 / $0.99). */
 .tier-badge-best { background: var(--teal); }
 
-/* Per-credit price displayed under the headline price — surfaces
-   the real value math so Pro's $0.98/credit stands out as the best
-   deal across the lineup. */
-.tier-per-credit {
-  margin: -4px 0 18px;
-  font-size: 13px;
-  color: var(--muted);
-  display: flex; align-items: baseline; gap: 6px;
-}
-.tier-per-credit .price-credit-amount {
-  color: var(--navy); font-weight: 700; font-size: 14px;
-}
-.tier-per-credit-hi .price-credit-amount {
-  color: var(--teal-2);
-}
+/* Centered text alignment for the plans-hero section (headline + sub
+   + cards). Kept after the billing toggle removal since the section
+   layout relies on this. */
+.plans-hero { text-align: center; }
+
+/* Tier-list ✗-row styling — used for Follow Up Boss row on Starter
+   to show "not included" without removing the row entirely. Keeps
+   visual alignment with Pro/Power's row. */
 .tier-list-na {
   color: var(--muted);
   opacity: 0.5;
@@ -2279,51 +2272,12 @@ a:hover { color: var(--teal); }
 }
 .tier-list-yes::before { content: ''; }
 
-/* Billing period toggle (Monthly / Annual). PropStream-style pill. */
-.billing-toggle {
-  display: inline-flex;
-  align-items: center;
-  padding: 4px;
-  background: var(--cream);
-  border-radius: 999px;
-  border: 1px solid var(--hairline);
-  margin: 0 auto 32px;
-  gap: 2px;
-}
-.plans-hero { text-align: center; }
-.plans-hero .billing-toggle { display: inline-flex; }
-.billing-toggle-btn {
-  appearance: none;
-  background: transparent;
-  border: 0;
-  cursor: pointer;
-  font-size: 13.5px;
-  font-weight: 600;
-  color: var(--ink-2);
-  padding: 9px 18px;
-  border-radius: 999px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: background 0.15s ease, color 0.15s ease;
-  font-family: var(--f-sans);
-}
-.billing-toggle-btn:hover { color: var(--navy); }
-.billing-toggle-btn.is-active {
-  background: #ffffff;
-  color: var(--navy);
-  box-shadow: 0 1px 3px rgba(11,37,69,0.10);
-}
-.billing-save {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: 2px 8px;
-  border-radius: 999px;
-  background: rgba(14,159,149,0.14);
-  color: var(--teal-2);
-}
+/* (Removed 2026-05-21:
+   - .tier-per-credit / .tier-per-credit-hi / .price-credit-amount —
+     plan per-credit math is not promoted per iron rule
+     feedback_no_per_credit_on_monthly_plans.md
+   - .billing-toggle, .billing-toggle-btn, .billing-save —
+     annual toggle removed per Xavi, Stripe has no annual Prices.) */
 
 /* Compare-plans expandable matrix (below the cards). */
 .plans-detail {
