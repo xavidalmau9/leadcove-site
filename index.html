@@ -345,14 +345,21 @@
     Cancel anytime. No surprise charges.
   </p>
 
-  <!-- Monthly/Annual toggle. Annual saves 2 months (~17%). Preview-
-       only UI for now — annual checkout link not yet wired to Stripe.
-       2026-05-21 redesign per Xavi: cards needed real per-tier
-       differentiators surfaced (credits, $/credit, FUB sync). -->
-  <div class="billing-toggle" role="tablist" aria-label="Billing period">
-    <button class="billing-toggle-btn is-active" data-period="monthly" type="button" role="tab" aria-selected="true">Monthly</button>
-    <button class="billing-toggle-btn" data-period="annual" type="button" role="tab" aria-selected="false">Annual <span class="billing-save">Save ~17%</span></button>
-  </div>
+  <!-- Monthly/Annual toggle REMOVED 2026-05-21 — Stripe has no annual
+       Prices provisioned. Toggle was visual-only; clicking "Choose
+       Pro" with Annual selected would have routed to the monthly
+       checkout and charged $49/mo, not the displayed annual rate.
+       Misleading + chargeback risk. Re-introduce only after:
+       (1) deciding whether to offer annual at all,
+       (2) deciding on annual pricing,
+       (3) creating 3 new Stripe Prices (yearly recurring) in Live,
+       (4) adding STRIPE_PRICE_PLAN_*_ANNUAL env vars in Vercel,
+       (5) updating lib/stripe.js + api/stripe/checkout.js to accept
+           a period parameter and route to the matching Price ID,
+       (6) updating the marketing-site CTAs to pass ?period=annual
+           when the toggle is set.
+       Until then: monthly only. -->
+
 
   <div class="pricing-grid pricing-grid-3">
 
@@ -438,21 +445,9 @@
   </details>
 </section>
 
-<!-- Tiny inline script wires the billing-period toggle. Pure CSS
-     can't swap textContent of multiple elements at once. Kept inline
-     to avoid a separate JS file for a 10-line behavior. -->
-<script>
-(function(){
-  const buttons = document.querySelectorAll('.billing-toggle-btn');
-  buttons.forEach(b => b.addEventListener('click', () => {
-    const period = b.dataset.period;
-    buttons.forEach(x => { x.classList.toggle('is-active', x === b); x.setAttribute('aria-selected', x === b); });
-    document.querySelectorAll('.price-amount, .price-credit-amount').forEach(el => {
-      el.textContent = el.dataset[period];
-    });
-  }));
-})();
-</script>
+<!-- Billing-period toggle script removed 2026-05-21 alongside the
+     toggle UI itself (no annual Prices provisioned in Stripe). -->
+
 
 <!-- (Stats band removed 2026-04-29 per Xavi: "expensive real estate on
      the page and just thin the section under it is better to be higher."
