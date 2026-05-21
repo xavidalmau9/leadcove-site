@@ -111,7 +111,7 @@ a:hover { color: var(--teal); }
   align-items: center;
   max-width: 1240px;
   margin: 0 auto;
-  padding: 72px 40px 96px;
+  padding: 56px 40px 64px;
 }
 .hero-inner { max-width: 620px; }
 .eyebrow {
@@ -757,16 +757,17 @@ a:hover { color: var(--teal); }
 .mock-key-tier-b { background: rgba(245,185,58,0.20); color: #f5b93a; }
 
 /* ── Bands (generic section wrapper) ────────────────────────────── */
-/* Symmetric padding (Xavi 2026-05-02 — "should be equal top/bottom").
-   Was 96/96 — visually too generous, sections felt over-spaced and
-   the page read as long-er than necessary. Tightened to 64/64 across
-   the board. .band-tight kept smaller for the hero-adjacent plans
-   block. Section-sub margin-bottom reduced 48→32 for tighter heading
-   stacks. */
+/* Symmetric padding (Xavi feedback path):
+   - 2026-05-02: 96 → 64 ("equal top/bottom, less generous")
+   - 2026-05-21: 64 → 48 ("a lot of empty space at the bottom of a
+     section and at the top of the next section"). White-on-white
+     bands with minimal accent backgrounds don't need as much vertical
+     breathing room because there's no color contrast to absorb the
+     gap visually. Mobile gets a further reduction. */
 .band {
   max-width: 1240px;
   margin: 0 auto;
-  padding: 64px 40px;
+  padding: 48px 40px;
 }
 .band + .band { border-top: 1px solid var(--hairline); }
 
@@ -1461,7 +1462,7 @@ a:hover { color: var(--teal); }
    under the hero per Xavi 2026-04-29. Tighter top padding than a
    normal .band so the plans don't feel disconnected from the hero
    pitch above. */
-.band-tight { padding-top: 40px; padding-bottom: 40px; }
+.band-tight { padding-top: 32px; padding-bottom: 32px; }
 .plans-hero { background: #fff; }
 .plans-hero .section-eyebrow,
 .plans-hero .section-title,
@@ -2653,7 +2654,7 @@ a:hover { color: var(--teal); }
      burger fit comfortably in 390px viewport. */
   .nav-cta .btn-primary { padding: 8px 12px; font-size: 13px; min-height: 36px; }
 
-  .hero { grid-template-columns: 1fr; padding: 44px 20px 56px; gap: 40px; }
+  .hero { grid-template-columns: 1fr; padding: 36px 20px 40px; gap: 32px; }
   /* CRITICAL: CSS grid tracks default to min-content sizing, which means
      the dashboard mockup's implicit minimum width (~520px from tier-row
      children) was forcing the grid track wider than the viewport on
@@ -2662,7 +2663,7 @@ a:hover { color: var(--teal); }
      the "third hero pill is clipped" issue Xavi 2026-05-19. */
   .hero-inner, .hero-visual { min-width: 0; }
   .hero-visual { order: 2; }
-  .band { padding: 64px 20px; }
+  .band { padding: 40px 20px; }
   .problem-grid { grid-template-columns: 1fr; }
   .pricing-grid { grid-template-columns: 1fr; gap: 16px; }
   .tier-featured { transform: none; }
