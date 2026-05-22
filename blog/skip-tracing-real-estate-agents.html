@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Google Analytics (GA4) — added 2026-05-11 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q17T70D5R4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q17T70D5R4');
+  </script>
+  <!-- Microsoft Clarity — added 2026-05-12 -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wq57o9awo1");
+  </script>
+
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Skip tracing for real estate agents: how it works, what it costs, what to avoid · LeadCove</title>
+<meta name="description" content="Plain-language guide to skip tracing for real estate agents. What it is, how to find a property owner's phone and email at scale, what good data costs in 2026, TCPA + DNC compliance basics, and how to unmask the human behind LLC-owned properties." />
+<meta name="keywords" content="skip tracing real estate, skip tracing for real estate agents, real estate skip tracing software, find property owner phone, LLC owner lookup, unmask LLC owner, TCPA real estate, DNC scrubbing" />
+<link rel="canonical" href="https://leadcove.io/blog/skip-tracing-real-estate-agents.html" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://leadcove.io/blog/skip-tracing-real-estate-agents.html" />
+<meta property="og:title" content="Skip tracing for real estate agents: how it works, what it costs, what to avoid" />
+<meta property="og:description" content="Plain-language guide to skip tracing for real estate agents. What it is, how to find a property owner's phone and email at scale, what good data costs, TCPA + DNC compliance, and how to unmask LLC-owned properties." />
+<meta property="og:image" content="https://leadcove.io/assets/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:site_name" content="LeadCove" />
+<meta property="og:locale" content="en_US" />
+<meta property="article:author" content="LeadCove" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Skip tracing for real estate agents: the practical guide" />
+<meta name="twitter:description" content="What it is, how it works, what it costs, what to avoid. Plus how to unmask LLC-owned properties." />
+<meta name="twitter:image" content="https://leadcove.io/assets/og.png" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" href="/favicon.svg" />
+<meta name="theme-color" content="#0B2545" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css" />
+<style>
+  .post { max-width: 720px; margin: 0 auto; padding: 56px 40px 40px; }
+  .post-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal-2); margin: 0 0 14px; }
+  .post h1 { font-family: var(--f-display); font-weight: 600; font-size: clamp(34px, 4.2vw, 48px); line-height: 1.08; letter-spacing: -0.02em; color: var(--navy); margin: 0 0 18px; }
+  .post-meta { font-size: 14px; color: var(--muted); margin: 0 0 36px; padding-bottom: 24px; border-bottom: 1px solid var(--hairline); }
+  .post-meta strong { color: var(--ink-2); font-weight: 600; }
+  .post-body { color: var(--ink-2); font-size: 17px; line-height: 1.72; }
+  .post-body p { margin: 0 0 22px; }
+  .post-body strong { color: var(--navy); }
+  .post-body h2 { font-family: var(--f-display); font-weight: 600; font-size: 28px; line-height: 1.2; letter-spacing: -0.01em; color: var(--navy); margin: 44px 0 14px; }
+  .post-body h3 { font-family: var(--f-sans); font-weight: 700; font-size: 18px; color: var(--navy); margin: 28px 0 10px; }
+  .post-body ul, .post-body ol { padding-left: 22px; margin: 0 0 22px; }
+  .post-body li { margin: 0 0 8px; }
+  .post-callout { margin: 36px 0; padding: 22px 24px; background: var(--sand); border-radius: var(--radius-md); border: 1px solid rgba(11,37,69,0.08); }
+  .post-callout p { margin: 0; font-size: 15px; }
+  .post-cta { background: var(--navy); color: #fff; text-align: center; padding: 56px 40px; margin-top: 24px; }
+  .post-cta h2 { font-family: var(--f-display); font-weight: 600; font-size: 28px; color: #fff; margin: 0 0 12px; }
+  .post-cta p { color: rgba(255,255,255,0.78); font-size: 16px; margin: 0 0 22px; }
+  .post-cta .btn-primary { background: var(--teal); }
+  .post-cta .btn-primary:hover { background: var(--teal-2); }
+  .post-back { display: inline-block; font-size: 13px; color: var(--muted); margin-bottom: 24px; text-decoration: none; }
+  .post-back:hover { color: var(--navy); }
+  .related { max-width: 720px; margin: 0 auto; padding: 40px; border-top: 1px solid var(--hairline); }
+  .related h3 { font-family: var(--f-sans); font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 0 0 14px; }
+  .related a { display: block; color: var(--navy); font-weight: 500; padding: 8px 0; text-decoration: none; }
+  .related a:hover { color: var(--teal-2); }
+  @media (max-width: 640px) {
+    .post { padding: 40px 24px 24px; }
+    .post-body { font-size: 16px; }
+    .related { padding: 32px 24px; }
+  }
+</style>
+<!-- JSON-LD structured data for Article — Google rich snippets -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Skip tracing for real estate agents: how it works, what it costs, what to avoid",
+  "description": "Plain-language guide to skip tracing for real estate agents. What it is, how to find a property owner's phone and email at scale, what good data costs in 2026, TCPA + DNC compliance basics, and how to unmask the human behind LLC-owned properties.",
+  "datePublished": "2026-05-22",
+  "dateModified": "2026-05-22",
+  "author": { "@type": "Organization", "name": "LeadCove" },
+  "publisher": { "@type": "Organization", "name": "LeadCove", "url": "https://leadcove.io/" },
+  "image": "https://leadcove.io/assets/og.png",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://leadcove.io/blog/skip-tracing-real-estate-agents.html" }
+}
+</script>
+<!-- Crisp support chat -->
+<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="42ed026c-1c3c-432e-a4c8-fced861a42b2";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+</head>
+<body>
+
+<header class="nav">
+  <a class="brand" href="/">
+    <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+      <path d="M3 26 C 8 22, 14 22, 20 26 C 26 30, 32 30, 37 26" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+      <path d="M3 32 C 8 28, 14 28, 20 32 C 26 36, 32 36, 37 32" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" opacity="0.5"/>
+      <circle cx="30" cy="14" r="3" fill="currentColor"/>
+    </svg>
+    <span class="brand-wordmark">LeadCove</span>
+  </a>
+  <nav class="nav-links" id="navLinks">
+    <a href="/">Home</a>
+    <a href="/blog/" class="active">Blog</a>
+    <a href="/help/">Help</a>
+    <a href="https://app.leadcove.io/">Sign in</a>
+  </nav>
+  <div class="nav-cta">
+    <a href="https://app.leadcove.io/" class="btn-ghost">Sign in</a>
+    <a href="https://app.leadcove.io/#signup" class="btn-primary">Sign up</a>
+  </div>
+</header>
+
+<article class="post">
+  <a class="post-back" href="/blog/">← Blog</a>
+  <p class="post-eyebrow">Guide · skip tracing</p>
+  <h1>Skip tracing for real estate agents: how it works, what it costs, what to avoid</h1>
+  <p class="post-meta">12 min read · By the LeadCove team</p>
+
+  <div class="post-body">
+
+    <p>
+      <strong>Skip tracing</strong> is the practice of taking a property address (or a name, or a partial record) and finding the owner's current phone, email, and mailing address. In real estate, it's the difference between a list of <em>addresses</em> and a list of <em>prospects you can actually reach</em>. Same row of data — but only one of them is a phone call away from a listing.
+    </p>
+
+    <p>
+      Done well, real estate skip tracing compresses two hours of property-by-property Google + Whitepages + county-records hunting into a 30-second bulk lookup. Done badly, it produces a CSV of disconnected numbers, a couple of TCPA fines, and a wasted afternoon. This guide is the working agent's version of "how to do it well" — what skip tracing is, where the data comes from, what good output looks like, what it should cost, and the compliance traps to avoid.
+    </p>
+
+    <h2>What "skip tracing" actually means</h2>
+
+    <p>
+      The term comes from the bail-bonds and collections world, where "skip" means a person who's skipped out and "tracing" means finding them. In real estate, nobody's hiding — but the same data infrastructure (multi-source identity graphs, phone-line carrier records, public-records aggregators) is what turns an address into a contactable human.
+    </p>
+
+    <p>
+      Practically, skip tracing for real estate agents is a one-way function: <strong>property address → owner contact info</strong>. The inputs and outputs:
+    </p>
+
+    <ul>
+      <li><strong>Inputs you give:</strong> property address (the most common starting point), sometimes a name from the county tax roll, sometimes a partial record from MLS.</li>
+      <li><strong>Outputs you get back:</strong> owner's full name, current mobile and landline numbers, email addresses, mailing address (often different from the property if absentee), and increasingly, the human behind LLC / Trust / Corp ownership structures.</li>
+    </ul>
+
+    <h2>Where the data actually comes from</h2>
+
+    <p>
+      Skip tracing isn't magic — it's the assembly of dozens of public and licensed data sources into a single lookup. The major buckets:
+    </p>
+
+    <ul>
+      <li><strong>County tax rolls and parcel records.</strong> Every U.S. property has an assessed-owner record at the county level. This is the starting point — name + mailing address. Usually a year stale and often only the legal entity (e.g., "MIKEANGY LLC") rather than the human.</li>
+      <li><strong>Phone carrier line records.</strong> Verizon, AT&amp;T, T-Mobile, and the dozens of MVNOs report active line ownership to a regulated layer of data brokers. This is where current mobile numbers come from, including the line-type signal (mobile vs landline) that's critical for TCPA compliance.</li>
+      <li><strong>Credit-header data.</strong> Aggregated, anonymized identity records from credit bureaus — the same plumbing that powers identity-verification at banks and KYC tooling. Skip-trace vendors license access through compliance-vetted channels.</li>
+      <li><strong>Business registry and Secretary of State filings.</strong> When a property is owned by an LLC, Trust, or Corp, you need to pierce the entity to find the actual human. The state's business-entity portal (Sunbiz in Florida, the SOS filings elsewhere) lists the registered agent and managing members. Modern skip-trace tools automate this lookup.</li>
+      <li><strong>Public records aggregators.</strong> Court filings, voter records, deed transfers, marriage and divorce records — useful for confirming a match across data sources.</li>
+    </ul>
+
+    <p>
+      The skill of a good skip-trace vendor is in the <em>match logic</em>: how confidently they connect "owner name on the parcel record" with "current phone number from the carrier feed." Confidence scores, multi-source cross-validation, and recency are what separate a 95%-match-rate vendor from a 60%-match-rate vendor.
+    </p>
+
+    <h2>What good skip-tracing output looks like</h2>
+
+    <p>
+      A skip-traced record that an agent can actually work has all of these on a single row:
+    </p>
+
+    <ul>
+      <li><strong>Owner name(s),</strong> including the human behind any LLC, Trust, or Corp ownership.</li>
+      <li><strong>Multiple verified phone numbers</strong> — typically 3 to 5 per owner — with line-type indicators (mobile vs landline) so you know which to dial first.</li>
+      <li><strong>Per-phone DNC flag.</strong> Federal Do Not Call list status on every single phone, refreshed within the last 30 days. Critical for staying out of TCPA jail.</li>
+      <li><strong>TCPA-litigator flag.</strong> Known professional plaintiffs who file TCPA lawsuits as an income strategy. Dial these and you're paying their mortgage — skip entirely.</li>
+      <li><strong>Multiple email addresses,</strong> ranked by deliverability and recency.</li>
+      <li><strong>Joint-owner data</strong> when a property is co-owned (spouse, business partner) — names + phones + emails for both.</li>
+      <li><strong>Mailing address</strong> when it differs from the property address (the "absentee owner" signal — they don't live in the rental).</li>
+    </ul>
+
+    <p>
+      Anything less and you're paying for the cost of skip tracing without the data quality that justifies it. Multi-source vendors that return all of the above run $0.20-$1.00 per enriched record in 2026 — vendors that return just a phone number with no compliance flags are usually $0.10-$0.30 but cost you 5× more in mis-dialed-DNC fines and wasted time.
+    </p>
+
+    <h2>What it costs (the honest math)</h2>
+
+    <p>
+      The skip-tracing market in 2026 looks roughly like this:
+    </p>
+
+    <ul>
+      <li><strong>Per-lookup wholesale (REIskip, Skip Genie, raw API access):</strong> $0.10-$0.25 per hit. You manage your own list, scrub, and compliance.</li>
+      <li><strong>Monthly subscriptions with bundled lookups (BatchLeads, PropStream):</strong> $99-$199/month, includes 1,500-10,000 lookups. Better UX, often spotty on LLC unmask.</li>
+      <li><strong>Enterprise/team plans (Lexis-Nexis, IDI):</strong> $1,000+/month minimums, contract-required, built for collections firms not solo agents.</li>
+      <li><strong>Agent-focused with full CRM (LeadCove):</strong> $29-$99/month, bundled credits, "no data, no charge" billing so misses don't cost you anything. Best-fit for working agents who don't want to manage a wholesale skip-trace pipeline separately from their dialer.</li>
+    </ul>
+
+    <p>
+      The single biggest cost mistake is paying per-record for skip tracing where the vendor charges for <em>attempts</em>, not <em>hits</em>. On a noisy list, you might pay for 200 records and only get 142 usable rows — a 71% hit rate. If your vendor charges on attempts, you just paid 40% over true cost. The "no data, no charge" billing model exists specifically to align the vendor's incentives with yours.
+    </p>
+
+    <div class="post-callout">
+      <p><strong>Quick math:</strong> a typical Brickell expireds export (200 rows, 85% match rate, mostly residential, ~30% LLC-owned) at LeadCove pricing is 170 credits ≈ one Pro plan month. At per-attempt wholesale ($0.20 × 200 = $40) you pay for the misses; at LeadCove you don't.</p>
+    </div>
+
+    <h2>TCPA + DNC compliance — the part nobody wants to talk about</h2>
+
+    <p>
+      Skip tracing without TCPA and DNC compliance is the fastest way to turn a $0.20 lookup into a $1,500 lawsuit. Federal TCPA fines run $500-$1,500 per violation. State laws — Florida's FTSA, California's CIPA, Oklahoma's mini-TCPA — stack additional liability on top, with FTSA specifically authorizing private lawsuits at $500/call minimum plus attorney's fees.
+    </p>
+
+    <p>
+      Three rules any real estate agent doing skip tracing at scale needs to internalize:
+    </p>
+
+    <ol>
+      <li><strong>Scrub against the federal DNC registry before every campaign.</strong> The list updates daily. A number that was safe to dial last week can be DNC-listed today. Modern skip-trace tools should return a fresh DNC flag with every enrichment — not a 90-day-old cached value.</li>
+      <li><strong>Flag known TCPA litigators.</strong> A small population of professional plaintiffs file thousands of TCPA suits a year. Their phone numbers circulate among compliance teams as a known-litigator list. Dial one and you've handed them a $1,500 settlement check.</li>
+      <li><strong>Don't blast SMS to skip-traced numbers without consent.</strong> The 10DLC framework that governs A2P text messaging in the U.S. effectively requires prior opt-in for marketing texts. Cold-texting at scale via Twilio or similar will get the campaign blocked by carriers, your number flagged, and — if a recipient complains — TCPA liability stacked on top. <a href="/blog/dont-blast-sms-balanced-prospecting.html">Full SMS compliance breakdown here</a>.</li>
+    </ol>
+
+    <p>
+      We covered the legal specifics in a separate post: <a href="/blog/tcpa-florida-real-estate-agents.html">TCPA + Florida FTSA for real estate agents: what triggers a fine</a>. If you're prospecting any meaningful volume, read it once and bookmark it.
+    </p>
+
+    <h2>The LLC problem (and how modern skip tracing solves it)</h2>
+
+    <p>
+      In luxury and investment-heavy markets, a non-trivial fraction of properties are owned by LLCs, Trusts, or Corporations. Brickell. Beverly Hills. Aspen. Manhattan. The Hamptons. Anywhere with high-value real estate has 40-60% entity ownership rates. The county tax roll shows "MIKEANGY LLC" and gives you nothing else.
+    </p>
+
+    <p>
+      Old-school skip tracing punted on LLCs entirely — returned "REFERENCE ONLY" or just blanked the row. Modern skip tracing solves this by piercing the entity:
+    </p>
+
+    <ul>
+      <li>Cross-reference the LLC's registered agent and managing-member filings from the Secretary of State.</li>
+      <li>Match the managing member's name back against the consumer identity graph (phone, email, mailing address).</li>
+      <li>Surface both the entity name AND the human contact info so you know who you're actually calling.</li>
+    </ul>
+
+    <p>
+      The LLC-unmask capability is one of the strongest signals of a modern skip-trace tool. Vendors that return just "MIKEANGY LLC" with no further info aren't useful for luxury or investor-targeted prospecting. <a href="/blog/find-property-owner-residential-commercial-investor.html">More on LLC unmasking here</a>.
+    </p>
+
+    <h2>How LeadCove does skip tracing</h2>
+
+    <p>
+      We built LeadCove because every existing skip-tracing tool either targeted investors (BatchLeads, PropStream, REISkip), required a wholesale pipeline you had to manage yourself (raw skip-trace API access from data brokers), or charged $300+/month for a "real estate" product that was really just data resale with a thin CRM bolted on.
+    </p>
+
+    <p>
+      LeadCove is a single integrated workflow for agents:
+    </p>
+
+    <ul>
+      <li><strong>Upload any list</strong> — MLS expireds, FSBO scrapes, building canvasses, your own CSV. No setup wizard, no field-mapping page, no "configure your integrations" step.</li>
+      <li><strong>One-click enrich</strong> — bulk skip-trace 100, 500, 1,000 rows at once. Returns the multi-source result we described above: 3-5 phones per owner, line-type, DNC, TCPA-litigator, multiple emails, joint-owner data, mailing address.</li>
+      <li><strong>LLC + Trust + Corp unmask</strong> — built in, no separate workflow.</li>
+      <li><strong>No data, no charge</strong> — credits only consumed when we deliver usable contact info. Misses are free.</li>
+      <li><strong>Same owner = one charge</strong> — if an owner holds 10 properties on your list, you pay for the skip-trace once and the contact info propagates to all 10.</li>
+      <li><strong>Built-in CRM</strong> — Mission Control, lead scoring, call/SMS/email/LinkedIn logging, archive workflow, FUB sync optional.</li>
+      <li><strong>Pricing</strong> — $29-$99/mo depending on volume. 7-day trial. Cancel anytime.</li>
+    </ul>
+
+    <h2>Common questions</h2>
+
+    <h3>Is skip tracing legal?</h3>
+    <p>
+      Yes, when the data sources are licensed and the use case is permissible under FCRA (Fair Credit Reporting Act) and GLBA (Gramm-Leach-Bliley Act). Real estate prospecting is a permissible use case. Vendors that source from sketchy data resellers (scraped social media, breached datasets) operate in gray areas — stick to vendors that publicly document their data licensing.
+    </p>
+
+    <h3>How accurate is real estate skip tracing?</h3>
+    <p>
+      Best-in-class vendors deliver 80-95% match rates on clean U.S. residential lists. Quality drops on noisy lists (commercial, multi-unit, mobile homes), foreign-owned properties, and recently transferred deeds. Don't believe anyone claiming 99% — they're either lying or counting "any phone returned" rather than "current owner's actual phone."
+    </p>
+
+    <h3>How long does a skip trace take?</h3>
+    <p>
+      Modern API-based skip tracing returns results in 1-3 seconds per lookup. Bulk runs of 100-1,000 records complete in 1-5 minutes. The old workflow of submitting a CSV and getting results back the next day is dead.
+    </p>
+
+    <h3>Can I skip-trace my own number?</h3>
+    <p>
+      Yes, and it's a good sanity check before you commit to a vendor. Sign up for a trial, enter your home address, see what comes back. If the vendor returns your correct mobile, your spouse's mobile, and your current email — they have a real identity graph. If they return a disconnected number from a previous address, save your money.
+    </p>
+
+    <h2>The bottom line</h2>
+
+    <p>
+      Skip tracing is the prep-work multiplier that lets a working real estate agent spend more of the day actually dialing instead of hunting for numbers. Done right, it's the single highest-leverage tool in the prospecting stack. Done badly — wrong vendor, no compliance flags, no LLC unmask — it's a TCPA lawsuit waiting to happen.
+    </p>
+
+    <p>
+      If you want to skip the vendor-shopping and just see what good skip tracing looks like on your own list, start a 7-day LeadCove trial. Upload any CSV, enrich up to 10 rows on the trial credits, and judge the quality against whatever you're using today.
+    </p>
+
+  </div>
+</article>
+
+<section class="post-cta">
+  <h2>See what good skip tracing looks like on your list.</h2>
+  <p>7-day trial. $0 today. 10 credits to try it on real prospects. Cancel anytime.</p>
+  <a href="https://app.leadcove.io/?trial=1#signup" class="btn-primary btn-lg">Start your 7-day trial →</a>
+</section>
+
+<section class="related">
+  <h3>Related reading</h3>
+  <a href="/blog/find-property-owner-residential-commercial-investor.html">How to find a property owner's name, phone, and email — for residential, commercial, or investor</a>
+  <a href="/blog/the-phone-you-have-isnt-the-phone-to-call.html">The phone you have isn't the phone you should call (DNC trap, real example)</a>
+  <a href="/blog/tcpa-florida-real-estate-agents.html">TCPA + Florida FTSA for real estate agents: what triggers a fine</a>
+  <a href="/blog/dont-blast-sms-balanced-prospecting.html">Don't blast SMS — the carrier rules + safer cadences</a>
+  <a href="/blog/credit-pack-math-real-estate-prospecting-cost.html">What does a real estate prospecting credit actually cost?</a>
+</section>
+
+<footer class="footer">
+  <div class="footer-col">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <path d="M3 26 C 8 22, 14 22, 20 26 C 26 30, 32 30, 37 26" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+        <path d="M3 32 C 8 28, 14 28, 20 32 C 26 36, 32 36, 37 32" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" opacity="0.5"/>
+        <circle cx="30" cy="14" r="3" fill="currentColor"/>
+      </svg>
+      <span class="brand-wordmark">LeadCove</span>
+    </div>
+    <p class="footer-tag">More dials. Less prep.</p>
+  </div>
+  <div class="footer-col">
+    <h5>Product</h5>
+    <a href="/#how">How it works</a>
+    <a href="/#features">Features</a>
+    <a href="/#tour">Tour</a>
+    <a href="/#plans">Pricing</a>
+    <a href="/#topups">Add-ons</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/about.html">About</a>
+    <a href="/blog/">Blog</a>
+  </div>
+  <div class="footer-col">
+    <h5>Account</h5>
+    <a href="https://app.leadcove.io/">Sign in</a>
+    <a href="https://app.leadcove.io/#signup">Sign up</a>
+    <a href="mailto:hello@leadcove.io">hello@leadcove.io</a>
+  </div>
+  <div class="footer-col">
+    <h5>Legal</h5>
+    <a href="/terms.html">Terms of Service</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="/tcpa.html">TCPA &amp; DNC</a>
+  </div>
+  <div class="footer-bar">
+    © 2026 LeadCove · a brand owned by Miami Metro LLC · <a href="mailto:hello@leadcove.io" style="color:inherit;text-decoration:underline">hello@leadcove.io</a>
+  </div>
+</footer>
+
+</body>
+</html>
