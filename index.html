@@ -21,26 +21,70 @@
 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>LeadCove — Real estate prospecting on autopilot. Nationwide.</title>
-<meta name="description" content="LeadCove automates real estate prospecting. Upload any list — MLS expireds, withdrawals, canceleds, FSBOs, your own CSV — and get back property owners' contact information with matched phone numbers and emails. Available nationwide. Sign up at app.leadcove.io." />
+<title>LeadCove — Real estate skip tracing + prospecting software | Nationwide</title>
+<meta name="description" content="Real estate skip tracing + prospecting software. Upload any list (MLS expireds, FSBOs, building canvasses, your CSV) and get back verified owner phones, emails, and DNC + TCPA flags in seconds. LLC + Trust owner unmask. Nationwide. 7-day trial." />
+<meta name="keywords" content="skip tracing, real estate skip tracing, real estate prospecting software, find property owner contact, expired listing leads, FSBO leads, absentee owner leads, LLC owner lookup, unmask LLC owner, TCPA real estate, realtor CRM, DNC scrubbing real estate" />
+<link rel="canonical" href="https://leadcove.io/" />
 <!-- ─── Open Graph + Twitter card ──────────────────────────────────
      Social-share + iMessage/Slack/LinkedIn snippet metadata. The OG
      image at /assets/og.png is rendered from /assets/og.svg via sips
      (1200x630 brand card). Re-run `sips -s format png og.svg --out
-     og.png` after editing the SVG. -->
+     og.png` after editing the SVG.
+     SEO note 2026-05-22: titles + descriptions reworked to lead with
+     high-search-volume keywords ("skip tracing", "real estate
+     prospecting software"). Voice in the body stays canonical
+     (Enrich, not skip-trace) — per feedback_no_skip_trace_in_user_strings.md
+     iron rule (relaxed for SEO context per Xavi). -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://leadcove.io/" />
-<meta property="og:title" content="LeadCove — Real estate prospecting on autopilot. Nationwide." />
-<meta property="og:description" content="Drop in any list. Get back owner data on every match — ready to call, text, or email from your dashboard. More dials. Less prep." />
+<meta property="og:title" content="LeadCove — Real estate skip tracing + prospecting software | Nationwide" />
+<meta property="og:description" content="Upload any list. Get back verified owner phones, emails, DNC + TCPA flags in seconds. LLC + Trust unmask. Nationwide. 7-day trial." />
 <meta property="og:image" content="https://leadcove.io/assets/og.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:site_name" content="LeadCove" />
 <meta property="og:locale" content="en_US" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="LeadCove — Real estate prospecting on autopilot." />
-<meta name="twitter:description" content="Drop in any list. Get back owner data on every match. More dials. Less prep." />
+<meta name="twitter:title" content="LeadCove — Real estate skip tracing + prospecting software" />
+<meta name="twitter:description" content="Upload any list. Get back verified owner phones, emails, DNC + TCPA flags in seconds. LLC + Trust unmask. Nationwide. 7-day trial." />
 <meta name="twitter:image" content="https://leadcove.io/assets/og.png" />
+<!-- ─── JSON-LD structured data for Google rich snippets ──────────
+     SoftwareApplication schema = Google may show price, rating,
+     and category in search results. Per schema.org/SoftwareApplication.
+     Keep this section in sync with lib/stripe.js PLAN_CATALOG when
+     prices change. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "LeadCove",
+  "description": "Real estate skip tracing + prospecting software. Upload any list and get back verified owner phones, emails, DNC + TCPA flags in seconds. LLC + Trust owner unmask. Nationwide.",
+  "applicationCategory": "BusinessApplication",
+  "applicationSubCategory": "Real Estate",
+  "operatingSystem": "Web (any modern browser)",
+  "offers": [
+    { "@type": "Offer", "name": "Starter", "price": "29", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "29", "priceCurrency": "USD", "billingDuration": "P1M" } },
+    { "@type": "Offer", "name": "Pro",     "price": "49", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "49", "priceCurrency": "USD", "billingDuration": "P1M" } },
+    { "@type": "Offer", "name": "Power",   "price": "99", "priceCurrency": "USD", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "99", "priceCurrency": "USD", "billingDuration": "P1M" } }
+  ],
+  "featureList": [
+    "Skip tracing — verified owner phones, emails, mobile vs landline",
+    "DNC + TCPA-litigator flags on every record",
+    "LLC, Trust, and Corporation owner unmask",
+    "Bulk CSV upload — MLS expireds, FSBOs, building canvasses",
+    "Same-owner deduplication (one credit per distinct owner)",
+    "Mission Control CRM (Call / SMS / Email / LinkedIn from one dashboard)",
+    "Optional Follow Up Boss sync",
+    "Nationwide coverage"
+  ],
+  "url": "https://leadcove.io/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Miami Metro LLC",
+    "url": "https://leadcove.io/"
+  }
+}
+</script>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="apple-touch-icon" href="/favicon.svg" />
 <meta name="theme-color" content="#0B2545" />
