@@ -150,6 +150,7 @@ ${meta.jsonld}
 
 function shellFoot() {
   return `
+<div class="footer-wrap">
 <footer class="footer">
   <div class="footer-col">
     <div class="brand">
@@ -188,6 +189,7 @@ function shellFoot() {
     © 2026 LeadCove · a brand owned by Miami Metro LLC · <a href="mailto:hello@leadcove.io" style="color:inherit;text-decoration:underline">hello@leadcove.io</a>
   </div>
 </footer>
+</div>
 
 </body></html>`;
 }
