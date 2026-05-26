@@ -327,15 +327,35 @@
 
     const r = json.reveal || {};
     const rowFn = (k, v, badge) => v ? `<div class="fl-reveal-row"><span class="k">${k}</span><span class="v">${escapeHtml(v)}${badge || ''}</span></div>` : '';
+    // Show EVERY phone Tracerfy returned (up to 5). Each row carries
+    // its own DNC + type badge so the visitor sees the full picture.
+    const phoneTypeLabel = { mobile: 'Mobile', landline: 'Landline', voip: 'VoIP' };
+    const phoneRows = (arr, ownerLabel) => (arr || []).map((p, i) => {
+      const label = ownerLabel
+        ? `${ownerLabel} · ${phoneTypeLabel[p.type] || 'Phone'} ${i + 1}`
+        : `${phoneTypeLabel[p.type] || 'Phone'} ${i + 1}`;
+      const badge = p.dnc
+        ? '<span class="fl-reveal-badge warn">⚠ DNC</span>'
+        : '<span class="fl-reveal-badge">DNC clean</span>';
+      return `<div class="fl-reveal-row"><span class="k">${label}</span><span class="v">${escapeHtml(p.number)}${badge}</span></div>`;
+    }).join('');
+    const emailRows = (arr, ownerLabel) => (arr || []).map((e, i) => {
+      const label = ownerLabel ? `${ownerLabel} · Email ${i + 1}` : `Email ${i + 1}`;
+      return `<div class="fl-reveal-row"><span class="k">${label}</span><span class="v">${escapeHtml(e)}</span></div>`;
+    }).join('');
     resCard.innerHTML = `
       <p class="label">Contact found for this address</p>
       ${r.is_llc ? '<span class="fl-llc-pill">✓ LLC unmasked</span>' : ''}
       <h2 style="margin-bottom:8px">${escapeHtml(r.owner_name || '—')}</h2>
       ${r.owner_2_name ? `<p style="margin:0 0 16px;color:rgba(255,255,255,0.7);font-size:15px">Also at this address: <strong style="color:#fff">${escapeHtml(r.owner_2_name)}</strong></p>` : '<div style="height:8px"></div>'}
-      ${rowFn('Mobile',   r.phone_1, r.dnc_clean ? '<span class="fl-reveal-badge">DNC clean</span>' : '')}
-      ${rowFn('Phone 2',  r.phone_2)}
-      ${rowFn('Email',    r.email_1)}
-      ${rowFn('Mail to',  r.mailing_address)}
+      ${phoneRows(r.phones)}
+      ${emailRows(r.emails)}
+      ${rowFn('Mail to', r.mailing_address)}
+      ${r.owner_2_name && (r.owner_2_phones?.length || r.owner_2_emails?.length) ? `
+        <div class="fl-reveal-row" style="border-top:1px solid rgba(255,255,255,0.20);padding-top:18px;margin-top:6px"><span class="k" style="color:#0E9F95">${escapeHtml(r.owner_2_name)}</span><span class="v" style="color:rgba(255,255,255,0.7);font-size:13px;font-weight:500">Co-owner contact info ↓</span></div>
+        ${phoneRows(r.owner_2_phones)}
+        ${emailRows(r.owner_2_emails)}
+      ` : ''}
       ${r.tcpa_litigator ? '<div class="fl-reveal-row"><span class="k">⚠ TCPA</span><span class="v">Litigator flagged — do not call</span></div>' : ''}
 
       <div class="fl-conversion">
