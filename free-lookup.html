@@ -330,8 +330,7 @@
     resCard.innerHTML = `
       <p class="label">Owner found</p>
       ${t.has_llc ? '<span class="fl-llc-pill">✓ LLC unmasked</span>' : ''}
-      <h2>It's <span style="color:var(--teal)">${escapeHtml(t.first_name)}</span>.</h2>
-      <p class="fl-teaser-row"><span class="key">Name</span> <span class="val">${escapeHtml(t.first_name)} <span style="color:rgba(255,255,255,0.55)">${t.has_llc ? '(behind the LLC)' : ''}</span></span></p>
+      <h2>It's <span style="color:var(--teal)">${escapeHtml(t.first_name)}</span>${t.has_llc ? ' <span style="color:rgba(255,255,255,0.55);font-size:18px;font-weight:500">(behind the LLC)</span>' : ''}.</h2>
       <p class="fl-teaser-row"><span class="key">Mobile</span> <span class="val">${escapeHtml(t.masked_phone || '———')}</span> <span class="lock">🔒 Unlock full number</span></p>
       <p class="fl-teaser-row"><span class="key">Channels</span> ${chips}</p>
 
