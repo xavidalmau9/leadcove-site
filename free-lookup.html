@@ -157,8 +157,11 @@
     <input class="fl-input" id="fl-state" name="state" placeholder="ST" maxlength="2" required value="FL" autocomplete="off" style="text-transform:uppercase" />
     <input class="fl-input" id="fl-zip" name="zip" placeholder="ZIP (optional)" autocomplete="off" />
   </div>
-  <button class="fl-btn" id="fl-submit" type="submit">Find the owner →</button>
-  <p class="fl-hint">1 free lookup per day. We never sell or share what you searched.</p>
+  <div style="margin-top:12px">
+    <input class="fl-input" id="fl-email" name="email" type="email" placeholder="Your email (required to see the contact info)" required autocomplete="email" inputmode="email" />
+  </div>
+  <button class="fl-btn" id="fl-submit" type="submit">Show me the contact info →</button>
+  <p class="fl-hint">1 free lookup per day. We won't email you — your address goes on our list for occasional updates.</p>
   <div class="fl-error hidden" id="fl-error"></div>
 </form>
 
@@ -259,16 +262,17 @@
     const original = submitBtn.innerHTML;
     submitBtn.innerHTML = '<span class="fl-spinner"></span> Looking up…';
 
+    const email = form.email.value.trim().toLowerCase();
     const payload = {
       address: form.address.value.trim(),
       city:    form.city.value.trim(),
       state:   form.state.value.trim().toUpperCase(),
       zip:     form.zip.value.trim(),
+      email,
       ...utm,
     };
 
-    // GA4 event
-    if (window.gtag) gtag('event', 'free_lookup_started', { event_category: 'acquisition', address: payload.address });
+    if (window.gtag) gtag('event', 'free_lookup_started', { event_category: 'acquisition' });
 
     let json;
     try {
@@ -279,11 +283,7 @@
       });
       json = await r.json();
       if (!r.ok || !json.ok) {
-        if (r.status === 429) {
-          showError(json.message || 'You\'ve hit the free-lookup limit. Start a free trial to keep going.');
-        } else {
-          showError(json.message || json.error || 'Lookup failed. Double-check the address and try again.');
-        }
+        showError(json.message || json.error || 'Lookup failed. Double-check the address and try again.');
         submitBtn.disabled = false;
         submitBtn.innerHTML = original;
         return;
@@ -301,7 +301,7 @@
     if (!json.hit) {
       resCard.innerHTML = `
         <p class="label">No match</p>
-        <h2>We couldn't find the owner for that address.</h2>
+        <h2>We couldn't find contact info for that address.</h2>
         <p style="color:rgba(255,255,255,0.78);font-size:15px;line-height:1.55;margin:0 0 16px">
           That can happen if the address spelling is off, the property is a P.O. box, or the parcel record isn't complete.
           Double-check and try a different one — misses don't count toward your free lookup.
@@ -316,107 +316,32 @@
       return;
     }
 
-    // Hit — render teaser + email gate
-    const t = json.teaser;
-    const channelLabels = {
-      mobile:   '📞 Mobile phone',
-      email:    '✉️ Email',
-      linkedin: '💼 LinkedIn',
-      mail:     '📮 Mailing address',
-    };
-    const chips = (t.channels || []).map(c =>
-      `<span class="lock">🔓 ${channelLabels[c] || c}</span>`
-    ).join(' ');
+    // GA4 + Google Ads conversion event — fires on every successful reveal
+    if (window.gtag) {
+      gtag('event', 'free_lookup_revealed', { event_category: 'acquisition', value: 1 });
+      gtag('event', 'generate_lead',         { event_category: 'acquisition', value: 1 });
+    }
 
+    const r = json.reveal || {};
+    const rowFn = (k, v, badge) => v ? `<div class="fl-reveal-row"><span class="k">${k}</span><span class="v">${escapeHtml(v)}${badge || ''}</span></div>` : '';
     resCard.innerHTML = `
-      <p class="label">${t.is_likely_owner ? 'Owner found' : 'Contact found at this address'}</p>
-      ${t.has_llc ? '<span class="fl-llc-pill">✓ LLC unmasked</span>' : ''}
-      <h2>It's <span style="color:var(--teal)">${escapeHtml(t.first_name)}</span>${t.has_llc ? ' <span style="color:rgba(255,255,255,0.55);font-size:18px;font-weight:500">(behind the LLC)</span>' : ''}.</h2>
-      <p class="fl-teaser-row"><span class="key">Mobile</span> <span class="val">${escapeHtml(t.masked_phone || '———')}</span> <span class="lock">🔒 Unlock full number</span></p>
-      <p class="fl-teaser-row"><span class="key">Channels</span> ${chips}</p>
+      <p class="label">Contact found for this address</p>
+      ${r.is_llc ? '<span class="fl-llc-pill">✓ LLC unmasked</span>' : ''}
+      <h2 style="margin-bottom:8px">${escapeHtml(r.owner_name || '—')}</h2>
+      ${r.owner_2_name ? `<p style="margin:0 0 16px;color:rgba(255,255,255,0.7);font-size:15px">Also at this address: <strong style="color:#fff">${escapeHtml(r.owner_2_name)}</strong></p>` : '<div style="height:8px"></div>'}
+      ${rowFn('Mobile',   r.phone_1, r.dnc_clean ? '<span class="fl-reveal-badge">DNC clean</span>' : '')}
+      ${rowFn('Phone 2',  r.phone_2)}
+      ${rowFn('Email',    r.email_1)}
+      ${rowFn('Mail to',  r.mailing_address)}
+      ${r.tcpa_litigator ? '<div class="fl-reveal-row"><span class="k">⚠ TCPA</span><span class="v">Litigator flagged — do not call</span></div>' : ''}
 
-      <div class="fl-gate">
-        <h3>Want the full reveal?</h3>
-        <p>Drop your email — we'll show you the full phone, email, and mailing address here AND send a copy to your inbox. No signup required.</p>
-        <form id="fl-gate-form" autocomplete="email">
-          <div class="fl-gate-row">
-            <input class="fl-gate-input" id="fl-gate-email" type="email" placeholder="your@email.com" required autocomplete="email" inputmode="email" />
-            <button class="fl-gate-btn" type="submit" id="fl-gate-btn">Reveal →</button>
-          </div>
-          <div class="fl-error hidden" id="fl-gate-error" style="margin-top:10px"></div>
-        </form>
+      <div class="fl-conversion">
+        <p><strong>That's 1 row.</strong> Drop a full list and LeadCove returns the same data on every row, deduped by owner.</p>
+        <a class="btn-primary" href="https://app.leadcove.io/?utm_source=free-lookup&utm_medium=reveal&utm_campaign=${encodeURIComponent(email)}#signup" onclick="if(window.gtag)gtag('event','sign_up_click',{event_category:'acquisition',source:'reveal'})">Start your 7-day trial — $0 today →</a>
       </div>
     `;
-
     resWrap.classList.remove('hidden');
     resWrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-    if (window.gtag) gtag('event', 'free_lookup_teaser_shown', { event_category: 'acquisition' });
-
-    // Wire the email-gate form
-    const gateForm = document.getElementById('fl-gate-form');
-    const gateBtn  = document.getElementById('fl-gate-btn');
-    const gateErr  = document.getElementById('fl-gate-error');
-    gateForm.addEventListener('submit', async (e2) => {
-      e2.preventDefault();
-      gateErr.classList.add('hidden');
-      gateBtn.disabled = true;
-      const orig = gateBtn.innerHTML;
-      gateBtn.innerHTML = '<span class="fl-spinner"></span>';
-      const email = document.getElementById('fl-gate-email').value.trim().toLowerCase();
-      let rj;
-      try {
-        const rr = await fetch(API_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ lookup_id: json.lookup_id, email }),
-        });
-        rj = await rr.json();
-        if (!rr.ok || !rj.ok) {
-          gateErr.textContent = rj.error === 'invalid_email' ? 'That email doesn\'t look right.'
-                              : rj.error === 'disposable_email' ? 'Please use a real email — disposable inboxes are blocked.'
-                              : rj.error || 'Something went wrong. Please try again.';
-          gateErr.classList.remove('hidden');
-          gateBtn.disabled = false;
-          gateBtn.innerHTML = orig;
-          return;
-        }
-      } catch (err) {
-        gateErr.textContent = 'Network error. Please try again.';
-        gateErr.classList.remove('hidden');
-        gateBtn.disabled = false;
-        gateBtn.innerHTML = orig;
-        return;
-      }
-
-      // GA4 + Google Ads conversion event
-      if (window.gtag) {
-        gtag('event', 'free_lookup_revealed', { event_category: 'acquisition', value: 1 });
-        gtag('event', 'generate_lead',         { event_category: 'acquisition', value: 1 });
-      }
-
-      // Render the full reveal
-      const r = rj.reveal || {};
-      const row = (k, v, badge) => v ? `<div class="fl-reveal-row"><span class="k">${k}</span><span class="v">${escapeHtml(v)}${badge || ''}</span></div>` : '';
-      resCard.innerHTML = `
-        <p class="label">Full reveal · also sent to ${escapeHtml(email)}</p>
-        ${r.is_llc ? '<span class="fl-llc-pill">✓ LLC unmasked</span>' : ''}
-        <h2 style="margin-bottom:8px">${escapeHtml(r.owner_name || '—')}</h2>
-        ${r.owner_2_name ? `<p style="margin:0 0 16px;color:rgba(255,255,255,0.7);font-size:15px">Co-owner: <strong style="color:#fff">${escapeHtml(r.owner_2_name)}</strong></p>` : '<div style="height:8px"></div>'}
-        ${row('Mobile',   r.phone_1, r.dnc_clean ? '<span class="fl-reveal-badge">DNC clean</span>' : '')}
-        ${row('Phone 2',  r.phone_2)}
-        ${row('Email',    r.email_1)}
-        ${row('LinkedIn', r.linkedin_url)}
-        ${row('Mail to',  r.mailing_address)}
-        ${r.tcpa_litigator ? '<div class="fl-reveal-row"><span class="k">⚠ TCPA</span><span class="v">Litigator flagged — do not call</span></div>' : ''}
-
-        <div class="fl-conversion">
-          <p><strong>That's 1 row.</strong> Drop a full list and LeadCove returns the same data on every row, deduped by owner.</p>
-          <a class="btn-primary" href="https://app.leadcove.io/?utm_source=free-lookup&utm_medium=reveal&utm_campaign=${encodeURIComponent(email)}#signup" onclick="if(window.gtag)gtag('event','sign_up_click',{event_category:'acquisition',source:'reveal'})">Start your 7-day trial — $0 today →</a>
-        </div>
-      `;
-      resCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
   });
 
   // Share buttons
