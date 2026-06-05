@@ -1,0 +1,65 @@
+LeadCove · Instagram launch post #01
+──────────────────────────────────────────────────────────────────────
+ASSETS
+  ig-launch-01-square.png   (1080×1080 — feed post)
+  ig-launch-01-story.png    (1080×1920 — Story / Reel cover)
+
+──────────────────────────────────────────────────────────────────────
+CAPTION (88 chars — under IG's first-line truncation point)
+
+  Stop stitching 7 lookup sites for every cold address. One screen.
+  Free trial → leadcove.io
+
+──────────────────────────────────────────────────────────────────────
+ALT CAPTION — longer, more conversational (for when the audience
+is warmer and you want more context):
+
+  6am, 40 expireds, MLS phone goes to the listing agent. So begins
+  the Tuesday ritual: 7 paid lookup sites, 2.5 hours, $62 in fees,
+  and you haven't dialed once.
+
+  We built LeadCove to kill that workflow. One screen. Every owner
+  on the deed, every phone (with DNC + TCPA flags), LLC officers
+  unmasked. ~8 seconds per lead.
+
+  $0 today, cancel anytime. Link in bio.
+
+──────────────────────────────────────────────────────────────────────
+HASHTAGS — weighted toward FL realtor reach. 12 tags is IG's
+sweet-spot per recent guidance. Order matters less than mix.
+
+  #miamirealestate
+  #miamirealtor
+  #floridarealtor
+  #floridarealestate
+  #realestateagent
+  #realtorlife
+  #realestatemarketing
+  #leadgeneration
+  #realestateprospecting
+  #skiptracing
+  #expiredlistings
+  #fsbo
+
+──────────────────────────────────────────────────────────────────────
+NOTES
+
+- Iron-rule check: no third-party brand names in the graphic. Generic
+  "site-one.com" through "site-seven.com" chips replace the original
+  TruePeopleSearch / Spokeo / etc labels. The visual point — "many
+  tabs vs one screen" — still lands without naming competitors.
+- Iron-rule check: no Florida-only language. "FOR WORKING REAL
+  ESTATE AGENTS" eyebrow is geo-neutral; the platform is nationwide.
+- Iron-rule check: no vendor names, no vendor costs disclosed.
+- Synthetic owner data in the mock modal ("Maria Espinoza", 305 area
+  code, masked phones). Standard PII discipline.
+
+──────────────────────────────────────────────────────────────────────
+POSTING CHECKLIST
+
+  [ ] Upload square version to feed
+  [ ] Upload story version to Stories with leadcove.io link sticker
+  [ ] Set the link in bio to https://app.leadcove.io/#signup
+  [ ] After posting: pin to top of grid for 7 days
+  [ ] Cross-post story to Facebook page
+──────────────────────────────────────────────────────────────────────
