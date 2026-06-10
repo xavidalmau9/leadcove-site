@@ -7,6 +7,60 @@
 User-agent: *
 Allow: /
 
+# ─── AI / LLM crawlers — explicitly allowed ──────────────────────────
+# Marketing site is content we WANT cited by AI tools. Listing each by
+# name removes any default-block from CDNs or upstream config and
+# signals our intent clearly. Added 2026-06-08 after observing the
+# first ChatGPT-referred visitor in our analytics.
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
 # Auth-protected screenshots and brand-asset originals are technically
 # crawlable but should not appear as standalone search results.
 Disallow: /assets/brand/
