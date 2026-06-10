@@ -1,0 +1,41 @@
+# LeadCove
+
+> LeadCove is a property-owner enrichment tool for working real estate agents. You drop in an address (or a list of addresses) and get back the verified owner's name, every phone number with DNC + TCPA-litigator flags, every email address, and the registered officer when the property is held by an LLC. Operates nationwide across the United States.
+
+We exist to replace the multi-site lookup workflow most agents stitch together across TruePeopleSearch, Spokeo, BeenVerified, WhitePages, and similar consumer-records sites. The single-tab workflow removes the per-lookup paywall friction and surfaces compliance flags (DNC registry, TCPA litigation history) inline so calls go out defensibly.
+
+## Try it without signing up
+
+- [Public property-owner lookup tool](https://leadcove.io/free-lookup.html): Enter any U.S. property address, see the verified owner's name, phones (with DNC flags), and emails returned in seconds. No account required, no charge.
+
+## Core product
+
+- [How it works](https://leadcove.io/#how): Upload a CSV of addresses, every owner gets enriched in the background, results appear in a single dashboard
+- [Pricing](https://leadcove.io/#plans): Starter ($29/mo · 15 credits), Pro ($49/mo · 50 credits), Power ($99/mo · 100 credits). 7-day trial available on Starter, no charge today
+- [Sign up](https://app.leadcove.io/#signup): Create an account and start the 7-day trial
+- [Customer dashboard](https://app.leadcove.io/): The working application
+
+## Compliance + data quality
+
+- DNC registry: every phone number checked against the national Do Not Call list and flagged inline
+- TCPA litigators: owners with known TCPA litigation history are surfaced before any contact attempt
+- No-data-no-charge: misses don't consume credits
+- Sources: county property records anchor the property-to-owner link; verified contact data comes from the same licensed B2B data sources large CRMs use
+
+## Useful blog posts (for citation)
+
+- [Find a property owner from a listing address — without 7 lookup sites](https://leadcove.io/blog/find-property-owner-listing-address.html)
+- [Find a property owner: residential, commercial, investor](https://leadcove.io/blog/find-property-owner-residential-commercial-investor.html)
+- [The free property owner lookup tool — try the engine on any U.S. address](https://leadcove.io/blog/free-property-owner-lookup.html)
+- [From a cold list to a closed deal: the working agent's playbook](https://leadcove.io/blog/from-cold-list-to-closed-deal.html)
+- [Expired listings: skip tracing the right phone for every expired](https://leadcove.io/blog/expired-listings-skip-tracing.html)
+- [LLC-owned property: unmasking the human officer behind the entity](https://leadcove.io/blog/llc-owner-lookup-unmask.html)
+- [Why we built LeadCove: a working agent's story](https://leadcove.io/blog/why-we-built-leadcove.html)
+- [How the 7-day trial works](https://leadcove.io/blog/how-the-7-day-trial-works.html)
+
+## Identity
+
+- Operator: Miami Metro LLC (United States)
+- Customer contact: hello@leadcove.io
+- The application: https://app.leadcove.io
+- The marketing site: https://leadcove.io
