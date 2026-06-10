@@ -16,6 +16,7 @@ on:
       - 'integrations/**'
       - 'help/**'
       - 'llc-owner-lookup/**'
+      - 'real-estate-prospecting-laws/**'
       - 'index.html'
       - 'free-lookup.html'
       - 'about.html'
