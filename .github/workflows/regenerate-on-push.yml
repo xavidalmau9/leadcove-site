@@ -1,0 +1,65 @@
+name: Auto-regen sitemap + OG images
+
+# Fires whenever someone pushes content changes. Regenerates the
+# sitemap from disk, regenerates per-page OG images for any new posts,
+# and commits the result back to main. The follow-on push then
+# triggers the indexnow-on-push workflow which submits to Bing.
+#
+# Skips itself when the bot author pushes (to avoid infinite loop).
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'blog/**'
+      - 'find-property-owner/**'
+      - 'llc-owner-lookup/**'
+      - 'integrations/**'
+      - 'help/**'
+      - 'index.html'
+      - 'free-lookup.html'
+      - 'about.html'
+      - 'scripts/generate_state_landing_pages.py'
+      - 'scripts/generate_og_images.py'
+      - 'scripts/regenerate_sitemap.py'
+
+  workflow_dispatch:
+
+jobs:
+  regen:
+    runs-on: ubuntu-latest
+    # Avoid loop: if the most recent commit was made by this workflow,
+    # don't re-run.
+    if: "!contains(github.event.head_commit.message, '[skip-regen]')"
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Pillow (for OG image rendering)
+        run: pip install Pillow
+
+      - name: Regenerate sitemap.xml
+        run: python3 scripts/regenerate_sitemap.py
+
+      - name: Regenerate per-page OG images
+        run: python3 scripts/generate_og_images.py
+
+      - name: Commit regenerated assets if changed
+        run: |
+          git config user.name  "leadcove-bot"
+          git config user.email "noreply@leadcove.io"
+          git add sitemap.xml assets/og/ blog/ find-property-owner/ llc-owner-lookup/ integrations/ help/ || true
+          if git diff --cached --quiet; then
+            echo "No regeneration changes to commit."
+          else
+            git commit -m "chore: auto-regen sitemap + OG images [skip-regen]"
+            git push
+          fi

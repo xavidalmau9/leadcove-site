@@ -110,7 +110,7 @@ HEAD = '''<!doctype html>
 
 def render_page(state):
     name, slug, abbr, sos_url, _portal, cities, notes = state
-    title = f'Find a property owner in {name} (no-account address lookup, 2026)'
+    title = f'Find a property owner in {name} (free address lookup, 2026)'
     description = (
         f'Look up the verified owner of any {name} property by address — '
         f'including the registered LLC officer when the deed is held by an '
