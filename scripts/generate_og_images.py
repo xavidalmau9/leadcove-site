@@ -167,7 +167,9 @@ def render_og(title, eyebrow, out_path):
 
 
 def slug_for(html_path):
-    """blog/foo.html → 'foo'"""
+    """blog/foo.html → 'foo'; find-property-owner/california.html → 'find-property-owner-california'."""
+    if 'find-property-owner' in str(html_path):
+        return f'find-property-owner-{html_path.stem}'
     return html_path.stem
 
 
@@ -193,7 +195,12 @@ def update_og_meta(html_path, image_url):
 
 
 def main():
+    # Blog posts + state landing pages. Both directories use the
+    # same template hooks so the OG generator handles them uniformly.
     posts = sorted(p for p in BLOG.glob('*.html') if p.name != 'index.html')
+    state_dir = HERE / 'find-property-owner'
+    if state_dir.exists():
+        posts.extend(sorted(state_dir.glob('*.html')))
     rendered = []
     updated_meta = []
     skipped = []
