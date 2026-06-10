@@ -1,0 +1,45 @@
+name: IndexNow auto-submit
+
+# Fires on every push to main. Waits ~90 sec for Vercel to finish
+# deploying, then submits every URL in sitemap.xml to IndexNow so
+# Bing (which powers ChatGPT search + Copilot) re-crawls within
+# minutes instead of weeks.
+#
+# Added 2026-06-08. See scripts/submit_indexnow.py for the submission
+# logic and the verification file at site root for the IndexNow key.
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'blog/**'
+      - 'integrations/**'
+      - 'help/**'
+      - 'llc-owner-lookup/**'
+      - 'index.html'
+      - 'free-lookup.html'
+      - 'about.html'
+      - 'sitemap.xml'
+      - 'llms.txt'
+
+  # Allow manual re-runs from the GitHub Actions UI
+  workflow_dispatch:
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Wait for Vercel deploy
+        run: |
+          echo "Waiting 90 seconds for Vercel deploy to complete…"
+          sleep 90
+
+      - name: Verify production is serving the new sitemap
+        run: |
+          curl -fsSL "https://leadcove.io/sitemap.xml" > /dev/null \
+            || (echo "sitemap.xml not reachable, deploy may not be complete" && exit 1)
+
+      - name: Submit URLs to IndexNow
+        run: python3 scripts/submit_indexnow.py
