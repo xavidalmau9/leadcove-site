@@ -14,6 +14,7 @@ on:
       - 'blog/**'
       - 'find-property-owner/**'
       - 'llc-owner-lookup/**'
+      - 'real-estate-prospecting-laws/**'
       - 'integrations/**'
       - 'help/**'
       - 'index.html'
@@ -56,7 +57,7 @@ jobs:
         run: |
           git config user.name  "leadcove-bot"
           git config user.email "noreply@leadcove.io"
-          git add sitemap.xml assets/og/ blog/ find-property-owner/ llc-owner-lookup/ integrations/ help/ || true
+          git add sitemap.xml assets/og/ blog/ find-property-owner/ llc-owner-lookup/ real-estate-prospecting-laws/ integrations/ help/ || true
           if git diff --cached --quiet; then
             echo "No regeneration changes to commit."
           else

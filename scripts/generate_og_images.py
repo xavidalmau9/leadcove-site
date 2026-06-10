@@ -170,6 +170,8 @@ def slug_for(html_path):
     """blog/foo.html → 'foo'; find-property-owner/california.html → 'find-property-owner-california'."""
     if 'find-property-owner' in str(html_path):
         return f'find-property-owner-{html_path.stem}'
+    if 'real-estate-prospecting-laws' in str(html_path):
+        return f'real-estate-prospecting-laws-{html_path.stem}'
     return html_path.stem
 
 
@@ -201,6 +203,9 @@ def main():
     state_dir = HERE / 'find-property-owner'
     if state_dir.exists():
         posts.extend(sorted(state_dir.glob('*.html')))
+    laws_dir = HERE / 'real-estate-prospecting-laws'
+    if laws_dir.exists():
+        posts.extend(sorted(laws_dir.glob('*.html')))
     rendered = []
     updated_meta = []
     skipped = []

@@ -45,6 +45,7 @@ TOP_LEVEL = [
     ('/about.html',             'monthly', 0.7),
     ('/help/',                  'monthly', 0.6),
     ('/blog/',                  'weekly',  0.8),
+    ('/press.html',             'monthly', 0.7),
     ('/terms.html',             'yearly',  0.3),
     ('/privacy.html',           'yearly',  0.3),
     ('/tcpa.html',              'yearly',  0.3),
@@ -54,8 +55,9 @@ TOP_LEVEL = [
 DIRS = [
     ('blog',                {'changefreq': 'monthly', 'priority': 0.8}),
     ('integrations',        {'changefreq': 'monthly', 'priority': 0.8}),
-    ('find-property-owner', {'changefreq': 'monthly', 'priority': 0.7}),
-    ('llc-owner-lookup',    {'changefreq': 'monthly', 'priority': 0.7}),
+    ('find-property-owner',           {'changefreq': 'monthly', 'priority': 0.7}),
+    ('llc-owner-lookup',              {'changefreq': 'monthly', 'priority': 0.7}),
+    ('real-estate-prospecting-laws',  {'changefreq': 'monthly', 'priority': 0.7}),
     ('help',                {'changefreq': 'monthly', 'priority': 0.6}),
 ]
 
